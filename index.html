@@ -5,48 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Producción Electrónica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            background-color: #f4f1ea; 
-            color: #2c2a29; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: rgba(22, 27, 34, 0.85);
+            --border-color: #30363d;
+            --accent-cyan: #00f2fe;
+            --accent-green: #00ff87;
+            --text-main: #c9d1d9;
+            --text-heading: #ffffff;
+            --subtext: #8b949e;
         }
 
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 135, 0.05) 0%, transparent 20%),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* LOGO ESQUINA */
         .logo-esquina {
             position: fixed;
             top: 20px;
             left: 25px;
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
             border-radius: 12px; 
-            border: 2px solid #d4cec3;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
             z-index: 1100; 
+            background-color: #fff;
+            transition: transform 0.3s ease;
         }
-        
+
+        .logo-esquina:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        /* NAVEGACIÓN */
         nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #e3ded5; 
-            padding: 12px 25px;
-            margin: 10px auto 25px auto; 
-            width: 50%;                 
-            max-width: 400px;           
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+            background: rgba(22, 27, 34, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            padding: 8px 20px;
+            margin: 20px auto 30px auto; 
+            width: 90%;                 
+            max-width: 450px;           
+            border-radius: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); 
             position: sticky;
             top: 15px; 
             z-index: 1000;
         }
-        
+
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 15px;
+            gap: 10px;
             margin: 0;
             padding: 0;
         }
@@ -55,24 +85,27 @@
             background: none;
             border: none;
             cursor: pointer;
-            text-decoration: none;
-            color: #4a4543;
+            color: var(--subtext);
             font-weight: 600;
-            font-size: 1rem;
-            padding: 8px 16px;
+            font-size: 0.95rem;
+            padding: 8px 20px;
             border-radius: 20px;
             transition: all 0.3s ease;
+            font-family: 'Fira Code', monospace;
         }
 
         .nav-links button:hover, .nav-links button.active {
-            background-color: #d4cec3;
-            color: #1f1d1c;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+            color: #0d1117;
+            font-weight: 700;
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
         }
-        
+
+        /* MAIN & SECCIONES */
         main {
-            max-width: 800px;
-            margin: 20px auto 60px auto; 
-            padding: 20px 20px 20px 40px; 
+            max-width: 850px;
+            margin: 0 auto 60px auto; 
+            padding: 0 20px; 
         }
 
         .page-section {
@@ -81,230 +114,33 @@
         
         .page-section.active-page {
             display: block;
-            animation: fadeIn 0.4s ease-in-out;
+            animation: fadeInUp 0.5s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .contenido-inicial {
             text-align: center;
+            margin-bottom: 30px;
         }
 
         h1, h2 {
-            color: #1f1d1c;
-            margin-top: 0; 
+            color: var(--text-heading);
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
-        @media (max-width: 600px) {
-            .logo-esquina {
-                display: none; 
-            }
+        h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, #fff, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .info-footer-container {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #d4cec3; 
-            text-align: left;
-        }
-
-        .info-footer-container h4 {
-            color: #1f1d1c;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .info-card {
-            background-color: #e3ded5;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-            border: 1px solid #d4cec3;
-        }
-
-        .info-card h4 {
-            margin-top: 0;
-            margin-bottom: 12px;
-            color: #1f1d1c;
-            font-size: 1rem;
-        }
-
-        .info-card p {
-            margin: 6px 0;
-            font-size: 0.9rem;
-            color: #4a4543;
-        }
-       
-        .perfil-card {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .perfil-foto {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%; 
-            object-fit: cover;
-            border: 2px solid #d4cec3;
-            flex-shrink: 0;
-        }
-
-        .perfil-info h5, .perfil-info h6 {
-            margin: 0 0 4px 0;
-            font-size: 0.95rem;
-            color: #1f1d1c;
-        }
-        
-        .perfil-carrera {
-            margin: 0 0 6px 0 !important;
-            font-size: 0.85rem !important;
-            color: #615b58;
-            font-weight: 500;
-        }
-
-        .perfil-correo {
-            font-size: 0.85rem;
-            color: #2c2a29;
-            text-decoration: underline;
-            font-weight: 500;
-            word-break: break-all;
-        }
-
-        .perfil-correo:hover {
-            color: #000;
-        }
-        
-        .gps-indicator {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: #4a7c59; 
-            border-radius: 50%;
-            margin-right: 6px;
-            box-shadow: 0 0 0 rgba(74, 124, 89, 0.4);
-            animation: pulse-gps 2s infinite;
-        }
-        
-        @keyframes pulse-gps {
-            0% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(74, 124, 89, 0.7);
-            }
-            70% {
-                transform: scale(1);
-                box-shadow: 0 0 0 8px rgba(74, 124, 89, 0);
-            }
-            100% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(74, 124, 89, 0);
-            }
-        }
-        
-        .link-mapa {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 0.85rem;
-            color: #1f1d1c;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .link-mapa:hover {
-            text-decoration: underline;
-        }
-
-        .ubicacion-grande-container {
-            margin-top: 30px;
-        }
-
-        .tarjeta-ubicacion-completa {
-            background-color: #e3ded5;
-            padding: 25px;
-            border-radius: 25px; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-            border: 1px solid #d4cec3;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .tarjeta-ubicacion-completa:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .ubicacion-imagen {
-            width: 100%;
-            height: 220px; 
-            object-fit: cover;
-            border-radius: 16px;
-            border: 1px solid #d4cec3;
-        }
-
-        .ubicacion-contenido {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .materia-intro-card {
-            background-color: rgba(227, 222, 213, 0.75);
-            padding: 30px;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(212, 206, 195, 0.6);
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-            position: relative;
-            z-index: 2;
-        }
-
-        .materia-intro-card h2 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-
-        .materia-intro-card h3 {
-            font-size: 1.1rem;
-            color: #1f1d1c;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-
-        .materia-objetivos-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 15px;
-            align-items: stretch;
-        }
-
-        .objetivo-pill {
-            background-color: #f4f1ea;
-            padding: 16px 20px;
-            border-radius: 20px;
-            border: 1px solid #d4cec3;
-            font-size: 0.9rem;
-            color: #4a4543;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
-            display: inline-block;
-            width: fit-content;
-        }
-
+        /* FRANJA CON VIDEO */
         .franja-fondo-materia {
             width: 100vw;
             position: relative;
@@ -312,10 +148,11 @@
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
-            padding: 50px 20px;
+            padding: 60px 20px;
             margin-top: 30px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             overflow: hidden;
+            border-y: 1px solid var(--border-color);
         }
 
         .video-fondo {
@@ -329,6 +166,8 @@
             transform: translate(-50%, -50%);
             object-fit: cover;
             z-index: 0;
+            opacity: 0.35;
+            filter: grayscale(40%) contrast(120%);
         }
 
         .franja-fondo-materia::after {
@@ -338,10 +177,201 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: linear-gradient(180deg, var(--bg-color) 0%, rgba(13, 17, 23, 0.7) 50%, var(--bg-color) 100%);
             z-index: 1;
         }
 
+        .materia-intro-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+        }
+
+        .materia-intro-card h2 {
+            font-size: 1.6rem;
+            color: var(--accent-cyan);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .materia-intro-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .materia-objetivos-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .objetivo-pill {
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 18px 22px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+
+        .objetivo-pill:hover {
+            border-color: var(--accent-green);
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(0, 255, 135, 0.1);
+        }
+
+        .objetivo-pill i {
+            color: var(--accent-green);
+        }
+
+        /* EQUIPO Y TARJETAS */
+        .info-footer-container {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .info-footer-container h4 {
+            color: var(--text-heading);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-cyan);
+        }
+
+        .perfil-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .perfil-foto {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%; 
+            object-fit: cover;
+            border: 2px solid var(--accent-cyan);
+            flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+        }
+
+        .perfil-info h5, .perfil-info h6 {
+            margin: 0 0 4px 0;
+            font-size: 1rem;
+            color: var(--text-heading);
+        }
+
+        .perfil-carrera {
+            margin: 0 0 6px 0 !important;
+            font-size: 0.85rem !important;
+            color: var(--accent-green);
+            font-weight: 600;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .perfil-correo {
+            font-size: 0.85rem;
+            color: var(--subtext);
+            text-decoration: none;
+            word-break: break-all;
+            transition: color 0.3s ease;
+        }
+
+        .perfil-correo:hover {
+            color: var(--accent-cyan);
+            text-decoration: underline;
+        }
+
+        /* UBICACIÓN */
+        .gps-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-green); 
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 10px var(--accent-green);
+            animation: pulse-gps 2s infinite;
+        }
+
+        @keyframes pulse-gps {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 135, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(0, 255, 135, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 135, 0); }
+        }
+
+        .tarjeta-ubicacion-completa {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 24px; 
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .tarjeta-ubicacion-completa:hover {
+            border-color: var(--accent-cyan);
+        }
+
+        .ubicacion-imagen {
+            width: 100%;
+            height: 220px; 
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            filter: brightness(0.9);
+        }
+
+        .link-mapa {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+            color: #0d1117 !important;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+        }
+
+        .link-mapa:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 135, 0.4);
+        }
+
+        /* TRABAJOS Y BANNER */
         .trabajos-banner {
             width: 100vw;
             position: relative;
@@ -349,16 +379,17 @@
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/PCB_BKG.jpg');
+            background-image: linear-gradient(rgba(13, 17, 23, 0.8), rgba(13, 17, 23, 0.8)), url('img/PCB_BKG.jpg');
             background-size: cover;
             background-position: center;
             padding: 50px 20px;
             text-align: center;
             margin-bottom: 40px;
+            border-y: 1px solid var(--border-color);
         }
 
         .trabajos-banner h2 {
-            color: #fff;
+            color: var(--text-heading);
             font-size: 2.2rem;
             margin: 0;
             font-weight: 700;
@@ -368,7 +399,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
@@ -383,33 +414,25 @@
             align-items: center;
             text-align: center;
             padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
             cursor: pointer;
-            border: 1px solid #d4cec3;
+            border: 1px solid var(--border-color);
             background-size: cover;
             background-position: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .trabajo-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-            transition: background 0.3s ease;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(180deg, transparent 30%, rgba(13, 17, 23, 0.95) 100%);
             z-index: 1;
         }
 
         .trabajo-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .trabajo-card:hover::before {
-            background: rgba(0, 0, 0, 0.3);
+            transform: translateY(-6px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2);
         }
 
         .trabajo-card h3, .trabajo-card p {
@@ -421,37 +444,117 @@
         .trabajo-card h3 {
             margin: 0 0 5px 0;
             font-size: 1.2rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .trabajo-card p {
             margin: 0;
             font-size: 0.85rem;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            color: var(--accent-green);
+            font-family: 'Fira Code', monospace;
         }
 
         .btn-regresar {
-            background: none;
-            border: 1px solid #d4cec3;
-            color: #4a4543;
-            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 20px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             transition: all 0.3s ease;
+            font-family: 'Fira Code', monospace;
         }
 
         .btn-regresar:hover {
-            background-color: #d4cec3;
-            color: #1f1d1c;
+            background-color: var(--accent-cyan);
+            color: #0d1117;
         }
 
-        /* Estilos del Banner Footer */
+        /* TARJETA DEL GATITO TRABAJANDO EN SECCIONES SIN INFORMACIÓN */
+        .gatito-card-trabajando {
+            background: var(--card-bg);
+            border: 2px dashed var(--accent-cyan);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gatito-img-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .gatito-img {
+            max-width: 260px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+        }
+
+        .badge-status {
+            display: inline-block;
+            background: rgba(0, 255, 135, 0.15);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: 'Fira Code', monospace;
+            margin-top: 10px;
+        }
+
+        /* GATITO CAMINANDO EN EL FOOTER / PANTALLA */
+        .cat-walker-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 50px;
+            pointer-events: none;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        .cat-walker {
+            position: absolute;
+            bottom: 5px;
+            font-size: 32px;
+            animation: walkAcross 18s linear infinite;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(13, 17, 23, 0.8);
+            padding: 4px 12px;
+            border-radius: 15px;
+            border: 1px solid var(--accent-cyan);
+            backdrop-filter: blur(5px);
+        }
+
+        .cat-walker-text {
+            font-size: 0.75rem;
+            color: var(--accent-green);
+            font-family: 'Fira Code', monospace;
+            white-space: nowrap;
+        }
+
+        @keyframes walkAcross {
+            0% { left: -150px; }
+            100% { left: 100vw; }
+        }
+
+        /* FOOTER */
         .site-footer {
-            background-color: #e3ded5;
-            border-top: 2px solid #d4cec3;
-            color: #4a4543;
+            background-color: #090d11;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext);
             padding: 40px 20px 20px 20px;
             margin-top: 60px;
             font-size: 0.9rem;
@@ -465,41 +568,37 @@
         }
 
         .footer-content {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center; 
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
             margin-bottom: 30px;
         }
 
-        /* Bloque izquierda: Info de la materia y créditos agrupados en columna para evitar separación */
         .footer-left-group {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
-        .footer-section p {
-            margin: 2px 0;
-        }
-
-        /* Estilo para el logo en el footer derecho (más grande y forzado a la derecha) */
         .footer-logo-derecha {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             object-fit: contain;
             border-radius: 8px;
             margin-left: auto;
+            background: #fff;
+            padding: 8px;
         }
 
         .footer-bottom {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             padding-top: 20px;
-            border-top: 1px solid #d4cec3;
+            border-top: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -509,10 +608,10 @@
         }
 
         .btn-subir {
-            background: none;
-            border: 1px solid #d4cec3;
-            color: #4a4543;
-            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 16px;
             border-radius: 15px;
             cursor: pointer;
             font-weight: 600;
@@ -520,20 +619,17 @@
         }
 
         .btn-subir:hover {
-            background-color: #d4cec3;
-            color: #1f1d1c;
+            background-color: var(--accent-cyan);
+            color: #0d1117;
         }
 
         @media (max-width: 768px) {
-            .trabajos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .trabajos-grid { grid-template-columns: repeat(2, 1fr); }
+            .logo-esquina { display: none; }
         }
 
         @media (max-width: 480px) {
-            .trabajos-grid {
-                grid-template-columns: 1fr;
-            }
+            .trabajos-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -541,6 +637,7 @@
 
     <img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
 
+    <!-- BARRA NAVEGACIÓN -->
     <nav>
         <ul class="nav-links">
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
@@ -549,7 +646,16 @@
         </ul>
     </nav>
 
+    <!-- GATITO INGENIERO CAMINANDO POR LA PANTALLA -->
+    <div class="cat-walker-container">
+        <div class="cat-walker">
+            <span>🐱‍💻⛑️</span>
+            <span class="cat-walker-text">GatoIngeniero_v2.6 ~ inspeccionando_linea...</span>
+        </div>
+    </div>
+
     <main>
+        <!-- SECCIÓN INICIO -->
         <section id="inicio" class="page-section active-page">
             <div class="contenido-inicial">
                 <h1>Portafolio de Proyectos</h1>
@@ -566,14 +672,14 @@
                     <h2>¿De qué trata la materia?</h2>
                     <p>La asignatura de <strong>Producción Electrónica</strong> está enfocada en el desarrollo de prototipos y circuitos impresos (PCB) mediante la aplicación de técnicas especializadas de diseño, simulación y manufactura.</p>
                 
-                    <h3>Objetivos</h3>
+                    <h3><i class="fa-solid fa-code-branch" style="color: var(--accent-cyan);"></i> Objetivos</h3>
                     <div class="materia-objetivos-grid">
                         <div class="objetivo-pill">
-                            <i class="fa-solid fa-microchip" style="margin-right: 8px; color: #4a7c59;"></i>
+                            <i class="fa-solid fa-microchip" style="margin-right: 8px;"></i>
                             <strong>Diseño y Simulación:</strong> Creación e interpretación de diagramas esquemáticos y circuitos utilizando softwares como <strong>KiCad</strong>.
                         </div>
                         <div class="objetivo-pill">
-                            <i class="fa-solid fa-industry" style="margin-right: 8px; color: #4a7c59;"></i>
+                            <i class="fa-solid fa-industry" style="margin-right: 8px;"></i>
                             <strong>Manufactura Avanzada:</strong> Fabricación física de prototipos mediante la aplicación de reglas de ruteado y el uso de equipo especializado como la cortadora láser <strong>XTOOL</strong> y la máquina <strong>MONOFAB</strong>.
                         </div>
                    </div>
@@ -582,7 +688,7 @@
 
             <div class="contenido-inicial" style="text-align: left;">
                 <div class="info-footer-container">
-                    <h4>Acerca del Equipo</h4>
+                    <h4><i class="fa-solid fa-users" style="color: var(--accent-cyan); margin-right: 8px;"></i>Acerca del Equipo</h4>
                     
                     <div class="info-grid">    
                         <div class="info-card perfil-card">
@@ -609,12 +715,12 @@
                         <div class="tarjeta-ubicacion-completa" style="margin-top: 0;">
                             <img src="img/Ibero.jpg" alt="Mapa" class="ubicacion-imagen">
                             
-                            <div class="ubicacion-contenido">
+                            <div class="ubicacion-contenido" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                                 <div>
-                                    <p><strong>Universidad Iberoamericana Puebla</strong></p>
-                                    <p style="margin: 0; font-size: 0.9rem; color: #4a4543;">Blvd. Del Niño Poblano #2901, Reserva Territorial Atlixcáyotl, San Andrés Cholula, Pue.</p>
+                                    <p style="margin:0 0 5px 0;"><strong style="color:var(--text-heading);">Universidad Iberoamericana Puebla</strong></p>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--subtext);">Blvd. Del Niño Poblano #2901, Reserva Territorial Atlixcáyotl, San Andrés Cholula, Pue.</p>
                                 </div>
-                                <a href="https://maps.app.goo.gl/ENTByS38ee4rZKPLA" target="_blank" class="link-mapa" style="margin-top: 0; background-color: #d4cec3; padding: 10px 16px; border-radius: 20px;">Ver en Google Maps ↗</a>
+                                <a href="https://maps.app.goo.gl/ENTByS38ee4rZKPLA" target="_blank" class="link-mapa">Ver en Google Maps ↗</a>
                             </div>
                         </div>
                     </div>
@@ -622,6 +728,7 @@
             </div>     
         </section>
 
+        <!-- SECCIÓN TRABAJOS -->
         <section id="acerca" class="page-section">
             <div class="trabajos-banner">
                 <h2>Trabajos Realizados</h2>
@@ -632,36 +739,78 @@
                     <h3>KiCad</h3>
                     <p>Diseño y esquemáticos</p>
                 </div>
-                <div class="trabajo-card" style="background-image: url('img/xtool_preview.jpg');">
-                    <h3>2</h3>
-                    <p>...</p>
+                <div class="trabajo-card" style="background-image: url('img/xtool_preview.jpg');" onclick="cambiarPagina('trabajo2-detalle')">
+                    <h3>Práctica 2</h3>
+                    <p>Manufactura Laser XTOOL</p>
                 </div>
-                <div class="trabajo-card" style="background-image: url('img/monofab_preview.jpg');">
-                    <h3>3</h3>
-                    <p>...</p>
+                <div class="trabajo-card" style="background-image: url('img/monofab_preview.jpg');" onclick="cambiarPagina('trabajo3-detalle')">
+                    <h3>Práctica 3</h3>
+                    <p>Fresado CNC MONOFAB</p>
                 </div>
             </div>
         </section>
 
+        <!-- SECCIÓN DETALLE KICAD -->
         <section id="kicad-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica: KiCad</h2>
-            <p>...</p>
+            
+            <!-- GATITO INGENIERO EN SECCIÓN EN CONSTRUCCIÓN -->
+            <div class="gatito-card-trabajando">
+                <div class="gatito-img-wrapper">
+                    <img src="watermarked_img_15338189493937909918.jpg" alt="Gatito Soldando PCB" class="gatito-img">
+                </div>
+                <h3 style="color: var(--text-heading); margin: 10px 0 5px 0;">Sección en proceso de Cauterización & Ruteado</h3>
+                <p style="color: var(--subtext); margin: 0;">El michi ingeniero está soldando los componentes de esta práctica. ¡Vuelve pronto!</p>
+                <div class="badge-status"><i class="fa-solid fa-gear fa-spin"></i> Estado: Compilando información...</div>
+            </div>
         </section>
 
+        <!-- DETALLE TRABAJO 2 -->
+        <section id="trabajo2-detalle" class="page-section">
+            <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
+            <h2>Práctica 2: Cortadora Laser XTOOL</h2>
+            <div class="gatito-card-trabajando">
+                <img src="watermarked_img_15338189493937909918.jpg" alt="Gatito Soldando PCB" class="gatito-img">
+                <h3 style="color: var(--text-heading); margin: 10px 0 5px 0;">Corte en proceso...</h3>
+                <p style="color: var(--subtext); margin: 0;">Estamos calibrando los parámetros del láser en el taller.</p>
+                <div class="badge-status"><i class="fa-solid fa-bolt"></i> Estado: En desarrollo</div>
+            </div>
+        </section>
+
+        <!-- DETALLE TRABAJO 3 -->
+        <section id="trabajo3-detalle" class="page-section">
+            <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
+            <h2>Práctica 3: Fresadora CNC MONOFAB</h2>
+            <div class="gatito-card-trabajando">
+                <img src="watermarked_img_15338189493937909918.jpg" alt="Gatito Soldando PCB" class="gatito-img">
+                <h3 style="color: var(--text-heading); margin: 10px 0 5px 0;">Fresando Pistas PCB...</h3>
+                <p style="color: var(--subtext); margin: 0;">El gatito está ajustando la broca de grabado de 0.1mm.</p>
+                <div class="badge-status"><i class="fa-solid fa-wrench"></i> Estado: En desarrollo</div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
             <div class="contenido-inicial">
-                <h2>Proyectos</h2>
-                <p>...</p>
+                <h2>Proyectos Finales</h2>
+                
+                <div class="gatito-card-trabajando">
+                    <img src="watermarked_img_15338189493937909918.jpg" alt="Gatito Soldando PCB" class="gatito-img">
+                    <h3 style="color: var(--text-heading); margin: 10px 0 5px 0;">Proyectos Mecatrónicos en Laboratorio</h3>
+                    <p style="color: var(--subtext); margin: 0;">Próximamente desplegaremos las pruebas finales de hardware y reportes.</p>
+                    <div class="badge-status"><i class="fa-solid fa-microchip"></i> Estado: Prototipado en curso</div>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-left-group">
                 <div class="footer-section">
-                    <p><strong>Universidad Iberoamericana Puebla</strong></p>
+                    <p><strong style="color: var(--text-heading);">Universidad Iberoamericana Puebla</strong></p>
                     <p>Departamento de Ciencias e Ingenierías</p>
                     <p>Producción Electrónica | Otoño 2026</p>
                     <p>Profesor: Osorio Figueroa Javier</p>
@@ -692,13 +841,18 @@
             const botones = document.querySelectorAll('.nav-links button');
             botones.forEach(btn => btn.classList.remove('active'));
 
-            document.getElementById(idSeccion).classList.add('active-page');
+            const seccionDestino = document.getElementById(idSeccion);
+            if(seccionDestino) {
+                seccionDestino.classList.add('active-page');
+            }
             
-            if (idSeccion === 'kicad-detalle') {
+            if (idSeccion === 'kicad-detalle' || idSeccion === 'trabajo2-detalle' || idSeccion === 'trabajo3-detalle') {
                 document.getElementById('btn-acerca').classList.add('active');
             } else if (document.getElementById('btn-' + idSeccion)) {
                 document.getElementById('btn-' + idSeccion).classList.add('active');
             }
+
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 
