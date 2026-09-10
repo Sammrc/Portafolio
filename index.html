@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Nueva paleta con color (Tonos verde terracota / salvia / crema cálido) */
-            --bg-color: #e8f0fe;               /* Fondo azul suave/lavanda */
+            /* Paleta en Tonos Morados Fuertes, Claros y Colores Complementarios (Dorado / Rosa Místico) */
+            --bg-color: #f3e8ff;               /* Lavanda pastel muy suave de fondo */
             --card-bg: #ffffff;                /* Tarjetas limpias */
-            --card-bg-hover: #dbe4ff;
-            --accent-color: #2b4c7e;           /* Azul elegante principal */
-            --accent-secondary: #4a7c59;       /* Verde salvia */
-            --text-color: #1e293b;             /* Texto oscuro nítido */
-            --text-muted: #475569;             /* Texto secundario */
-            --border-color: #cbd5e1;           /* Bordes */
-            --siamese-cream: #f4ece1;          /* Siamés crema */
-            --siamese-dark: #3a2d27;           /* Siamés café oscuro */
+            --accent-color: #5b21b6;           /* Morado fuerte vibrante */
+            --accent-hover: #4c1d95;           /* Morado oscuro profundo */
+            --accent-light: #d8b4fe;           /* Morado claro brillante */
+            --accent-secondary: #059669;       /* Verde esmeralda suave para contraste de éxito */
+            --gold-accent: #d97706;            /* Dorado/Cálido para pequeños acentos */
+            --text-color: #1e1b4b;             /* Texto morado oscuro nítido */
+            --text-muted: #581c87;             /* Texto secundario en tono ciruela */
+            --border-color: #c084fc;           /* Bordes morados suaves */
+            --siamese-cream: #fbf0df;          /* Siamés crema */
+            --siamese-dark: #3b2820;           /* Siamés café oscuro punto */
         }
 
         body {
@@ -40,7 +42,7 @@
             object-fit: cover;
             border-radius: 14px; 
             border: 2px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(91, 33, 182, 0.15);
             z-index: 1100; 
             background-color: var(--card-bg);
         }
@@ -57,8 +59,8 @@
             width: 80%;                 
             max-width: 420px;           
             border-radius: 50px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(43, 76, 126, 0.08); 
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(91, 33, 182, 0.15); 
             position: sticky;
             top: 15px; 
             z-index: 1000;
@@ -88,6 +90,7 @@
         .nav-links button:hover, .nav-links button.active {
             background-color: var(--accent-color);
             color: #ffffff;
+            box-shadow: 0 2px 8px rgba(91, 33, 182, 0.3);
         }
         
         /* --- MAIN & SECCIONES --- */
@@ -150,8 +153,8 @@
             background-color: var(--card-bg);
             padding: 20px;
             border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(91, 33, 182, 0.08);
+            border: 1.5px solid var(--border-color);
         }
 
         .perfil-card {
@@ -165,9 +168,9 @@
             height: 75px;
             border-radius: 50%; 
             object-fit: cover;
-            border: 2px solid var(--accent-color);
+            border: 3px solid var(--accent-color);
             flex-shrink: 0;
-            background-color: #cbd5e1;
+            background-color: var(--accent-light);
         }
 
         .perfil-info h5, .perfil-info h6 {
@@ -180,7 +183,7 @@
             margin: 0 0 6px 0 !important;
             font-size: 0.85rem !important;
             color: var(--text-muted);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .perfil-correo {
@@ -192,24 +195,24 @@
         }
 
         .perfil-correo:hover {
-            color: #1d3557;
+            color: var(--accent-hover);
         }
         
         .gps-indicator {
             display: inline-block;
             width: 10px;
             height: 10px;
-            background-color: var(--accent-secondary); 
+            background-color: var(--accent-color); 
             border-radius: 50%;
             margin-right: 6px;
-            box-shadow: 0 0 0 rgba(74, 124, 89, 0.4);
+            box-shadow: 0 0 0 rgba(91, 33, 182, 0.4);
             animation: pulse-gps 2s infinite;
         }
         
         @keyframes pulse-gps {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 124, 89, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(74, 124, 89, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 124, 89, 0); }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(91, 33, 182, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(91, 33, 182, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(91, 33, 182, 0); }
         }
         
         .link-mapa {
@@ -221,19 +224,20 @@
             background-color: var(--accent-color);
             padding: 10px 18px;
             border-radius: 20px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(91, 33, 182, 0.2);
         }
         
         .link-mapa:hover {
-            background-color: #1d3557;
+            background-color: var(--accent-hover);
         }
 
         .tarjeta-ubicacion-completa {
             background-color: var(--card-bg);
             padding: 25px;
             border-radius: 25px; 
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(91, 33, 182, 0.08);
+            border: 1.5px solid var(--border-color);
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -242,7 +246,7 @@
 
         .tarjeta-ubicacion-completa:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 25px rgba(91, 33, 182, 0.15);
         }
 
         .ubicacion-imagen {
@@ -251,7 +255,7 @@
             object-fit: cover;
             border-radius: 16px;
             border: 1px solid var(--border-color);
-            background-color: #cbd5e1;
+            background-color: var(--accent-light);
         }
 
         .ubicacion-contenido {
@@ -288,7 +292,7 @@
             transform: translate(-50%, -50%);
             object-fit: cover;
             z-index: 0;
-            filter: brightness(0.6) contrast(1.1);
+            filter: brightness(0.5) contrast(1.1);
         }
 
         .franja-fondo-materia::after {
@@ -298,17 +302,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(27, 38, 59, 0.7);
+            background: rgba(76, 29, 149, 0.65); /* Overlay morado oscuro transparente */
             z-index: 1;
         }
 
         .materia-intro-card {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
             padding: 35px;
             border-radius: 28px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(76, 29, 149, 0.3);
+            border: 2px solid var(--accent-light);
             max-width: 800px;
             margin: 0 auto;
             text-align: left;
@@ -336,7 +340,7 @@
         }
 
         .objetivo-pill {
-            background-color: #f1f5f9;
+            background-color: #faf5ff;
             padding: 16px 20px;
             border-radius: 18px;
             border: 1px solid var(--border-color);
@@ -354,8 +358,7 @@
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
-            background-image: linear-gradient(rgba(30, 41, 59, 0.75), rgba(30, 41, 59, 0.75)), url('img/PCB_BKG.jpg');
-            background-color: var(--accent-color);
+            background-image: linear-gradient(rgba(76, 29, 149, 0.85), rgba(91, 33, 182, 0.85)), url('img/PCB_BKG.jpg');
             background-size: cover;
             background-position: center;
             padding: 50px 20px;
@@ -390,9 +393,9 @@
             align-items: center;
             text-align: center;
             padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(91, 33, 182, 0.1);
             cursor: pointer;
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--border-color);
             background-size: cover;
             background-position: center;
             background-color: var(--card-bg);
@@ -406,18 +409,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(30, 41, 59, 0.45);
+            background: rgba(76, 29, 149, 0.45);
             transition: background 0.3s ease;
             z-index: 1;
         }
 
         .trabajo-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 25px rgba(91, 33, 182, 0.25);
         }
 
         .trabajo-card:hover::before {
-            background: rgba(30, 41, 59, 0.3);
+            background: rgba(76, 29, 149, 0.3);
         }
 
         .trabajo-card h3, .trabajo-card p {
@@ -440,7 +443,7 @@
 
         .btn-regresar {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--border-color);
             color: var(--accent-color);
             padding: 9px 18px;
             border-radius: 20px;
@@ -468,7 +471,7 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 15px rgba(91, 33, 182, 0.05);
         }
 
         .siamese-working-box h3 {
@@ -482,18 +485,18 @@
             font-size: 0.95rem;
         }
 
-        /* --- ANIMACIÓN CILINDRO/CHISPA SOLDADURA --- */
-        @keyframes sparkFlash {
-            0%, 100% { opacity: 0.2; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.3); }
+        /* --- ANIMACIÓN CHISPA Y LUZ DE SOLDADURA --- */
+        @keyframes sparkGlow {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
 
-        .spark {
-            animation: sparkFlash 0.4s infinite ease-in-out;
+        .spark-effect {
+            animation: sparkGlow 0.3s infinite ease-in-out;
             transform-origin: center;
         }
 
-        /* --- GATO SIAMES CAMINANDO EN EL FOOTER --- */
+        /* --- GATO SIAMÉS CAMINANDO EN EL FOOTER --- */
         .siamese-walker-container {
             position: fixed;
             bottom: 0;
@@ -509,8 +512,8 @@
             position: absolute;
             bottom: 2px;
             left: -80px;
-            width: 60px;
-            height: 35px;
+            width: 70px;
+            height: 38px;
             animation: walkAcross 22s linear infinite;
         }
 
@@ -607,7 +610,7 @@
 
         .btn-subir {
             background: var(--bg-color);
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--border-color);
             color: var(--accent-color);
             padding: 8px 16px;
             border-radius: 18px;
@@ -663,11 +666,11 @@
                     <h3>Objetivos</h3>
                     <div class="materia-objetivos-grid">
                         <div class="objetivo-pill">
-                            <i class="fa-solid fa-microchip" style="margin-right: 8px; color: var(--accent-secondary);"></i>
+                            <i class="fa-solid fa-microchip" style="margin-right: 8px; color: var(--accent-color);"></i>
                             <strong>Diseño y Simulación:</strong> Creación e interpretación de diagramas esquemáticos y circuitos utilizando softwares como <strong>KiCad</strong>.
                         </div>
                         <div class="objetivo-pill">
-                            <i class="fa-solid fa-industry" style="margin-right: 8px; color: var(--accent-secondary);"></i>
+                            <i class="fa-solid fa-industry" style="margin-right: 8px; color: var(--accent-color);"></i>
                             <strong>Manufactura Avanzada:</strong> Fabricación física de prototipos mediante la aplicación de reglas de ruteado y el uso de equipo especializado como la cortadora láser <strong>XTOOL</strong> y la máquina <strong>MONOFAB</strong>.
                         </div>
                    </div>
@@ -737,69 +740,80 @@
                 </div>
             </div>
 
-            <!-- ILUSTRACIÓN ANATÓMICAMENTE CORRECTA DE GATO SIAMÉS SOLDANDO -->
+            <!-- ILUSTRACIÓN ANATÓMICAMENTE ANATÓMICA Y DETALLADA: GATO SIAMÉS SOLDANDO CON AMBOS OJOS VISIBLES -->
             <div class="siamese-working-box">
-                <svg width="240" height="150" viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Mesa de Trabajo -->
-                    <rect x="20" y="125" width="200" height="10" rx="3" fill="#8d6e63"/>
+                <svg width="280" height="170" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Mesa de Trabajo con PCB -->
+                    <rect x="20" y="142" width="240" height="12" rx="3" fill="#64748b"/>
                     
-                    <!-- Tarjeta PCB en la mesa -->
-                    <rect x="50" y="115" width="60" height="10" rx="2" fill="#2e7d32"/>
-                    <circle cx="65" cy="120" r="2" fill="#ffb300"/>
-                    <circle cx="80" cy="120" r="2" fill="#ffb300"/>
-                    <line x1="65" y1="120" x2="80" y2="120" stroke="#81c784" stroke-width="1.5"/>
+                    <!-- Placa PCB verde sobre la mesa -->
+                    <rect x="50" y="132" width="75" height="10" rx="2" fill="#15803d"/>
+                    <circle cx="65" cy="137" r="2.5" fill="#f59e0b"/>
+                    <circle cx="85" cy="137" r="2.5" fill="#f59e0b"/>
+                    <circle cx="105" cy="137" r="2.5" fill="#f59e0b"/>
+                    <line x1="65" y1="137" x2="105" y2="137" stroke="#86efac" stroke-width="1.5"/>
 
-                    <!-- Gato Siamés Completo y Detallado -->
-                    <g id="gato-siames-soldador">
-                        <!-- Cola -->
-                        <path d="M 190 110 Q 215 90 205 65" stroke="#3a2d27" stroke-width="7" fill="none" stroke-linecap="round"/>
+                    <!-- GATO SIAMÉS COMPLETO (ANATOMÍA MEJORADA + 2 OJOS AZULES) -->
+                    <g id="gato-siames-soldando-completo">
+                        <!-- Cola de gato estilizada -->
+                        <path d="M 220 120 C 255 100 245 60 230 65 C 220 70 230 90 210 110" fill="#3b2820"/>
                         
-                        <!-- Cuerpo (Cream/Beige) -->
-                        <ellipse cx="150" cy="95" rx="35" ry="25" fill="#f4ece1"/>
+                        <!-- Pata Trasera Derecha e Izquierda -->
+                        <ellipse cx="200" cy="128" rx="16" ry="18" fill="#3b2820"/>
+                        <ellipse cx="170" cy="130" rx="14" ry="16" fill="#3b2820"/>
                         
-                        <!-- Patas Traseras -->
-                        <ellipse cx="175" cy="112" rx="12" ry="15" fill="#3a2d27"/>
-                        <ellipse cx="145" cy="115" rx="10" ry="12" fill="#3a2d27"/>
+                        <!-- Lomo / Cuerpo Completo Cream/Siamés -->
+                        <path d="M 130 110 C 130 80 160 70 200 85 C 220 95 210 135 180 135 C 150 135 130 130 130 110 Z" fill="#fbf0df"/>
                         
-                        <!-- Pata Delantera Derecha (Sosteniendo Cautín) -->
-                        <path d="M 130 95 Q 110 100 95 110" stroke="#3a2d27" stroke-width="9" fill="none" stroke-linecap="round"/>
-                        
-                        <!-- Pata Delantera Izquierda (Apoyada) -->
-                        <path d="M 140 100 Q 125 110 115 120" stroke="#3a2d27" stroke-width="8" fill="none" stroke-linecap="round"/>
+                        <!-- Sombreado suave del cuerpo -->
+                        <path d="M 150 82 C 170 78 200 88 205 98 C 185 92 160 90 150 82 Z" fill="#f3e1c8"/>
 
-                        <!-- Cabeza -->
-                        <circle cx="115" cy="65" r="22" fill="#f4ece1"/>
-                        
-                        <!-- Orejas Siamés (Oscuras) -->
-                        <polygon points="98,48 102,28 112,45" fill="#3a2d27"/>
-                        <polygon points="118,45 128,28 132,48" fill="#3a2d27"/>
-                        <polygon points="101,46 104,33 110,44" fill="#e57373" opacity="0.6"/>
-                        
-                        <!-- Máscara de la cara Siamés (Oscura) -->
-                        <ellipse cx="108" cy="68" rx="14" ry="11" fill="#3a2d27"/>
-                        
-                        <!-- Ojos Azules Siameses -->
-                        <ellipse cx="102" cy="64" rx="3.5" ry="4.5" fill="#40c4ff"/>
-                        <ellipse cx="114" cy="64" rx="3.5" ry="4.5" fill="#40c4ff"/>
-                        <circle cx="101" cy="63" r="1.2" fill="#ffffff"/>
-                        <circle cx="113" cy="63" r="1.2" fill="#ffffff"/>
+                        <!-- Pata Delantera Izquierda (Apoyando la placa) -->
+                        <path d="M 140 105 Q 120 118 105 132" stroke="#3b2820" stroke-width="10" stroke-linecap="round" fill="none"/>
 
-                        <!-- Nariz y Hocico -->
-                        <polygon points="107,70 109,70 108,72" fill="#1a100c"/>
+                        <!-- Pata Delantera Derecha (Sosteniendo el cautín) -->
+                        <path d="M 148 100 Q 125 105 102 120" stroke="#3b2820" stroke-width="10" stroke-linecap="round" fill="none"/>
 
-                        <!-- Gafas de Protección/Soldar en la Cabeza -->
-                        <rect x="94" y="52" width="28" height="8" rx="4" fill="#1e293b"/>
-                        <circle cx="101" cy="56" r="3" fill="#818cf8"/>
-                        <circle cx="115" cy="56" r="3" fill="#818cf8"/>
+                        <!-- Cabeza Vista de Frente/Tres Cuartos (Para mostrar ambos ojos perfectamente) -->
+                        <ellipse cx="125" cy="72" rx="24" ry="20" fill="#fbf0df"/>
 
-                        <!-- Cautín de Soldar -->
-                        <line x1="100" y1="107" x2="72" y2="118" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
-                        <polygon points="72,118 64,120 70,116" fill="#cbd5e1"/>
-                        
-                        <!-- Chispa / Humo de Soldadura -->
-                        <g class="spark">
-                            <circle cx="65" cy="119" r="4" fill="#ffeb3b"/>
-                            <path d="M 65 119 L 60 112 M 65 119 L 68 110 M 65 119 L 58 118" stroke="#ff9800" stroke-width="1.5"/>
+                        <!-- Orejas Oscuras Siamés -->
+                        <polygon points="104,58 100,32 116,52" fill="#3b2820"/>
+                        <polygon points="134,52 150,32 146,58" fill="#3b2820"/>
+                        <polygon points="107,55 104,38 114,51" fill="#f43f5e" opacity="0.4"/>
+                        <polygon points="136,51 146,38 143,55" fill="#f43f5e" opacity="0.4"/>
+
+                        <!-- Máscara Café Oscuro de la Cara -->
+                        <ellipse cx="125" cy="75" rx="17" ry="13" fill="#3b2820"/>
+
+                        <!-- OJO IZQUIERDO Y OJO DERECHO (AMBOS VISIBLES CON PUPILAS Y BRILLO) -->
+                        <!-- Ojo Izquierdo -->
+                        <ellipse cx="116" cy="71" rx="4.5" ry="5.5" fill="#38bdf8"/>
+                        <ellipse cx="116" cy="71" rx="2" ry="4" fill="#0f172a"/>
+                        <circle cx="114.5" cy="69" r="1.3" fill="#ffffff"/>
+
+                        <!-- Ojo Derecho -->
+                        <ellipse cx="134" cy="71" rx="4.5" ry="5.5" fill="#38bdf8"/>
+                        <ellipse cx="134" cy="71" rx="2" ry="4" fill="#0f172a"/>
+                        <circle cx="132.5" cy="69" r="1.3" fill="#ffffff"/>
+
+                        <!-- Nariz Rosa/Oscura y Hocico -->
+                        <polygon points="123,79 127,79 125,82" fill="#1c1917"/>
+                        <path d="M 123 83 Q 125 85 127 83" stroke="#1c1917" stroke-width="1" fill="none"/>
+
+                        <!-- Gafas de Seguridad Levantadas en la Frente -->
+                        <rect x="108" y="52" width="34" height="10" rx="5" fill="#5b21b6"/>
+                        <circle cx="117" cy="57" r="4" fill="#a855f7" opacity="0.8"/>
+                        <circle cx="133" cy="57" r="4" fill="#a855f7" opacity="0.8"/>
+
+                        <!-- Lápiz de Soldadura / Cautín -->
+                        <line x1="106" y1="118" x2="70" y2="135" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+                        <line x1="78" y1="131" x2="66" y2="137" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+
+                        <!-- Destellos Animados de Soldadura -->
+                        <g class="spark-effect">
+                            <circle cx="65" cy="137" r="5" fill="#fef08a"/>
+                            <path d="M 65 137 L 58 128 M 65 137 L 68 125 M 65 137 L 55 137 M 65 137 L 72 130" stroke="#f59e0b" stroke-width="2"/>
                         </g>
                     </g>
                 </svg>
@@ -822,44 +836,51 @@
                 <p>Sección dedicada a los proyectos finales del curso.</p>
             </div>
 
-            <!-- SEGUNDA ILUSTRACIÓN DE GATO REVISANDO UN CIRCUITO CON LUPA -->
+            <!-- SEGUNDA ILUSTRACIÓN: GATO INSPECTOR CON AMBOS OJOS Y ANATOMÍA COMPLETA -->
             <div class="siamese-working-box">
-                <svg width="240" height="150" viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+                <svg width="280" height="170" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
                     <!-- Mesa de Trabajo -->
-                    <rect x="20" y="125" width="200" height="10" rx="3" fill="#8d6e63"/>
+                    <rect x="20" y="142" width="240" height="12" rx="3" fill="#64748b"/>
 
-                    <!-- Plano / Esquema Extendido -->
-                    <rect x="40" y="100" width="80" height="25" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
-                    <path d="M 45 105 L 70 105 M 45 112 L 80 112 M 45 119 L 65 119" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,2"/>
+                    <!-- Plano / Esquema de Proyecto Extendido -->
+                    <rect x="40" y="115" width="85" height="28" fill="#ffffff" stroke="#a855f7" stroke-width="2" rx="2"/>
+                    <path d="M 48 122 L 75 122 M 48 129 L 105 129 M 48 136 L 85 136" stroke="#5b21b6" stroke-width="2" stroke-dasharray="4,2"/>
 
-                    <!-- Gato Siamés Observando -->
-                    <g id="gato-siames-inspector">
+                    <!-- Gato Siamés Inspector -->
+                    <g id="gato-siames-proyectos">
                         <!-- Cola -->
-                        <path d="M 190 110 Q 215 90 205 65" stroke="#3a2d27" stroke-width="7" fill="none" stroke-linecap="round"/>
-                        <!-- Cuerpo -->
-                        <ellipse cx="150" cy="95" rx="35" ry="25" fill="#f4ece1"/>
-                        <!-- Patas Traseras -->
-                        <ellipse cx="175" cy="112" rx="12" ry="15" fill="#3a2d27"/>
-                        <ellipse cx="145" cy="115" rx="10" ry="12" fill="#3a2d27"/>
-                        <!-- Patas Delanteras sosteniendo lupa -->
-                        <path d="M 130 95 Q 105 102 85 108" stroke="#3a2d27" stroke-width="8" fill="none" stroke-linecap="round"/>
+                        <path d="M 220 120 C 255 100 245 60 230 65 C 220 70 230 90 210 110" fill="#3b2820"/>
+                        
+                        <!-- Cuerpo Anatomico -->
+                        <ellipse cx="200" cy="128" rx="16" ry="18" fill="#3b2820"/>
+                        <ellipse cx="170" cy="130" rx="14" ry="16" fill="#3b2820"/>
+                        <path d="M 130 110 C 130 80 160 70 200 85 C 220 95 210 135 180 135 C 150 135 130 130 130 110 Z" fill="#fbf0df"/>
+
+                        <!-- Patas sosteniendo la Lupa -->
+                        <path d="M 140 108 Q 115 110 95 122" stroke="#3b2820" stroke-width="9" stroke-linecap="round" fill="none"/>
 
                         <!-- Cabeza -->
-                        <circle cx="115" cy="65" r="22" fill="#f4ece1"/>
-                        <!-- Orejas -->
-                        <polygon points="98,48 102,28 112,45" fill="#3a2d27"/>
-                        <polygon points="118,45 128,28 132,48" fill="#3a2d27"/>
-                        <!-- Máscara -->
-                        <ellipse cx="108" cy="68" rx="14" ry="11" fill="#3a2d27"/>
-                        <!-- Ojos -->
-                        <ellipse cx="102" cy="64" rx="3.5" ry="4.5" fill="#40c4ff"/>
-                        <ellipse cx="114" cy="64" rx="3.5" ry="4.5" fill="#40c4ff"/>
-                        <circle cx="101" cy="63" r="1.2" fill="#ffffff"/>
-                        <circle cx="113" cy="63" r="1.2" fill="#ffffff"/>
+                        <ellipse cx="125" cy="72" rx="24" ry="20" fill="#fbf0df"/>
+                        <polygon points="104,58 100,32 116,52" fill="#3b2820"/>
+                        <polygon points="134,52 150,32 146,58" fill="#3b2820"/>
+
+                        <!-- Máscara de la cara -->
+                        <ellipse cx="125" cy="75" rx="17" ry="13" fill="#3b2820"/>
+
+                        <!-- OJOS 1 Y 2 VISIBLES Y EXPRESIVOS -->
+                        <ellipse cx="116" cy="71" rx="4.5" ry="5.5" fill="#38bdf8"/>
+                        <ellipse cx="116" cy="71" rx="2" ry="4" fill="#0f172a"/>
+                        <circle cx="114.5" cy="69" r="1.3" fill="#ffffff"/>
+
+                        <ellipse cx="134" cy="71" rx="4.5" ry="5.5" fill="#38bdf8"/>
+                        <ellipse cx="134" cy="71" rx="2" ry="4" fill="#0f172a"/>
+                        <circle cx="132.5" cy="69" r="1.3" fill="#ffffff"/>
+
+                        <polygon points="123,79 127,79 125,82" fill="#1c1917"/>
 
                         <!-- Lupa de Inspección -->
-                        <circle cx="80" cy="108" r="12" fill="rgba(224, 242, 254, 0.6)" stroke="#0284c7" stroke-width="3"/>
-                        <line x1="88" y1="114" x2="98" y2="120" stroke="#3a2d27" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="85" cy="124" r="14" fill="rgba(216, 180, 254, 0.4)" stroke="#5b21b6" stroke-width="3"/>
+                        <line x1="95" y1="133" x2="108" y2="140" stroke="#3b2820" stroke-width="5" stroke-linecap="round"/>
                     </g>
                 </svg>
                 <h3>Diseñando los Grandes Proyectos...</h3>
@@ -896,20 +917,24 @@
         </div>
     </footer>
 
-    <!-- ANIMACIÓN DEL GATO SIAMÉS CAMINANDO ABAJO DE LA PÁGINA -->
+    <!-- ANIMACIÓN DEL GATO SIAMÉS CAMINANDO CON AMBOS OJOS VISIBLES EN EL FOOTER -->
     <div class="siamese-walker-container">
         <svg class="siamese-cat-walking" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-            <path class="cat-tail" d="M 20 25 Q 10 10 5 15" stroke="#3a2d27" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <ellipse cx="45" cy="30" rx="25" ry="14" fill="#f4ece1"/>
-            <line class="cat-leg" x1="28" y1="38" x2="26" y2="52" stroke="#3a2d27" stroke-width="4" stroke-linecap="round"/>
-            <line class="cat-leg-2" x1="35" y1="38" x2="33" y2="52" stroke="#3a2d27" stroke-width="4" stroke-linecap="round"/>
-            <line class="cat-leg-2" x1="58" y1="38" x2="56" y2="52" stroke="#3a2d27" stroke-width="4" stroke-linecap="round"/>
-            <line class="cat-leg" x1="64" y1="38" x2="63" y2="52" stroke="#3a2d27" stroke-width="4" stroke-linecap="round"/>
-            <circle cx="72" cy="22" r="11" fill="#f4ece1"/>
-            <ellipse cx="75" cy="23" rx="7" ry="6" fill="#3a2d27"/>
-            <polygon points="66,14 70,4 74,14" fill="#3a2d27"/>
-            <polygon points="73,14 77,4 81,14" fill="#3a2d27"/>
-            <circle cx="76" cy="21" r="1.5" fill="#40c4ff"/>
+            <path class="cat-tail" d="M 18 28 Q 8 12 4 18" stroke="#3b2820" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+            <ellipse cx="45" cy="30" rx="26" ry="14" fill="#fbf0df"/>
+            <line class="cat-leg" x1="28" y1="38" x2="26" y2="54" stroke="#3b2820" stroke-width="4" stroke-linecap="round"/>
+            <line class="cat-leg-2" x1="35" y1="38" x2="33" y2="54" stroke="#3b2820" stroke-width="4" stroke-linecap="round"/>
+            <line class="cat-leg-2" x1="58" y1="38" x2="56" y2="54" stroke="#3b2820" stroke-width="4" stroke-linecap="round"/>
+            <line class="cat-leg" x1="65" y1="38" x2="64" y2="54" stroke="#3b2820" stroke-width="4" stroke-linecap="round"/>
+            
+            <!-- Cabeza caminante -->
+            <circle cx="74" cy="22" r="11" fill="#fbf0df"/>
+            <ellipse cx="76" cy="23" rx="7" ry="6" fill="#3b2820"/>
+            <polygon points="67,13 71,3 75,13" fill="#3b2820"/>
+            <polygon points="74,13 78,3 82,13" fill="#3b2820"/>
+            <!-- Ojos azules visibles -->
+            <circle cx="73" cy="21" r="1.5" fill="#38bdf8"/>
+            <circle cx="78" cy="21" r="1.5" fill="#38bdf8"/>
         </svg>
     </div>
 
