@@ -39,6 +39,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            padding-bottom: 60px; /* Espacio para el gato caminando */
         }
 
         /* LOGO ESQUINA */
@@ -488,9 +489,7 @@
             box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
         }
 
-        /* =================================================== */
-        /* TARJETA CON GATO SIAMÉS TRABAJANDO / PENSANDO / DISEÑANDO */
-        /* =================================================== */
+        /* TARJETA DEL GATITO TRABAJANDO EN SECCIONES SIN INFORMACIÓN */
         .gatito-card-trabajando {
             background: var(--card-bg);
             border: 2px dashed var(--accent-cyan);
@@ -506,49 +505,24 @@
 
         .gatito-img-wrapper {
             position: relative;
-            display: inline-block;
+            display: flex; /* Para centrar */
+            justify-content: center;
+            align-items: center;
             margin-bottom: 20px;
-        }
-
-        .gatito-img-wrapper::after {
-            content: '';
-            position: absolute;
-            top: -5%;
-            left: -5%;
-            width: 110%;
-            height: 110%;
-            border-radius: 20px;
-            background: radial-gradient(circle, rgba(0, 242, 254, 0.25) 0%, transparent 70%);
-            z-index: 1;
-            pointer-events: none;
-            animation: pulse-glow 3s infinite alternate;
-        }
-
-        @keyframes pulse-glow {
-            0% { opacity: 0.4; transform: scale(0.98); }
-            100% { opacity: 0.9; transform: scale(1.03); }
+            width: 100%; /* Ocupar ancho tarjeta */
+            height: 200px; /* Alto fijo para la imagen de referencia */
         }
 
         .gatito-img {
-            max-width: 320px;
-            width: 100%;
-            height: auto;
-            border-radius: 18px;
-            border: 2px solid var(--accent-cyan);
-            box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+            max-width: 100%; /* Ajustar al wrapper */
+            max-height: 100%; /* Ajustar al wrapper */
+            object-fit: contain; /* Mantener proporción */
             position: relative;
             z-index: 2;
-            transition: transform 0.3s ease;
-        }
-
-        .gatito-card-trabajando:hover .gatito-img {
-            transform: scale(1.02);
         }
 
         .badge-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            display: inline-block;
             background: rgba(0, 255, 135, 0.12);
             color: var(--accent-green);
             border: 1px solid var(--accent-green);
@@ -560,69 +534,38 @@
             box-shadow: 0 0 15px rgba(0, 255, 135, 0.2);
         }
 
-        /* =================================================== */
-        /* GATO SIAMÉS CAMINANDO EN CUERPO COMPLETO (FOOTER/PANTALLA) */
-        /* =================================================== */
+        /* GATITO CAMINANDO EN EL FOOTER - SIN TEXTO */
         .cat-walker-container {
             position: fixed;
-            bottom: 0;
+            bottom: 10px; /* Ajuste para que se vea */
             left: 0;
             width: 100vw;
-            height: 60px;
+            height: 50px;
             pointer-events: none;
             z-index: 999;
             overflow: hidden;
-            border-bottom: 2px solid var(--accent-cyan);
-            background: linear-gradient(180deg, transparent 0%, rgba(8, 11, 16, 0.8) 100%);
         }
 
-        .cat-walker-wrapper {
+        .cat-walker {
             position: absolute;
-            bottom: 4px;
-            animation: walkAcross 20s linear infinite;
+            bottom: 0;
+            height: 100%;
+            animation: walkAcross 18s linear infinite;
             display: flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(16, 22, 34, 0.9);
-            padding: 6px 16px;
-            border-radius: 25px;
-            border: 1px solid var(--accent-cyan);
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
-            backdrop-filter: blur(8px);
+            justify-content: center;
+            /* Eliminadas decoraciones de texto */
         }
 
-        /* SVG ANIMADO DE GATO SIAMÉS CAMINANDO DE CUERPO COMPLETO */
-        .siamese-cat-svg {
-            width: 45px;
-            height: 35px;
-        }
-
-        .leg-1 { animation: legMove 0.4s ease-in-out infinite alternate; transform-origin: 12px 25px; }
-        .leg-2 { animation: legMove 0.4s ease-in-out infinite alternate-reverse; transform-origin: 16px 25px; }
-        .leg-3 { animation: legMove 0.4s ease-in-out infinite alternate-reverse; transform-origin: 32px 25px; }
-        .leg-4 { animation: legMove 0.4s ease-in-out infinite alternate; transform-origin: 36px 25px; }
-        .tail { animation: tailWag 0.8s ease-in-out infinite alternate; transform-origin: 8px 18px; }
-
-        @keyframes legMove {
-            0% { transform: rotate(-25deg); }
-            100% { transform: rotate(25deg); }
-        }
-
-        @keyframes tailWag {
-            0% { transform: rotate(-10deg); }
-            100% { transform: rotate(20deg); }
-        }
-
-        .cat-walker-text {
-            font-size: 0.8rem;
-            color: var(--accent-green);
-            font-family: 'Fira Code', monospace;
-            white-space: nowrap;
-            font-weight: 600;
+        .gatito-caminando-gif {
+            height: 100%; /* Ocupar alto del container */
+            width: auto;
+            object-fit: contain;
+            /* Eliminado borde y sombra */
         }
 
         @keyframes walkAcross {
-            0% { left: -220px; }
+            0% { left: -100px; } /* Ajuste inicio */
             100% { left: 100vw; }
         }
 
@@ -631,7 +574,7 @@
             background-color: #05070a;
             border-top: 1px solid var(--border-color);
             color: var(--subtext);
-            padding: 40px 20px 30px 20px;
+            padding: 40px 20px 20px 20px;
             margin-top: 60px;
             font-size: 0.9rem;
             width: 100vw;
@@ -715,7 +658,6 @@
 
     <img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
 
-    <!-- BARRA NAVEGACIÓN -->
     <nav>
         <ul class="nav-links">
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
@@ -724,37 +666,13 @@
         </ul>
     </nav>
 
-    <!-- GATO SIAMÉS CAMINANDO DE CUERPO COMPLETO POR LA PANTALLA -->
     <div class="cat-walker-container">
-        <div class="cat-walker-wrapper">
-            <!-- SVG ANIMADO DE GATO SIAMÉS CAMINANDO -->
-            <svg class="siamese-cat-svg" viewBox="0 0 50 35">
-                <!-- Cola -->
-                <path class="tail" d="M 10 20 Q 2 10 5 5" stroke="#3d2c29" stroke-width="3" fill="none" stroke-linecap="round"/>
-                <!-- Patas traseras -->
-                <line class="leg-1" x1="12" y1="22" x2="10" y2="32" stroke="#3d2c29" stroke-width="3" stroke-linecap="round"/>
-                <line class="leg-2" x1="16" y1="22" x2="18" y2="32" stroke="#2a1e1c" stroke-width="3" stroke-linecap="round"/>
-                <!-- Cuerpo (Crema Siames) -->
-                <ellipse cx="24" cy="18" rx="14" ry="8" fill="#f5e6d3"/>
-                <!-- Patas delanteras -->
-                <line class="leg-3" x1="32" y1="22" x2="30" y2="32" stroke="#3d2c29" stroke-width="3" stroke-linecap="round"/>
-                <line class="leg-4" x1="36" y1="22" x2="38" y2="32" stroke="#2a1e1c" stroke-width="3" stroke-linecap="round"/>
-                <!-- Cabeza -->
-                <circle cx="38" cy="12" r="6" fill="#f5e6d3"/>
-                <!-- Máscara de cara oscura (Siames) -->
-                <ellipse cx="40" cy="13" rx="3.5" ry="3" fill="#3d2c29"/>
-                <!-- Orejas -->
-                <polygon points="34,8 37,2 39,7" fill="#3d2c29"/>
-                <polygon points="39,7 42,2 44,8" fill="#3d2c29"/>
-                <!-- Ojo Azul Neón -->
-                <circle cx="41" cy="12" r="1" fill="#00f2fe"/>
-            </svg>
-            <span class="cat-walker-text">MichiSiames_PCB_v2.6 ~ inspeccionando_linea...</span>
+        <div class="cat-walker">
+            <img src="watermarked_img_15338189493937909918.jpg" alt="Gatito Caminando" class="gatito-caminando-gif">
         </div>
     </div>
 
     <main>
-        <!-- SECCIÓN INICIO -->
         <section id="inicio" class="page-section active-page">
             <div class="contenido-inicial">
                 <h1>Portafolio de Proyectos</h1>
@@ -827,7 +745,6 @@
             </div>      
         </section>
 
-        <!-- SECCIÓN TRABAJOS -->
         <section id="acerca" class="page-section">
             <div class="trabajos-banner">
                 <h2>Trabajos Realizados</h2>
@@ -849,68 +766,54 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DETALLE KICAD -->
         <section id="kicad-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica: KiCad</h2>
             
-            <!-- GATO SIAMÉS PENSANDO Y DISEÑANDO EN SECCIONES PENDIENTES DE SUBIR -->
             <div class="gatito-card-trabajando">
                 <div class="gatito-img-wrapper">
-                    
+                    <img src="watermarked_img_17084364739623380510.jpg" alt="Gatito Siamés Diseñando" class="gatito-img">
                 </div>
-                <h3 style="color: var(--text-heading); margin: 10px 0 5px 0; font-size: 1.4rem;">Gato Siamés Diseñando la Documentación</h3>
-                <p style="color: var(--subtext); margin: 0; font-size: 0.95rem;">El michi ingeniero está analizando los esquemáticos y trazando las pistas en KiCad. ¡Muy pronto estará listo el reporte!</p>
                 <div class="badge-status"><i class="fa-solid fa-pen-ruler fa-spin"></i> Estado: Diseñando esquemáticos...</div>
             </div>
         </section>
 
-        <!-- DETALLE TRABAJO 2 -->
         <section id="trabajo2-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica 2: Cortadora Laser XTOOL</h2>
             <div class="gatito-card-trabajando">
                 <div class="gatito-img-wrapper">
-                    ![Gato Siamés Diseñando PCB](watermarked_img_17084364739623380510.jpg)
+                    <img src="watermarked_img_17084364739623380510.jpg" alt="Gatito Siamés Diseñando" class="gatito-img">
                 </div>
-                <h3 style="color: var(--text-heading); margin: 10px 0 5px 0; font-size: 1.4rem;">Ajustando Parámetros del Láser</h3>
-                <p style="color: var(--subtext); margin: 0; font-size: 0.95rem;">El gato siamés está calculando la potencia y velocidad de corte para la cortadora XTOOL.</p>
                 <div class="badge-status"><i class="fa-solid fa-bolt"></i> Estado: Calibrando láser...</div>
             </div>
         </section>
 
-        <!-- DETALLE TRABAJO 3 -->
         <section id="trabajo3-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica 3: Fresadora CNC MONOFAB</h2>
             <div class="gatito-card-trabajando">
                 <div class="gatito-img-wrapper">
-                    ![Gato Siamés Diseñando PCB](watermarked_img_17084364739623380510.jpg)
+                    <img src="watermarked_img_17084364739623380510.jpg" alt="Gatito Siamés Diseñando" class="gatito-img">
                 </div>
-                <h3 style="color: var(--text-heading); margin: 10px 0 5px 0; font-size: 1.4rem;">Calculando Ruteado CNC</h3>
-                <p style="color: var(--subtext); margin: 0; font-size: 0.95rem;">Nuestro michi ingeniero está preparando los archivos Gerber y verificando el centrado de la placa MONOFAB.</p>
                 <div class="badge-status"><i class="fa-solid fa-gear fa-spin"></i> Estado: Procesando código G...</div>
             </div>
         </section>
 
-        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
             <div class="contenido-inicial">
                 <h2>Proyectos Finales</h2>
                 
                 <div class="gatito-card-trabajando">
                     <div class="gatito-img-wrapper">
-                        ![Gato Siamés Diseñando PCB](watermarked_img_17084364739623380510.jpg)
+                        <img src="watermarked_img_17084364739623380510.jpg" alt="Gatito Siamés Diseñando" class="gatito-img">
                     </div>
-                    <h3 style="color: var(--text-heading); margin: 10px 0 5px 0; font-size: 1.4rem;">Proyectos Mecatrónicos en Laboratorio</h3>
-                    <p style="color: var(--subtext); margin: 0; font-size: 0.95rem;">Próximamente desplegaremos las pruebas finales de hardware, soldadura y reportes de laboratorio.</p>
                     <div class="badge-status"><i class="fa-solid fa-lightbulb"></i> Estado: Prototipado & Pruebas</div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER CON LA INFORMACIÓN COMPLETA REINTEGRADA -->
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-left-group">
@@ -953,14 +856,4 @@
             }
             
             if (idSeccion === 'kicad-detalle' || idSeccion === 'trabajo2-detalle' || idSeccion === 'trabajo3-detalle') {
-                document.getElementById('btn-acerca').classList.add('active');
-            } else if (document.getElementById('btn-' + idSeccion)) {
-                document.getElementById('btn-' + idSeccion).classList.add('active');
-            }
-
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-    </script>
-
-</body>
-</html>
+                document.getElementById('btn
