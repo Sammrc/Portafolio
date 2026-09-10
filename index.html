@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Paleta en Tonos Morados Fuertes, Claros y Colores Complementarios (Dorado / Rosa Místico) */
+            /* Paleta en Tonos Morados Fuertes, Claros y Colores Complementarios */
             --bg-color: #f3e8ff;               /* Lavanda pastel muy suave de fondo */
             --card-bg: #ffffff;                /* Tarjetas limpias */
             --accent-color: #5b21b6;           /* Morado fuerte vibrante */
             --accent-hover: #4c1d95;           /* Morado oscuro profundo */
             --accent-light: #d8b4fe;           /* Morado claro brillante */
-            --accent-secondary: #059669;       /* Verde esmeralda suave para contraste de éxito */
-            --gold-accent: #d97706;            /* Dorado/Cálido para pequeños acentos */
-            --text-color: #1e1b4b;             /* Texto morado oscuro nítido */
-            --text-muted: #581c87;             /* Texto secundario en tono ciruela */
+            --accent-secondary: #059669;       /* Verde esmeralda suave */
+            --gold-accent: #d97706;            /* Dorado/Cálido */
+            --text-color: #1e1b4b;             /* Texto morado oscuro */
+            --text-muted: #581c87;             /* Texto secundario */
             --border-color: #c084fc;           /* Bordes morados suaves */
             --siamese-cream: #fbf0df;          /* Siamés crema */
             --siamese-dark: #3b2820;           /* Siamés café oscuro punto */
@@ -302,7 +302,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(76, 29, 149, 0.65); /* Overlay morado oscuro transparente */
+            background: rgba(76, 29, 149, 0.65);
             z-index: 1;
         }
 
@@ -458,7 +458,7 @@
             color: #ffffff;
         }
 
-        /* --- CONTENEDOR DE PLACEHOLDER CON GATO MEJORADO --- */
+        /* --- CONTENEDOR DE PLACEHOLDER CON GATO --- */
         .siamese-working-box {
             background-color: #ffffff;
             border: 2px dashed var(--border-color);
@@ -485,68 +485,37 @@
             font-size: 0.95rem;
         }
 
-        /* --- ANIMACIÓN CHISPA Y LUZ DE SOLDADURA --- */
-        @keyframes sparkGlow {
+        /* --- ANIMACIÓN Y EFECTOS REALISTAS DE SOLDADURA (CHISPAS) --- */
+        @keyframes sparkParticle {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
+        }
+
+        @keyframes plasmaGlow {
             0%, 100% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
+            50% { opacity: 1; transform: scale(1.25); }
         }
 
-        .spark-effect {
-            animation: sparkGlow 0.3s infinite ease-in-out;
-            transform-origin: center;
+        .spark-core {
+            animation: plasmaGlow 0.15s infinite ease-in-out;
+            transform-origin: 65px 137px;
         }
 
-        /* --- GATO SIAMÉS CAMINANDO EN EL FOOTER --- */
-        .siamese-walker-container {
+        .spark-p1 { --dx: -18px; --dy: -25px; animation: sparkParticle 0.4s infinite ease-out; }
+        .spark-p2 { --dx: 12px;  --dy: -30px; animation: sparkParticle 0.35s infinite ease-out 0.1s; }
+        .spark-p3 { --dx: -28px; --dy: -10px; animation: sparkParticle 0.45s infinite ease-out 0.05s; }
+        .spark-p4 { --dx: 22px;  --dy: -18px; animation: sparkParticle 0.3s infinite ease-out 0.15s; }
+        .spark-p5 { --dx: -5px;  --dy: -32px; animation: sparkParticle 0.5s infinite ease-out 0.2s; }
+
+        /* --- GATO INTERACTIVO QUE SIGUE EL CURSOR --- */
+        #interactive-cat {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40px;
+            width: 80px;
+            height: 70px;
             pointer-events: none;
-            z-index: 999;
-            overflow: hidden;
-        }
-
-        .siamese-cat-walking {
-            position: absolute;
-            bottom: 2px;
-            left: -80px;
-            width: 70px;
-            height: 38px;
-            animation: walkAcross 22s linear infinite;
-        }
-
-        @keyframes walkAcross {
-            0% { left: -80px; transform: scaleX(1); }
-            48% { left: calc(100% + 20px); transform: scaleX(1); }
-            50% { left: calc(100% + 20px); transform: scaleX(-1); }
-            98% { left: -80px; transform: scaleX(-1); }
-            100% { left: -80px; transform: scaleX(1); }
-        }
-
-        .cat-leg {
-            animation: legMove 0.4s ease-in-out infinite alternate;
-            transform-origin: top center;
-        }
-        .cat-leg-2 {
-            animation: legMove 0.4s ease-in-out infinite alternate-reverse;
-            transform-origin: top center;
-        }
-
-        @keyframes legMove {
-            from { transform: rotate(-20deg); }
-            to { transform: rotate(20deg); }
-        }
-
-        .cat-tail {
-            animation: tailWag 1.2s ease-in-out infinite alternate;
-            transform-origin: bottom left;
-        }
-
-        @keyframes tailWag {
-            from { transform: rotate(-10deg); }
-            to { transform: rotate(15deg); }
+            z-index: 9999;
+            transform: translate(-50%, -100%);
+            transition: transform 0.1s linear;
         }
 
         /* --- FOOTER SITE --- */
@@ -740,7 +709,7 @@
                 </div>
             </div>
 
-            <!-- ILUSTRACIÓN ANATÓMICAMENTE ANATÓMICA Y DETALLADA: GATO SIAMÉS SOLDANDO CON AMBOS OJOS VISIBLES -->
+            <!-- ILUSTRACIÓN MEJORADA: GATO SOLDANDO CON ANATOMÍA PERFECCIONADA Y DESTELLOS REALISTAS -->
             <div class="siamese-working-box">
                 <svg width="280" height="170" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
                     <!-- Mesa de Trabajo con PCB -->
@@ -753,67 +722,76 @@
                     <circle cx="105" cy="137" r="2.5" fill="#f59e0b"/>
                     <line x1="65" y1="137" x2="105" y2="137" stroke="#86efac" stroke-width="1.5"/>
 
-                    <!-- GATO SIAMÉS COMPLETO (ANATOMÍA MEJORADA + 2 OJOS AZULES) -->
+                    <!-- GATO SIAMÉS SOLDANDO (ANATOMÍA MEJORADA + 2 OJOS VISIBLES) -->
                     <g id="gato-siames-soldando-completo">
-                        <!-- Cola de gato estilizada -->
-                        <path d="M 220 120 C 255 100 245 60 230 65 C 220 70 230 90 210 110" fill="#3b2820"/>
+                        <!-- Cola de gato suavemente curvada -->
+                        <path d="M 215 115 C 240 100 245 70 230 60 C 220 55 210 75 205 105" fill="none" stroke="#3b2820" stroke-width="8" stroke-linecap="round"/>
                         
-                        <!-- Pata Trasera Derecha e Izquierda -->
-                        <ellipse cx="200" cy="128" rx="16" ry="18" fill="#3b2820"/>
-                        <ellipse cx="170" cy="130" rx="14" ry="16" fill="#3b2820"/>
+                        <!-- Muslo Trasero y Pata -->
+                        <ellipse cx="195" cy="120" rx="18" ry="16" fill="#fbf0df"/>
+                        <path d="M 190 128 C 195 138 210 142 215 142" stroke="#3b2820" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+                        <!-- Cuerpo del Gato Anatómico y Torso -->
+                        <path d="M 135 108 C 135 82 165 72 195 85 C 215 95 205 135 175 138 C 148 138 135 125 135 108 Z" fill="#fbf0df"/>
                         
-                        <!-- Lomo / Cuerpo Completo Cream/Siamés -->
-                        <path d="M 130 110 C 130 80 160 70 200 85 C 220 95 210 135 180 135 C 150 135 130 130 130 110 Z" fill="#fbf0df"/>
-                        
-                        <!-- Sombreado suave del cuerpo -->
-                        <path d="M 150 82 C 170 78 200 88 205 98 C 185 92 160 90 150 82 Z" fill="#f3e1c8"/>
+                        <!-- Sombreado anatómico del cuerpo -->
+                        <path d="M 152 85 C 172 80 198 88 202 98 C 182 92 162 90 152 85 Z" fill="#f3e1c8"/>
 
-                        <!-- Pata Delantera Izquierda (Apoyando la placa) -->
-                        <path d="M 140 105 Q 120 118 105 132" stroke="#3b2820" stroke-width="10" stroke-linecap="round" fill="none"/>
+                        <!-- Brazo Izquierdo apoyando la placa -->
+                        <path d="M 140 102 Q 120 115 105 132" stroke="#3b2820" stroke-width="8" stroke-linecap="round" fill="none"/>
 
-                        <!-- Pata Delantera Derecha (Sosteniendo el cautín) -->
-                        <path d="M 148 100 Q 125 105 102 120" stroke="#3b2820" stroke-width="10" stroke-linecap="round" fill="none"/>
+                        <!-- Brazo Derecho sosteniendo cautín -->
+                        <path d="M 148 98 Q 125 102 100 118" stroke="#3b2820" stroke-width="8" stroke-linecap="round" fill="none"/>
 
-                        <!-- Cabeza Vista de Frente/Tres Cuartos (Para mostrar ambos ojos perfectamente) -->
-                        <ellipse cx="125" cy="72" rx="24" ry="20" fill="#fbf0df"/>
+                        <!-- Cabeza Vista de Tres Cuartos (Ambos ojos bien proporcionados) -->
+                        <ellipse cx="125" cy="70" rx="22" ry="18" fill="#fbf0df"/>
 
-                        <!-- Orejas Oscuras Siamés -->
-                        <polygon points="104,58 100,32 116,52" fill="#3b2820"/>
-                        <polygon points="134,52 150,32 146,58" fill="#3b2820"/>
-                        <polygon points="107,55 104,38 114,51" fill="#f43f5e" opacity="0.4"/>
-                        <polygon points="136,51 146,38 143,55" fill="#f43f5e" opacity="0.4"/>
+                        <!-- Orejas Siamés bien integradas -->
+                        <polygon points="106,56 98,32 115,50" fill="#3b2820"/>
+                        <polygon points="135,50 148,32 142,56" fill="#3b2820"/>
+                        <polygon points="109,53 103,38 113,49" fill="#f43f5e" opacity="0.4"/>
+                        <polygon points="137,49 144,38 140,53" fill="#f43f5e" opacity="0.4"/>
 
-                        <!-- Máscara Café Oscuro de la Cara -->
-                        <ellipse cx="125" cy="75" rx="17" ry="13" fill="#3b2820"/>
+                        <!-- Máscara de la cara -->
+                        <ellipse cx="125" cy="73" rx="16" ry="12" fill="#3b2820"/>
 
-                        <!-- OJO IZQUIERDO Y OJO DERECHO (AMBOS VISIBLES CON PUPILAS Y BRILLO) -->
+                        <!-- OJOS VISIBLES CON PUPILA Y BRILLO -->
                         <!-- Ojo Izquierdo -->
-                        <ellipse cx="116" cy="71" rx="4.5" ry="5.5" fill="#38bdf8"/>
-                        <ellipse cx="116" cy="71" rx="2" ry="4" fill="#0f172a"/>
-                        <circle cx="114.5" cy="69" r="1.3" fill="#ffffff"/>
+                        <ellipse cx="116" cy="70" rx="4.5" ry="5.5" fill="#38bdf8"/>
+                        <ellipse cx="116" cy="70" rx="2" ry="4" fill="#0f172a"/>
+                        <circle cx="114.5" cy="68" r="1.3" fill="#ffffff"/>
 
                         <!-- Ojo Derecho -->
-                        <ellipse cx="134" cy="71" rx="4.5" ry="5.5" fill="#38bdf8"/>
-                        <ellipse cx="134" cy="71" rx="2" ry="4" fill="#0f172a"/>
-                        <circle cx="132.5" cy="69" r="1.3" fill="#ffffff"/>
+                        <ellipse cx="134" cy="70" rx="4.5" ry="5.5" fill="#38bdf8"/>
+                        <ellipse cx="134" cy="70" rx="2" ry="4" fill="#0f172a"/>
+                        <circle cx="132.5" cy="68" r="1.3" fill="#ffffff"/>
 
-                        <!-- Nariz Rosa/Oscura y Hocico -->
-                        <polygon points="123,79 127,79 125,82" fill="#1c1917"/>
-                        <path d="M 123 83 Q 125 85 127 83" stroke="#1c1917" stroke-width="1" fill="none"/>
+                        <!-- Nariz y Hocico -->
+                        <polygon points="123,77 127,77 125,80" fill="#1c1917"/>
+                        <path d="M 123 81 Q 125 83 127 81" stroke="#1c1917" stroke-width="1" fill="none"/>
 
-                        <!-- Gafas de Seguridad Levantadas en la Frente -->
-                        <rect x="108" y="52" width="34" height="10" rx="5" fill="#5b21b6"/>
-                        <circle cx="117" cy="57" r="4" fill="#a855f7" opacity="0.8"/>
-                        <circle cx="133" cy="57" r="4" fill="#a855f7" opacity="0.8"/>
+                        <!-- Gafas de Protección levantadas -->
+                        <rect x="108" y="50" width="34" height="9" rx="4.5" fill="#5b21b6"/>
+                        <circle cx="117" cy="54.5" r="3.5" fill="#a855f7" opacity="0.8"/>
+                        <circle cx="133" cy="54.5" r="3.5" fill="#a855f7" opacity="0.8"/>
 
-                        <!-- Lápiz de Soldadura / Cautín -->
-                        <line x1="106" y1="118" x2="70" y2="135" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
-                        <line x1="78" y1="131" x2="66" y2="137" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+                        <!-- Lápiz Cautín con punta fina metalizada -->
+                        <line x1="104" y1="116" x2="72" y2="133" stroke="#475569" stroke-width="4.5" stroke-linecap="round"/>
+                        <line x1="78" y1="130" x2="65" y2="137" stroke="#e2e8f0" stroke-width="2.5" stroke-linecap="round"/>
 
-                        <!-- Destellos Animados de Soldadura -->
-                        <g class="spark-effect">
-                            <circle cx="65" cy="137" r="5" fill="#fef08a"/>
-                            <path d="M 65 137 L 58 128 M 65 137 L 68 125 M 65 137 L 55 137 M 65 137 L 72 130" stroke="#f59e0b" stroke-width="2"/>
+                        <!-- DESTELLOS Y CHISPAS REALISTAS DE SOLDADURA -->
+                        <g id="efecto-chispas">
+                            <!-- Resplandor místico/plasma central -->
+                            <circle cx="65" cy="137" r="7" fill="#ffffff" class="spark-core"/>
+                            <circle cx="65" cy="137" r="12" fill="#38bdf8" opacity="0.5" class="spark-core"/>
+                            <circle cx="65" cy="137" r="18" fill="#c084fc" opacity="0.3" class="spark-core"/>
+
+                            <!-- Partículas proyectadas dinámicamente -->
+                            <circle cx="65" cy="137" r="2" fill="#fef08a" class="spark-p1"/>
+                            <circle cx="65" cy="137" r="1.8" fill="#38bdf8" class="spark-p2"/>
+                            <circle cx="65" cy="137" r="2.2" fill="#ffffff" class="spark-p3"/>
+                            <circle cx="65" cy="137" r="1.5" fill="#f59e0b" class="spark-p4"/>
+                            <circle cx="65" cy="137" r="2" fill="#e0e7ff" class="spark-p5"/>
                         </g>
                     </g>
                 </svg>
@@ -836,49 +814,40 @@
                 <p>Sección dedicada a los proyectos finales del curso.</p>
             </div>
 
-            <!-- SEGUNDA ILUSTRACIÓN: GATO INSPECTOR CON AMBOS OJOS Y ANATOMÍA COMPLETA -->
+            <!-- SEGUNDA ILUSTRACIÓN: GATO INSPECTOR -->
             <div class="siamese-working-box">
                 <svg width="280" height="170" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Mesa de Trabajo -->
                     <rect x="20" y="142" width="240" height="12" rx="3" fill="#64748b"/>
 
-                    <!-- Plano / Esquema de Proyecto Extendido -->
                     <rect x="40" y="115" width="85" height="28" fill="#ffffff" stroke="#a855f7" stroke-width="2" rx="2"/>
                     <path d="M 48 122 L 75 122 M 48 129 L 105 129 M 48 136 L 85 136" stroke="#5b21b6" stroke-width="2" stroke-dasharray="4,2"/>
 
-                    <!-- Gato Siamés Inspector -->
                     <g id="gato-siames-proyectos">
-                        <!-- Cola -->
-                        <path d="M 220 120 C 255 100 245 60 230 65 C 220 70 230 90 210 110" fill="#3b2820"/>
+                        <path d="M 215 115 C 240 100 245 70 230 60 C 220 55 210 75 205 105" fill="none" stroke="#3b2820" stroke-width="8" stroke-linecap="round"/>
                         
-                        <!-- Cuerpo Anatomico -->
-                        <ellipse cx="200" cy="128" rx="16" ry="18" fill="#3b2820"/>
-                        <ellipse cx="170" cy="130" rx="14" ry="16" fill="#3b2820"/>
-                        <path d="M 130 110 C 130 80 160 70 200 85 C 220 95 210 135 180 135 C 150 135 130 130 130 110 Z" fill="#fbf0df"/>
+                        <ellipse cx="195" cy="120" rx="18" ry="16" fill="#fbf0df"/>
+                        <path d="M 190 128 C 195 138 210 142 215 142" stroke="#3b2820" stroke-width="8" stroke-linecap="round" fill="none"/>
 
-                        <!-- Patas sosteniendo la Lupa -->
-                        <path d="M 140 108 Q 115 110 95 122" stroke="#3b2820" stroke-width="9" stroke-linecap="round" fill="none"/>
+                        <path d="M 135 108 C 135 82 165 72 195 85 C 215 95 205 135 175 138 C 148 138 135 125 135 108 Z" fill="#fbf0df"/>
 
-                        <!-- Cabeza -->
-                        <ellipse cx="125" cy="72" rx="24" ry="20" fill="#fbf0df"/>
-                        <polygon points="104,58 100,32 116,52" fill="#3b2820"/>
-                        <polygon points="134,52 150,32 146,58" fill="#3b2820"/>
+                        <path d="M 140 105 Q 115 108 95 120" stroke="#3b2820" stroke-width="8" stroke-linecap="round" fill="none"/>
 
-                        <!-- Máscara de la cara -->
-                        <ellipse cx="125" cy="75" rx="17" ry="13" fill="#3b2820"/>
+                        <ellipse cx="125" cy="70" rx="22" ry="18" fill="#fbf0df"/>
+                        <polygon points="106,56 98,32 115,50" fill="#3b2820"/>
+                        <polygon points="135,50 148,32 142,56" fill="#3b2820"/>
 
-                        <!-- OJOS 1 Y 2 VISIBLES Y EXPRESIVOS -->
-                        <ellipse cx="116" cy="71" rx="4.5" ry="5.5" fill="#38bdf8"/>
-                        <ellipse cx="116" cy="71" rx="2" ry="4" fill="#0f172a"/>
-                        <circle cx="114.5" cy="69" r="1.3" fill="#ffffff"/>
+                        <ellipse cx="125" cy="73" rx="16" ry="12" fill="#3b2820"/>
 
-                        <ellipse cx="134" cy="71" rx="4.5" ry="5.5" fill="#38bdf8"/>
-                        <ellipse cx="134" cy="71" rx="2" ry="4" fill="#0f172a"/>
-                        <circle cx="132.5" cy="69" r="1.3" fill="#ffffff"/>
+                        <ellipse cx="116" cy="70" rx="4.5" ry="5.5" fill="#38bdf8"/>
+                        <ellipse cx="116" cy="70" rx="2" ry="4" fill="#0f172a"/>
+                        <circle cx="114.5" cy="68" r="1.3" fill="#ffffff"/>
 
-                        <polygon points="123,79 127,79 125,82" fill="#1c1917"/>
+                        <ellipse cx="134" cy="70" rx="4.5" ry="5.5" fill="#38bdf8"/>
+                        <ellipse cx="134" cy="70" rx="2" ry="4" fill="#0f172a"/>
+                        <circle cx="132.5" cy="68" r="1.3" fill="#ffffff"/>
 
-                        <!-- Lupa de Inspección -->
+                        <polygon points="123,77 127,77 125,80" fill="#1c1917"/>
+
                         <circle cx="85" cy="124" r="14" fill="rgba(216, 180, 254, 0.4)" stroke="#5b21b6" stroke-width="3"/>
                         <line x1="95" y1="133" x2="108" y2="140" stroke="#3b2820" stroke-width="5" stroke-linecap="round"/>
                     </g>
@@ -917,26 +886,39 @@
         </div>
     </footer>
 
-    <!-- ANIMACIÓN DEL GATO SIAMÉS CAMINANDO CON AMBOS OJOS VISIBLES EN EL FOOTER -->
-    <div class="siamese-walker-container">
-        <svg class="siamese-cat-walking" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-            <path class="cat-tail" d="M 18 28 Q 8 12 4 18" stroke="#3b2820" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-            <ellipse cx="45" cy="30" rx="26" ry="14" fill="#fbf0df"/>
-            <line class="cat-leg" x1="28" y1="38" x2="26" y2="54" stroke="#3b2820" stroke-width="4" stroke-linecap="round"/>
-            <line class="cat-leg-2" x1="35" y1="38" x2="33" y2="54" stroke="#3b2820" stroke-width="4" stroke-linecap="round"/>
-            <line class="cat-leg-2" x1="58" y1="38" x2="56" y2="54" stroke="#3b2820" stroke-width="4" stroke-linecap="round"/>
-            <line class="cat-leg" x1="65" y1="38" x2="64" y2="54" stroke="#3b2820" stroke-width="4" stroke-linecap="round"/>
+    <!-- GATO INTERACTIVO COMPLETO QUE SIGUE AL CURSOR Y JUEGA CON ÉL -->
+    <svg id="interactive-cat" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+        <g id="cat-body-group">
+            <!-- Cola dinámica -->
+            <path id="interactive-tail" d="M 22 42 Q 10 25 5 35" stroke="#3b2820" stroke-width="5" fill="none" stroke-linecap="round"/>
             
-            <!-- Cabeza caminante -->
-            <circle cx="74" cy="22" r="11" fill="#fbf0df"/>
-            <ellipse cx="76" cy="23" rx="7" ry="6" fill="#3b2820"/>
-            <polygon points="67,13 71,3 75,13" fill="#3b2820"/>
-            <polygon points="74,13 78,3 82,13" fill="#3b2820"/>
-            <!-- Ojos azules visibles -->
-            <circle cx="73" cy="21" r="1.5" fill="#38bdf8"/>
-            <circle cx="78" cy="21" r="1.5" fill="#38bdf8"/>
-        </svg>
-    </div>
+            <!-- Patas traseras -->
+            <ellipse cx="30" cy="50" rx="10" ry="12" fill="#3b2820"/>
+            <!-- Cuerpo Crema del Gatito -->
+            <ellipse cx="48" cy="42" rx="24" ry="16" fill="#fbf0df"/>
+            
+            <!-- Patas delanteras animadas -->
+            <line id="leg-left" x1="58" y1="52" x2="58" y2="68" stroke="#3b2820" stroke-width="4.5" stroke-linecap="round"/>
+            <line id="leg-right" x1="68" y1="52" x2="68" y2="68" stroke="#3b2820" stroke-width="4.5" stroke-linecap="round"/>
+            
+            <!-- Cabeza -->
+            <circle cx="76" cy="30" r="13" fill="#fbf0df"/>
+            <!-- Orejas -->
+            <polygon points="66,22 71,8 77,20" fill="#3b2820"/>
+            <polygon points="76,20 83,8 87,22" fill="#3b2820"/>
+            <!-- Antifaz/Máscara -->
+            <ellipse cx="78" cy="32" rx="8" ry="7" fill="#3b2820"/>
+            
+            <!-- Ambos Ojos Celestes -->
+            <circle cx="75" cy="30" r="2" fill="#38bdf8"/>
+            <circle cx="81" cy="30" r="2" fill="#38bdf8"/>
+            <circle cx="74.5" cy="29" r="0.7" fill="#ffffff"/>
+            <circle cx="80.5" cy="29" r="0.7" fill="#ffffff"/>
+            
+            <!-- Nariz -->
+            <polygon points="77,34 79,34 78,35.5" fill="#1c1917"/>
+        </g>
+    </svg>
 
     <script>
         function cambiarPagina(idSeccion) {
@@ -956,6 +938,69 @@
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        /* --- SCRIPT PARA EL GATO INTERACTIVO SIGUE-CURSOR --- */
+        const cat = document.getElementById('interactive-cat');
+        const catBody = document.getElementById('cat-body-group');
+        const legLeft = document.getElementById('leg-left');
+        const legRight = document.getElementById('leg-right');
+        const tail = document.getElementById('interactive-tail');
+
+        let catX = window.innerWidth / 2;
+        let catY = window.innerHeight / 2;
+        let mouseX = catX;
+        let mouseY = catY;
+        let step = 0;
+        let isPlaying = false;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function updateCat() {
+            const dx = mouseX - catX;
+            const dy = mouseY - catY;
+            const distance = Math.hypot(dx, dy);
+
+            // Orientación según la dirección del movimiento
+            if (dx < -5) {
+                catBody.setAttribute('transform', 'scale(-1, 1) translate(-100, 0)');
+            } else if (dx > 5) {
+                catBody.setAttribute('transform', 'scale(1, 1)');
+            }
+
+            if (distance > 35) {
+                // El gato camina hacia el cursor
+                isPlaying = false;
+                catX += (dx / distance) * 3.5;
+                catY += (dy / distance) * 3.5;
+
+                step += 0.25;
+                const legAngle = Math.sin(step) * 12;
+                legLeft.setAttribute('transform', `rotate(${legAngle}, 58, 52)`);
+                legRight.setAttribute('transform', `rotate(${-legAngle}, 68, 52)`);
+                tail.setAttribute('d', `M 22 42 Q 10 ${25 + Math.sin(step)*8} 5 35`);
+            } else {
+                // Cuando alcanza el cursor: se sienta y/o juega con él
+                if (!isPlaying) {
+                    isPlaying = true;
+                }
+                step += 0.1;
+                // Movimiento juguetón con las patitas intentando atrapar el cursor
+                const playMotion = Math.sin(step * 2) * 15;
+                legLeft.setAttribute('transform', `rotate(${-30 + playMotion}, 58, 52)`);
+                legRight.setAttribute('transform', `rotate(${-20 - playMotion}, 68, 52)`);
+                tail.setAttribute('d', `M 22 42 Q ${5 + Math.cos(step)*10} 15 5 25`);
+            }
+
+            cat.style.left = `${catX}px`;
+            cat.style.top = `${catY}px`;
+
+            requestAnimationFrame(updateCat);
+        }
+
+        updateCat();
     </script>
 
 </body>
