@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Producción Electrónica</title>
+    <title>Portafolio Mecatrónico | Producción Electrónica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #f8fafc;
+            --bg-color: #f1f5f9;
             --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --primary: #0284c7;
-            --primary-light: #e0f2fe;
-            --accent-green: #10b981;
+            --border-color: #cbd5e1;
+            /* Paleta Mecatrónica: Azul Técnico + Rosa/Magenta Neón */
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent-pink: #ec4899;
+            --accent-pink-light: #fce7f3;
+            --accent-cyan: #06b6d4;
             --text-main: #334155;
             --text-heading: #0f172a;
             --subtext: #64748b;
@@ -27,8 +30,10 @@
         body {
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(#cbd5e1 1px, transparent 1px);
-            background-size: 24px 24px;
+                radial-gradient(var(--primary) 0.8px, transparent 0.8px), 
+                radial-gradient(var(--accent-pink) 0.8px, var(--bg-color) 0.8px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
             color: var(--text-main);
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -41,35 +46,35 @@
             position: fixed;
             top: 20px;
             left: 25px;
-            width: 80px;
-            height: 80px;
+            width: 75px;
+            height: 75px;
             object-fit: cover;
             border-radius: 16px; 
-            border: 2px solid var(--primary);
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+            border: 3px solid var(--primary);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
             z-index: 1100; 
             background-color: #fff;
             transition: transform 0.3s ease;
         }
 
         .logo-esquina:hover {
-            transform: scale(1.05);
+            transform: scale(1.08) rotate(-3deg);
         }
 
-        /* BARRA NAVEGACIÓN */
+        /* BARRA NAVEGACIÓN MECATRÓNICA */
         nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            padding: 6px 15px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 2px solid var(--border-color);
+            padding: 6px 12px;
             margin: 20px auto 30px auto; 
             width: 90%;                 
-            max-width: 420px;           
+            max-width: 440px;           
             border-radius: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); 
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.1); 
             position: sticky;
             top: 15px; 
             z-index: 1000;
@@ -97,15 +102,15 @@
         }
 
         .nav-links button:hover, .nav-links button.active {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
             color: #ffffff;
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
         }
 
         /* CONTENIDO PRINCIPAL */
         main {
             max-width: 850px;
-            margin: 0 auto 80px auto; 
+            margin: 0 auto 100px auto; 
             padding: 0 20px; 
         }
 
@@ -119,7 +124,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -130,16 +135,18 @@
 
         h1, h2 {
             color: var(--text-heading);
-            font-weight: 700;
+            font-weight: 800;
         }
 
         h1 {
-            font-size: 2.2rem;
-            color: var(--primary);
+            font-size: 2.3rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 5px;
         }
 
-        /* FRANJA VIDEO Y MATERIA */
+        /* FRANJA CON ESTILO TÉCNICO */
         .franja-fondo-materia {
             width: 100vw;
             position: relative;
@@ -151,8 +158,8 @@
             margin-top: 20px;
             margin-bottom: 40px;
             overflow: hidden;
-            background-color: var(--primary-light);
-            border-y: 1px solid var(--border-color);
+            background: linear-gradient(135deg, #eff6ff, #fce7f3);
+            border-y: 2px solid var(--border-color);
         }
 
         .video-fondo {
@@ -166,15 +173,15 @@
             transform: translate(-50%, -50%);
             object-fit: cover;
             z-index: 0;
-            opacity: 0.2;
+            opacity: 0.15;
         }
 
         .materia-intro-card {
             background: var(--card-bg);
             padding: 35px;
             border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            border: 2px solid var(--border-color);
             max-width: 800px;
             margin: 0 auto;
             text-align: left;
@@ -189,13 +196,6 @@
             margin-bottom: 12px;
         }
 
-        .materia-intro-card h3 {
-            font-size: 1.1rem;
-            color: var(--text-heading);
-            margin-top: 25px;
-            margin-bottom: 12px;
-        }
-
         .materia-objetivos-grid {
             display: flex;
             flex-direction: column;
@@ -205,7 +205,7 @@
         .objetivo-pill {
             background-color: var(--bg-color);
             padding: 16px 20px;
-            border-radius: 14px;
+            border-radius: 16px;
             border: 1px solid var(--border-color);
             font-size: 0.95rem;
             color: var(--text-main);
@@ -213,20 +213,14 @@
         }
 
         .objetivo-pill:hover {
-            border-color: var(--primary);
-            transform: translateX(4px);
+            border-color: var(--accent-pink);
+            transform: translateX(5px);
         }
 
-        /* TARJETAS DE EQUIPO */
+        /* TARJETAS DE INTEGRANTES */
         .info-footer-container {
             margin-top: 30px;
             padding-top: 20px;
-        }
-
-        .info-footer-container h4 {
-            color: var(--text-heading);
-            margin-bottom: 18px;
-            font-size: 1.2rem;
         }
 
         .info-grid {
@@ -238,14 +232,15 @@
         .info-card {
             background-color: var(--card-bg);
             padding: 20px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            border: 2px solid var(--border-color);
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             transition: transform 0.3s ease;
         }
 
         .info-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            border-color: var(--accent-pink);
         }
 
         .perfil-card {
@@ -259,7 +254,7 @@
             height: 70px;
             border-radius: 50%; 
             object-fit: cover;
-            border: 2px solid var(--primary);
+            border: 3px solid var(--accent-pink);
             flex-shrink: 0;
         }
 
@@ -273,7 +268,7 @@
             margin: 0 0 6px 0 !important;
             font-size: 0.85rem !important;
             color: var(--primary);
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .perfil-correo {
@@ -283,30 +278,18 @@
         }
 
         .perfil-correo:hover {
-            color: var(--primary);
-            text-decoration: underline;
+            color: var(--accent-pink);
         }
 
         /* UBICACIÓN */
-        .gps-indicator {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-green); 
-            border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0 0 8px var(--accent-green);
-        }
-
         .tarjeta-ubicacion-completa {
             background-color: var(--card-bg);
             padding: 20px;
             border-radius: 20px; 
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             display: flex;
             flex-direction: column;
             gap: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
         .ubicacion-imagen {
@@ -318,9 +301,9 @@
         }
 
         .link-mapa {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: #ffffff !important;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 20px;
             font-weight: 600;
             font-size: 0.9rem;
@@ -329,10 +312,10 @@
         }
 
         .link-mapa:hover {
-            background-color: #0369a1;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
-        /* TRABAJOS Y TARJETAS */
+        /* BANNER DE TRABAJOS */
         .trabajos-banner {
             width: 100vw;
             position: relative;
@@ -340,7 +323,7 @@
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
-            background: linear-gradient(135deg, var(--primary), #0369a1);
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
             padding: 40px 20px;
             text-align: center;
             margin-bottom: 30px;
@@ -360,7 +343,7 @@
 
         .trabajo-card {
             position: relative;
-            border-radius: 20px;
+            border-radius: 22px;
             aspect-ratio: 1 / 1;
             overflow: hidden;
             display: flex;
@@ -368,23 +351,24 @@
             justify-content: flex-end;
             padding: 20px;
             cursor: pointer;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             background-size: cover;
             background-position: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .trabajo-card::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.85) 100%);
+            background: linear-gradient(180deg, transparent 35%, rgba(15, 23, 42, 0.88) 100%);
             z-index: 1;
         }
 
         .trabajo-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            border-color: var(--accent-pink);
         }
 
         .trabajo-card h3, .trabajo-card p {
@@ -401,9 +385,9 @@
 
         .btn-regresar {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             color: var(--text-main);
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
@@ -414,76 +398,111 @@
         .btn-regresar:hover {
             background-color: var(--primary);
             color: white;
+            border-color: var(--primary);
         }
 
-        /* TARJETA DEL GATITO SOLDANDO */
-        .gatito-card-trabajando {
-            background: var(--card-bg);
-            border: 2px dashed var(--primary);
-            border-radius: 24px;
-            padding: 30px;
+        /* COMPONENTE GATITO INGENIERO TRABAJANDO CONCENTRADO */
+        .gatito-card-concentrado {
+            background: #ffffff;
+            border: 2px dashed var(--accent-pink);
+            border-radius: 28px;
+            padding: 35px 25px;
             text-align: center;
-            margin: 20px 0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+            margin: 25px 0;
+            box-shadow: 0 12px 30px rgba(236, 72, 153, 0.08);
+            position: relative;
+        }
+
+        .gatito-img-wrapper {
+            position: relative;
+            display: inline-block;
         }
 
         .gatito-img {
-            max-width: 220px;
+            max-width: 250px;
             width: 100%;
             height: auto;
-            border-radius: 16px;
+            border-radius: 20px;
             margin-bottom: 15px;
+            animation: catPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes catPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* Chispas y resplandor de soldadura */
+        .soldering-spark {
+            position: absolute;
+            bottom: 35px;
+            right: 80px;
+            width: 12px;
+            height: 12px;
+            background: #fef08a;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #f59e0b, 0 0 25px #ec4899;
+            animation: sparkGlow 0.6s infinite alternate;
+        }
+
+        @keyframes sparkGlow {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.5); }
         }
 
         .badge-status {
-            display: inline-block;
-            background: var(--primary-light);
-            color: var(--primary);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-pink-light);
+            color: var(--accent-pink);
+            border: 1px solid var(--accent-pink);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 15px;
         }
 
-        /* ANIMACIÓN DEL GATITO CAMINANDO CON CASCO */
+        /* GATO INGENIERO CAMINANDO POR LA PARTE INFERIOR */
         .cat-walker-container {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100vw;
-            height: 65px;
+            height: 70px;
             pointer-events: none;
             z-index: 999;
             overflow: hidden;
+            background: transparent;
         }
 
         .cat-walker {
             position: absolute;
-            bottom: 0;
+            bottom: 5px;
             display: flex;
             align-items: center;
-            animation: walkAcross 16s linear infinite;
+            animation: walkAcross 15s linear infinite;
         }
 
-        /* SVG del Gatito Animado caminando */
+        /* SVG del Gatito con Casco y Forma Claramente Definida */
         .cat-svg {
-            width: 55px;
-            height: 55px;
+            width: 75px;
+            height: 65px;
         }
 
         @keyframes walkAcross {
-            0% { left: -80px; }
+            0% { left: -90px; }
             100% { left: 100vw; }
         }
 
         /* FOOTER */
         .site-footer {
             background-color: #ffffff;
-            border-top: 1px solid var(--border-color);
+            border-top: 2px solid var(--border-color);
             color: var(--subtext);
             padding: 30px 20px;
-            margin-top: 50px;
+            margin-top: 60px;
             font-size: 0.9rem;
             width: 100vw;
             position: relative;
@@ -512,9 +531,9 @@
 
         .btn-subir {
             background: var(--bg-color);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             color: var(--text-main);
-            padding: 8px 18px;
+            padding: 8px 20px;
             border-radius: 15px;
             cursor: pointer;
             font-weight: 600;
@@ -522,8 +541,9 @@
         }
 
         .btn-subir:hover {
-            background-color: var(--primary);
+            background: var(--primary);
             color: white;
+            border-color: var(--primary);
         }
 
         @media (max-width: 768px) {
@@ -540,7 +560,7 @@
 
     <img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
 
-    <!-- BARRA NAVEGACIÓN -->
+    <!-- NAVEGACIÓN PRINCIPAL -->
     <nav>
         <ul class="nav-links">
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
@@ -549,32 +569,66 @@
         </ul>
     </nav>
 
-    <!-- GATITO INGENIERO VISIBLE CAMINANDO POR ABAJO -->
+    <!-- GATITO INGENIERO ANIMADO CAMINANDO (FORMA MEJORADA Y CLARA) -->
     <div class="cat-walker-container">
         <div class="cat-walker">
-            <!-- Ilustración SVG del gatito con casco amarillo caminando -->
-            <svg class="cat-svg" viewBox="0 0 100 100">
-                <!-- Casco de Ingeniero Amarillo -->
-                <path d="M 25 35 Q 50 10 75 35 Z" fill="#f59e0b" />
-                <rect x="20" y="33" width="60" height="6" rx="3" fill="#d97706" />
-                <!-- Cabeza del Gato -->
-                <circle cx="50" cy="50" r="22" fill="#f97316" />
-                <!-- Orejas -->
-                <polygon points="30,35 20,20 38,30" fill="#f97316" />
-                <polygon points="70,35 80,20 62,30" fill="#f97316" />
-                <!-- Ojos y Nariz -->
-                <circle cx="42" cy="48" r="3" fill="#0f172a" />
-                <circle cx="58" cy="48" r="3" fill="#0f172a" />
-                <polygon points="48,54 52,54 50,57" fill="#fda4af" />
-                <!-- Patitas caminando -->
-                <ellipse cx="40" cy="78" rx="5" ry="8" fill="#ea580c">
-                    <animate attributeName="cy" values="78;72;78" dur="0.4s" repeatCount="indefinite" />
-                </ellipse>
-                <ellipse cx="60" cy="78" rx="5" ry="8" fill="#ea580c">
-                    <animate attributeName="cy" values="72;78;72" dur="0.4s" repeatCount="indefinite" />
-                </ellipse>
-                <!-- Cola -->
-                <path d="M 28 55 Q 10 50 15 70" stroke="#f97316" stroke-width="6" stroke-linecap="round" fill="none" />
+            <svg class="cat-svg" viewBox="0 0 120 90">
+                <!-- Sombra -->
+                <ellipse cx="60" cy="82" rx="35" ry="5" fill="rgba(0,0,0,0.15)" />
+                
+                <!-- Cola del Gatito -->
+                <path d="M 25 55 C 10 40 10 25 22 25 C 28 25 26 38 32 50" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" values="0 25 55; 10 25 55; 0 25 55" dur="1.2s" repeatCount="indefinite" />
+                </path>
+
+                <!-- Cuerpo del Gatito -->
+                <rect x="30" y="45" width="50" height="28" rx="14" fill="#f97316" />
+                <!-- Chaleco reflectante de Ingeniero -->
+                <rect x="42" y="45" width="26" height="28" rx="4" fill="#eab308" />
+                <line x1="55" y1="45" x2="55" y2="73" stroke="#ffffff" stroke-width="4" />
+
+                <!-- Patitas traseras y delanteras caminando -->
+                <g fill="#ea580c">
+                    <!-- Patita trasera izq -->
+                    <rect x="35" y="68" width="8" height="15" rx="4">
+                        <animateTransform attributeName="transform" type="translate" values="0,0; 4,-3; 0,0" dur="0.5s" repeatCount="indefinite" />
+                    </rect>
+                    <!-- Patita delantera izq -->
+                    <rect x="65" y="68" width="8" height="15" rx="4">
+                        <animateTransform attributeName="transform" type="translate" values="0,0; -4,-3; 0,0" dur="0.5s" repeatCount="indefinite" />
+                    </rect>
+                    <!-- Patita trasera der -->
+                    <rect x="45" y="68" width="8" height="15" rx="4">
+                        <animateTransform attributeName="transform" type="translate" values="0,0; -4,-3; 0,0" dur="0.5s" repeatCount="indefinite" />
+                    </rect>
+                    <!-- Patita delantera der -->
+                    <rect x="73" y="68" width="8" height="15" rx="4">
+                        <animateTransform attributeName="transform" type="translate" values="0,0; 4,-3; 0,0" dur="0.5s" repeatCount="indefinite" />
+                    </rect>
+                </g>
+
+                <!-- Cabeza del Gatito -->
+                <circle cx="82" cy="40" r="20" fill="#f97316" />
+                
+                <!-- Orejitas -->
+                <polygon points="70,26 62,10 77,20" fill="#ea580c" />
+                <polygon points="88,20 100,10 94,26" fill="#ea580c" />
+
+                <!-- Ojos atentos de Michi -->
+                <circle cx="80" cy="38" r="3" fill="#0f172a" />
+                <circle cx="92" cy="38" r="3" fill="#0f172a" />
+                <circle cx="81" cy="37" r="1" fill="#ffffff" />
+                <circle cx="93" cy="37" r="1" fill="#ffffff" />
+
+                <!-- Nariz y Bigotes -->
+                <polygon points="85,43 87,43 86,45" fill="#fda4af" />
+                <line x1="88" y1="44" x2="102" y2="42" stroke="#475569" stroke-width="1.5" />
+                <line x1="88" y1="46" x2="100" y2="48" stroke="#475569" stroke-width="1.5" />
+
+                <!-- CASCO DE INGENIERO AMARILLO -->
+                <path d="M 65 26 Q 82 5 99 26 Z" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
+                <rect x="60" y="24" width="44" height="5" rx="2" fill="#fbbf24" />
+                <path d="M 78 12 Q 82 8 86 12" stroke="#ffffff" stroke-width="2" fill="none" />
             </svg>
         </div>
     </div>
@@ -583,29 +637,28 @@
         <!-- SECCIÓN INICIO -->
         <section id="inicio" class="page-section active-page">
             <div class="contenido-inicial">
-                <h1>Portafolio de Proyectos</h1>
-                <p>Bienvenido a nuestro portafolio de Producción Electrónica.</p>
+                <h1>Portafolio de Producción Electrónica</h1>
+                <p style="font-weight: 500; color: var(--subtext);">Ingeniería Mecatrónica | Laboratorio de Electrónica</p>
             </div>
              
             <div class="franja-fondo-materia">
                 <video autoplay muted loop playsinline class="video-fondo">
                     <source src="Videos/336233_medium.mp4" type="video/mp4">
-                    Tu navegador no soporta video HTML5.
                 </video>
 
                 <div class="materia-intro-card">
-                    <h2>¿De qué trata la materia?</h2>
-                    <p>La asignatura de <strong>Producción Electrónica</strong> está enfocada en el desarrollo de prototipos y circuitos impresos (PCB) mediante la aplicación de técnicas especializadas de diseño, simulación y manufactura.</p>
+                    <h2><i class="fa-solid fa-microchip" style="color: var(--accent-pink);"></i> ¿De qué trata la materia?</h2>
+                    <p>La asignatura de <strong>Producción Electrónica</strong> está enfocada en el desarrollo de prototipos e ingeniería de circuitos impresos (PCB) mediante la aplicación de técnicas avanzadas de diseño, simulación y manufactura.</p>
                 
-                    <h3><i class="fa-solid fa-bullseye" style="color: var(--primary);"></i> Objetivos</h3>
+                    <h3 style="color: var(--text-heading);"><i class="fa-solid fa-bullseye" style="color: var(--primary);"></i> Objetivos del Laboratorio</h3>
                     <div class="materia-objetivos-grid">
                         <div class="objetivo-pill">
-                            <i class="fa-solid fa-microchip" style="margin-right: 8px; color: var(--primary);"></i>
-                            <strong>Diseño y Simulación:</strong> Creación e interpretación de diagramas esquemáticos y circuitos utilizando softwares como <strong>KiCad</strong>.
+                            <i class="fa-solid fa-diagram-project" style="margin-right: 8px; color: var(--accent-pink);"></i>
+                            <strong>Diseño & Simulación:</strong> Esquematización y ruteado de circuitos profesionales con <strong>KiCad</strong>.
                         </div>
                         <div class="objetivo-pill">
-                            <i class="fa-solid fa-industry" style="margin-right: 8px; color: var(--primary);"></i>
-                            <strong>Manufactura Avanzada:</strong> Fabricación física de prototipos mediante la aplicación de reglas de ruteado y el uso de equipo especializado como la cortadora láser <strong>XTOOL</strong> y la máquina <strong>MONOFAB</strong>.
+                            <i class="fa-solid fa-bolt" style="margin-right: 8px; color: var(--primary);"></i>
+                            <strong>Manufactura Mecatrónica:</strong> Fabricación mediante cortadora láser <strong>XTOOL</strong> y ruteadora CNC <strong>MONOFAB</strong>.
                         </div>
                    </div>
                 </div>
@@ -613,11 +666,14 @@
 
             <div class="contenido-inicial" style="text-align: left;">
                 <div class="info-footer-container">
-                    <h4><i class="fa-solid fa-users" style="color: var(--primary); margin-right: 8px;"></i>Acerca del Equipo</h4>
+                    <h4 style="color: var(--text-heading); font-size: 1.2rem; margin-bottom: 18px;">
+                        <i class="fa-solid fa-user-gear" style="color: var(--accent-pink); margin-right: 8px;"></i>
+                        Ingenieras a Cargo
+                    </h4>
                     
                     <div class="info-grid">    
                         <div class="info-card perfil-card">
-                            <img src="img/samantha.jpg" alt="Sam" class="perfil-foto">
+                            <img src="img/samantha.jpg" alt="Samantha Ramírez" class="perfil-foto">
                             <div class="perfil-info">
                                 <h5>Samantha Ramírez Castillo</h5>
                                 <p class="perfil-carrera">Ing. Mecatrónica</p>
@@ -626,7 +682,7 @@
                         </div>
 
                         <div class="info-card perfil-card">
-                            <img src="img/fotoAlumno.png" alt="Karen" class="perfil-foto">
+                            <img src="img/fotoAlumno.png" alt="Karen Pastrana" class="perfil-foto">
                             <div class="perfil-info">
                                 <h6>Karen Melissa Pastrana Monzón</h6>
                                 <p class="perfil-carrera">Ing. Mecatrónica</p>
@@ -636,16 +692,15 @@
                    </div>   
                     
                    <div class="info-footer-container">
-                        <h4 style="margin-bottom: 15px;"><span class="gps-indicator"></span> Ubicación</h4>
+                        <h4 style="margin-bottom: 15px; color: var(--text-heading);"><i class="fa-solid fa-location-dot" style="color: var(--primary);"></i> Ubicación</h4>
                         <div class="tarjeta-ubicacion-completa">
-                            <img src="img/Ibero.jpg" alt="Mapa" class="ubicacion-imagen">
-                            
+                            <img src="img/Ibero.jpg" alt="Ibero Puebla" class="ubicacion-imagen">
                             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                                 <div>
                                     <p style="margin:0 0 4px 0;"><strong style="color:var(--text-heading);">Universidad Iberoamericana Puebla</strong></p>
-                                    <p style="margin: 0; font-size: 0.9rem; color: var(--subtext);">Blvd. Del Niño Poblano #2901, Reserva Territorial Atlixcáyotl, San Andrés Cholula, Pue.</p>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--subtext);">Blvd. Del Niño Poblano #2901, San Andrés Cholula, Pue.</p>
                                 </div>
-                                <a href="https://maps.app.goo.gl/ENTByS38ee4rZKPLA" target="_blank" class="link-mapa">Ver en Google Maps ↗</a>
+                                <a href="https://maps.app.goo.gl/ENTByS38ee4rZKPLA" target="_blank" class="link-mapa">Google Maps ↗</a>
                             </div>
                         </div>
                     </div>
@@ -656,13 +711,13 @@
         <!-- SECCIÓN TRABAJOS -->
         <section id="acerca" class="page-section">
             <div class="trabajos-banner">
-                <h2>Trabajos Realizados</h2>
+                <h2>Prácticas & Documentación</h2>
             </div>
             
             <div class="trabajos-grid">
                 <div class="trabajo-card" style="background-image: url('img/kicad_preview.jpg');" onclick="cambiarPagina('kicad-detalle')">
-                    <h3>KiCad</h3>
-                    <p>Diseño y esquemáticos</p>
+                    <h3>Trabajo 1: KiCad</h3>
+                    <p>Documentación en proceso <i class="fa-solid fa-pen-to-square"></i></p>
                 </div>
                 <div class="trabajo-card" style="background-image: url('img/xtool_preview.jpg');" onclick="cambiarPagina('trabajo2-detalle')">
                     <h3>Práctica 2</h3>
@@ -675,15 +730,23 @@
             </div>
         </section>
 
-        <!-- DETALLE KICAD -->
+        <!-- DETALLE TRABAJO 1: KICAD (EN DOCUMENTACIÓN) -->
         <section id="kicad-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
-            <h2>Práctica: KiCad</h2>
-            <div class="gatito-card-trabajando">
-                <img src="watermarked_img_14765406714678542246.jpg" alt="Gatito Soldando" class="gatito-img">
-                <h3 style="color: var(--text-heading); margin: 5px 0;">Sección en Ensamble</h3>
-                <p style="color: var(--subtext); margin: 0;">El michi ingeniero está ruteando las pistas del circuito.</p>
-                <div class="badge-status"><i class="fa-solid fa-wrench"></i> En proceso de documentación</div>
+            <h2>Trabajo 1: Diseños Esquémicos en KiCad</h2>
+            
+            <div class="gatito-card-concentrado">
+                <div class="gatito-img-wrapper">
+                    <img src="watermarked_img_498055111175163758.jpg" alt="Gatito Soldando Concentrado" class="gatito-img">
+                    <div class="soldering-spark"></div>
+                </div>
+                <h3 style="color: var(--text-heading); margin: 10px 0 5px 0;">Michi Ingeniero Concentrado</h3>
+                <p style="color: var(--subtext); margin: 0; max-width: 500px; margin: 0 auto;">
+                    Estamos redactando y ordenando los diagramas esquemáticos y la guía paso a paso del Trabajo 1 de KiCad.
+                </p>
+                <div class="badge-status">
+                    <i class="fa-solid fa-laptop-code fa-spin"></i> Documentando Trabajo 1...
+                </div>
             </div>
         </section>
 
@@ -691,11 +754,13 @@
         <section id="trabajo2-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica 2: Cortadora Laser XTOOL</h2>
-            <div class="gatito-card-trabajando">
-                <img src="watermarked_img_14765406714678542246.jpg" alt="Gatito Soldando" class="gatito-img">
-                <h3 style="color: var(--text-heading); margin: 5px 0;">Calibrando Láser...</h3>
-                <p style="color: var(--subtext); margin: 0;">Ajustando velocidad y potencia para el acrílico.</p>
-                <div class="badge-status"><i class="fa-solid fa-gear fa-spin"></i> En laboratorio</div>
+            <div class="gatito-card-concentrado">
+                <img src="watermarked_img_498055111175163758.jpg" alt="Gatito Concentrado" class="gatito-img">
+                <h3 style="color: var(--text-heading); margin: 5px 0;">Sin información publicada</h3>
+                <p style="color: var(--subtext); margin: 0;">El gato ingeniero está ajustando el enfoque del láser.</p>
+                <div class="badge-status" style="background: #e0f2fe; color: #0284c7; border-color: #0284c7;">
+                    <i class="fa-solid fa-clock"></i> Pendiente de Práctica
+                </div>
             </div>
         </section>
 
@@ -703,11 +768,13 @@
         <section id="trabajo3-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica 3: Fresadora CNC MONOFAB</h2>
-            <div class="gatito-card-trabajando">
-                <img src="watermarked_img_14765406714678542246.jpg" alt="Gatito Soldando" class="gatito-img">
-                <h3 style="color: var(--text-heading); margin: 5px 0;">Fresando PCB...</h3>
-                <p style="color: var(--subtext); margin: 0;">Configurando parámetros del husillo y broca.</p>
-                <div class="badge-status"><i class="fa-solid fa-microchip"></i> En laboratorio</div>
+            <div class="gatito-card-concentrado">
+                <img src="watermarked_img_498055111175163758.jpg" alt="Gatito Concentrado" class="gatito-img">
+                <h3 style="color: var(--text-heading); margin: 5px 0;">Sin información publicada</h3>
+                <p style="color: var(--subtext); margin: 0;">Configurando parámetros del Husillo y broca CNC.</p>
+                <div class="badge-status" style="background: #e0f2fe; color: #0284c7; border-color: #0284c7;">
+                    <i class="fa-solid fa-clock"></i> Pendiente de Práctica
+                </div>
             </div>
         </section>
 
@@ -715,11 +782,13 @@
         <section id="proyectos" class="page-section">
             <div class="contenido-inicial">
                 <h2>Proyectos Finales</h2>
-                <div class="gatito-card-trabajando">
-                    <img src="watermarked_img_14765406714678542246.jpg" alt="Gatito Soldando" class="gatito-img">
-                    <h3 style="color: var(--text-heading); margin: 5px 0;">Prototipos Mecatrónicos</h3>
-                    <p style="color: var(--subtext); margin: 0;">Próximamente mostraremos los resultados de las pruebas.</p>
-                    <div class="badge-status"><i class="fa-solid fa-flask"></i> Próximamente</div>
+                <div class="gatito-card-concentrado">
+                    <img src="watermarked_img_498055111175163758.jpg" alt="Gatito Concentrado" class="gatito-img">
+                    <h3 style="color: var(--text-heading); margin: 5px 0;">Área de Desarrollo Mecatrónico</h3>
+                    <p style="color: var(--subtext); margin: 0;">Esta sección mostrará los avances de los proyectos finales del semestre.</p>
+                    <div class="badge-status">
+                        <i class="fa-solid fa-microchip"></i> En desarrollo
+                    </div>
                 </div>
             </div>
         </section>
@@ -732,7 +801,7 @@
                 <p><strong style="color: var(--text-heading);">Universidad Iberoamericana Puebla</strong></p>
                 <p style="margin: 3px 0;">Producción Electrónica | Otoño 2026</p>
                 <p style="margin: 3px 0;">Profesor: Osorio Figueroa Javier</p>
-                <p style="margin: 8px 0 0 0;">Desarrollado por: <strong>Samantha Ramírez Castillo</strong> y <strong>Karen Melissa Pastrana Monzón</strong></p>
+                <p style="margin: 8px 0 0 0;">Ingenieras: <strong>Samantha Ramírez Castillo</strong> & <strong>Karen Melissa Pastrana Monzón</strong></p>
             </div>
 
             <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 15px;">
