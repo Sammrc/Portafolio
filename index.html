@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Producción Electrónica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #080b10;
-            --card-bg: rgba(16, 22, 34, 0.85);
-            --card-hover-bg: rgba(23, 32, 50, 0.95);
-            --border-color: #212936;
-            --accent-cyan: #00f2fe;
-            --accent-green: #00ff87;
-            --accent-purple: #9d4edd;
-            --text-main: #c9d1d9;
-            --text-heading: #ffffff;
-            --subtext: #8b949e;
+            --bg-color: #07090e;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-card-hover: rgba(24, 34, 58, 0.9);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --accent-gold: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --text-main: #cbd5e1;
+            --text-heading: #f8fafc;
+            --subtext: #94a3b8;
         }
 
         * {
@@ -28,18 +29,18 @@
         body {
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 35%),
-                radial-gradient(circle at 85% 75%, rgba(157, 78, 221, 0.08) 0%, transparent 35%),
-                radial-gradient(circle at 50% 50%, rgba(0, 255, 135, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 10% 10%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
                 linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+            background-size: 100% 100%, 100% 100%, 100% 100%, 30px 30px, 30px 30px;
             color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            padding-bottom: 60px; /* Espacio para el gato caminando */
+            padding-bottom: 70px;
         }
 
         /* LOGO ESQUINA */
@@ -51,8 +52,8 @@
             height: 80px;
             object-fit: cover;
             border-radius: 16px; 
-            border: 2px solid var(--accent-cyan);
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
             z-index: 1100; 
             background-color: #fff;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -60,8 +61,8 @@
 
         .logo-esquina:hover {
             transform: scale(1.08) rotate(-3deg);
-            box-shadow: 0 0 30px rgba(0, 255, 135, 0.6);
-            border-color: var(--accent-green);
+            box-shadow: 0 0 35px rgba(6, 182, 212, 0.5);
+            border-color: var(--accent-cyan);
         }
 
         /* NAVEGACIÓN DUPER DINÁMICA */
@@ -69,15 +70,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(16, 22, 34, 0.8);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(0, 242, 254, 0.25);
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             padding: 8px 16px;
             margin: 20px auto 30px auto; 
             width: 90%;                 
             max-width: 480px;           
             border-radius: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(0, 242, 254, 0.1); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(59, 130, 246, 0.1); 
             position: sticky;
             top: 15px; 
             z-index: 1000;
@@ -104,14 +105,13 @@
             border-radius: 30px;
             transition: all 0.3s ease;
             font-family: 'Fira Code', monospace;
-            position: relative;
         }
 
         .nav-links button:hover, .nav-links button.active {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
-            color: #080b10;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
+            color: #07090e;
             font-weight: 800;
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
         }
 
         /* MAIN & SECCIONES */
@@ -148,7 +148,7 @@
 
         h1 {
             font-size: 2.5rem;
-            background: linear-gradient(90deg, #ffffff, var(--accent-cyan), var(--accent-green));
+            background: linear-gradient(90deg, #ffffff, var(--accent-gold), var(--accent-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 8px;
@@ -181,8 +181,8 @@
             transform: translate(-50%, -50%);
             object-fit: cover;
             z-index: 0;
-            opacity: 0.35;
-            filter: grayscale(30%) contrast(120%);
+            opacity: 0.25;
+            filter: grayscale(40%) contrast(120%);
         }
 
         .franja-fondo-materia::after {
@@ -192,17 +192,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, var(--bg-color) 0%, rgba(8, 11, 16, 0.7) 50%, var(--bg-color) 100%);
+            background: linear-gradient(180deg, var(--bg-color) 0%, rgba(7, 9, 14, 0.8) 50%, var(--bg-color) 100%);
             z-index: 1;
         }
 
         .materia-intro-card {
-            background: var(--card-bg);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
             padding: 35px;
             border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 1px rgba(0, 242, 254, 0.5);
-            border: 1px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 1px rgba(245, 158, 11, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             max-width: 850px;
             margin: 0 auto;
             text-align: left;
@@ -212,7 +212,7 @@
 
         .materia-intro-card h2 {
             font-size: 1.8rem;
-            color: var(--accent-cyan);
+            color: var(--accent-gold);
             margin-top: 0;
             margin-bottom: 15px;
         }
@@ -243,10 +243,10 @@
         }
 
         .objetivo-pill:hover {
-            border-color: var(--accent-green);
+            border-color: var(--accent-cyan);
             transform: translateX(8px);
-            background: rgba(0, 255, 135, 0.05);
-            box-shadow: 0 0 20px rgba(0, 255, 135, 0.15);
+            background: rgba(6, 182, 212, 0.08);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
         }
 
         /* EQUIPO Y TARJETAS */
@@ -270,7 +270,7 @@
         }
 
         .info-card {
-            background-color: var(--card-bg);
+            background-color: var(--bg-card);
             padding: 22px;
             border-radius: 20px;
             border: 1px solid var(--border-color);
@@ -279,9 +279,9 @@
 
         .info-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 10px 25px rgba(0, 242, 254, 0.2);
-            background-color: var(--card-hover-bg);
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.25);
+            background-color: var(--bg-card-hover);
         }
 
         .perfil-card {
@@ -295,9 +295,9 @@
             height: 75px;
             border-radius: 50%; 
             object-fit: cover;
-            border: 2px solid var(--accent-cyan);
+            border: 2px solid var(--accent-gold);
             flex-shrink: 0;
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
         }
 
         .perfil-info h5, .perfil-info h6 {
@@ -309,7 +309,7 @@
         .perfil-carrera {
             margin: 0 0 6px 0 !important;
             font-size: 0.85rem !important;
-            color: var(--accent-green);
+            color: var(--accent-cyan);
             font-weight: 600;
             font-family: 'Fira Code', monospace;
         }
@@ -323,7 +323,7 @@
         }
 
         .perfil-correo:hover {
-            color: var(--accent-cyan);
+            color: var(--accent-gold);
             text-decoration: underline;
         }
 
@@ -332,21 +332,21 @@
             display: inline-block;
             width: 12px;
             height: 12px;
-            background-color: var(--accent-green); 
+            background-color: var(--accent-gold); 
             border-radius: 50%;
             margin-right: 8px;
-            box-shadow: 0 0 12px var(--accent-green);
+            box-shadow: 0 0 12px var(--accent-gold);
             animation: pulse-gps 2s infinite;
         }
 
         @keyframes pulse-gps {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 135, 0.7); }
-            70% { transform: scale(1.15); box-shadow: 0 0 0 12px rgba(0, 255, 135, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 135, 0); }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+            70% { transform: scale(1.15); box-shadow: 0 0 0 12px rgba(245, 158, 11, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
         }
 
         .tarjeta-ubicacion-completa {
-            background-color: var(--card-bg);
+            background-color: var(--bg-card);
             padding: 25px;
             border-radius: 24px; 
             border: 1px solid var(--border-color);
@@ -358,7 +358,7 @@
 
         .tarjeta-ubicacion-completa:hover {
             border-color: var(--accent-cyan);
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
         }
 
         .ubicacion-imagen {
@@ -371,20 +371,20 @@
         }
 
         .link-mapa {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
-            color: #080b10 !important;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
+            color: #07090e !important;
             padding: 12px 24px;
             border-radius: 25px;
             font-weight: 800;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
             display: inline-block;
         }
 
         .link-mapa:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(0, 255, 135, 0.5);
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.5);
         }
 
         /* TRABAJOS Y BANNER */
@@ -395,7 +395,7 @@
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
-            background-image: linear-gradient(rgba(8, 11, 16, 0.85), rgba(8, 11, 16, 0.85)), url('img/PCB_BKG.jpg');
+            background-image: linear-gradient(rgba(7, 9, 14, 0.85), rgba(7, 9, 14, 0.85)), url('img/PCB_BKG.jpg');
             background-size: cover;
             background-position: center;
             padding: 50px 20px;
@@ -442,14 +442,14 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(180deg, transparent 30%, rgba(8, 11, 16, 0.95) 100%);
+            background: linear-gradient(180deg, transparent 30%, rgba(7, 9, 14, 0.95) 100%);
             z-index: 1;
         }
 
         .trabajo-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.3);
+            border-color: var(--accent-gold);
+            box-shadow: 0 15px 30px rgba(245, 158, 11, 0.3);
         }
 
         .trabajo-card h3, .trabajo-card p {
@@ -466,7 +466,7 @@
         .trabajo-card p {
             margin: 0;
             font-size: 0.85rem;
-            color: var(--accent-green);
+            color: var(--accent-cyan);
             font-family: 'Fira Code', monospace;
         }
 
@@ -484,20 +484,20 @@
         }
 
         .btn-regresar:hover {
-            background-color: var(--accent-cyan);
-            color: #080b10;
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+            background-color: var(--accent-gold);
+            color: #07090e;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
         }
 
-        /* TARJETA DEL GATITO TRABAJANDO EN SECCIONES SIN INFORMACIÓN */
+        /* TARJETA DEL GATITO GIF TRABAJANDO EN SECCIONES SIN INFORMACIÓN */
         .gatito-card-trabajando {
-            background: var(--card-bg);
-            border: 2px dashed var(--accent-cyan);
+            background: var(--bg-card);
+            border: 2px dashed var(--accent-gold);
             border-radius: 24px;
             padding: 35px 25px;
             text-align: center;
             margin: 30px 0;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 242, 254, 0.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(245, 158, 11, 0.05);
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(12px);
@@ -505,42 +505,43 @@
 
         .gatito-img-wrapper {
             position: relative;
-            display: flex; /* Para centrar */
+            display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-            width: 100%; /* Ocupar ancho tarjeta */
-            height: 200px; /* Alto fijo para la imagen de referencia */
+            width: 100%;
+            height: 220px;
         }
 
-        .gatito-img {
-            max-width: 100%; /* Ajustar al wrapper */
-            max-height: 100%; /* Ajustar al wrapper */
-            object-fit: contain; /* Mantener proporción */
+        .gatito-gif-animado {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
             position: relative;
             z-index: 2;
         }
 
         .badge-status {
             display: inline-block;
-            background: rgba(0, 255, 135, 0.12);
-            color: var(--accent-green);
-            border: 1px solid var(--accent-green);
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
             padding: 8px 18px;
             border-radius: 30px;
             font-size: 0.9rem;
             font-family: 'Fira Code', monospace;
             margin-top: 15px;
-            box-shadow: 0 0 15px rgba(0, 255, 135, 0.2);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
         }
 
-        /* GATITO CAMINANDO EN EL FOOTER - SIN TEXTO */
+        /* GATITO CAMINANDO EN EL FOOTER - SOLO GIF ANIMADO SOBERANO */
         .cat-walker-container {
             position: fixed;
-            bottom: 10px; /* Ajuste para que se vea */
+            bottom: 5px;
             left: 0;
             width: 100vw;
-            height: 50px;
+            height: 55px;
             pointer-events: none;
             z-index: 999;
             overflow: hidden;
@@ -550,28 +551,26 @@
             position: absolute;
             bottom: 0;
             height: 100%;
-            animation: walkAcross 18s linear infinite;
+            animation: walkAcross 16s linear infinite;
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Eliminadas decoraciones de texto */
         }
 
         .gatito-caminando-gif {
-            height: 100%; /* Ocupar alto del container */
+            height: 100%;
             width: auto;
             object-fit: contain;
-            /* Eliminado borde y sombra */
         }
 
         @keyframes walkAcross {
-            0% { left: -100px; } /* Ajuste inicio */
+            0% { left: -100px; }
             100% { left: 100vw; }
         }
 
         /* FOOTER */
         .site-footer {
-            background-color: #05070a;
+            background-color: #030407;
             border-top: 1px solid var(--border-color);
             color: var(--subtext);
             padding: 40px 20px 20px 20px;
@@ -639,9 +638,9 @@
         }
 
         .btn-subir:hover {
-            background-color: var(--accent-cyan);
-            color: #080b10;
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+            background-color: var(--accent-gold);
+            color: #07090e;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
         }
 
         @media (max-width: 768px) {
@@ -658,6 +657,7 @@
 
     <img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
 
+    <!-- BARRA NAVEGACIÓN -->
     <nav>
         <ul class="nav-links">
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
@@ -666,13 +666,15 @@
         </ul>
     </nav>
 
+    <!-- GATITO INGENIERO CAMINANDO (GIF ANIMADO) -->
     <div class="cat-walker-container">
         <div class="cat-walker">
-            <img src="watermarked_img_15338189493937909918.jpg" alt="Gatito Caminando" class="gatito-caminando-gif">
+            <img src="" alt="Gatito Caminando GIF" class="gatito-caminando-gif">
         </div>
     </div>
 
     <main>
+        <!-- SECCIÓN INICIO -->
         <section id="inicio" class="page-section active-page">
             <div class="contenido-inicial">
                 <h1>Portafolio de Proyectos</h1>
@@ -689,14 +691,14 @@
                     <h2>¿De qué trata la materia?</h2>
                     <p>La asignatura de <strong>Producción Electrónica</strong> está enfocada en el desarrollo de prototipos y circuitos impresos (PCB) mediante la aplicación de técnicas especializadas de diseño, simulación y manufactura.</p>
                 
-                    <h3><i class="fa-solid fa-code-branch" style="color: var(--accent-cyan);"></i> Objetivos</h3>
+                    <h3><i class="fa-solid fa-code-branch" style="color: var(--accent-gold);"></i> Objetivos</h3>
                     <div class="materia-objetivos-grid">
                         <div class="objetivo-pill">
-                            <i class="fa-solid fa-microchip" style="color: var(--accent-cyan); margin-right: 8px;"></i>
+                            <i class="fa-solid fa-microchip" style="color: var(--accent-gold); margin-right: 8px;"></i>
                             <strong>Diseño y Simulación:</strong> Creación e interpretación de diagramas esquemáticos y circuitos utilizando softwares como <strong>KiCad</strong>.
                         </div>
                         <div class="objetivo-pill">
-                            <i class="fa-solid fa-industry" style="color: var(--accent-green); margin-right: 8px;"></i>
+                            <i class="fa-solid fa-industry" style="color: var(--accent-cyan); margin-right: 8px;"></i>
                             <strong>Manufactura Avanzada:</strong> Fabricación física de prototipos mediante la aplicación de reglas de ruteado y el uso de equipo especializado como la cortadora láser <strong>XTOOL</strong> y la máquina <strong>MONOFAB</strong>.
                         </div>
                    </div>
@@ -705,7 +707,7 @@
 
             <div class="contenido-inicial" style="text-align: left;">
                 <div class="info-footer-container">
-                    <h4><i class="fa-solid fa-users" style="color: var(--accent-cyan); margin-right: 8px;"></i>Acerca del Equipo</h4>
+                    <h4><i class="fa-solid fa-users" style="color: var(--accent-gold); margin-right: 8px;"></i>Acerca del Equipo</h4>
                     
                     <div class="info-grid">    
                         <div class="info-card perfil-card">
@@ -745,6 +747,7 @@
             </div>      
         </section>
 
+        <!-- SECCIÓN TRABAJOS -->
         <section id="acerca" class="page-section">
             <div class="trabajos-banner">
                 <h2>Trabajos Realizados</h2>
@@ -766,47 +769,52 @@
             </div>
         </section>
 
+        <!-- SECCIÓN DETALLE KICAD -->
         <section id="kicad-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica: KiCad</h2>
             
+            <!-- GATO SIAMÉS GIF TRABAJANDO -->
             <div class="gatito-card-trabajando">
                 <div class="gatito-img-wrapper">
-                    <img src="watermarked_img_17084364739623380510.jpg" alt="Gatito Siamés Diseñando" class="gatito-img">
+                    <img src="" alt="Gatito Siamés Trabajando GIF" class="gatito-gif-animado">
                 </div>
-                <div class="badge-status"><i class="fa-solid fa-pen-ruler fa-spin"></i> Estado: Diseñando esquemáticos...</div>
+                <div class="badge-status"><i class="fa-solid fa-laptop-code fa-spin"></i> Estado: Diseñando esquemáticos...</div>
             </div>
         </section>
 
+        <!-- DETALLE TRABAJO 2 -->
         <section id="trabajo2-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica 2: Cortadora Laser XTOOL</h2>
             <div class="gatito-card-trabajando">
                 <div class="gatito-img-wrapper">
-                    <img src="watermarked_img_17084364739623380510.jpg" alt="Gatito Siamés Diseñando" class="gatito-img">
+                    <img src="watermarked_img_5363590987293416974.jpg" alt="Gatito Siamés Trabajando GIF" class="gatito-gif-animado">
                 </div>
                 <div class="badge-status"><i class="fa-solid fa-bolt"></i> Estado: Calibrando láser...</div>
             </div>
         </section>
 
+        <!-- DETALLE TRABAJO 3 -->
         <section id="trabajo3-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica 3: Fresadora CNC MONOFAB</h2>
             <div class="gatito-card-trabajando">
                 <div class="gatito-img-wrapper">
-                    <img src="watermarked_img_17084364739623380510.jpg" alt="Gatito Siamés Diseñando" class="gatito-img">
+                    <img src="watermarked_img_5363590987293416974.jpg" alt="Gatito Siamés Trabajando GIF" class="gatito-gif-animado">
                 </div>
                 <div class="badge-status"><i class="fa-solid fa-gear fa-spin"></i> Estado: Procesando código G...</div>
             </div>
         </section>
 
+        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
             <div class="contenido-inicial">
                 <h2>Proyectos Finales</h2>
                 
                 <div class="gatito-card-trabajando">
                     <div class="gatito-img-wrapper">
-                        <img src="watermarked_img_17084364739623380510.jpg" alt="Gatito Siamés Diseñando" class="gatito-img">
+                        <img src="watermarked_img_5363590987293416974.jpg" alt="Gatito Siamés Trabajando GIF" class="gatito-gif-animado">
                     </div>
                     <div class="badge-status"><i class="fa-solid fa-lightbulb"></i> Estado: Prototipado & Pruebas</div>
                 </div>
@@ -814,13 +822,14 @@
         </section>
     </main>
 
+    <!-- FOOTER COMPLETO -->
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-left-group">
                 <div class="footer-section">
                     <p><strong style="color: var(--text-heading); font-size: 1.05rem;">Universidad Iberoamericana Puebla</strong></p>
                     <p>Departamento de Ciencias e Ingenierías</p>
-                    <p style="color: var(--accent-cyan); font-weight: 600;">Producción Electrónica | Otoño 2026</p>
+                    <p style="color: var(--accent-gold); font-weight: 600;">Producción Electrónica | Otoño 2026</p>
                     <p>Profesor: <strong>Osorio Figueroa Javier</strong></p>
                 </div>
 
@@ -856,4 +865,14 @@
             }
             
             if (idSeccion === 'kicad-detalle' || idSeccion === 'trabajo2-detalle' || idSeccion === 'trabajo3-detalle') {
-                document.getElementById('btn
+                document.getElementById('btn-acerca').classList.add('active');
+            } else if (document.getElementById('btn-' + idSeccion)) {
+                document.getElementById('btn-' + idSeccion).classList.add('active');
+            }
+
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+</body>
+</html>
