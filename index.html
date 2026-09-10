@@ -31,27 +31,28 @@
         /* --- GATO SEGUIDOR DEL CURSOR CON ANIMACIÓN DE CAMINATA --- */
         #cat-cursor-container {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: -42px;
+            left: -42px;
             width: 85px;
             height: 85px;
             pointer-events: none;
             z-index: 9999;
             will-change: transform;
             filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.15));
+            transition: transform 0.08s linear;
         }
 
         /* Animación de caminata cuando se mueve el ratón */
-        .walking #leg-front-left { animation: walkLeg 0.25s infinite alternate ease-in-out; }
-        .walking #leg-front-right { animation: walkLeg 0.25s infinite alternate-reverse ease-in-out; }
-        .walking #leg-back-left { animation: walkLeg 0.25s infinite alternate-reverse ease-in-out; }
-        .walking #leg-back-right { animation: walkLeg 0.25s infinite alternate ease-in-out; }
-        .walking #cat-body-group { animation: bodyBob 0.25s infinite alternate ease-in-out; }
-        .walking #cat-tail { animation: tailWag 0.5s infinite alternate ease-in-out; }
+        .walking #leg-front-left { animation: walkLeg 0.2s infinite alternate ease-in-out; }
+        .walking #leg-front-right { animation: walkLeg 0.2s infinite alternate-reverse ease-in-out; }
+        .walking #leg-back-left { animation: walkLeg 0.2s infinite alternate-reverse ease-in-out; }
+        .walking #leg-back-right { animation: walkLeg 0.2s infinite alternate ease-in-out; }
+        .walking #cat-body-group { animation: bodyBob 0.2s infinite alternate ease-in-out; }
+        .walking #cat-tail { animation: tailWag 0.3s infinite alternate ease-in-out; }
 
         @keyframes walkLeg {
-            from { transform: rotate(-18deg); }
-            to { transform: rotate(18deg); }
+            from { transform: rotate(-22deg); }
+            to { transform: rotate(22deg); }
         }
 
         @keyframes bodyBob {
@@ -60,8 +61,8 @@
         }
 
         @keyframes tailWag {
-            from { transform: rotate(-8deg); }
-            to { transform: rotate(8deg); }
+            from { transform: rotate(-12deg); }
+            to { transform: rotate(12deg); }
         }
 
         /* --- LOGO ESQUINA --- */
@@ -497,7 +498,7 @@
             box-shadow: 0 4px 15px rgba(91, 33, 182, 0.05);
         }
 
-        /* ANIMACIÓN CHISPAS DE SOLDADURA */
+        /* ANIMACIÓN CHISPAS DE SOLDADURA Y HUMO */
         @keyframes sparkParticle {
             0% { transform: translate(0, 0) scale(1); opacity: 1; }
             100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
@@ -505,17 +506,28 @@
 
         @keyframes plasmaGlow {
             0%, 100% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.25); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        @keyframes smokeRise {
+            0% { transform: translate(0, 0) scale(0.5); opacity: 0.6; }
+            100% { transform: translate(-15px, -35px) scale(1.8); opacity: 0; }
         }
 
         .spark-core {
             animation: plasmaGlow 0.15s infinite ease-in-out;
-            transform-origin: 65px 137px;
+            transform-origin: 75px 135px;
         }
 
-        .spark-p1 { --dx: -18px; --dy: -25px; animation: sparkParticle 0.4s infinite ease-out; }
-        .spark-p2 { --dx: 12px;  --dy: -30px; animation: sparkParticle 0.35s infinite ease-out 0.1s; }
-        .spark-p3 { --dx: -28px; --dy: -10px; animation: sparkParticle 0.45s infinite ease-out 0.05s; }
+        .spark-p1 { --dx: -20px; --dy: -25px; animation: sparkParticle 0.4s infinite ease-out; }
+        .spark-p2 { --dx: 15px;  --dy: -30px; animation: sparkParticle 0.35s infinite ease-out 0.1s; }
+        .spark-p3 { --dx: -30px; --dy: -10px; animation: sparkParticle 0.45s infinite ease-out 0.05s; }
+        .spark-p4 { --dx: 22px;  --dy: -18px; animation: sparkParticle 0.38s infinite ease-out 0.12s; }
+
+        .smoke-puff {
+            animation: smokeRise 1.8s infinite ease-out;
+            transform-origin: 75px 135px;
+        }
 
         /* --- FOOTER SITE --- */
         .site-footer {
@@ -585,13 +597,13 @@
 </head>
 <body>
 
-    <!-- DEFINICIONES REUTILIZABLES DE GRADIENTES PARA GATOS ANIMADOS -->
+    <!-- DEFINICIONES REUTILIZABLES DE GRADIENTES Y SOMBRAS PARA GATOS ANIMADOS -->
     <svg style="display:none;">
         <defs>
             <!-- Degradado Pelaje Crema -->
             <radialGradient id="siameseBody" cx="40%" cy="40%" r="60%">
                 <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="50%" stop-color="#fcedd9"/>
+                <stop offset="65%" stop-color="#fcedd9"/>
                 <stop offset="100%" stop-color="#e2cbb2"/>
             </radialGradient>
             <!-- Degradado Puntos Café/Oscuro -->
@@ -614,61 +626,65 @@
         </defs>
     </svg>
 
-    <!-- GATO SEGUIDOR EN EL CURSOR CON DISEÑO ANIMADO Y DEGRADADOS -->
+    <!-- GATO SEGUIDOR EN EL CURSOR CON DISEÑO ANATÓMICO MEJORADO Y ANIMACIÓN -->
     <div id="cat-cursor-container">
         <svg width="85" height="85" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
             <!-- Sombra -->
-            <ellipse cx="60" cy="105" rx="30" ry="6" fill="url(#softShadow)"/>
+            <ellipse cx="60" cy="102" rx="30" ry="6" fill="url(#softShadow)"/>
             
-            <g id="cat-cursor-body" transform-origin="60 60">
+            <g id="cat-cursor-body">
                 <!-- Cola -->
-                <path id="cat-tail" d="M 32 70 C 12 60 5 30 18 20 C 24 15 26 35 34 60" fill="none" stroke="url(#siameseDark)" stroke-width="7" stroke-linecap="round"/>
+                <path id="cat-tail" d="M 32 72 C 12 62 5 32 18 22 C 24 17 26 37 34 62" fill="none" stroke="url(#siameseDark)" stroke-width="7" stroke-linecap="round"/>
                 
                 <!-- Patas Traseras -->
-                <g id="leg-back-left" transform-origin="38 85">
-                    <rect x="34" y="80" width="8" height="22" rx="4" fill="url(#siameseDark)"/>
+                <g id="leg-back-left" transform-origin="38 82">
+                    <rect x="34" y="78" width="8" height="24" rx="4" fill="url(#siameseDark)"/>
                 </g>
-                <g id="leg-back-right" transform-origin="48 85">
-                    <rect x="44" y="80" width="8" height="22" rx="4" fill="url(#siameseDark)"/>
+                <g id="leg-back-right" transform-origin="48 82">
+                    <rect x="44" y="78" width="8" height="24" rx="4" fill="url(#siameseDark)"/>
                 </g>
 
-                <!-- Cuerpo -->
+                <!-- Cuerpo Principal -->
                 <g id="cat-body-group">
                     <ellipse cx="55" cy="72" rx="26" ry="18" fill="url(#siameseBody)"/>
                 </g>
 
                 <!-- Patas Delanteras -->
-                <g id="leg-front-left" transform-origin="64 85">
-                    <rect x="60" y="80" width="8" height="22" rx="4" fill="url(#siameseDark)"/>
+                <g id="leg-front-left" transform-origin="64 82">
+                    <rect x="60" y="78" width="8" height="24" rx="4" fill="url(#siameseDark)"/>
                 </g>
-                <g id="leg-front-right" transform-origin="74 85">
-                    <rect x="70" y="80" width="8" height="22" rx="4" fill="url(#siameseDark)"/>
+                <g id="leg-front-right" transform-origin="74 82">
+                    <rect x="70" y="78" width="8" height="24" rx="4" fill="url(#siameseDark)"/>
                 </g>
 
-                <!-- Cabeza -->
-                <g transform="translate(72, 52)">
+                <!-- Cabeza Completa con Rasgos de Siamés -->
+                <g transform="translate(75, 52)">
                     <!-- Oreja Izquierda -->
-                    <path d="M -14 -10 L -4 -30 L 2 -12 Z" fill="url(#siameseDark)"/>
-                    <path d="M -11 -12 L -4 -25 L -1 -13 Z" fill="#f472b6" opacity="0.6"/>
+                    <path d="M -15 -8 L -6 -32 L 2 -10 Z" fill="url(#siameseDark)"/>
+                    <path d="M -11 -10 L -6 -26 L -1 -11 Z" fill="#f472b6" opacity="0.6"/>
                     
                     <!-- Oreja Derecha -->
-                    <path d="M 2 -12 L 12 -30 L 18 -8 Z" fill="url(#siameseDark)"/>
-                    <path d="M 5 -12 L 12 -25 L 15 -9 Z" fill="#f472b6" opacity="0.6"/>
+                    <path d="M 1 -10 L 10 -32 L 18 -6 Z" fill="url(#siameseDark)"/>
+                    <path d="M 4 -10 L 10 -26 L 15 -8 Z" fill="#f472b6" opacity="0.6"/>
 
-                    <!-- Cabeza Principal -->
+                    <!-- Cabeza Base -->
                     <ellipse cx="2" cy="-2" rx="20" ry="17" fill="url(#siameseBody)"/>
                     
-                    <!-- Máscara de la Cara -->
-                    <path d="M -12 2 C -12 -10 16 -10 16 2 C 16 14 -12 14 -12 2 Z" fill="url(#siameseDark)"/>
+                    <!-- Máscara Oscura de la Cara -->
+                    <path d="M -11 -2 C -13 -12 17 -12 15 -2 C 14 12 -10 12 -11 -2 Z" fill="url(#siameseDark)"/>
                     
-                    <!-- Ojos -->
+                    <!-- Ojos Azules Brillantes -->
                     <ellipse cx="-4" cy="-2" rx="4.5" ry="5.5" fill="url(#catEyeBlue)"/>
                     <ellipse cx="8" cy="-2" rx="4.5" ry="5.5" fill="url(#catEyeBlue)"/>
-                    <circle cx="-5.5" cy="-3.5" r="1.5" fill="#ffffff"/>
-                    <circle cx="6.5" cy="-3.5" r="1.5" fill="#ffffff"/>
+                    <!-- Pupilas y Brillos -->
+                    <ellipse cx="-4" cy="-2" rx="2" ry="4" fill="#0f172a"/>
+                    <ellipse cx="8" cy="-2" rx="2" ry="4" fill="#0f172a"/>
+                    <circle cx="-5.5" cy="-4" r="1.5" fill="#ffffff"/>
+                    <circle cx="6.5" cy="-4" r="1.5" fill="#ffffff"/>
                     
-                    <!-- Nariz y Bocio -->
-                    <polygon points="1,3 3,3 2,5" fill="#f472b6"/>
+                    <!-- Nariz Rosa y Hocico -->
+                    <path d="M 1 3 L 3 3 L 2 5 Z" fill="#f472b6"/>
+                    <path d="M 2 5 Q 0 8 -2 6 M 2 5 Q 4 8 6 6" fill="none" stroke="#2d1d15" stroke-width="1.2" stroke-linecap="round"/>
                 </g>
             </g>
         </svg>
@@ -780,40 +796,43 @@
                 </div>
             </div>
 
-            <!-- ILUSTRACIÓN GATO SOLDANDO CON ESTILO MEJORADO -->
+            <!-- ILUSTRACIÓN GATO SOLDADOR TOTALMENTE CORREGIDO Y MEJORADO -->
             <div class="siamese-working-box">
-                <svg width="280" height="170" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="140" cy="152" rx="110" ry="10" fill="url(#softShadow)"/>
-                    <rect x="20" y="142" width="240" height="10" rx="4" fill="#475569"/>
-                    <rect x="50" y="132" width="80" height="10" rx="2" fill="#15803d"/>
+                <svg width="300" height="180" viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Sombra Mesa y Placa PCB -->
+                    <ellipse cx="150" cy="162" rx="120" ry="10" fill="url(#softShadow)"/>
+                    <rect x="25" y="150" width="250" height="10" rx="4" fill="#334155"/>
+                    <rect x="45" y="138" width="90" height="12" rx="3" fill="#15803d"/>
                     
                     <!-- Gato Soldando Estilizado -->
                     <g id="gato-soldador-animado">
                         <path d="M 215 115 C 240 100 245 70 230 60 C 220 55 210 75 205 105" fill="none" stroke="url(#siameseDark)" stroke-width="8" stroke-linecap="round"/>
                         <ellipse cx="195" cy="120" rx="18" ry="16" fill="url(#siameseBody)"/>
+
                         <path d="M 140 115 C 145 90 165 80 195 95 C 210 110 200 135 180 138 C 155 140 140 130 140 115 Z" fill="url(#siameseBody)"/>
 
-                        <g transform="translate(128, 82) rotate(12)">
-                            <polygon points="-18,-20 -8,-45 2,-22" fill="url(#siameseDark)"/>
-                            <polygon points="5,-22 18,-43 25,-18" fill="url(#siameseDark)"/>
+                        <g transform="translate(128, 82) rotate(10)">
+                            <polygon points="-18,-18 -8,-45 2,-20" fill="url(#siameseDark)"/>
+                            <polygon points="5,-20 18,-43 25,-16" fill="url(#siameseDark)"/>
                             <ellipse cx="0" cy="0" rx="26" ry="22" fill="url(#siameseBody)"/>
-                            <ellipse cx="-4" cy="5" rx="16" ry="12" fill="url(#siameseDark)"/>
-                            <rect x="-18" y="-6" width="14" height="10" rx="3" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-                            <rect x="2" y="-6" width="14" height="10" rx="3" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                            <ellipse cx="-2" cy="5" rx="16" ry="12" fill="url(#siameseDark)"/>
+                            <rect x="-18" y="-6" width="15" height="12" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+                            <rect x="1" y="-6" width="15" height="12" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+                            <polygon points="0,5 2,5 1,8" fill="#f472b6"/>
                         </g>
 
-                        <!-- Cautín y Chispas -->
-                        <line x1="125" y1="110" x2="92" y2="124" stroke="#e11d48" stroke-width="6" stroke-linecap="round"/>
-                        <line x1="92" y1="124" x2="65" y2="137" stroke="#94a3b8" stroke-width="3"/>
+                        <line x1="125" y1="112" x2="95" y2="124" stroke="#dc2626" stroke-width="7" stroke-linecap="round"/> 
+                        <line x1="95" y1="124" x2="65" y2="137" stroke="#cbd5e1" stroke-width="3"/> 
+                        <circle cx="70" cy="125" r="4" fill="#cbd5e1" class="smoke-puff"/>
+                        
                         <g id="efectos-chispa">
-                            <circle cx="65" cy="137" r="4" fill="#ffffff" class="spark-core"/>
-                            <circle cx="65" cy="137" r="1.5" fill="#fde047" class="spark-p1"/>
-                            <circle cx="65" cy="137" r="2" fill="#38bdf8" class="spark-p2"/>
-                            <circle cx="65" cy="137" r="1.2" fill="#ffffff" class="spark-p3"/>
+                            <circle cx="75" cy="135" r="5" fill="#ffffff" class="spark-core"/>
+                            <circle cx="75" cy="135" r="2" fill="#fde047" class="spark-p1"/>
+                            <circle cx="75" cy="135" r="2.5" fill="#38bdf8" class="spark-p2"/>
+                            <circle cx="75" cy="135" r="1.8" fill="#ffffff" class="spark-p3"/>
                         </g>
                     </g>
                 </svg>
-
                 <h3>¡Próximamente más Prácticas!</h3>
                 <p>Las prácticas restantes se encuentran en proceso de documentación y ensamblaje.</p>
             </div>
@@ -822,151 +841,29 @@
         <!-- VISTA DETALLADA KICAD -->
         <section id="kicad-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
-            
             <div class="kicad-detalle-container">
                 <h2><i class="fa-solid fa-microchip"></i> Guía Completa de Diseño Electrónico con KiCad</h2>
                 <p><strong>KiCad EDA</strong> es la suite de software libre y de código abierto referente en la industria para la captura de esquemáticos y el diseño de circuitos impresos (PCB). Permite llevar una idea desde el concepto teórico hasta la fabricación industrial o artesanal.</p>
-                
                 <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 20px 0;">
-
                 <h3>¿Cómo funciona el flujo de trabajo en KiCad?</h3>
                 <ol style="line-height: 1.8;">
                     <li><strong>Diseño Esquemático (Eeschema):</strong> Se dibujan los componentes interconectados lógicamente definiendo símbolos y conexiones de señales.</li>
-                    <li><strong>Asignación de Huellas (Footprints):</strong> Se asocia cada símbolo del esquemático con su encapsulado físico (SMD o THT).</li>
-                    <li><strong>Layout de PCB (Pcbnew):</strong> Se colocan físicamente los componentes en la placa y se trazan las pistas de cobre (ruteado).</li>
-                    <li><strong>Verificación ERC / DRC:</strong> Ejecución de reglas eléctricas y de diseño para evitar cortocircuitos o fallas de manufactura.</li>
-                    <li><strong>Generación de Gerbers:</strong> Exportación de archivos de manufactura estándar enviados a fabricación o máquinas CNC.</li>
+                    <li><strong>Asignación de Huellas (Footprints):</strong> Asignar a cada símbolo esquemático su contraparte física real (superficie SMD o pasante THT).</li>
+                    <li><strong>Ruteado de PCB (PCB Editor):</strong> Disposición física de los componentes sobre las capas de cobre y trazado de pistas conductivas.</li>
+                    <li><strong>Verificación DRC (Design Rules Check):</strong> Comprobación automática de errores de diseño y cortocircuitos.</li>
+                    <li><strong>Generación de Gerbers:</strong> Exportación de archivos estándar para máquinas de manufactura CNC, corte o fotolitografía.</li>
                 </ol>
-
-                <h3>Herramientas Principales</h3>
-                <div class="kicad-grid">
-                    <div class="kicad-item">
-                        <h4><i class="fa-solid fa-diagram-project"></i> Schematic Editor</h4>
-                        <p>Librería completa de símbolos electromecánicos, verificación de conexiones y definición de buses de datos.</p>
-                    </div>
-                    <div class="kicad-item">
-                        <h4><i class="fa-solid fa-layer-group"></i> PCB Editor</h4>
-                        <p>Control multicapa, ruteado diferencial, planos de tierra interactivos y reglas de diseño dinámicas.</p>
-                    </div>
-                    <div class="kicad-item">
-                        <h4><i class="fa-solid fa-cube"></i> Visor 3D</h4>
-                        <p>Renderizado 3D para inspeccionar distancias físicas con gabinetes y validar alineación de componentes.</p>
-                    </div>
-                    <div class="kicad-item">
-                        <h4><i class="fa-solid fa-calculator"></i> PCB Calculator</h4>
-                        <p>Calculadora integrada para ancho de pista según corriente, impedancia y disipación térmica.</p>
-                    </div>
-                </div>
-
-                <h3>Ejemplos de Placas Desarrolladas</h3>
-                <ul style="line-height: 1.8;">
-                    <li><strong>Placa de Control ESP32:</strong> Integración de microcontrolador BLE/Wi-Fi con regulación de voltaje de 5V a 3.3V.</li>
-                    <li><strong>Shield de Sensores LDR y Servomotores:</strong> PCB de potencia y adquisición para proyectos de seguimiento solar.</li>
-                </ul>
-
-                <h3>Indicaciones Importantes para el Diseño de PCBs</h3>
-                <div style="background-color: #f3e8ff; padding: 15px 20px; border-radius: 12px; border-left: 5px solid var(--accent-color);">
-                    <ul>
-                        <li><strong>Ancho de Pista:</strong> Dimensionar adecuadamente el ancho para corrientes de alimentación (ej. > 0.8 mm para 1A) y señal (0.25 - 0.4 mm).</li>
-                        <li><strong>Planos de Tierra (Ground Planes):</strong> Colocar verter de cobre a GND en capas superior e inferior para reducir el ruido electromagnético.</li>
-                        <li><strong>Capacitores de Desacoplo:</strong> Ubicarlos lo más cerca posible de los pines de alimentación de los circuitos integrados.</li>
-                        <li><strong>Ángulos de Pista:</strong> Evitar ángulos de 90° al rutar pistas; utilizar esquinas a 45° para evitar reflexiones de señal y problemas de grabado en ácido.</li>
-                    </ul>
-                </div>
             </div>
         </section>
 
-        <!-- SECCIÓN PROYECTOS (ESTILO REPLICADO DE LA SEGUNDA IMAGEN) -->
+        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
-            <div class="siamese-working-box" style="padding: 40px 20px;">
-                <svg width="420" height="220" viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Sombra Base Geral -->
-                    <ellipse cx="210" cy="175" rx="170" ry="12" fill="url(#softShadow)"/>
-
-                    <!-- Barra de Plataforma Oscura -->
-                    <rect x="50" y="160" width="320" height="16" rx="8" fill="#334155"/>
-                    <rect x="52" y="162" width="316" height="4" rx="2" fill="#64748b"/>
-
-                    <!-- Pantalla / Ventana de Inspección -->
-                    <g transform="translate(120, 115)">
-                        <rect x="0" y="0" width="85" height="48" rx="6" fill="#ffffff" stroke="#c084fc" stroke-width="3"/>
-                        <!-- Líneas Simuladas -->
-                        <line x1="12" y1="12" x2="40" y2="12" stroke="#5b21b6" stroke-width="3" stroke-dasharray="4,3"/>
-                        <line x1="12" y1="24" x2="40" y2="24" stroke="#5b21b6" stroke-width="3" stroke-dasharray="4,3"/>
-                        <line x1="12" y1="36" x2="40" y2="36" stroke="#5b21b6" stroke-width="3" stroke-dasharray="4,3"/>
-                        
-                        <!-- Lupa -->
-                        <circle cx="52" cy="24" r="15" fill="rgba(255,255,255,0.7)" stroke="#475569" stroke-width="3.5"/>
-                        <line x1="63" y1="35" x2="78" y2="48" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
-                        <circle cx="52" cy="24" r="7" fill="none" stroke="#d97706" stroke-width="2"/>
-                    </g>
-
-                    <!-- GATO SIAMÉS PRINCIPAL ANALIZANDO (ESTILO IMAGEN 2) -->
-                    <g id="gato-inspector-realista">
-                        <!-- Cola Curvada Elegante -->
-                        <path d="M 270 120 C 310 100 320 45 285 35 C 265 30 255 60 250 105" fill="none" stroke="url(#siameseDark)" stroke-width="12" stroke-linecap="round"/>
-                        
-                        <!-- Patas Traseras en Reposo -->
-                        <ellipse cx="230" cy="155" rx="14" ry="10" fill="url(#siameseDark)"/>
-                        <ellipse cx="260" cy="155" rx="14" ry="10" fill="url(#siameseDark)"/>
-
-                        <!-- Cuerpo Siamés Esbelto -->
-                        <path d="M 195 130 C 185 90 220 70 255 90 C 275 105 270 145 245 158 C 220 162 200 150 195 130 Z" fill="url(#siameseBody)"/>
-                        <ellipse cx="232" cy="120" rx="32" ry="26" fill="url(#siameseBody)"/>
-
-                        <!-- Pata Delantera Apoyada / Extendida -->
-                        <path d="M 200 135 C 180 135 160 142 148 148" stroke="url(#siameseBody)" stroke-width="14" stroke-linecap="round"/>
-                        <ellipse cx="148" cy="148" rx="8" ry="6" fill="url(#siameseDark)"/>
-
-                        <!-- Cabeza Vista de Frente/Perfil -->
-                        <g transform="translate(182, 82)">
-                            <!-- Oreja Izquierda -->
-                            <path d="M -22 -10 L -10 -42 L 0 -15 Z" fill="url(#siameseDark)"/>
-                            <path d="M -18 -12 L -10 -35 L -3 -15 Z" fill="#f472b6" opacity="0.5"/>
-                            <!-- Oreja Derecha -->
-                            <path d="M 2 -15 L 12 -42 L 24 -8 Z" fill="url(#siameseDark)"/>
-                            <path d="M 5 -15 L 12 -35 L 20 -10 Z" fill="#f472b6" opacity="0.5"/>
-
-                            <!-- Cara -->
-                            <ellipse cx="2" cy="0" rx="26" ry="21" fill="url(#siameseBody)"/>
-                            <ellipse cx="0" cy="4" rx="17" ry="13" fill="url(#siameseDark)"/>
-
-                            <!-- Ojos Azules Intensos -->
-                            <ellipse cx="-7" cy="-2" rx="5.5" ry="7" fill="url(#catEyeBlue)"/>
-                            <ellipse cx="9" cy="-2" rx="5.5" ry="7" fill="url(#catEyeBlue)"/>
-                            <circle cx="-8.5" cy="-4" r="2" fill="#ffffff"/>
-                            <circle cx="7.5" cy="-4" r="2" fill="#ffffff"/>
-
-                            <!-- Nariz -->
-                            <polygon points="0,5 2,5 1,8" fill="#f472b6"/>
-                        </g>
-                    </g>
-
-                    <!-- SEGUNDO GATO PEQUEÑO AL FONDO (ESTILO IMAGEN 2) -->
-                    <g id="gato-secundario-fondo" transform="translate(340, 75) scale(0.65)">
-                        <!-- Cola -->
-                        <path d="M -20 50 C -40 35 -30 5 -15 10 C -5 15 -10 35 -5 45" fill="none" stroke="url(#siameseDark)" stroke-width="8" stroke-linecap="round"/>
-                        <!-- Cuerpo -->
-                        <ellipse cx="15" cy="50" rx="22" ry="16" fill="url(#siameseBody)"/>
-                        <!-- Patas -->
-                        <rect x="-2" y="60" width="6" height="18" rx="3" fill="url(#siameseDark)"/>
-                        <rect x="18" y="60" width="6" height="18" rx="3" fill="url(#siameseDark)"/>
-                        <!-- Cabeza -->
-                        <g transform="translate(30, 32)">
-                            <polygon points="-12,-10 -2,-28 4,-8" fill="url(#siameseDark)"/>
-                            <polygon points="4,-8 14,-25 18,-6" fill="url(#siameseDark)"/>
-                            <ellipse cx="2" cy="0" rx="16" ry="14" fill="url(#siameseBody)"/>
-                            <ellipse cx="3" cy="3" rx="10" ry="8" fill="url(#siameseDark)"/>
-                            <ellipse cx="-1" cy="-1" rx="3" ry="4" fill="url(#catEyeBlue)"/>
-                            <ellipse cx="8" cy="-1" rx="3" ry="4" fill="url(#catEyeBlue)"/>
-                            <circle cx="-2" cy="-2" r="1" fill="#ffffff"/>
-                            <circle cx="7" cy="-2" r="1" fill="#ffffff"/>
-                        </g>
-                    </g>
-                </svg>
-
-                <h2 style="margin: 10px 0 5px 0;">Diseñando los Grandes Proyectos...</h2>
-                <p>Pronto se mostrarán aquí los avances de los prototipos integrados.</p>
+            <div class="trabajos-banner">
+                <h2>Proyectos Principales</h2>
+            </div>
+            <div class="siamese-working-box">
+                <h3>Sección en desarrollo</h3>
+                <p>Aquí se publicarán los proyectos integradores de la materia.</p>
             </div>
         </section>
     </main>
@@ -975,86 +872,48 @@
     <footer class="site-footer">
         <div class="footer-content">
             <div>
-                <p><strong>Producción Electrónica</strong></p>
-                <p>Departamento de Ciencias e Ingenierías</p>
+                <h3>Portafolio de Producción Electrónica</h3>
                 <p>Universidad Iberoamericana Puebla</p>
             </div>
-            <img src="img/logoIbero.png" alt="Logo Ibero Puebla" class="footer-logo-derecha">
+            <img src="img/logoIbero.png" alt="Logo Ibero" class="footer-logo-derecha">
         </div>
         <div class="footer-bottom">
-            <span>© 2026 Portafolio de Producción Electrónica. Todos los derechos reservados.</span>
-            <button class="btn-subir" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-                <i class="fa-solid fa-arrow-up" style="margin-right: 5px;"></i> Subir
-            </button>
+            <span>© 2026 Producción Electrónica - Todos los derechos reservados.</span>
+            <button class="btn-subir" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Subir arriba ↑</button>
         </div>
     </footer>
 
-    <!-- SCRIPT DE NAVEGACIÓN Y RASTREO DEL CURSOR CON ANIMACIÓN DE CAMINATA -->
+    <!-- SCRIPT DE INTERACCIÓN Y MOVIMIENTO -->
     <script>
         function cambiarPagina(paginaId) {
             const paginas = document.querySelectorAll('.page-section');
             paginas.forEach(p => p.classList.remove('active-page'));
-
+            const paginaObjetivo = document.getElementById(paginaId);
+            if (paginaObjetivo) paginaObjetivo.classList.add('active-page');
             const botones = document.querySelectorAll('.nav-links button');
             botones.forEach(b => b.classList.remove('active'));
-
-            const paginaObjetivo = document.getElementById(paginaId);
-            if (paginaObjetivo) {
-                paginaObjetivo.classList.add('active-page');
-            }
-
-            const btnActivo = document.getElementById('btn-' + paginaId);
-            if (btnActivo) {
-                btnActivo.classList.add('active');
-            }
-
+            if (paginaId === 'inicio') document.getElementById('btn-inicio')?.classList.add('active');
+            if (paginaId === 'acerca' || paginaId === 'kicad-detalle') document.getElementById('btn-acerca')?.classList.add('active');
+            if (paginaId === 'proyectos') document.getElementById('btn-proyectos')?.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Lógica de Movimiento y Animación de Caminata para el Gato
         const catContainer = document.getElementById('cat-cursor-container');
-        const catBody = document.getElementById('cat-cursor-body');
-        
-        let currentX = 100, currentY = 100;
-        let targetX = 100, targetY = 100;
-        let lastX = 100, lastY = 100;
-        let isMovingTimeout;
+        let mouseX = 0, mouseY = 0, catX = 0, catY = 0, walkTimeout;
 
         document.addEventListener('mousemove', (e) => {
-            targetX = e.clientX;
-            targetY = e.clientY;
-            
-            // Activar clase caminata
+            mouseX = e.clientX; mouseY = e.clientY;
             catContainer.classList.add('walking');
-            
-            clearTimeout(isMovingTimeout);
-            isMovingTimeout = setTimeout(() => {
-                catContainer.classList.remove('walking');
-            }, 120);
+            clearTimeout(walkTimeout);
+            walkTimeout = setTimeout(() => catContainer.classList.remove('walking'), 150);
         });
 
         function animateCat() {
-            // Suavizado de movimiento (lerp)
-            currentX += (targetX - currentX) * 0.12;
-            currentY += (targetY - currentY) * 0.12;
-
-            const deltaX = currentX - lastX;
-            
-            // Orientación según el movimiento horizontal
-            if (deltaX < -0.3) {
-                catBody.setAttribute('transform', 'scale(-1, 1) translate(-120, 0)');
-            } else if (deltaX > 0.3) {
-                catBody.setAttribute('transform', 'scale(1, 1)');
-            }
-            
-            catContainer.style.transform = `translate3d(${currentX - 42}px, ${currentY - 42}px, 0)`;
-
-            lastX = currentX;
-            lastY = currentY;
-
+            catX += (mouseX - catX) * 0.15; catY += (mouseY - catY) * 0.15;
+            const angle = Math.atan2(mouseY - catY, mouseX - catX) * (180 / Math.PI);
+            catContainer.style.transform = `translate3d(${catX}px, ${catY}px, 0) rotate(${angle}deg)`;
             requestAnimationFrame(animateCat);
         }
-        
         animateCat();
     </script>
 </body>
