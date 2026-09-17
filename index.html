@@ -1099,6 +1099,17 @@
 
     <!-- SCRIPT NAVEGACIÓN Y MOVIMIENTO DEL GATO -->
     <script>
+            function cambiarTabKicad(tabId, boton) {
+    document.querySelectorAll('.kicad-tab-content').forEach(tab => {
+        tab.classList.remove('active-tab-content');
+    });
+    document.getElementById('tab-' + tabId).classList.add('active-tab-content');
+
+    document.querySelectorAll('.kicad-tab-btn').forEach(btn => {
+        btn.classList.remove('active-tab-btn');
+    });
+    boton.classList.add('active-tab-btn');
+}
         function cambiarPagina(paginaId) {
             const paginas = document.querySelectorAll('.page-section');
             paginas.forEach(p => p.classList.remove('active-page'));
