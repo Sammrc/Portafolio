@@ -950,43 +950,94 @@
                 <h2><i class="fa-solid fa-microchip"></i> Guía Integral de Diseño Electrónico con KiCad</h2>
                 <p><strong>KiCad EDA</strong> es una suite de herramientas de código abierto líder en el diseño de automatización electrónica (EDA). Permite cubrir todo el flujo de trabajo: desde el diseño conceptual del diagrama esquemático hasta el ruteado detallado y la exportación de archivos Gerber para manufactura profesional o artesanal.</p>
                 
-                <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 25px 0;">
+               <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 25px 0;">
 
-                <h3><i class="fa-solid fa-diagram-project"></i> Flujo de Trabajo Metódico</h3>
-                <ol class="kicad-pasos-lista">
-                    <li><strong>Creación de Captura Esquemática (Eeschema):</strong> Representación lógica de los circuitos interconectados mediante símbolos estándar. Definición de puertos de entrada, salida, alimentación y tierra.</li>
-                    <li><strong>Asignación y Verificación de Huellas (Footprints):</strong> Vinculación de cada símbolo esquemático con su encapsulado físico real (tecnología THT pasante o SMD de montaje superficial).</li>
-                    <li><strong>Layoút y Ruteado de la PCB (PCB Editor):</strong> Disposición física de componentes en la placa, ruteado de pistas de cobre, ajuste de anchos según corriente y creación de planos de masa.</li>
-                    <li><strong>Verificación de Reglas de Diseño (DRC):</strong> Comprobación automática de errores mecánicos y eléctricos (distancias mínimas de separación, pistas sin conectar y cortocircuitos).</li>
-                    <li><strong>Exportación para Fabricación (Gerber y Drill File):</strong> Generación de los archivos fotolitos estandarizados (archivos RS-274X Gerber y planos de perforación Excellon) compatibles con cortadoras CNC y fábricas de PCB.</li>
-                </ol>
+<h3><i class="fa-solid fa-diagram-project"></i> Flujo de Trabajo Metódico</h3>
+<ol class="kicad-pasos-lista">
+    <li><strong>Creación de Captura Esquemática (Eeschema):</strong> Representación lógica de los circuitos interconectados mediante símbolos estándar. Definición de puertos de entrada, salida, alimentación y tierra.</li>
+    <li><strong>Asignación y Verificación de Huellas (Footprints):</strong> Vinculación de cada símbolo esquemático con su encapsulado físico real (tecnología THT pasante o SMD de montaje superficial).</li>
+    <li><strong>Layoút y Ruteado de la PCB (PCB Editor):</strong> Disposición física de componentes en la placa, ruteado de pistas de cobre, ajuste de anchos según corriente y creación de planos de masa.</li>
+    <li><strong>Verificación de Reglas de Diseño (DRC):</strong> Comprobación automática de errores mecánicos y eléctricos (distancias mínimas de separación, pistas sin conectar y cortocircuitos).</li>
+    <li><strong>Exportación para Fabricación (Gerber y Drill File):</strong> Generación de los archivos fotolitos estandarizados (archivos RS-274X Gerber y planos de perforación Excellon) compatibles con cortadoras CNC y fábricas de PCB.</li>
+</ol>
 
-                <h3 style="margin-top: 30px;"><i class="fa-solid fa-screwdriver-wrench"></i> Herramientas Clave de KiCad</h3>
-                <div class="kicad-grid">
-                    <div class="kicad-item">
-                        <h4><i class="fa-solid fa-layer-group"></i> Editor PCB Multicapa</h4>
-                        <p>Diseño en placas de 2, 4 o más capas, con soporte para planos de tierra/alimentación, relleno de zonas de cobre y vías de interconexión.</p>
-                    </div>
-                    <div class="kicad-item">
-                        <h4><i class="fa-solid fa-cube"></i> Visor 3D Interactivo</h4>
-                        <p>Renderizado 3D en tiempo real que permite evaluar la interferencia física con gabinetes, chasis y conectores mecánicos.</p>
-                    </div>
-                    <div class="kicad-item">
-                        <h4><i class="fa-solid fa-calculator"></i> Calculadora PCB</h4>
-                        <p>Herramienta integrada para calcular el ancho de pistas según la corriente, impedancia de líneas de transmisión y atenuadores.</p>
-                    </div>
-                    <div class="kicad-item">
-                        <h4><i class="fa-solid fa-wave-square"></i> Simulación SPICE</h4>
-                        <p>Motor de simulación de circuitos integrado (Ngspice) para validar comportamiento analógico y transitorio antes de fabricar.</p>
-                    </div>
-                </div>
+<!-- NAVEGACIÓN DE PESTAÑAS -->
+<div class="kicad-tabs-nav">
+    <button class="kicad-tab-btn active-tab-btn" onclick="cambiarTabKicad('instalacion', this)">
+        <i class="fa-solid fa-download"></i> Instalación
+    </button>
+    <button class="kicad-tab-btn" onclick="cambiarTabKicad('librerias', this)">
+        <i class="fa-solid fa-box-archive"></i> Librerías
+    </button>
+    <button class="kicad-tab-btn" onclick="cambiarTabKicad('esquematico', this)">
+        <i class="fa-solid fa-diagram-project"></i> Esquemático
+    </button>
+    <button class="kicad-tab-btn" onclick="cambiarTabKicad('footprints', this)">
+        <i class="fa-solid fa-shapes"></i> Footprints
+    </button>
+    <button class="kicad-tab-btn" onclick="cambiarTabKicad('pcb-layout', this)">
+        <i class="fa-solid fa-layer-group"></i> PCB Layout
+    </button>
+    <button class="kicad-tab-btn" onclick="cambiarTabKicad('gerbers', this)">
+        <i class="fa-solid fa-file-export"></i> Gerbers
+    </button>
+</div>
 
-                <h3 style="margin-top: 30px;"><i class="fa-solid fa-check-double"></i> Buenas Prácticas de Ruteado para Manufactura</h3>
-                <ul class="kicad-pasos-lista" style="list-style-type: disc;">
-                    <li><strong>Ángulos de Pistas:</strong> Evitar esquinas de 90° en las pistas de cobre; utilizar giros a 45° para prevenir reflexiones de señal y facilitar el grabado químico/fresado.</li>
-                    <li><strong>Planos de Tierra:</strong> Utilizar vaciado de cobre en las capas superior e inferior para reducir interferencias electromagnéticas (EMI) y mejorar el retorno de corriente.</li>
-                    <li><strong>Grosor de Pistas:</strong> Ajustar las anchuras de pista según la corriente calculada para prevenir sobrecalentamiento.</li>
-                </ul>
+<!-- CONTENIDO DE CADA PESTAÑA -->
+<div id="tab-instalacion" class="kicad-tab-content active-tab-content">
+    <h3><i class="fa-solid fa-download"></i> Instalación de KiCad</h3>
+    <p>Aquí va el contenido sobre cómo descargar e instalar KiCad.</p>
+</div>
+
+<div id="tab-librerias" class="kicad-tab-content">
+    <h3><i class="fa-solid fa-box-archive"></i> Librerías</h3>
+    <p>Aquí va el contenido sobre librerías de símbolos y footprints.</p>
+</div>
+
+<div id="tab-esquematico" class="kicad-tab-content">
+    <h3><i class="fa-solid fa-diagram-project"></i> Esquemático</h3>
+    <div class="kicad-grid">
+        <div class="kicad-item">
+            <h4><i class="fa-solid fa-wave-square"></i> Simulación SPICE</h4>
+            <p>Motor de simulación de circuitos integrado (Ngspice) para validar comportamiento analógico y transitorio antes de fabricar.</p>
+        </div>
+    </div>
+</div>
+
+<div id="tab-footprints" class="kicad-tab-content">
+    <h3><i class="fa-solid fa-shapes"></i> Footprints</h3>
+    <p>Aquí va el contenido sobre asignación de footprints.</p>
+</div>
+
+<div id="tab-pcb-layout" class="kicad-tab-content">
+    <h3><i class="fa-solid fa-layer-group"></i> PCB Layout</h3>
+    <div class="kicad-grid">
+        <div class="kicad-item">
+            <h4><i class="fa-solid fa-layer-group"></i> Editor PCB Multicapa</h4>
+            <p>Diseño en placas de 2, 4 o más capas, con soporte para planos de tierra/alimentación, relleno de zonas de cobre y vías de interconexión.</p>
+        </div>
+        <div class="kicad-item">
+            <h4><i class="fa-solid fa-cube"></i> Visor 3D Interactivo</h4>
+            <p>Renderizado 3D en tiempo real que permite evaluar la interferencia física con gabinetes, chasis y conectores mecánicos.</p>
+        </div>
+        <div class="kicad-item">
+            <h4><i class="fa-solid fa-calculator"></i> Calculadora PCB</h4>
+            <p>Herramienta integrada para calcular el ancho de pistas según la corriente, impedancia de líneas de transmisión y atenuadores.</p>
+        </div>
+    </div>
+
+    <h4 style="margin-top: 25px;"><i class="fa-solid fa-check-double"></i> Buenas Prácticas de Ruteado para Manufactura</h4>
+    <ul class="kicad-pasos-lista" style="list-style-type: disc;">
+        <li><strong>Ángulos de Pistas:</strong> Evitar esquinas de 90° en las pistas de cobre; utilizar giros a 45° para prevenir reflexiones de señal y facilitar el grabado químico/fresado.</li>
+        <li><strong>Planos de Tierra:</strong> Utilizar vaciado de cobre en las capas superior e inferior para reducir interferencias electromagnéticas (EMI) y mejorar el retorno de corriente.</li>
+        <li><strong>Grosor de Pistas:</strong> Ajustar las anchuras de pista según la corriente calculada para prevenir sobrecalentamiento.</li>
+    </ul>
+</div>
+
+<div id="tab-gerbers" class="kicad-tab-content">
+    <h3><i class="fa-solid fa-file-export"></i> Gerbers</h3>
+    <p>Aquí va el contenido sobre exportación de archivos Gerber.</p>
+</div>
             </div>
         </section>
 
