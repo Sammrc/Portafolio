@@ -70,8 +70,8 @@
             position: fixed;
             top: 20px;
             left: 25px;
-            width: 90px;
-            height: 90px;
+            width: 50px;
+            height: 50px;
             object-fit: cover;
             border-radius: 14px; 
             border: 2px solid var(--border-color);
@@ -156,7 +156,7 @@
             margin-top: 0; 
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 200px) {
             .logo-esquina { display: none; }
         }
 
@@ -552,8 +552,8 @@
         }
 
         .footer-logo-derecha {
-            width: 140px;
-            height: 140px;
+            width: 50px;
+            height: 50px;
             object-fit: contain;
         }
 
@@ -621,7 +621,7 @@
             
             <g id="cat-cursor-body" transform-origin="60 60">
                 <!-- Cola -->
-                <path id="cat-tail" d="M 32 70 C 12 60 5 30 18 20 C 24 15 26 35 34 60" fill="none" stroke="url(#curDarkGrad)" stroke-width="7" stroke-linecap="round"/>
+                <path id="cat-tail" d="M 32 70 C 24 15 26 35 34 60" fill="none" stroke="url(#curDarkGrad)" stroke-width="7" stroke-linecap="round"/>
                 
                 <!-- Patas Traseras -->
                 <g id="leg-back-left" transform-origin="38 85">
@@ -769,7 +769,7 @@
                     <p>Diseño y esquemáticos</p>
                 </div>
                 <div class="trabajo-card" style="background-image: url('img/xtool_preview.jpg');">
-                    <h3>2. Cortadora XTOOL</h3>
+                    <h3>2. Mods</h3>
                     <p>En proceso de subida...</p>
                 </div>
                 <div class="trabajo-card" style="background-image: url('img/monofab_preview.jpg');">
@@ -802,21 +802,59 @@
                     <ellipse cx="140" cy="152" rx="110" ry="10" fill="url(#wShadow)"/>
                     <rect x="20" y="142" width="240" height="10" rx="4" fill="#475569"/>
                     <rect x="50" y="132" width="80" height="10" rx="2" fill="#15803d"/>
-                    
-                    <!-- Gato Soldando Siamés -->
-                    <g id="gato-soldador-animado">
-                        <!-- Cola -->
-                        <path d="M 215 115 C 240 100 245 70 230 60 C 220 55 210 75 205 105" fill="none" stroke="url(#wDark)" stroke-width="8" stroke-linecap="round"/>
-                        <!-- Cuerpo -->
-                        <ellipse cx="195" cy="120" rx="18" ry="16" fill="url(#wBody)"/>
-                        <path d="M 140 115 C 145 90 165 80 195 95 C 210 110 200 135 180 138 C 155 140 140 130 140 115 Z" fill="url(#wBody)"/>
 
-                        <!-- Cabeza -->
-                        <g transform="translate(128, 82) rotate(12)">
-                            <polygon points="-18,-20 -8,-45 2,-22" fill="url(#wDark)"/>
-                            <polygon points="5,-22 18,-43 25,-18" fill="url(#wDark)"/>
-                            <ellipse cx="0" cy="0" rx="26" ry="22" fill="url(#wBody)"/>
-                            <ellipse cx="-4" cy="5" rx="16" ry="12" fill="url(#wDark)"/>
+
+            <!-- Gato Soldando Siamés -->
+                    <g id="gato-soldador-animado">
+                <!-- Cola -->
+                <path id="cat-tail" d="M 32 70 C 24 15 26 35 34 60" fill="none" stroke="url(#curDarkGrad)" stroke-width="7" stroke-linecap="round"/>
+                
+                <!-- Patas Traseras -->
+                <g id="leg-back-left" transform-origin="38 85">
+                    <rect x="34" y="80" width="8" height="22" rx="4" fill="url(#curDarkGrad)"/>
+                </g>
+                <g id="leg-back-right" transform-origin="48 85">
+                    <rect x="44" y="80" width="8" height="22" rx="4" fill="url(#curDarkGrad)"/>
+                </g>
+
+                <!-- Cuerpo -->
+                <g id="cat-body-group">
+                    <ellipse cx="55" cy="72" rx="26" ry="18" fill="url(#curBodyGrad)"/>
+                </g>
+
+                <!-- Patas Delanteras -->
+                <g id="leg-front-left" transform-origin="64 85">
+                    <rect x="60" y="80" width="8" height="22" rx="4" fill="url(#curDarkGrad)"/>
+                </g>
+                <g id="leg-front-right" transform-origin="74 85">
+                    <rect x="70" y="80" width="8" height="22" rx="4" fill="url(#curDarkGrad)"/>
+                </g>
+
+                <!-- Cabeza -->
+                <g transform="translate(72, 52)">
+                    <!-- Orejas -->
+                    <path d="M -14 -10 L -4 -30 L 2 -12 Z" fill="url(#curDarkGrad)"/>
+                    <path d="M -11 -12 L -4 -25 L -1 -13 Z" fill="#f472b6" opacity="0.6"/>
+                    
+                    <path d="M 2 -12 L 12 -30 L 18 -8 Z" fill="url(#curDarkGrad)"/>
+                    <path d="M 5 -12 L 12 -25 L 15 -9 Z" fill="#f472b6" opacity="0.6"/>
+
+                    <!-- Cabeza Principal -->
+                    <ellipse cx="2" cy="-2" rx="20" ry="17" fill="url(#curBodyGrad)"/>
+                    
+                    <!-- Máscara de la Cara Siamés -->
+                    <path d="M -12 2 C -12 -10 16 -10 16 2 C 16 14 -12 14 -12 2 Z" fill="url(#curDarkGrad)"/>
+                    
+                    <!-- Ojos -->
+                    <ellipse cx="-4" cy="-2" rx="4.5" ry="5.5" fill="url(#curEyeBlue)"/>
+                    <ellipse cx="8" cy="-2" rx="4.5" ry="5.5" fill="url(#curEyeBlue)"/>
+                    <circle cx="-5.5" cy="-3.5" r="1.5" fill="#ffffff"/>
+                    <circle cx="6.5" cy="-3.5" r="1.5" fill="#ffffff"/>
+                    
+                    <!-- Nariz -->
+                    <polygon points="1,3 3,3 2,5" fill="#f472b6"/>
+                </g>
+            </g>
                             
                             <!-- Lentes de Protección -->
                             <rect x="-18" y="-6" width="14" height="10" rx="3" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
@@ -894,11 +932,11 @@
         <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
             <div class="trabajos-banner">
-                <h2>Proyectos Principales</h2>
+                <h2>Proyecto</h2>
             </div>
             <div class="siamese-working-box">
                 <h3>Sección en desarrollo</h3>
-                <p>Aquí se publicarán los proyectos integradores de la materia.</p>
+                <p>Aquí se publicará el proyecto de la materia.</p>
             </div>
         </section>
     </main>
@@ -914,7 +952,7 @@
         </div>
         <div class="footer-bottom">
             <span>© 2026 Producción Electrónica - Todos los derechos reservados.</span>
-            <button class="btn-subir" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Subir arriba ↑</button>
+            <button class="btn-subir" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Subir ↑</button>
         </div>
     </footer>
 
