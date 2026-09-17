@@ -7,6 +7,51 @@
     <title>Portafolio de Producción Electrónica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+
+        /* --- PESTAÑAS KICAD --- */
+        .kicad-tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 25px 0 20px 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+        
+        .kicad-tab-btn {
+            background-color: #faf5ff;
+            border: 1.5px solid var(--accent-light);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .kicad-tab-btn:hover {
+            background-color: var(--accent-light);
+            color: var(--accent-hover);
+        }
+        
+        .kicad-tab-btn.active-tab-btn {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-color);
+            box-shadow: 0 2px 8px rgba(91, 33, 182, 0.3);
+        }
+        
+        .kicad-tab-content {
+            display: none;
+        }
+        
+        .kicad-tab-content.active-tab-content {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+            
         :root {
             /* Paleta en Tonos Morados Fuertes, Claros y Lavanda */
             --bg-color: #f3e8ff;
