@@ -1043,7 +1043,7 @@
 
 
             <!-- SECCIÓN DETALLE MODS (NUEVA) -->
-       <section id="mods-detalle" class="page-section" style="display: none;">
+       <section id="mods-detalle" class="page-section">
     <div class="detalle-container" style="max-width: 900px; margin: 0 auto; padding: 2rem; color: #333; font-family: sans-serif; text-align: left;">
         <button class="btn-regresar" onclick="cambiarPagina('inicio')" style="margin-bottom: 1.5rem; padding: 0.5rem 1rem; cursor: pointer;">← Regresar</button>
         
@@ -1186,7 +1186,7 @@
     });
     boton.classList.add('active-tab-btn');
 }
-        function cambiarPagina(paginaId) {
+       function cambiarPagina(paginaId) {
             const paginas = document.querySelectorAll('.page-section');
             paginas.forEach(p => p.classList.remove('active-page'));
 
@@ -1200,6 +1200,7 @@
 
             if (paginaId === 'inicio') document.getElementById('btn-inicio')?.classList.add('active');
             if (paginaId === 'acerca' || paginaId === 'kicad-detalle') document.getElementById('btn-acerca')?.classList.add('active');
+            if (paginaId === 'mods-detalle') document.getElementById('btn-mods')?.classList.add('active'); // <-- Agregado para Mods
             if (paginaId === 'proyectos') document.getElementById('btn-proyectos')?.classList.add('active');
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
