@@ -945,6 +945,35 @@
             </div>
         </section>
 
+
+            <!-- SECCIÓN DETALLE MODS (NUEVA) -->
+        <section id="mods-detalle" class="page-section">
+            <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
+            <div class="mods-detalle-container">
+                <h2>Procesamiento con MODS para Manufactura</h2>
+                <p><strong>MODS</strong> es una plataforma basada en navegador utilizada para transformar archivos de diseño gráfico y vectorial (como mapas de bits o archivos PNG/SVG) en rutas de control numérico (G-code o archivos RML) compatibles con las fresadoras de la marca Roland (como la Monofab).</p>
+                
+                <div class="kicad-grid">
+                    <div class="kicad-item">
+                        <h4><i class="fa-solid fa-file-image"></i> Conversión y Mapas de Bits</h4>
+                        <p>Carga de las capas de la pista y el contorno de la PCB exportadas desde KiCad para configurar la resolución y escala de fresado.</p>
+                    </div>
+                    <div class="kicad-item">
+                        <h4><i class="fa-solid fa-sliders"></i> Parámetros de Corte (Toolpath)</h4>
+                        <p>Ajuste de la profundidad de corte, velocidad de avance (feed rate) y diámetro de la herramienta (mill diameter) para asegurar un aislamiento perfecto de las pistas.</p>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 25px;">Pasos principales del proceso:</h4>
+                <ol class="kicad-pasos-lista">
+                    <li><strong>Importar el archivo:</strong> Cargar el diseño de las pistas en formato PNG de alta resolución obtenido de KiCad.</li>
+                    <li><strong>Configurar el módulo de fresado:</strong> Seleccionar la función de PCB rml para generar las trayectorias de las herramientas de grabado (bit de 1/64 o similar).</li>
+                    <li><strong>Calcular trayectorias:</strong> Ejecutar el cálculo del proceso para visualizar las líneas por donde pasará la fresa.</li>
+                    <li><strong>Enviar a producción:</strong> Exportar el archivo resultante para cargarlo en el software de control de la máquina de grabado físico.</li>
+                </ol>
+            </div>
+        </section>
+            
         <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
             <div class="trabajos-banner">
