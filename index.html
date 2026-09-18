@@ -1083,20 +1083,18 @@
                 <div class="kicad-etapa">
                     <div class="kicad-etapa-numero">1</div>
                     <h3><i class="fa-solid fa-download"></i> Instalación de KiCad</h3>
-                    <p>El primer paso es descargar KiCad desde su sitio oficial: <a href="https://www.kicad.org/download/windows/" target="_blank" style="color: var(--accent-color); font-weight: 600;">kicad.org/download</a>. Al abrirlo por primera vez, aparece la pantalla de inicio, donde se accede a todas las herramientas de la suite (Editor de Esquemas, Editor de PCB, Editor de Footprints, visor de Gerbers, calculadoras, etc.).</p>
+                    <p>El primer paso es descargar KiCad desde su sitio oficial: <a href="https://www.kicad.org/download/windows/" target="_blank" style="color: var(--accent-color); font-weight: 600;">kicad.org/download</a>.</p>
                     <p>Se descargó e instaló la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint (huella física), lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
+                    <p>Al abrirlo por primera vez, aparece la pantalla de inicio, donde se accede a todas las herramientas como el Editor de Esquemas, Editor de PCB, Editor de Footprints, visor de Gerbers, calculadoras, etc.</p>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: pantalla de inicio de KiCad con las herramientas disponibles</span>
-                    </div>
+                <div class="kicad-imagen-slot">
+                    <img src="img/Pinicio.png" alt="Pantalla de inicio de KiCad">
+                </div>
 
                     <p>Una vez instalado, se crea un nuevo proyecto desde <strong>File → New Project</strong>, lo cual genera la carpeta de trabajo donde se guardarán el esquemático, la PCB y todos los archivos asociados.</p>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: menú File → New Project</span>
-                    </div>
+                <div class="kicad-imagen-slot">
+                    <img src="img/KiCad_Inicio.png" alt="Menú File New Project">
                 </div>
 
                 <!-- ETAPA 2: EDITOR DE ESQUEMAS -->
@@ -1105,30 +1103,22 @@
                     <h3><i class="fa-solid fa-diagram-project"></i> Editor de Esquemas (Eeschema)</h3>
                     <p>Desde el proyecto se abre el <strong>Editor de Esquemas</strong>, donde se representa el circuito de forma lógica antes de pasar al diseño físico. En la barra lateral derecha están los símbolos y en la parte superior las herramientas de anotación, impresión y verificación.</p>
 
-                    <div class="kicad-chip-lista">
-                        <span class="kicad-chip"><i class="fa-solid fa-plug"></i> Insertar símbolo</span>
-                        <span class="kicad-chip"><i class="fa-solid fa-bolt"></i> Símbolo de alimentación</span>
-                        <span class="kicad-chip"><i class="fa-solid fa-a"></i> Atajo: tecla "A"</span>
-                    </div>
 
                     <p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <strong>A</strong>. Ambas abren el buscador de símbolos, donde —al tener la librería de FabLab instalada— se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: entorno del Editor de Esquemas y barra de herramientas</span>
-                    </div>
-
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: buscador de símbolos con la librería FabLab</span>
-                    </div>
+                <div class="kicad-imagen-slot">
+                    <img src="img/Esq.png" alt="Entorno del Editor de Esquemas y barra de herramientas">
+                </div>
+                
+                <div class="kicad-imagen-slot">
+                    <img src="img/Fab.png" alt="Buscador de símbolos con la librería FabLab">
                 </div>
 
                 <!-- ETAPA 3: CREACIÓN DEL ESQUEMÁTICO -->
                 <div class="kicad-etapa">
                     <div class="kicad-etapa-numero">3</div>
                     <h3><i class="fa-solid fa-sitemap"></i> Creación del Esquemático</h3>
-                    <p>Con los símbolos ya disponibles, se armó el circuito de la práctica "Hola_mundo" colocando los siguientes componentes:</p>
+                    <p>Con los símbolos ya disponibles, se armó el circuito de la práctica colocando los siguientes componentes:</p>
 
                     <div class="kicad-chip-lista">
                         <span class="kicad-chip">8 resistencias R_1206</span>
@@ -1139,31 +1129,29 @@
 
                     <p>Para simplificar las conexiones se usaron <strong>etiquetas de red</strong> (net labels), que permiten unir eléctricamente dos puntos sin necesidad de trazar una línea física entre ellos en el esquemático, manteniendo el diagrama más limpio y ordenado.</p>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: esquemático completo con pulsadores, LEDs y resistencias</span>
-                    </div>
+                <div class="kicad-imagen-slot">
+                    <img src="img/Comp.png" alt="Esquemático completo con pulsadores, LEDs y resistencias">
+                </div>
 
                     <div class="kicad-nota">
                         <strong>Verificación importante:</strong> antes de continuar, se debe correr el <strong>Electrical Rules Checker (ERC)</strong> desde la barra superior para confirmar que no existan errores de conexión (pines sin conectar, cortocircuitos, etc.).
                     </div>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: ventana del Electrical Rules Checker sin errores</span>
-                    </div>
+                        <div class="kicad-imagen-slot">
+                            <img src="img/ERC.png" alt="Ventana del Electrical Rules Checker sin errores">
+                        </div>
                 </div>
 
                 <!-- ETAPA 4: PASO AL EDITOR DE PCB -->
                 <div class="kicad-etapa">
                     <div class="kicad-etapa-numero">4</div>
                     <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> Del Esquemático a la PCB</h3>
-                    <p>Una vez validado el ERC, se pasa al <strong>Editor de Placas (PCB Editor)</strong> mediante el ícono verde de la barra superior, y desde ahí se usa <strong>"Actualizar placa desde esquema"</strong> para transferir automáticamente todos los componentes del esquemático al área de diseño de la PCB.</p>
+                    <p>Una vez validado el ERC, se pasa al <strong>Editor de Placas (PCB Editor)</strong> mediante el ícono verde de la barra superior, y desde ahí se usa <strong>"Actualizar placa desde esquema"</strong> presionando <strong>F8</strong> para transferir automáticamente todos los componentes del esquemático al área de diseño de la PCB.</p>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: área de trabajo vacía del PCB Editor antes de importar componentes</span>
-                    </div>
+                        <div class="kicad-imagen-slot">
+                            <img src="img/PCBEDITOR.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes">
+                        </div>
+                        
                 </div>
 
                 <!-- ETAPA 5: CONFIGURACIÓN DE LA PLACA -->
@@ -1172,10 +1160,13 @@
                     <h3><i class="fa-solid fa-gear"></i> Configuración de la Placa (Board Setup)</h3>
                     <p>Antes de rutear, es fundamental definir las reglas de diseño desde <strong>Board Setup</strong>. En este proyecto se estableció un ancho de pista de <strong>0.4 mm</strong> y una separación mínima entre conductores de <strong>0.4 mm</strong>, para evitar cortos durante el fresado o grabado de la placa.</p>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: ventana de Board Setup — tamaños predefinidos de pista</span>
-                    </div>
+                        <div class="kicad-imagen-slot">
+                            <img src="img/BOARD_PRE.png" alt="Ventana de Board Setup - tamaños predefinidos de pista">
+                        </div>
+                        
+                          <div class="kicad-imagen-slot">
+                            <img src="img/CONSTRAINTS.png" alt="Ventana de Board Setup - tamaños predefinidos de pista">
+                        </div>
 
                     <p>Para trabajar de forma ordenada, se usaron distintas capas del editor según su función:</p>
 
@@ -1198,10 +1189,9 @@
                         </div>
                     </div>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: panel Appearance mostrando las capas disponibles</span>
-                    </div>
+                        <div class="kicad-imagen-slot">
+                            <img src="img/CAPAS.png" alt="Panel Appearance mostrando las capas disponibles">
+                        </div>
                 </div>
 
                 <!-- ETAPA 6: DISEÑO DE LA PCB -->
@@ -1210,47 +1200,41 @@
                     <h3><i class="fa-solid fa-layer-group"></i> Diseño y Ruteado de la PCB</h3>
                     <p>Con los componentes ya importados, se acomodaron de forma estratégica sobre la placa para facilitar el ruteado, evitando cruces innecesarios entre pistas. Después se trazaron las conexiones de cobre siguiendo el esquemático, respetando el contorno, las perforaciones y las etiquetas definidas previamente.</p>
 
-                    <p>Finalmente, se usó la herramienta <strong>Draw Filled Zones</strong> para trazar el contorno completo de la PCB y cubrirlo con un plano de cobre, lo cual mejora el retorno de corriente y reduce interferencia electromagnética.</p>
+                    <p>Finalmente, se usó la herramienta <strong>Draw Filled Zones</strong> para trazar el contorno completo de la PCB y cubrirlo con un plano de cobre.</p>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: PCB final "Hola_mundo" con pistas, plano de cobre y componentes</span>
-                    </div>
+                        <div class="kicad-imagen-slot">
+                            <img src="img/DISEÑOPCB.png" alt="PCB final Hola_mundo con pistas, plano de cobre y componentes">
+                        </div>
 
                     <div class="kicad-nota">
                         <strong>Verificación importante:</strong> antes de exportar, se debe correr el <strong>Design Rules Checker (DRC)</strong> para confirmar que no haya errores de separación, pistas sin conectar o violaciones a las reglas configuradas en el Board Setup.
                     </div>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: ventana del Design Rules Checker sin violaciones</span>
-                    </div>
+                        <div class="kicad-imagen-slot">
+                            <img src="img/DRC.png" alt="Ventana del Design Rules Checker sin violaciones">
+                            <span>Captura: ventana del Design Rules Checker sin violaciones</span>
+                        </div>
                 </div>
 
                 <!-- ETAPA 7: EXPORTACIÓN GERBER -->
                 <div class="kicad-etapa">
                     <div class="kicad-etapa-numero">7</div>
                     <h3><i class="fa-solid fa-file-export"></i> Exportación de Archivos Gerber</h3>
-                    <p>El último paso es generar los archivos de fabricación desde <strong>File → Fabrication Outputs → Gerbers (.gbr)</strong>. Para este proyecto se cambió el formato de trazado a <strong>SVG</strong>, seleccionando únicamente las capas utilizadas (F.Cu y Edge.Cuts) y activando la opción <strong>"Fit page to board"</strong> para que el archivo se ajuste exactamente al tamaño de la placa.</p>
+                    <p>El último paso es generar los archivos de fabricación desde <strong>File → Fabrication Outputs → Gerbers (.gbr)</strong>. Para este proyecto se cambió el formato de trazado a <strong>SVG</strong>, seleccionando únicamente las capas utilizadas y activando la opción <strong>"Fit page to board"</strong> para que el archivo se ajuste exactamente al tamaño de la placa.</p>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: menú Fabrication Outputs → Gerbers</span>
-                    </div>
+                        <div class="kicad-imagen-slot">
+                            <img src="img/SAVE.png" alt="Menú Fabrication Outputs - Gerbers">
+                            <span>Captura: menú Fabrication Outputs → Gerbers</span>
+                        </div>
 
-                    <div class="kicad-imagen-slot">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Captura: ventana de Plot con configuración SVG y "Fit page to board"</span>
-                    </div>
+                        <div class="kicad-imagen-slot">
+                            <img src="img/PLOT.png" alt="Ventana de Plot con configuración SVG y Fit page to board">
+                        </div>
 
-                    <p>Con la configuración lista, se presiona <strong>Plot</strong> para generar los archivos finales, quedando la placa lista para su fabricación mediante fresado o grabado químico.</p>
+                    <p>Con la configuración lista, se presiona <strong>Plot</strong> para generar los archivos finales, quedando la placa lista para su fabricación.</p>
                 </div>
 
-                <!-- DATO COMPLEMENTARIO SOBRE KICAD -->
-                <div class="kicad-dato-cern">
-                    <i class="fa-solid fa-circle-info"></i>
-                    <p><strong>Dato curioso:</strong> KiCad fue creado en 1992 por Jean-Pierre Charras y comenzó como un conjunto de programas independientes (Eeschema, PCBnew, un visor de Gerber y una calculadora). A partir de 2013, el CERN contribuyó activamente al proyecto para llevarlo al nivel de las herramientas EDA comerciales, y hoy es una de las suites de diseño electrónico de código abierto más usadas a nivel mundial, tanto en la industria como en la educación.</p>
-                </div>
+
 
             </div>
         </section>
