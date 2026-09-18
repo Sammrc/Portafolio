@@ -1217,7 +1217,7 @@
                 <div class="kicad-etapa">
                     <div class="kicad-etapa-numero">7</div>
                     <h3><i class="fa-solid fa-file-export"></i> Exportación de Archivos Gerber</h3>
-                    <p>El último paso es generar los archivos de fabricación desde <strong>File → Fabrication Outputs → Gerbers (.gbr)</strong>. Para este proyecto se cambió el formato de trazado a <strong>SVG</strong>, seleccionando únicamente las capas utilizadas y activando la opción <strong>"Fit page to board"</strong> para que el archivo se ajuste exactamente al tamaño de la placa.</p>
+                    <p>El último paso es generar los archivos de fabricación desde <strong>File → Fabrication Outputs → Gerbers (.gbr)</strong>. Se cambió el formato de trazado a <strong>SVG</strong>, seleccionando únicamente las capas utilizadas y activando la opción <strong>"Fit page to board"</strong> para que el archivo se ajuste exactamente al tamaño de la placa.</p>
 
                         <div class="kicad-imagen-slot">
                             <img src="img/SAVE.png" alt="Menú Fabrication Outputs - Gerbers">
@@ -1346,6 +1346,54 @@
         }
 
         animateCat();
+
+
+function cambiarPagina(idSeccion) {
+            // 1. Ocultar todas las secciones
+            const secciones = document.querySelectorAll('.page-section');
+            secciones.forEach(sec => sec.classList.remove('active-page'));
+
+            // 2. Desactivar todos los botones del menú
+            const botones = document.querySelectorAll('.nav-links button');
+            botones.forEach(btn => btn.classList.remove('active'));
+
+            // 3. Mostrar la sección seleccionada
+            const seccionActiva = document.getElementById(idSeccion);
+            if (seccionActiva) {
+                seccionActiva.classList.add('active-page');
+            }
+
+            // 4. Activar el botón correspondiente si existe
+            const botonActivo = document.getElementById('btn-' + idSeccion);
+            if (botonActivo) {
+                botonActivo.classList.add('active');
+            }
+
+            // 5. Actualizar la URL con el hash (#)
+            history.pushState(null, null, '#' + idSeccion);
+
+            // Subir al inicio de la página suavemente
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Leer la URL al cargar la página por si entran con un enlace directo
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                cambiarPagina(hash);
+            }
+        });
+
+        // Hacer que funcionen las flechas de avante/atrás del navegador
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                cambiarPagina(hash);
+            } else {
+                cambiarPagina('inicio');
+            }
+        });
+            
     </script>
 </body>
 </html>
