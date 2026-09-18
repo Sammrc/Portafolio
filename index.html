@@ -1088,7 +1088,7 @@
                     <p>Al abrirlo por primera vez, aparece la pantalla de inicio, donde se accede a todas las herramientas como el Editor de Esquemas, Editor de PCB, Editor de Footprints, visor de Gerbers, calculadoras, etc.</p>
 
                 <div class="kicad-imagen-slot">
-                    <img src="img/Pinicio.png" alt="Pantalla de inicio de KiCad">
+                    <img src="img/INI.png" alt="Pantalla de inicio de KiCad">
                 </div>
 
                     <p>Una vez instalado, se crea un nuevo proyecto desde <strong>File → New Project</strong>, lo cual genera la carpeta de trabajo donde se guardarán el esquemático, la PCB y todos los archivos asociados.</p>
@@ -1107,11 +1107,11 @@
                     <p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <strong>A</strong>. Ambas abren el buscador de símbolos, donde —al tener la librería de FabLab instalada— se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
 
                 <div class="kicad-imagen-slot">
-                    <img src="img/Esq.png" alt="Entorno del Editor de Esquemas y barra de herramientas">
+                    <img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas">
                 </div>
                 
                 <div class="kicad-imagen-slot">
-                    <img src="img/Fab.png" alt="Buscador de símbolos con la librería FabLab">
+                    <img src="img/CFAB.png" alt="Buscador de símbolos con la librería FabLab">
                 </div>
 
                 <!-- ETAPA 3: CREACIÓN DEL ESQUEMÁTICO -->
@@ -1130,7 +1130,7 @@
                     <p>Para simplificar las conexiones se usaron <strong>etiquetas de red</strong> (net labels), que permiten unir eléctricamente dos puntos sin necesidad de trazar una línea física entre ellos en el esquemático, manteniendo el diagrama más limpio y ordenado.</p>
 
                 <div class="kicad-imagen-slot">
-                    <img src="img/Comp.png" alt="Esquemático completo con pulsadores, LEDs y resistencias">
+                    <img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias">
                 </div>
 
                     <div class="kicad-nota">
@@ -1146,10 +1146,10 @@
                 <div class="kicad-etapa">
                     <div class="kicad-etapa-numero">4</div>
                     <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> Del Esquemático a la PCB</h3>
-                    <p>Una vez validado el ERC, se pasa al <strong>Editor de Placas (PCB Editor)</strong> mediante el ícono verde de la barra superior, y desde ahí se usa <strong>"Actualizar placa desde esquema"</strong> presionando <strong>F8</strong> para transferir automáticamente todos los componentes del esquemático al área de diseño de la PCB.</p>
+                    <p>Una vez validado el ERC, se pasa al <strong>Editor de Placas (PCB Editor)</strong>.</p>
 
                         <div class="kicad-imagen-slot">
-                            <img src="img/PCBEDITOR.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes">
+                            <img src="img/PCBEDIT.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes">
                         </div>
                         
                 </div>
@@ -1158,14 +1158,14 @@
                 <div class="kicad-etapa">
                     <div class="kicad-etapa-numero">5</div>
                     <h3><i class="fa-solid fa-gear"></i> Configuración de la Placa (Board Setup)</h3>
-                    <p>Antes de rutear, es fundamental definir las reglas de diseño desde <strong>Board Setup</strong>. En este proyecto se estableció un ancho de pista de <strong>0.4 mm</strong> y una separación mínima entre conductores de <strong>0.4 mm</strong>, para evitar cortos durante el fresado o grabado de la placa.</p>
+                    <p>Antes de rutear, es fundamental definir las reglas de diseño desde <strong>Board Setup</strong>. Se estableció un ancho de pista de <strong>0.4 mm</strong> y una separación mínima entre conductores de <strong>0.4 mm</strong>, para evitar cortos durante el fresado o grabado de la placa.</p>
 
                         <div class="kicad-imagen-slot">
                             <img src="img/BOARD_PRE.png" alt="Ventana de Board Setup - tamaños predefinidos de pista">
                         </div>
                         
                           <div class="kicad-imagen-slot">
-                            <img src="img/CONSTRAINTS.png" alt="Ventana de Board Setup - tamaños predefinidos de pista">
+                            <img src="img/CONS.png" alt="Ventana de Board Setup - tamaños predefinidos de pista">
                         </div>
 
                     <p>Para trabajar de forma ordenada, se usaron distintas capas del editor según su función:</p>
@@ -1189,21 +1189,19 @@
                         </div>
                     </div>
 
-                        <div class="kicad-imagen-slot">
-                            <img src="img/CAPAS.png" alt="Panel Appearance mostrando las capas disponibles">
-                        </div>
+                
                 </div>
 
                 <!-- ETAPA 6: DISEÑO DE LA PCB -->
                 <div class="kicad-etapa">
                     <div class="kicad-etapa-numero">6</div>
                     <h3><i class="fa-solid fa-layer-group"></i> Diseño y Ruteado de la PCB</h3>
-                    <p>Con los componentes ya importados, se acomodaron de forma estratégica sobre la placa para facilitar el ruteado, evitando cruces innecesarios entre pistas. Después se trazaron las conexiones de cobre siguiendo el esquemático, respetando el contorno, las perforaciones y las etiquetas definidas previamente.</p>
+                    <p>Para importar el esquemático, presionar <strong>F8</strong>. Con los componentes ya importados, se acomodaron de forma estratégica sobre la placa para facilitar el ruteado, evitando cruces innecesarios entre pistas. Después se trazaron las conexiones de cobre siguiendo el esquemático, respetando el contorno, las perforaciones y las etiquetas definidas previamente.</p>
 
                     <p>Finalmente, se usó la herramienta <strong>Draw Filled Zones</strong> para trazar el contorno completo de la PCB y cubrirlo con un plano de cobre.</p>
 
                         <div class="kicad-imagen-slot">
-                            <img src="img/DISEÑOPCB.png" alt="PCB final Hola_mundo con pistas, plano de cobre y componentes">
+                            <img src="img/SAMPCB.png" alt="PCB final Hola_mundo con pistas, plano de cobre y componentes">
                         </div>
 
                     <div class="kicad-nota">
@@ -1212,7 +1210,6 @@
 
                         <div class="kicad-imagen-slot">
                             <img src="img/DRC.png" alt="Ventana del Design Rules Checker sin violaciones">
-                            <span>Captura: ventana del Design Rules Checker sin violaciones</span>
                         </div>
                 </div>
 
@@ -1228,7 +1225,7 @@
                         </div>
 
                         <div class="kicad-imagen-slot">
-                            <img src="img/PLOT.png" alt="Ventana de Plot con configuración SVG y Fit page to board">
+                            <img src="img/PLOTT.png" alt="Ventana de Plot con configuración SVG y Fit page to board">
                         </div>
 
                     <p>Con la configuración lista, se presiona <strong>Plot</strong> para generar los archivos finales, quedando la placa lista para su fabricación.</p>
