@@ -1231,37 +1231,109 @@
                     <p>Con la configuración lista, se presiona <strong>Plot</strong> para generar los archivos finales, quedando la placa lista para su fabricación.</p>
                 </div>
 
-
+                 </div>
 
             </div>
         </section>
 
         <!-- SECCIÓN DETALLE MODS -->
-        <section id="mods-detalle" class="page-section">
-            <button class="btn-regresar" onclick="cambiarPagina('trabajos')">← Volver a Trabajos</button>
-            <div class="kicad-detalle-container">
-                <h2>Procesamiento con MODS para Manufactura</h2>
-                <p><strong>MODS</strong> es una plataforma basada en navegador utilizada para transformar archivos de diseño gráfico y vectorial (como mapas de bits o archivos PNG/SVG) en rutas de control numérico (G-code o archivos RML) compatibles con las fresadoras de la marca Roland (como la Monofab).</p>
-                
-                <div class="kicad-grid">
-                    <div class="kicad-item">
-                        <h4><i class="fa-solid fa-file-image"></i> Conversión y Mapas de Bits</h4>
-                        <p>Carga de las capas de la pista y el contorno de la PCB exportadas desde KiCad para configurar la resolución y escala de fresado.</p>
-                    </div>
-                    <div class="kicad-item">
-                        <h4><i class="fa-solid fa-sliders"></i> Parámetros de Corte (Toolpath)</h4>
-                        <p>Ajuste de la profundidad de corte, velocidad de avance (feed rate) y diámetro de la herramienta (mill diameter) para asegurar un aislamiento perfecto de las pistas.</p>
-                    </div>
-                </div>
 
-                <h4 style="margin-top: 25px;">Pasos principales del proceso:</h4>
-                <ol class="kicad-pasos-lista">
-                    <li><strong>Importar el archivo:</strong> Cargar el diseño de las pistas en formato PNG de alta resolución obtenido de KiCad.</li>
-                    <li><strong>Configurar el módulo de fresado:</strong> Seleccionar la función de PCB rml para generar las trayectorias de las herramientas de grabado (bit de 1/64 o similar).</li>
-                    <li><strong>Calcular trayectorias:</strong> Ejecutar el cálculo del proceso para visualizar las líneas por donde pasará la fresa.</li>
-                    <li><strong>Enviar a producción:</strong> Exportar el archivo resultante para cargarlo en el software de control de la máquina de grabado físico.</li>
-                </ol>
-            </div>
+<section id="mods-detalle" class="page-section">
+    <div class="detalle-container" style="max-width: 900px; margin: 0 auto; padding: 2rem; color: #333; font-family: sans-serif; text-align: left;">
+        <button class="btn-regresar" onclick="cambiarPagina('inicio')" style="margin-bottom: 1.5rem; padding: 0.5rem 1rem; cursor: pointer;">← Regresar</button>
+            <h1 style="border-bottom: 2px solid #ccc; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Guía paso a paso para la Generación de Archivos en MODS</h1>
+        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
+            <h2>Paso 1: Verificación de archivos y apertura en la plataforma MODS</h2>
+        <ol>
+            <li><strong>Revisión de archivos y ubicación:</strong> Antes de iniciar, verifica que todos tus diseños (perforaciones, pistas, etiquetas, agujeros para tornillos y contorno) se encuentren perfectamente exportados en formato SVG y ten plenamente identificada la carpeta de tu computadora donde están guardados para localizarlos de inmediato.</li>
+            <li><strong>Entrada a la página:</strong> Ingresa a la interfaz web de MODS a través del siguiente enlace oficial: <a href="https://modsproject.org/?program=programs%252Fmachines%252FRoland%252FSRM-20%252520mill%252Fmill%2525202D%252520PCB&utm_source=gemini" target="_blank">MODS Project - Roland SRM-20 Mill 2D PCB</a>.</li>
+            <li><strong>Carga del SVG:</strong> En el módulo inicial de lectura (<em>Read SVG</em>), da clic en el botón de selección de archivos para cargar tu vector SVG.</li>
+            <li><strong>Verificación e Inversión de Imagen (Invert):</strong>
+                <ul>
+                    <li>En el módulo de conversión de imagen, revisa el apartado de DPI y asegúrate de verificar si es necesario invertir o no la imagen.</li>
+                    <li><em>Nota importante:</em> Principalmente se debe checar si se invierte o no en la sección de pistas y etiquetas, auxiliándote del diseño 3D que se visualiza para confirmar que las líneas de cobre queden expuestas y el fondo negro aísle correctamente.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <blockquote style="background: #f9f9f9; border-left: 4px solid #007bff; padding: 1rem; margin: 1.5rem 0;">
+            📌 <strong>NOTAS Y DETALLES A CONSIDERAR:</strong><br>
+            * <strong>Velocidad de la herramienta: Recuerda que para todos los procesos de fresado estándar (pistas, etiquetas, agujeros y contorno) la velocidad debe ser de <code>4 mm/s</code></strong>, a excepción de las perforaciones (Drill), donde la velocidad debe configurarse específicamente en <code>0.3 mm/s</code> para proteger la broca vertical.
+        </blockquote>
+
+        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 1: Vista general del módulo inicial de MODS, selección de archivo SVG, configuración de DPI a 1000 y casilla de Invertir]</strong></p>
+
+        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
+
+        <h2>Paso 2: Selección de la herramienta según el tipo de proceso</h2>
+        <p>Una vez convertida la imagen, dirígete al panel de configuración por defecto (<em>set PCB defaults</em>) para elegir la herramienta adecuada de acuerdo con la fase que estés procesando:</p>
+        <ol>
+            <li><strong>Para Pistas y Etiquetas (Traces):</strong> Selecciona en la sección de <em>Traces</em> la opción más cercana de cortador plano, que es la de <strong><code>0.4 mm</code></strong> (<code>0.40mm flat</code>).</li>
+            <li><strong>Para Perforaciones / Drill (Primer paso físico):</strong> Selecciona la opción de <strong><code>0.79 mm drill</code></strong> (que corresponde al estándar aproximado de los 0.8 mm necesarios).</li>
+            <li><strong>Para Agujeros de Tornillos y Corte de Contorno (Último paso):</strong> Teóricamente se requiere una herramienta de <strong><code>2 mm</code></strong>, pero como no se encuentra disponible tal cual en el menú, debes seleccionar la opción de <strong><code>1.59 mm cutout</code></strong> (o la más cercana dentro de <em>cutout</em>).</li>
+        </ol>
+
+        <blockquote style="background: #f9f9f9; border-left: 4px solid #007bff; padding: 1rem; margin: 1.5rem 0;">
+            📌 <strong>NOTAS Y DETALLES A CONSIDERAR (Ajuste de herramienta en el módulo de cálculos):</strong><br>
+            * En el módulo secundario de parámetros del cortador que aparece después, únicamente la medida del cortador para el corte de contorno y agujeros de tornillos se tiene que modificar manualmente para que sea de <code>1.9 mm</code> (en lugar de 2 mm o el valor por defecto). Esto se hace para darle una pequeña holgura matemática al programa cortador y evitar que la herramienta se atasque, sufra sobreesfuerzos o rompa el contorno por milímetros exactos.
+        </blockquote>
+
+        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 2: Panel de selección de herramientas (Traces, Drill, Cutout) con las opciones de 0.40 mm, 0.79 mm y 1.59 mm]</strong></p>
+
+        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
+
+        <h2>Paso 3: Configuración del Offset (Número de pasadas)</h2>
+        <p>En el panel de configuración de la herramienta también encontrarás el parámetro de <strong>offset</strong> (<em>offset number</em>), que define cuántas veces pasará el cortador alrededor o al lado de las líneas vectoriales.</p>
+
+        <blockquote style="background: #f9f9f9; border-left: 4px solid #007bff; padding: 1rem; margin: 1.5rem 0;">
+            📌 <strong>¿Para qué se usa el offset y dónde se recomienda ponerlo?</strong><br>
+            * <strong>Uso:</strong> Sirve para limpiar el área de cobre excedente alrededor de las pistas o ampliar el canal de corte. Por defecto, en la mayoría de los procesos se recomienda dejarlo en <code>1 offset</code> (una sola pasada de limpieza o contorno).<br>
+            * <strong>Modificación:</strong> Puedes modificarlo si deseas que limpie más área alrededor de las pistas (por ejemplo, aumentando los offsets a 2 o 4 para barrer más residuo de cobre), pero ten en cuenta que incrementará el tiempo de maquinado. Para el contorno y perforaciones por lo general se mantiene en una pasada limpia.
+        </blockquote>
+
+        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 3: Configuración del parámetro "offset number" y ajustes de profundidad en MODS]</strong></p>
+
+        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
+
+        <h2>Paso 4: Cálculo de trayectorias, tiempo estimado y visualización 3D de la placa</h2>
+        <ol>
+            <li>Una vez configurados los diámetros y el offset, da clic en el botón "Calculate".</li>
+            <li>El sistema procesará los datos y te mostrará el tiempo estimado que tardará la máquina en realizar dicho proceso (por ejemplo, 1 o 2 minutos).</li>
+            <li><strong>Visualización de trazos y modelo 3D final:</strong>
+                <ul>
+                    <li>En el módulo de simulación (<em>simulate toolpath</em>), podrás observar exactamente los trazos y movimientos que hará la máquina detallados línea por línea.</li>
+                    <li>Al darle clic en el botón "VIEW" dentro de este módulo de simulación, se abrirá la visualización en 3D de cómo quedará exactamente la placa terminada con el material de cobre y los surcos rebajados, permitiéndote comprobar el aspecto físico antes de exportar.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 4: Módulo "simulate toolpath" mostrando los trazos de la máquina y la vista previa 3D de la placa resultante tras hacer clic en "VIEW"]</strong></p>
+
+        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
+
+        <h2>Paso 5: Verificación de coordenadas de origen y configuración espacial</h2>
+        <ol>
+            <li>Dirígete a la sección de configuración de origen de la máquina (<code>origin</code>).</li>
+            <li>Generalmente debes ponerlo en <strong><code>x = 0, y = 0, z = 0</code></strong> (o <code>x = 55, y = 0, z = 0</code> dependiendo de tu esquina de referencia en la tablilla).</li>
+            <li>Consideración para múltiples trabajos: Si vas a hacer dos o más trabajos en la misma placa con algún compañero, verifica muy bien las medidas de dónde deberá estar tu origen, asegurándote de que no se encimen los diseños.</li>
+            <li>En el cuadro o visor de la izquierda, puedes volver a dar clic en "VIEW" para corroborar la perspectiva espacial de cómo quedaría el diseño completo de la placa en esa zona de trabajo.</li>
+        </ol>
+
+        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 5: Módulo de configuración de coordenadas de origen (Origin) y verificación de los ejes X, Y, Z]</strong></p>
+
+        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
+
+        <h2>Paso 6: Descarga y almacenamiento del archivo final</h2>
+        <ol>
+            <li>Una vez que revisaste y corroboraste que todos los datos están correctos (medidas, offset, origen, velocidad y simulación 3D), busca el módulo final de salida.</li>
+            <li>Dale clic en descargar el archivo (que se genera con extensión <code>.rml</code>).</li>
+            <li><strong>Organización:</strong> Guárdalo inmediatamente en una carpeta específica y bien identificada en tu computadora (por ejemplo, una carpeta llamada "Archivos Placa") para que, cuando tengas que pasarlos al software de control de la cortadora física (<em>Monofab</em>), los encuentres rápidamente sin confusiones.</li>
+        </ol>
+
+        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 6: Módulo final de guardado/descarga del archivo .rml con el botón de guardado activo]</strong></p>
+    </div>
+
+            
         </section>
             
         <!-- SECCIÓN PROYECTOS -->
