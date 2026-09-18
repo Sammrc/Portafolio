@@ -836,7 +836,7 @@
     <nav>
         <ul class="nav-links">
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
-            <li><button onclick="cambiarPagina('acerca')" id="btn-acerca">Trabajos</button></li>
+            <li><button onclick="cambiarPagina('trabajos')" id="btn-trabajos">Trabajos</button></li>
             <li><button onclick="cambiarPagina('proyectos')" id="btn-proyectos">Proyectos</button></li>
         </ul>
     </nav>
@@ -916,7 +916,7 @@
         </section>
 
         <!-- SECCIÓN TRABAJOS -->
-        <section id="acerca" class="page-section">
+        <section id="trabajos" class="page-section">
             <div class="trabajos-banner">
                 <h2>Trabajos Realizados</h2>
             </div>
@@ -1059,7 +1059,7 @@
 
         <!-- VISTA DETALLADA KICAD AMPLIADA -->
         <section id="kicad-detalle" class="page-section">
-            <button class="btn-regresar" onclick="cambiarPagina('acerca')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
+            <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
             
             <div class="kicad-detalle-container">
                 <h2><i class="fa-solid fa-microchip"></i> Guía Integral de Diseño Electrónico con KiCad</h2>
@@ -1238,7 +1238,7 @@
 
         <!-- SECCIÓN DETALLE MODS -->
         <section id="mods-detalle" class="page-section">
-            <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
+            <button class="btn-regresar" onclick="cambiarPagina('trabajos')">← Volver a Trabajos</button>
             <div class="kicad-detalle-container">
                 <h2>Procesamiento con MODS para Manufactura</h2>
                 <p><strong>MODS</strong> es una plataforma basada en navegador utilizada para transformar archivos de diseño gráfico y vectorial (como mapas de bits o archivos PNG/SVG) en rutas de control numérico (G-code o archivos RML) compatibles con las fresadoras de la marca Roland (como la Monofab).</p>
@@ -1306,7 +1306,7 @@
             botones.forEach(b => b.classList.remove('active'));
 
             if (paginaId === 'inicio') document.getElementById('btn-inicio')?.classList.add('active');
-            if (paginaId === 'acerca' || paginaId === 'kicad-detalle' || paginaId === 'mods-detalle') document.getElementById('btn-acerca')?.classList.add('active');
+            if (paginaId === 'trabajos' || paginaId === 'kicad-detalle' || paginaId === 'mods-detalle') document.getElementById('btn-trabajos')?.classList.add('active');
             if (paginaId === 'proyectos') document.getElementById('btn-proyectos')?.classList.add('active');
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
