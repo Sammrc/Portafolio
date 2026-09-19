@@ -524,7 +524,14 @@
         .kicad-etapa {
             position: relative;
             padding-left: 34px;
+            padding-top: 30px;
             margin-bottom: 45px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .kicad-etapa-primera {
+            border-top: none;
+            padding-top: 0;
         }
 
         .kicad-etapa:last-child {
@@ -534,7 +541,7 @@
         .kicad-etapa-numero {
             position: absolute;
             left: -19px;
-            top: 0;
+            top: 30px;
             width: 36px;
             height: 36px;
             background-color: var(--accent-color);
@@ -547,6 +554,10 @@
             font-size: 0.95rem;
             box-shadow: 0 3px 10px rgba(91, 33, 182, 0.3);
             border: 3px solid #ffffff;
+        }
+
+        .kicad-etapa-primera .kicad-etapa-numero {
+            top: 0;
         }
 
         .kicad-etapa h3 {
@@ -567,7 +578,7 @@
             color: var(--accent-hover);
         }
 
-              .kicad-imagen-slot {
+        .kicad-imagen-slot {
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -1056,39 +1067,43 @@
             <div class="kicad-detalle-container">
                 <h2>Diseño de PCB con KiCad</h2>
                 <div class="kicad-imagen-slot">
-                    <img src="img/kicadlogo.png" alt="Pantalla de inicio de KiCad"style="max-height: 220px;">
+                    <img src="img/kicadlogo.png" alt="Pantalla de inicio de KiCad" style="max-height: 220px;">
                 </div>
                 <p class="kicad-pastilla-centrada"><strong>KiCad</strong> es un software para el diseño de esquemáticos de circuitos electrónicos y de PCBs.</p>
-               
+
                 <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 25px 0;">
 
                 <!-- ETAPA 1: INSTALACIÓN -->
-                <div class="kicad-etapa">
+                <div class="kicad-etapa kicad-etapa-primera">
                     <div class="kicad-etapa-numero">1</div>
                     <h3><i class="fa-solid fa-download"></i> Instalación de KiCad</h3>
                     <p>Descargar KiCad desde su sitio oficial: <a href="https://www.kicad.org/download/windows/" target="_blank" style="color: var(--accent-color); font-weight: 600;">kicad.org/download</a>.</p>
-                 <div class="kicad-imagen-slot">
-                    <img src="img/DESKIDCAD.png" alt="Pantalla de inicio de KiCad"style="max-height: 220px;">
-                </div>
-                        
-                    <p>Instalar la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint (huella física), lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
-                <div class="kicad-imagen-slot">
-                    <img src="img/INSKILIB.png" alt="Pantalla de inicio de KiCad"style="max-height: 220px;">
-                </div>
-                        <div class="kicad-imagen-slot">
-                    <img src="img/KICADLIB.png" alt="Pantalla de inicio de KiCad"style="max-height: 220px;">
-                </div>
-                        
+
+                    <div class="kicad-imagen-slot">
+                        <img src="img/DESKIDCAD.png" alt="Pantalla de inicio de KiCad" style="max-height: 220px;">
+                    </div>
+
                     <p>Al abrirlo por primera vez, aparece la pantalla de inicio, donde se accede a todas las herramientas como el Editor de Esquemas, Editor de PCB, Editor de Footprints, visor de Gerbers, calculadoras, etc.</p>
 
-                <div class="kicad-imagen-slot">
-                    <img src="img/INI.png" alt="Pantalla de inicio de KiCad">
-                </div>
+                    <div class="kicad-imagen-slot">
+                        <img src="img/INI.png" alt="Pantalla de inicio de KiCad">
+                    </div>
 
-                    <p>Una vez instalado, se crea un nuevo proyecto desde <strong>File → New Project</strong>, lo cual genera la carpeta de trabajo donde se guardarán el esquemático, la PCB y todos los archivos asociados.</p>
+                    <p>Instalar la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint (huella física), lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
 
-                <div class="kicad-imagen-slot">
-                    <img src="img/KiCad_Inicio.png" alt="Menú File New Project">
+                    <div class="kicad-imagen-slot">
+                        <img src="img/INSKILIB.png" alt="Instalación de la librería FabLab" style="max-height: 220px;">
+                    </div>
+
+                    <div class="kicad-imagen-slot">
+                        <img src="img/KICADLIB.png" alt="Librería FabLab instalada" style="max-height: 220px;">
+                    </div>
+
+                    <p>Para crear un nuevo proyecto, ir a <strong>File → New Project</strong>, lo cual genera la carpeta de trabajo donde se guardarán el esquemático, la PCB y todos los archivos asociados.</p>
+
+                    <div class="kicad-imagen-slot">
+                        <img src="img/KiCad_Inicio.png" alt="Menú File New Project">
+                    </div>
                 </div>
 
                 <!-- ETAPA 2: EDITOR DE ESQUEMAS -->
@@ -1097,15 +1112,15 @@
                     <h3><i class="fa-solid fa-diagram-project"></i> Editor de Esquemas (Eeschema)</h3>
                     <p>Desde el proyecto se abre el <strong>Editor de Esquemas</strong>, donde se representa el circuito de forma lógica antes de pasar al diseño físico. En la barra lateral derecha están los símbolos y en la parte superior las herramientas de anotación, impresión y verificación.</p>
 
-
                     <p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <strong>A</strong>. Ambas abren el buscador de símbolos, donde —al tener la librería de FabLab instalada— se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
 
-                <div class="kicad-imagen-slot">
-                    <img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas">
-                </div>
-                
-                <div class="kicad-imagen-slot">
-                    <img src="img/CFAB.png" alt="Buscador de símbolos con la librería FabLab">
+                    <div class="kicad-imagen-slot">
+                        <img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas">
+                    </div>
+
+                    <div class="kicad-imagen-slot">
+                        <img src="img/CFAB.png" alt="Buscador de símbolos con la librería FabLab">
+                    </div>
                 </div>
 
                 <!-- ETAPA 3: CREACIÓN DEL ESQUEMÁTICO -->
@@ -1123,17 +1138,17 @@
 
                     <p>Para simplificar las conexiones se usaron <strong>etiquetas de red</strong> (net labels), que permiten unir eléctricamente dos puntos sin necesidad de trazar una línea física entre ellos en el esquemático, manteniendo el diagrama más limpio y ordenado.</p>
 
-                <div class="kicad-imagen-slot">
-                    <img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias">
-                </div>
+                    <div class="kicad-imagen-slot">
+                        <img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias">
+                    </div>
 
                     <div class="kicad-nota">
                         <strong>Verificación importante:</strong> antes de continuar, se debe correr el <strong>Electrical Rules Checker (ERC)</strong> desde la barra superior para confirmar que no existan errores de conexión (pines sin conectar, cortocircuitos, etc.).
                     </div>
 
-                        <div class="kicad-imagen-slot">
-                            <img src="img/ERC.png" alt="Ventana del Electrical Rules Checker sin errores">
-                        </div>
+                    <div class="kicad-imagen-slot">
+                        <img src="img/ERC.png" alt="Ventana del Electrical Rules Checker sin errores">
+                    </div>
                 </div>
 
                 <!-- ETAPA 4: PASO AL EDITOR DE PCB -->
@@ -1142,10 +1157,9 @@
                     <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> Del Esquemático a la PCB</h3>
                     <p>Una vez validado el ERC, se pasa al <strong>Editor de Placas (PCB Editor)</strong>.</p>
 
-                        <div class="kicad-imagen-slot">
-                            <img src="img/PCBEDIT.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes">
-                        </div>
-                        
+                    <div class="kicad-imagen-slot">
+                        <img src="img/PCBEDIT.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes">
+                    </div>
                 </div>
 
                 <!-- ETAPA 5: CONFIGURACIÓN DE LA PLACA -->
@@ -1154,13 +1168,13 @@
                     <h3><i class="fa-solid fa-gear"></i> Configuración de la Placa (Board Setup)</h3>
                     <p>Antes de rutear, es fundamental definir las reglas de diseño desde <strong>Board Setup</strong>. Se estableció un ancho de pista de <strong>0.4 mm</strong> y una separación mínima entre conductores de <strong>0.4 mm</strong>, para evitar cortos durante el fresado o grabado de la placa.</p>
 
-                        <div class="kicad-imagen-slot">
-                            <img src="img/BOARD_PRE.png" alt="Ventana de Board Setup - tamaños predefinidos de pista">
-                        </div>
-                        
-                          <div class="kicad-imagen-slot">
-                            <img src="img/CONS.png" alt="Ventana de Board Setup - tamaños predefinidos de pista">
-                        </div>
+                    <div class="kicad-imagen-slot">
+                        <img src="img/BOARD_PRE.png" alt="Ventana de Board Setup - tamaños predefinidos de pista">
+                    </div>
+
+                    <div class="kicad-imagen-slot">
+                        <img src="img/CONS.png" alt="Ventana de Board Setup - restricciones de diseño">
+                    </div>
 
                     <p>Para trabajar de forma ordenada, se usaron distintas capas del editor según su función:</p>
 
@@ -1182,8 +1196,6 @@
                             <p>Usadas para marcar la posición de tornillos y perforaciones de montaje.</p>
                         </div>
                     </div>
-
-                
                 </div>
 
                 <!-- ETAPA 6: DISEÑO DE LA PCB -->
@@ -1194,17 +1206,17 @@
 
                     <p>Finalmente, se usó la herramienta <strong>Draw Filled Zones</strong> para trazar el contorno completo de la PCB y cubrirlo con un plano de cobre.</p>
 
-                        <div class="kicad-imagen-slot">
-                            <img src="img/SAMPCB.png" alt="PCB final Hola_mundo con pistas, plano de cobre y componentes">
-                        </div>
+                    <div class="kicad-imagen-slot">
+                        <img src="img/SAMPCB.png" alt="PCB final Hola_mundo con pistas, plano de cobre y componentes">
+                    </div>
 
                     <div class="kicad-nota">
                         <strong>Verificación importante:</strong> antes de exportar, se debe correr el <strong>Design Rules Checker (DRC)</strong> para confirmar que no haya errores de separación, pistas sin conectar o violaciones a las reglas configuradas en el Board Setup.
                     </div>
 
-                        <div class="kicad-imagen-slot">
-                            <img src="img/DRC.png" alt="Ventana del Design Rules Checker sin violaciones">
-                        </div>
+                    <div class="kicad-imagen-slot">
+                        <img src="img/DRC.png" alt="Ventana del Design Rules Checker sin violaciones">
+                    </div>
                 </div>
 
                 <!-- ETAPA 7: EXPORTACIÓN GERBER -->
@@ -1213,19 +1225,17 @@
                     <h3><i class="fa-solid fa-file-export"></i> Exportación de Archivos Gerber</h3>
                     <p>El último paso es generar los archivos de fabricación desde <strong>File → Fabrication Outputs → Gerbers (.gbr)</strong>. Se cambió el formato de trazado a <strong>SVG</strong>, seleccionando únicamente las capas utilizadas y activando la opción <strong>"Fit page to board"</strong> para que el archivo se ajuste exactamente al tamaño de la placa.</p>
 
-                        <div class="kicad-imagen-slot">
-                            <img src="img/SAVE.png" alt="Menú Fabrication Outputs - Gerbers">
-                            <span>Captura: menú Fabrication Outputs → Gerbers</span>
-                        </div>
+                    <div class="kicad-imagen-slot">
+                        <img src="img/SAVE.png" alt="Menú Fabrication Outputs - Gerbers">
+                        <span>Captura: menú Fabrication Outputs → Gerbers</span>
+                    </div>
 
-                        <div class="kicad-imagen-slot">
-                            <img src="img/PLOTT.png" alt="Ventana de Plot con configuración SVG y Fit page to board">
-                        </div>
+                    <div class="kicad-imagen-slot">
+                        <img src="img/PLOTT.png" alt="Ventana de Plot con configuración SVG y Fit page to board">
+                    </div>
 
                     <p>Con la configuración lista, se presiona <strong>Plot</strong> para generar los archivos finales, quedando la placa lista para su fabricación.</p>
                 </div>
-
-                 </div>
 
             </div>
         </section>
@@ -1359,24 +1369,50 @@
 
     <!-- SCRIPT NAVEGACIÓN Y MOVIMIENTO DEL GATO -->
     <script>
-        function cambiarPagina(paginaId) {
-            const paginas = document.querySelectorAll('.page-section');
-            paginas.forEach(p => p.classList.remove('active-page'));
+        function cambiarPagina(idSeccion) {
+            // 1. Ocultar todas las secciones
+            const secciones = document.querySelectorAll('.page-section');
+            secciones.forEach(sec => sec.classList.remove('active-page'));
 
-            const paginaObjetivo = document.getElementById(paginaId);
-            if (paginaObjetivo) {
-                paginaObjetivo.classList.add('active-page');
+            // 2. Desactivar todos los botones del menú
+            const botones = document.querySelectorAll('.nav-links button');
+            botones.forEach(btn => btn.classList.remove('active'));
+
+            // 3. Mostrar la sección seleccionada
+            const seccionActiva = document.getElementById(idSeccion);
+            if (seccionActiva) {
+                seccionActiva.classList.add('active-page');
             }
 
-            const botones = document.querySelectorAll('.nav-links button');
-            botones.forEach(b => b.classList.remove('active'));
+            // 4. Activar el botón correspondiente
+            if (idSeccion === 'inicio') document.getElementById('btn-inicio')?.classList.add('active');
+            if (idSeccion === 'trabajos' || idSeccion === 'kicad-detalle' || idSeccion === 'mods-detalle') document.getElementById('btn-trabajos')?.classList.add('active');
+            if (idSeccion === 'proyectos') document.getElementById('btn-proyectos')?.classList.add('active');
 
-            if (paginaId === 'inicio') document.getElementById('btn-inicio')?.classList.add('active');
-            if (paginaId === 'trabajos' || paginaId === 'kicad-detalle' || paginaId === 'mods-detalle') document.getElementById('btn-trabajos')?.classList.add('active');
-            if (paginaId === 'proyectos') document.getElementById('btn-proyectos')?.classList.add('active');
+            // 5. Actualizar la URL con el hash (#)
+            history.pushState(null, null, '#' + idSeccion);
 
+            // Subir al inicio de la página suavemente
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Leer la URL al cargar la página por si entran con un enlace directo
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                cambiarPagina(hash);
+            }
+        });
+
+        // Hacer que funcionen las flechas de avance/atrás del navegador
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                cambiarPagina(hash);
+            } else {
+                cambiarPagina('inicio');
+            }
+        });
 
         // Lógica de Movimiento del Gato Seguidor
         const catCursorContainer = document.getElementById('cat-cursor-container');
@@ -1412,54 +1448,6 @@
         }
 
         animateCat();
-
-
-function cambiarPagina(idSeccion) {
-            // 1. Ocultar todas las secciones
-            const secciones = document.querySelectorAll('.page-section');
-            secciones.forEach(sec => sec.classList.remove('active-page'));
-
-            // 2. Desactivar todos los botones del menú
-            const botones = document.querySelectorAll('.nav-links button');
-            botones.forEach(btn => btn.classList.remove('active'));
-
-            // 3. Mostrar la sección seleccionada
-            const seccionActiva = document.getElementById(idSeccion);
-            if (seccionActiva) {
-                seccionActiva.classList.add('active-page');
-            }
-
-            // 4. Activar el botón correspondiente si existe
-            const botonActivo = document.getElementById('btn-' + idSeccion);
-            if (botonActivo) {
-                botonActivo.classList.add('active');
-            }
-
-            // 5. Actualizar la URL con el hash (#)
-            history.pushState(null, null, '#' + idSeccion);
-
-            // Subir al inicio de la página suavemente
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Leer la URL al cargar la página por si entran con un enlace directo
-        window.addEventListener('DOMContentLoaded', () => {
-            const hash = window.location.hash.substring(1);
-            if (hash) {
-                cambiarPagina(hash);
-            }
-        });
-
-        // Hacer que funcionen las flechas de avante/atrás del navegador
-        window.addEventListener('popstate', () => {
-            const hash = window.location.hash.substring(1);
-            if (hash) {
-                cambiarPagina(hash);
-            } else {
-                cambiarPagina('inicio');
-            }
-        });
-            
     </script>
 </body>
 </html>
