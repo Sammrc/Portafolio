@@ -788,7 +788,7 @@
         .capas-imagen-lateral img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             background-color: #faf5ff;
             border: 1.5px solid var(--border-color);
             border-radius: 16px;
@@ -1217,7 +1217,7 @@
                                     </div>
                                 </div>
                                 <div class="capas-imagen-lateral">
-                                    <img src="img/CAPAS.png" alt="Ilustración de capas del editor"style="max-height: 150px;">
+                                    <img src="img/CAPAS.png" alt="Ilustración de capas del editor">
                                 </div>
                             </div>
 
@@ -1256,7 +1256,7 @@
                                 <strong>Verificación importante (DRC):</strong> Al concluir el ruteado y el vertido de planos de cobre, es obligatorio ejecutar el <strong>Design Rules Checker (DRC)</strong> desde la herramienta de verificación de diseño en el menú superior del editor de PCB. Esta función analiza de forma exhaustiva la geometría del circuito físico, validando que se respeten los anchos de pista mínimos, las distancias de aislamiento configuradas en el Board Setup, y detectando pistas cruzadas o pads aislados sin conexión. El informe final debe arrojar cero errores y cero violaciones de holgura, de lo contrario, la fresadora CNC podría cometer errores graves de corte o provocar cortos circuitos definitivos en el prototipo físico.
                             </div>
                             <p>Ventana de ejecución del Design Rules Checker (DRC) sin errores detectados.</p>
-                            <div class="kicad-imagen-slot"><img src="img/DRC.png" alt="Ventana del Design Rules Checker sin violaciones"></div>
+                            <div class="kicad-imagen-slot"><img src="img/DRC.png" alt="Ventana del Design Rules Checker sin violaciones"style="max-height: 500px;"></div>
                         </div>
                         <!-- ETAPA 7 -->
                         <div id="etapa-7" class="kicad-etapa">
