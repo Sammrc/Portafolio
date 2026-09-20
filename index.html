@@ -482,8 +482,15 @@
         }
         
         .kicad-imagen-par .kicad-imagen-item p {
-            font-weight: 700;
             margin: 0 0 8px 0;
+        }
+
+        .kicad-imagen-par .kicad-imagen-item.imagen-grande img {
+            max-height: 420px;
+        }
+        
+        .kicad-imagen-par .kicad-imagen-item.imagen-chica img {
+            max-height: 200px;
         }
         
         .kicad-imagen-par .kicad-imagen-item img {
@@ -940,10 +947,12 @@
                             <p>Instalar la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint, lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
                             <div class="kicad-imagen-par">
                             <div class="kicad-imagen-item">
+                             <div class="kicad-imagen-par">
+                            <div class="kicad-imagen-item imagen-chica">
                                 <p>Ventana de configuración para añadir librerías externas:</p>
                                 <img src="img/INSKILIB.png" alt="Instalación de la librería FabLab">
                             </div>
-                            <div class="kicad-imagen-item">
+                            <div class="kicad-imagen-item imagen-grande">
                                 <p>Confirmación visual de la librería FabLab cargada correctamente.</p>
                                 <img src="img/KICADLIB.png" alt="Librería FabLab instalada">
                             </div>
