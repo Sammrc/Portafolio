@@ -1138,7 +1138,7 @@
                                 <img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias">
                             </div>
                             <div class="kicad-nota">
-                                <strong>Verificación importante:</strong> antes de continuar, se debe correr el <strong>Electrical Rules Checker (ERC)</strong> desde la barra superior para confirmar que no existan errores de conexión (pines sin conectar, cortocircuitos, etc.).
+                                <strong>Verificación importante (ERC):</strong> Antes de proceder con el diseño físico de la placa, es indispensable ejecutar el <strong>Electrical Rules Checker (ERC)</strong> haciendo clic en el icono de los lentes o lupa con un símbolo eléctrico en la barra superior. Esta herramienta realiza una auditoría lógica automática de todo el esquemático para detectar pines de alimentación flotantes, salidas conectadas entre sí, componentes sin alimentación asignada o pines sin conectar. Si el reporte arroja advertencias o errores (marcados en rojo o verde), debes corregirlos directamente en el esquema lógico; de lo contrario, estos fallos se arrastrarán y provocarán cortocircuitos o errores críticos en la tarjeta física.
                             </div>
                             <p>Ventana de resultados del validador Electrical Rules Checker (ERC).</p>
                             <div class="kicad-imagen-slot">
@@ -1199,7 +1199,7 @@
                                 <img src="img/SAMPCB.png" alt="PCB final Hola_mundo con pistas, plano de cobre y componentes">
                             </div>
                             <div class="kicad-nota">
-                                <strong>Verificación importante:</strong> antes de exportar, se debe correr el <strong>Design Rules Checker (DRC)</strong> para confirmar que no haya errores de separación, pistas sin conectar o violaciones a las reglas configuradas en el Board Setup.
+                                <strong>Verificación importante (DRC):</strong> Al concluir el ruteado y el vertido de planos de cobre, es obligatorio ejecutar el <strong>Design Rules Checker (DRC)</strong> desde la herramienta de verificación de diseño en el menú superior del editor de PCB. Esta función analiza de forma exhaustiva la geometría del circuito físico, validando que se respeten los anchos de pista mínimos, las distancias de aislamiento (clearance) configuradas en el Board Setup, y detectando pistas cruzadas o pads aislados sin conexión. El informe final debe arrojar cero errores y cero violaciones de holgura; de lo contrario, la fresadora CNC podría cometer errores graves de corte o provocar cortos circuitos definitivos en el prototipo físico.
                             </div>
                             <p>Ventana de ejecución del Design Rules Checker (DRC) sin errores detectados.</p>
                             <div class="kicad-imagen-slot">
