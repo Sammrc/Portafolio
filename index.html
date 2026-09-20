@@ -18,7 +18,6 @@
             --text-muted: #581c87;
             --border-color: #c084fc;
         }
-
         body {
             background-color: var(--bg-color); 
             color: var(--text-color); 
@@ -27,7 +26,6 @@
             padding: 0;
            
         }
-
         /* --- GATO SEGUIDOR DEL CURSOR --- */
         #cat-cursor-container {
             position: fixed;
@@ -42,29 +40,24 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-
         .walking #leg-front-left { animation: walkLeg 0.2s infinite alternate ease-in-out; }
         .walking #leg-front-right { animation: walkLeg 0.2s infinite alternate-reverse ease-in-out; }
         .walking #leg-back-left { animation: walkLeg 0.2s infinite alternate-reverse ease-in-out; }
         .walking #leg-back-right { animation: walkLeg 0.2s infinite alternate ease-in-out; }
         .walking #cat-body-group { animation: bodyBob 0.2s infinite alternate ease-in-out; }
         .walking #cat-tail { animation: tailWag 0.4s infinite alternate ease-in-out; }
-
         @keyframes walkLeg {
             from { transform: rotate(-15deg); }
             to { transform: rotate(15deg); }
         }
-
         @keyframes bodyBob {
             from { transform: translateY(0px); }
             to { transform: translateY(-2px); }
         }
-
         @keyframes tailWag {
             from { transform: rotate(-6deg); }
             to { transform: rotate(6deg); }
         }
-
         /* --- LOGO ESQUINA --- */
         .logo-esquina {
             position: absolute;
@@ -106,7 +99,6 @@
             margin: 0;
             padding: 0;
         }
-
         .nav-links button {
             background: none;
             border: none;
@@ -119,7 +111,6 @@
             border-radius: 20px;
             transition: all 0.3s ease;
         }
-
         .nav-links button:hover, .nav-links button.active {
             background-color: var(--accent-color);
             color: #ffffff;
@@ -132,7 +123,6 @@
             margin: 20px auto 60px auto; 
             padding: 0 20px; 
         }
-
         .page-section {
             display: none; 
         }
@@ -141,7 +131,6 @@
             display: block;
             animation: fadeIn 0.4s ease-in-out;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(6px); }
             to { opacity: 1; transform: translateY(0); }
@@ -150,14 +139,11 @@
         .contenido-inicial {
             text-align: center;
         }
-
         h1, h2, h3, h4 {
             color: var(--accent-color);
             margin-top: 0; 
         }
-
        
-
         /* --- CARDS & GRID INFO --- */
         .info-footer-container {
             margin-top: 40px;
@@ -165,19 +151,16 @@
             border-top: 2px solid var(--border-color); 
             text-align: left;
         }
-
         .info-footer-container h4 {
             color: var(--accent-color);
             margin-bottom: 20px;
             font-size: 1.3rem;
         }
-
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
-
         .info-card {
             background-color: var(--card-bg);
             padding: 20px;
@@ -185,13 +168,11 @@
             box-shadow: 0 4px 15px rgba(91, 33, 182, 0.08);
             border: 1.5px solid var(--border-color);
         }
-
         .perfil-card {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-
         .perfil-foto {
             width: 75px;
             height: 75px;
@@ -201,7 +182,6 @@
             flex-shrink: 0;
             background-color: var(--accent-light);
         }
-
         .perfil-info h5, .perfil-info h6 {
             margin: 0 0 4px 0;
             font-size: 1rem;
@@ -214,7 +194,6 @@
             color: var(--text-muted);
             font-weight: 600;
         }
-
         .perfil-correo {
             font-size: 0.85rem;
             color: var(--accent-color);
@@ -222,7 +201,6 @@
             font-weight: 600;
             word-break: break-all;
         }
-
         .gps-indicator {
             display: inline-block;
             width: 10px;
@@ -253,7 +231,6 @@
         }
         
         .link-mapa:hover { background-color: var(--accent-hover); }
-
         .tarjeta-ubicacion-completa {
             background-color: var(--card-bg);
             padding: 25px;
@@ -264,7 +241,6 @@
             flex-direction: column;
             gap: 15px;
         }
-
         .ubicacion-imagen {
             width: 100%;
             height: 220px; 
@@ -273,7 +249,6 @@
             border: 1px solid var(--border-color);
             background-color: var(--accent-light);
         }
-
         .ubicacion-contenido {
             display: flex;
             justify-content: space-between;
@@ -281,7 +256,6 @@
             flex-wrap: wrap;
             gap: 15px;
         }
-
         /* --- BANNER VIDEO --- */
         .franja-fondo-materia {
             width: 100vw;
@@ -296,7 +270,6 @@
             overflow: hidden;
             box-sizing: border-box;
         }
-
         .video-fondo {
             position: absolute;
             top: 50%;
@@ -310,7 +283,6 @@
             z-index: 0;
             filter: brightness(0.5) contrast(1.1);
         }
-
         .franja-fondo-materia::after {
             content: '';
             position: absolute;
@@ -321,7 +293,6 @@
             background: rgba(76, 29, 149, 0.65);
             z-index: 1;
         }
-
         .materia-intro-card {
             background-color: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(10px);
@@ -335,14 +306,12 @@
             position: relative;
             z-index: 2;
         }
-
         .materia-objetivos-grid {
             display: flex;
             flex-direction: column;
             gap: 12px;
             margin-top: 15px;
         }
-
         .objetivo-pill {
             background-color: #faf5ff;
             padding: 16px 20px;
@@ -351,7 +320,6 @@
             font-size: 0.92rem;
             color: var(--text-color);
         }
-
         .kicad-pastilla-centrada {
             background-color: #faf5ff;
             border: 1px solid var(--accent-light);
@@ -361,7 +329,6 @@
             max-width: fit-content;
             margin: 14px auto;
         }
-
         /* --- TRABAJOS Y BANNER --- */
         .trabajos-banner {
             width: 100vw;
@@ -378,14 +345,12 @@
             margin-bottom: 40px;
             box-sizing: border-box;
         }
-
         .trabajos-banner h2 {
             color: #ffffff;
             font-size: 2.2rem;
             margin: 0;
             font-weight: 700;
         }
-
         .trabajos-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -393,7 +358,6 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-
         .trabajo-card {
             position: relative;
             border-radius: 20px;
@@ -413,7 +377,6 @@
             background-color: var(--card-bg);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .trabajo-card::before {
             content: '';
             position: absolute;
@@ -425,21 +388,17 @@
             transition: background 0.3s ease;
             z-index: 1;
         }
-
         .trabajo-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(91, 33, 182, 0.25);
         }
-
         .trabajo-card h3, .trabajo-card p {
             position: relative;
             z-index: 2;
             color: #ffffff;
         }
-
         .trabajo-card h3 { margin: 0 0 5px 0; font-size: 1.2rem; }
         .trabajo-card p { margin: 0; font-size: 0.85rem; }
-
         /* --- DETALLE KICAD EXPANDIDO --- */
         .kicad-detalle-container {
             background-color: #ffffff;
@@ -450,7 +409,7 @@
             margin-top: 20px;
             text-align: left;
         }
-            /* Estandarización de imágenes en la guía de KiCad para mantener tamaños uniformes */
+        /* Estandarización de imágenes en la guía de KiCad para mantener tamaños uniformes */
         .kicad-detalle-container .kicad-imagen-slot img {
             width: 100%;
             max-height: 320px;
@@ -461,21 +420,18 @@
             padding: 8px;
             margin: 12px 0;
         }
-
         .kicad-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 20px 0;
         }
-
         .kicad-item {
             background: #faf5ff;
             padding: 20px;
             border-radius: 18px;
             border: 1px solid var(--accent-light);
         }
-
         .kicad-item h4 {
             color: var(--accent-color);
             margin: 0 0 8px 0;
@@ -483,16 +439,13 @@
             align-items: center;
             gap: 8px;
         }
-
         .kicad-pasos-lista {
             padding-left: 20px;
             line-height: 1.8;
         }
-
         .kicad-pasos-lista li {
             margin-bottom: 12px;
         }
-
         .btn-regresar {
             background-color: var(--accent-color);
             color: #ffffff;
@@ -504,9 +457,7 @@
             margin-bottom: 20px;
             transition: background-color 0.3s;
         }
-
         .btn-regresar:hover { background-color: var(--accent-hover); }
-
         /* --- GUÍA KICAD: FLUJO CONTINUO --- */
         .kicad-imagen-slot img {
             width: 100%;
@@ -518,7 +469,6 @@
             padding: 8px;
             margin: 10px 0;
         }
-
         /* Estilo para tablas de medidas / notas importantes */
         .tabla-medidas {
             width: 100%;
@@ -530,19 +480,16 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
         }
-
         .tabla-medidas th, .tabla-medidas td {
             padding: 10px 14px;
             text-align: left;
             border-bottom: 1px solid var(--border-color);
         }
-
         .tabla-medidas th {
             background-color: var(--accent-light);
             color: var(--accent-hover);
             font-weight: 700;
         }
-
             
         .kicad-intro-banner {
             background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
@@ -555,19 +502,16 @@
             gap: 18px;
             box-shadow: 0 6px 20px rgba(91, 33, 182, 0.25);
         }
-
         .kicad-intro-banner i {
             font-size: 2rem;
             flex-shrink: 0;
         }
-
         .kicad-intro-banner p {
             margin: 0;
             font-size: 0.92rem;
             line-height: 1.6;
             opacity: 0.95;
         }
-
         .kicad-etapa {
             position: relative;
             padding-left: 34px;
@@ -575,16 +519,13 @@
             margin-bottom: 45px;
             border-top: 2px solid var(--border-color);
         }
-
         .kicad-etapa-primera {
             border-top: none;
             padding-top: 0;
         }
-
         .kicad-etapa:last-child {
             margin-bottom: 0;
         }
-
         .kicad-etapa-numero {
             position: absolute;
             left: -19px;
@@ -602,11 +543,9 @@
             box-shadow: 0 3px 10px rgba(91, 33, 182, 0.3);
             border: 3px solid #ffffff;
         }
-
         .kicad-etapa-primera .kicad-etapa-numero {
             top: 0;
         }
-
         .kicad-etapa h3 {
             margin: 2px 0 10px 0;
             font-size: 1.25rem;
@@ -614,17 +553,14 @@
             align-items: center;
             gap: 10px;
         }
-
         .kicad-etapa p {
             font-size: 0.95rem;
             line-height: 1.7;
             margin: 0 0 14px 0;
         }
-
         .kicad-etapa p strong {
             color: var(--accent-hover);
         }
-
         .kicad-imagen-slot {
             width: 100%;
             display: flex;
@@ -634,14 +570,12 @@
             gap: 8px;
             margin: 14px 0;
         }
-
         .kicad-imagen-slot img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             border-radius: 14px;
         }
-
         .kicad-nota {
             background-color: #faf5ff;
             border-left: 4px solid var(--accent-color);
@@ -651,18 +585,15 @@
             margin: 14px 0;
             color: var(--text-muted);
         }
-
         .kicad-nota strong {
             color: var(--accent-color);
         }
-
         .kicad-chip-lista {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             margin: 10px 0 16px 0;
         }
-
         .kicad-chip {
             background-color: var(--accent-light);
             color: var(--accent-hover);
@@ -671,7 +602,6 @@
             padding: 6px 14px;
             border-radius: 14px;
         }
-
         .kicad-dato-cern {
             display: flex;
             align-items: flex-start;
@@ -682,20 +612,17 @@
             padding: 18px 20px;
             margin-top: 30px;
         }
-
         .kicad-dato-cern i {
             font-size: 1.4rem;
             color: var(--accent-color);
             margin-top: 2px;
         }
-
         .kicad-dato-cern p {
             margin: 0;
             font-size: 0.88rem;
             line-height: 1.6;
         }
-
-/* --- /* --- ESTILOS PARA EL ÍNDICE LATERAL Y ESTRUCTURA DE KICAD --- */
+        /* --- ESTILOS PARA EL ÍNDICE LATERAL Y ESTRUCTURA DE KICAD --- */
         .kicad-layout-principal {
             display: flex;
             gap: 30px;
@@ -703,11 +630,9 @@
             position: relative;
             margin-top: 20px;
         }
-
         .kicad-contenido-principal {
             flex: 1;
         }
-
         .kicad-indice-lateral {
             position: sticky;
             top: 90px;
@@ -719,7 +644,6 @@
             box-shadow: 0 4px 15px rgba(91, 33, 182, 0.08);
             flex-shrink: 0;
         }
-
         .kicad-indice-lateral h4 {
             color: var(--accent-color);
             font-size: 1.05rem;
@@ -728,7 +652,6 @@
             align-items: center;
             gap: 8px;
         }
-
         .kicad-indice-lateral ul {
             list-style: none;
             padding: 0;
@@ -737,7 +660,6 @@
             flex-direction: column;
             gap: 6px;
         }
-
         .kicad-indice-lateral ul li a {
             color: var(--text-muted);
             text-decoration: none;
@@ -748,13 +670,11 @@
             border-radius: 8px;
             transition: all 0.2s ease;
         }
-
         .kicad-indice-lateral ul li a:hover {
             background-color: var(--accent-light);
             color: var(--accent-hover);
             padding-left: 14px;
         }
-
         /* Estandarización estricta de imágenes en KiCad */
         .kicad-imagen-slot img {
             width: 100%;
@@ -766,7 +686,6 @@
             padding: 8px;
             margin: 10px 0;
         }
-
         /* Responsividad para pantallas medianas/pequeñas */
         @media (max-width: 992px) {
             .kicad-layout-principal {
@@ -796,26 +715,21 @@
             gap: 15px;
             box-shadow: 0 4px 15px rgba(91, 33, 182, 0.05);
         }
-
         @keyframes sparkParticle {
             0% { transform: translate(0, 0) scale(1); opacity: 1; }
             100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
         }
-
         @keyframes plasmaGlow {
             0%, 100% { opacity: 0.3; transform: scale(0.8); }
             50% { opacity: 1; transform: scale(1.3); }
         }
-
         .spark-core {
             animation: plasmaGlow 0.15s infinite ease-in-out;
             transform-origin: 65px 137px;
         }
-
         .spark-p1 { --dx: -18px; --dy: -25px; animation: sparkParticle 0.4s infinite ease-out; }
         .spark-p2 { --dx: 12px;  --dy: -30px; animation: sparkParticle 0.35s infinite ease-out 0.1s; }
         .spark-p3 { --dx: -28px; --dy: -10px; animation: sparkParticle 0.45s infinite ease-out 0.05s; }
-
         /* --- FOOTER SITE --- */
         .site-footer {
             background-color: #ffffff;
@@ -832,7 +746,6 @@
             margin-right: -50vw;
             box-sizing: border-box;
         }
-
         .footer-content {
             max-width: 1100px;
             margin: 0 auto;
@@ -843,13 +756,11 @@
             gap: 20px;
             margin-bottom: 25px;
         }
-
         .footer-logo-derecha {
             width: 200px;
             height: 200px;
             object-fit: contain;
         }
-
         .footer-bottom {
             max-width: 1100px;
             margin: 0 auto;
@@ -862,7 +773,6 @@
             gap: 15px;
             font-size: 0.85rem;
         }
-
         .btn-subir {
             background: var(--bg-color);
             border: 1.5px solid var(--border-color);
@@ -872,11 +782,9 @@
             cursor: pointer;
             font-weight: 600;
         }
-
         @media (max-width: 768px) {
             .trabajos-grid { grid-template-columns: repeat(2, 1fr); }
         }
-
         @media (max-width: 480px) {
             .trabajos-grid { grid-template-columns: 1fr; }
             .kicad-intro-banner { flex-direction: column; text-align: center; }
@@ -884,7 +792,6 @@
     </style>
 </head>
 <body>
-
     <!-- GATO SEGUIDOR EN EL CURSOR CON COLORES Y DEGRADADOS AUTOCONTENIDOS -->
     <div id="cat-cursor-container">
         <svg width="85" height="85" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -909,7 +816,6 @@
                     <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
                 </radialGradient>
             </defs>
-
             <!-- Sombra -->
             <ellipse cx="60" cy="105" rx="30" ry="6" fill="url(#curShadow)"/>
             
@@ -924,12 +830,10 @@
                 <g id="leg-back-right" transform-origin="48 85">
                     <rect x="44" y="80" width="8" height="22" rx="4" fill="url(#curDarkGrad)"/>
                 </g>
-
                 <!-- Cuerpo -->
                 <g id="cat-body-group">
                     <ellipse cx="55" cy="72" rx="26" ry="18" fill="url(#curBodyGrad)"/>
                 </g>
-
                 <!-- Patas Delanteras -->
                 <g id="leg-front-left" transform-origin="64 85">
                     <rect x="60" y="80" width="8" height="22" rx="4" fill="url(#curDarkGrad)"/>
@@ -937,7 +841,6 @@
                 <g id="leg-front-right" transform-origin="74 85">
                     <rect x="70" y="80" width="8" height="22" rx="4" fill="url(#curDarkGrad)"/>
                 </g>
-
                 <!-- Cabeza -->
                 <g transform="translate(72, 52)">
                     <!-- Orejas -->
@@ -946,7 +849,6 @@
                     
                     <path d="M 2 -12 L 12 -30 L 18 -8 Z" fill="url(#curDarkGrad)"/>
                     <path d="M 5 -12 L 12 -25 L 15 -9 Z" fill="#f472b6" opacity="0.6"/>
-
                     <!-- Cabeza Principal -->
                     <ellipse cx="2" cy="-2" rx="20" ry="17" fill="url(#curBodyGrad)"/>
                     
@@ -965,10 +867,8 @@
             </g>
         </svg>
     </div>
-
     <!-- LOGO Y NAVEGACIÓN -->
     <img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
-
     <nav>
         <ul class="nav-links">
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
@@ -976,7 +876,6 @@
             <li><button onclick="cambiarPagina('proyectos')" id="btn-proyectos">Proyectos</button></li>
         </ul>
     </nav>
-
     <main>
         <!-- SECCIÓN INICIO -->
         <section id="inicio" class="page-section active-page">
@@ -990,7 +889,6 @@
                     <source src="Videos/336233_medium.mp4" type="video/mp4">
                     Tu navegador no soporta video HTML5.
                 </video>
-
                 <div class="materia-intro-card">
                     <h2>¿De qué trata la materia?</h2>
                         <p>La asignatura de producción electrónica se centra en el estudio integral y la aplicación práctica de los procesos de diseño, validación y manufactura de sistemas electrónicos modernos. Su enfoque principal abarca la ingeniería detrás del diseño de PCBs (Printed Circuit Boards), desde la captura de esquemáticos y el ruteado de pistas hasta la generación de archivos de fabricación y el ensamblaje de componentes de montaje superficial. </p>
@@ -1008,7 +906,6 @@
                    </div>
                 </div>
             </div>
-
             <div class="contenido-inicial" style="text-align: left;">
                 <div class="info-footer-container">
                     <h4>Acerca del Equipo</h4>
@@ -1022,7 +919,6 @@
                                 <a href="mailto:196933@iberopuebla.mx" class="perfil-correo">196933@iberopuebla.mx</a>
                             </div>
                         </div>
-
                         <div class="info-card perfil-card">
                             <img src="img/fotoAlumno.png" alt="Karen" class="perfil-foto">
                             <div class="perfil-info">
@@ -1050,7 +946,6 @@
                 </div> 
             </div>      
         </section>
-
         <!-- SECCIÓN TRABAJOS -->
         <section id="trabajos" class="page-section">
             <div class="trabajos-banner">
@@ -1064,14 +959,13 @@
                 </div>
                 <div class="trabajo-card" style="background-image: url('img/F_MODS.png');" onclick="cambiarPagina('mods-detalle')">
                     <h3>2. Mods</h3>
-                    <p>En proceso de subida...</p>
+                    <p>Generación de archivos .rml</p>
                 </div>
                 <div class="trabajo-card" style="background-image: url('img/F_MONOFAB.png');">
                     <h3>3. Fresadora MONOFAB</h3>
                     <p>En proceso de subida...</p>
                 </div>
             </div>
-
            <!-- ILUSTRACIÓN GATO SOLDADOR CON COLORES AUTOCONTENIDOS (MODIFICADO) -->
 <div class="siamese-working-box">
     <svg width="280" height="170" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
@@ -1106,12 +1000,10 @@
                 <stop offset="100%" stop-color="#0284c7"/>
             </radialGradient>
         </defs>
-
         <!-- Sombra Base y Mesa -->
         <ellipse cx="140" cy="152" rx="110" ry="10" fill="url(#wShadow)"/>
         <rect x="20" y="142" width="240" height="10" rx="4" fill="#475569"/>
         <rect x="50" y="132" width="80" height="10" rx="2" fill="#15803d"/>
-
         <!-- Gato Soldando Siamés (Grupo Principal) -->
         <g id="gato-soldador-animado">
             <!-- Cola -->
@@ -1124,12 +1016,10 @@
             <g id="leg-back-right">
                 <rect x="44" y="80" width="8" height="22" rx="4" fill="url(#curDarkGrad)"/>
             </g>
-
             <!-- Cuerpo -->
             <g id="cat-body-group">
                 <ellipse cx="55" cy="72" rx="26" ry="18" fill="url(#curBodyGrad)"/>
             </g>
-
             <!-- Patas Delanteras -->
             <g id="leg-front-left">
                 <rect x="60" y="80" width="8" height="22" rx="4" fill="url(#curDarkGrad)"/>
@@ -1137,7 +1027,6 @@
             <g id="leg-front-right">
                 <rect x="70" y="80" width="8" height="22" rx="4" fill="url(#curDarkGrad)"/>
             </g>
-
             <!-- Cabeza  -->
             <g transform="translate(72, 52)">
                 <!-- Orejas -->
@@ -1146,7 +1035,6 @@
                 
                 <path d="M 2 -12 L 12 -30 L 18 -8 Z" fill="url(#curDarkGrad)"/>
                 <path d="M 5 -12 L 12 -25 L 15 -9 Z" fill="#f472b6" opacity="0.6"/>
-
                 <!-- Cabeza Principal -->
                 <ellipse cx="2" cy="-2" rx="20" ry="17" fill="url(#curBodyGrad)"/>
                 
@@ -1161,7 +1049,6 @@
                 
                 <!-- Nariz -->
                 <polygon points="1,3 3,3 2,5" fill="#f472b6"/>
-
                 <!-- Lentes de Protección (Integrados en la cabeza) -->
                 <g id="protective- eyewear" transform="translate(-1, 0)">
                     <rect x="-10" y="-7" width="12" height="9" rx="2" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
@@ -1169,357 +1056,266 @@
                     <line x1="2" y1="-2.5" x2="4" y2="-2.5" stroke="#38bdf8" stroke-width="1"/>
                 </g>
             </g>
-
-            <!-- Cautín y Soldadura
-            <g id="welding-tool-assembly">
-                <!-- Cuerpo del cautín (Rojo oscuro) -->
-                <line x1="70" y1="100" x2="85" y2="120" stroke="#b91c1c" stroke-width="5" stroke-linecap="round"/>
-                <!-- Punta del cautín (Gris) -->
-                <line x1="85" y1="120" x2="92" y2="129" stroke="#94a3b8" stroke-width="2.5"/>
-                
-                <!-- Chispas de Soldadura (En la punta) -->
-                <g id="efectos-chispa">
-                    <circle cx="92" cy="129" r="3" fill="#ffffff" class="spark-core"/>
-                    <circle cx="93" cy="127" r="1.5" fill="#fde047" class="spark-p1"/>
-                    <circle cx="90" cy="131" r="1.2" fill="#38bdf8" class="spark-p2"/>
-                    <circle cx="955" cy="130" r="0.8" fill="#ffffff" class="spark-p3"/>
-                </g>
-            </g>
         </g>
     </svg>
-
                 <h3>¡Próximamente más Prácticas!</h3>
                 <p>Las prácticas restantes se encuentran en proceso de documentación y ensamblaje.</p>
             </div>
         </section>
-
         <!-- VISTA DETALLADA KICAD AMPLIADA -->
         <section id="kicad-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
             
-<div class="kicad-detalle-container">
-    <h2>Diseño de PCB con KiCad</h2>
-    <p>Pantalla principal del entorno de trabajo, mostrando el logotipo y acceso general al software.</p>
-    <div class="kicad-imagen-slot">
-        <img src="img/kicadlogo.png" alt="Pantalla de inicio de KiCad" style="max-height: 220px;">
-    </div>
-    <p class="kicad-pastilla-centrada"><strong>KiCad</strong> es un software para el diseño de esquemáticos de circuitos electrónicos y de PCBs.</p>
+            <div class="kicad-layout-principal">
+                <!-- CONTENIDO PRINCIPAL CON LAS 7 ETAPAS -->
+                <div class="kicad-contenido-principal">
+                    <div class="kicad-detalle-container" style="margin-top: 0;">
+                        <h2>Diseño de PCB con KiCad</h2>
+                        <p>Pantalla principal del entorno de trabajo, mostrando el logotipo y acceso general al software.</p>
+                        <div class="kicad-imagen-slot">
+                            <img src="img/kicadlogo.png" alt="Pantalla de inicio de KiCad" style="max-height: 220px;">
+                        </div>
+                        <p class="kicad-pastilla-centrada"><strong>KiCad</strong> es un software para el diseño de esquemáticos de circuitos electrónicos y de PCBs.</p>
+                        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 25px 0;">
+                        <!-- ETAPA 1: INSTALACIÓN -->
+                        <div id="etapa-1" class="kicad-etapa kicad-etapa-primera">
+                            <div class="kicad-etapa-numero">1</div>
+                            <h3><i class="fa-solid fa-download"></i> Instalación de KiCad</h3>
+                            <p>Descargar KiCad desde su sitio oficial: <a href="https://www.kicad.org/download/windows/" target="_blank" style="color: var(--accent-color); font-weight: 600;">kicad.org/download</a>.</p>
+                            <p>Vista del sitio de descarga para sistemas operativos Windows.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/DESKIDCAD.png" alt="Pantalla de inicio de KiCad" style="max-height: 220px;">
+                            </div>
+                            <p>Al abrirlo por primera vez, aparece la pantalla de inicio, donde se accede a todas las herramientas como el Editor de Esquemas, Editor de PCB, Editor de Footprints, visor de Gerbers, calculadoras, etc.</p>
+                            <p>Interfaz del gestor de proyectos al iniciar el programa.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/INI.png" alt="Pantalla de inicio de KiCad">
+                            </div>
+                            <p>Instalar la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint (huella física), lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
+                            <p>Ventana de configuración para añadir librerías externas.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/INSKILIB.png" alt="Instalación de la librería FabLab" style="max-height: 220px;">
+                            </div>
+                            <p>Confirmación visual de la librería FabLab cargada correctamente.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/KICADLIB.png" alt="Librería FabLab instalada" style="max-height: 220px;">
+                            </div>
+                            <p>Para crear un nuevo proyecto, ir a <strong>File → New Project</strong>, lo cual genera la carpeta de trabajo donde se guardarán el esquemático, la PCB y todos los archivos asociados.</p>
+                            <p>Menú superior desplegado para la creación de un nuevo proyecto.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/KiCad_Inicio.png" alt="Menú File New Project">
+                            </div>
+                        </div>
+                        <!-- ETAPA 2: EDITOR DE ESQUEMAS -->
+                        <div id="etapa-2" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">2</div>
+                            <h3><i class="fa-solid fa-diagram-project"></i> Editor de Esquemas (Eeschema)</h3>
+                            <p>Desde el proyecto se abre el <strong>Editor de Esquemas</strong>, donde se representa el circuito de forma lógica antes de pasar al diseño físico. En la barra lateral derecha están los símbolos y en la parte superior las herramientas de anotación, impresión y verificación.</p>
+                            <p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <strong>A</strong>. Ambas abren el buscador de símbolos, donde —al tener la librería de FabLab instalada— se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
+                            <p>Área de trabajo del editor de esquemáticos con sus barras de herramientas.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas">
+                            </div>
+                            <p>Buscador de componentes filtrando elementos de la librería FabLab.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/CFAB.png" alt="Buscador de símbolos con la librería FabLab">
+                            </div>
+                        </div>
+                        <!-- ETAPA 3: CREACIÓN DEL ESQUEMÁTICO -->
+                        <div id="etapa-3" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">3</div>
+                            <h3><i class="fa-solid fa-sitemap"></i> Creación del Esquemático</h3>
+                            <p>Con los símbolos ya disponibles, se armó el circuito de la práctica colocando los siguientes componentes:</p>
+                            <div class="kicad-chip-lista">
+                                <span class="kicad-chip">8 resistencias R_1206</span>
+                                <span class="kicad-chip">4 LEDs LED_1206</span>
+                                <span class="kicad-chip">4 interruptores</span>
+                                <span class="kicad-chip">Alimentación 3.3V + GND</span>
+                            </div>
+                            <p>Para simplificar las conexiones se usaron <strong>etiquetas de red</strong> (net labels), que permiten unir eléctricamente dos puntos sin necesidad de trazar una línea física entre ellos en el esquemático, manteniendo el diagrama más limpio y ordenado.</p>
+                            <p>Diagrama esquemático completo interconectando pulsadores, LEDs y resistencias.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias">
+                            </div>
+                            <div class="kicad-nota">
+                                <strong>Verificación importante:</strong> antes de continuar, se debe correr el <strong>Electrical Rules Checker (ERC)</strong> desde la barra superior para confirmar que no existan errores de conexión (pines sin conectar, cortocircuitos, etc.).
+                            </div>
+                            <p>Ventana de resultados del validador Electrical Rules Checker (ERC).</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/ERC.png" alt="Ventana del Electrical Rules Checker sin errores">
+                            </div>
+                        </div>
+                        <!-- ETAPA 4: PASO AL EDITOR DE PCB -->
+                        <div id="etapa-4" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">4</div>
+                            <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> Del Esquemático a la PCB</h3>
+                            <p>Una vez validado el ERC, se pasa al <strong>Editor de Placas (PCB Editor)</strong>.</p>
+                            <p>Vista vacía del lienzo de la PCB antes de importar los componentes.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/PCBEDIT.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes">
+                            </div>
+                        </div>
+                        <!-- ETAPA 5: CONFIGURACIÓN DE LA PLACA -->
+                        <div id="etapa-5" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">5</div>
+                            <h3><i class="fa-solid fa-gear"></i> Configuración de la Placa (Board Setup)</h3>
+                            <p>Antes de rutear, es fundamental definir las reglas de diseño desde <strong>Board Setup</strong>. Se estableció un ancho de pista de <strong>0.4 mm</strong> y una separación mínima entre conductores de <strong>0.4 mm</strong>, para evitar cortos durante el fresado o grabado de la placa.</p>
+                            <p>Panel de configuración de anchos de pista predefinidos.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/BOARD_PRE.png" alt="Ventana de Board Setup - tamaños predefinidos de pista">
+                            </div>
+                            <p>Panel de restricciones de separación y clearance en el diseño.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/CONS.png" alt="Ventana de Board Setup - restricciones de diseño">
+                            </div>
+                            <p>Para trabajar de forma ordenada, se usaron distintas capas del editor según su función:</p>
+                            <div class="kicad-grid">
+                                <div class="kicad-item">
+                                    <h4><i class="fa-solid fa-bolt"></i> F.Cu</h4>
+                                    <p>Capa de cobre superior, usada para rutear todas las pistas del circuito (0.4 mm de ancho).</p>
+                                </div>
+                                <div class="kicad-item">
+                                    <h4><i class="fa-solid fa-scissors"></i> Edge.Cuts</h4>
+                                    <p>Define el contorno físico de la placa; en este caso con un ancho de línea de 2 mm.</p>
+                                </div>
+                                <div class="kicad-item">
+                                    <h4><i class="fa-solid fa-tag"></i> User.1</h4>
+                                    <p>Reservada para las etiquetas de texto e identificación de la placa.</p>
+                                </div>
+                                <div class="kicad-item">
+                                    <h4><i class="fa-solid fa-screwdriver"></i> User.2 / User.4</h4>
+                                    <p>Usadas para marcar la posición de tornillos y perforaciones de montaje.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ETAPA 6: DISEÑO DE LA PCB -->
+                        <div id="etapa-6" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">6</div>
+                            <h3><i class="fa-solid fa-layer-group"></i> Diseño y Ruteado de la PCB</h3>
+                            <p>Para importar el esquemático, presionar <strong>F8</strong>. Con los componentes ya importados, se acomodaron de forma estratégica sobre la placa para facilitar el ruteado, evitando cruces innecesarios entre pistas. Después se trazaron las conexiones de cobre siguiendo el esquemático, respetando el contorno, las perforaciones y las etiquetas definidas previamente.</p>
+                            <p>Finalmente, se usó la herramienta <strong>Draw Filled Zones</strong> para trazar el contorno completo de la PCB y cubrirlo con un plano de cobre.</p>
+                            <p>Placa de circuito impreso ruteada con sus respectivas pistas y plano de cobre.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/SAMPCB.png" alt="PCB final Hola_mundo con pistas, plano de cobre y componentes">
+                            </div>
+                            <div class="kicad-nota">
+                                <strong>Verificación importante:</strong> antes de exportar, se debe correr el <strong>Design Rules Checker (DRC)</strong> para confirmar que no haya errores de separación, pistas sin conectar o violaciones a las reglas configuradas en el Board Setup.
+                            </div>
+                            <p>Ventana de ejecución del Design Rules Checker (DRC) sin errores detectados.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/DRC.png" alt="Ventana del Design Rules Checker sin violaciones">
+                            </div>
+                        </div>
+                        <!-- ETAPA 7: EXPORTACIÓN GERBER -->
+                        <div id="etapa-7" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">7</div>
+                            <h3><i class="fa-solid fa-file-export"></i> Exportación de Archivos Gerber</h3>
+                            <p>El último paso es generar los archivos de fabricación desde <strong>File → Fabrication Outputs → Gerbers (.gbr)</strong>. Se cambió el formato de trazado a <strong>SVG</strong>, seleccionando únicamente las capas utilizadas y activando la opción <strong>"Fit page to board"</strong> para que el archivo se ajuste exactamente al tamaño de la placa.</p>
+                            <p>Selección de la ruta de salida para la generación de archivos Gerber.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/SAVE.png" alt="Menú Fabrication Outputs - Gerbers">
+                            </div>
+                            <p>Ventana de ploteo configurada en formato SVG con ajuste a la tarjeta.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/PLOTT.png" alt="Ventana de Plot con configuración SVG y Fit page to board">
+                            </div>
+                            <p>Con la configuración lista, se presiona <strong>Plot</strong> para generar los archivos finales, quedando la placa lista para su fabricación.</p>
+                        </div>
+                    </div>
+                </div>
 
-    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 25px 0;">
-
-    <!-- ETAPA 1: INSTALACIÓN -->
-    <div class="kicad-etapa kicad-etapa-primera">
-        <div class="kicad-etapa-numero">1</div>
-        <h3><i class="fa-solid fa-download"></i> Instalación de KiCad</h3>
-        <p>Descargar KiCad desde su sitio oficial: <a href="https://www.kicad.org/download/windows/" target="_blank" style="color: var(--accent-color); font-weight: 600;">kicad.org/download</a>.</p>
-
-        <p>Vista del sitio de descarga para sistemas operativos Windows.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/DESKIDCAD.png" alt="Pantalla de inicio de KiCad" style="max-height: 220px;">
-        </div>
-
-        <p>Al abrirlo por primera vez, aparece la pantalla de inicio, donde se accede a todas las herramientas como el Editor de Esquemas, Editor de PCB, Editor de Footprints, visor de Gerbers, calculadoras, etc.</p>
-
-        <p>Interfaz del gestor de proyectos al iniciar el programa.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/INI.png" alt="Pantalla de inicio de KiCad">
-        </div>
-
-        <p>Instalar la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint (huella física), lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
-
-        <p>Ventana de configuración para añadir librerías externas.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/INSKILIB.png" alt="Instalación de la librería FabLab" style="max-height: 220px;">
-        </div>
-
-        <p>Confirmación visual de la librería FabLab cargada correctamente.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/KICADLIB.png" alt="Librería FabLab instalada" style="max-height: 220px;">
-        </div>
-
-        <p>Para crear un nuevo proyecto, ir a <strong>File → New Project</strong>, lo cual genera la carpeta de trabajo donde se guardarán el esquemático, la PCB y todos los archivos asociados.</p>
-
-        <p>Menú superior desplegado para la creación de un nuevo proyecto.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/KiCad_Inicio.png" alt="Menú File New Project">
-        </div>
-    </div>
-
-    <!-- ETAPA 2: EDITOR DE ESQUEMAS -->
-    <div class="kicad-etapa">
-        <div class="kicad-etapa-numero">2</div>
-        <h3><i class="fa-solid fa-diagram-project"></i> Editor de Esquemas (Eeschema)</h3>
-        <p>Desde el proyecto se abre el <strong>Editor de Esquemas</strong>, donde se representa el circuito de forma lógica antes de pasar al diseño físico. En la barra lateral derecha están los símbolos y en la parte superior las herramientas de anotación, impresión y verificación.</p>
-
-        <p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <strong>A</strong>. Ambas abren el buscador de símbolos, donde —al tener la librería de FabLab instalada— se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
-
-        <p>Área de trabajo del editor de esquemáticos con sus barras de herramientas.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas">
-        </div>
-
-        <p>Buscador de componentes filtrando elementos de la librería FabLab.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/CFAB.png" alt="Buscador de símbolos con la librería FabLab">
-        </div>
-    </div>
-
-    <!-- ETAPA 3: CREACIÓN DEL ESQUEMÁTICO -->
-    <div class="kicad-etapa">
-        <div class="kicad-etapa-numero">3</div>
-        <h3><i class="fa-solid fa-sitemap"></i> Creación del Esquemático</h3>
-        <p>Con los símbolos ya disponibles, se armó el circuito de la práctica colocando los siguientes componentes:</p>
-
-        <div class="kicad-chip-lista">
-            <span class="kicad-chip">8 resistencias R_1206</span>
-            <span class="kicad-chip">4 LEDs LED_1206</span>
-            <span class="kicad-chip">4 interruptores</span>
-            <span class="kicad-chip">Alimentación 3.3V + GND</span>
-        </div>
-
-        <p>Para simplificar las conexiones se usaron <strong>etiquetas de red</strong> (net labels), que permiten unir eléctricamente dos puntos sin necesidad de trazar una línea física entre ellos en el esquemático, manteniendo el diagrama más limpio y ordenado.</p>
-
-        <p>Diagrama esquemático completo interconectando pulsadores, LEDs y resistencias.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias">
-        </div>
-
-        <div class="kicad-nota">
-            <strong>Verificación importante:</strong> antes de continuar, se debe correr el <strong>Electrical Rules Checker (ERC)</strong> desde la barra superior para confirmar que no existan errores de conexión (pines sin conectar, cortocircuitos, etc.).
-        </div>
-
-        <p>Ventana de resultados del validador Electrical Rules Checker (ERC).</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/ERC.png" alt="Ventana del Electrical Rules Checker sin errores">
-        </div>
-    </div>
-
-    <!-- ETAPA 4: PASO AL EDITOR DE PCB -->
-    <div class="kicad-etapa">
-        <div class="kicad-etapa-numero">4</div>
-        <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> Del Esquemático a la PCB</h3>
-        <p>Una vez validado el ERC, se pasa al <strong>Editor de Placas (PCB Editor)</strong>.</p>
-
-        <p>Vista vacía del lienzo de la PCB antes de importar los componentes.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/PCBEDIT.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes">
-        </div>
-    </div>
-
-    <!-- ETAPA 5: CONFIGURACIÓN DE LA PLACA -->
-    <div class="kicad-etapa">
-        <div class="kicad-etapa-numero">5</div>
-        <h3><i class="fa-solid fa-gear"></i> Configuración de la Placa (Board Setup)</h3>
-        <p>Antes de rutear, es fundamental definir las reglas de diseño desde <strong>Board Setup</strong>. Se estableció un ancho de pista de <strong>0.4 mm</strong> y una separación mínima entre conductores de <strong>0.4 mm</strong>, para evitar cortos durante el fresado o grabado de la placa.</p>
-
-        <p>Panel de configuración de anchos de pista predefinidos.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/BOARD_PRE.png" alt="Ventana de Board Setup - tamaños predefinidos de pista">
-        </div>
-
-        <p>Panel de restricciones de separación y clearance en el diseño.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/CONS.png" alt="Ventana de Board Setup - restricciones de diseño">
-        </div>
-
-        <p>Para trabajar de forma ordenada, se usaron distintas capas del editor según su función:</p>
-
-        <div class="kicad-grid">
-            <div class="kicad-item">
-                <h4><i class="fa-solid fa-bolt"></i> F.Cu</h4>
-                <p>Capa de cobre superior, usada para rutear todas las pistas del circuito (0.4 mm de ancho).</p>
+                <!-- ÍNDICE LATERAL DERECHO (CORREGIDO CON ENLACES INTERNOS CORRECTOS) -->
+                <aside class="kicad-indice-lateral">
+                    <h4><i class="fa-solid fa-list-ul"></i> Índice de Secciones</h4>
+                    <ul>
+                        <li><a href="#etapa-1">1. Instalación de KiCad</a></li>
+                        <li><a href="#etapa-2">2. Editor de Esquemas</a></li>
+                        <li><a href="#etapa-3">3. Creación del Esquemático</a></li>
+                        <li><a href="#etapa-4">4. Del Esquemático a la PCB</a></li>
+                        <li><a href="#etapa-5">5. Configuración (Board Setup)</a></li>
+                        <li><a href="#etapa-6">6. Diseño y Ruteado</a></li>
+                        <li><a href="#etapa-7">7. Exportación Gerber</a></li>
+                    </ul>
+                </aside>
             </div>
-            <div class="kicad-item">
-                <h4><i class="fa-solid fa-scissors"></i> Edge.Cuts</h4>
-                <p>Define el contorno físico de la placa; en este caso con un ancho de línea de 2 mm.</p>
-            </div>
-            <div class="kicad-item">
-                <h4><i class="fa-solid fa-tag"></i> User.1</h4>
-                <p>Reservada para las etiquetas de texto e identificación de la placa.</p>
-            </div>
-            <div class="kicad-item">
-                <h4><i class="fa-solid fa-screwdriver"></i> User.2 / User.4</h4>
-                <p>Usadas para marcar la posición de tornillos y perforaciones de montaje.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ETAPA 6: DISEÑO DE LA PCB -->
-    <div class="kicad-etapa">
-        <div class="kicad-etapa-numero">6</div>
-        <h3><i class="fa-solid fa-layer-group"></i> Diseño y Ruteado de la PCB</h3>
-        <p>Para importar el esquemático, presionar <strong>F8</strong>. Con los componentes ya importados, se acomodaron de forma estratégica sobre la placa para facilitar el ruteado, evitando cruces innecesarios entre pistas. Después se trazaron las conexiones de cobre siguiendo el esquemático, respetando el contorno, las perforaciones y las etiquetas definidas previamente.</p>
-
-        <p>Finalmente, se usó la herramienta <strong>Draw Filled Zones</strong> para trazar el contorno completo de la PCB y cubrirlo con un plano de cobre.</p>
-
-        <p>Placa de circuito impreso ruteada con sus respectivas pistas y plano de cobre.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/SAMPCB.png" alt="PCB final Hola_mundo con pistas, plano de cobre y componentes">
-        </div>
-
-        <div class="kicad-nota">
-            <strong>Verificación importante:</strong> antes de exportar, se debe correr el <strong>Design Rules Checker (DRC)</strong> para confirmar que no haya errores de separación, pistas sin conectar o violaciones a las reglas configuradas en el Board Setup.
-        </div>
-
-        <p>Ventana de ejecución del Design Rules Checker (DRC) sin errores detectados.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/DRC.png" alt="Ventana del Design Rules Checker sin violaciones">
-        </div>
-    </div>
-
-    <!-- ETAPA 7: EXPORTACIÓN GERBER -->
-    <div class="kicad-etapa">
-        <div class="kicad-etapa-numero">7</div>
-        <h3><i class="fa-solid fa-file-export"></i> Exportación de Archivos Gerber</h3>
-        <p>El último paso es generar los archivos de fabricación desde <strong>File → Fabrication Outputs → Gerbers (.gbr)</strong>. Se cambió el formato de trazado a <strong>SVG</strong>, seleccionando únicamente las capas utilizadas y activando la opción <strong>"Fit page to board"</strong> para que el archivo se ajuste exactamente al tamaño de la placa.</p>
-
-        <p>Selección de la ruta de salida para la generación de archivos Gerber.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/SAVE.png" alt="Menú Fabrication Outputs - Gerbers">
-        </div>
-
-        <p>Ventana de ploteo configurada en formato SVG con ajuste a la tarjeta.</p>
-        <div class="kicad-imagen-slot">
-            <img src="img/PLOTT.png" alt="Ventana de Plot con configuración SVG y Fit page to board">
-        </div>
-
-        <p>Con la configuración lista, se presiona <strong>Plot</strong> para generar los archivos finales, quedando la placa lista para su fabricación.</p>
-    </div>
-</div>
-
-            <!-- ÍNDICE LATERAL DERECHO -->
-            <aside class="kicad-indice-lateral">
-                <h4><i class="fa-solid fa-list-ul"></i> Índice de Secciones</h4>
-                <ul>
-                    <li><a href="#etapa-1">1. Instalación de KiCad</a></li>
-                    <li><a href="#etapa-2">2. Editor de Esquemas</a></li>
-                    <li><a href="#etapa-3">3. Creación del Esquemático</a></li>
-                    <li><a href="#etapa-4">4. Del Esquemático a la PCB</a></li>
-                    <li><a href="#etapa-5">5. Configuración (Board Setup)</a></li>
-                    <li><a href="#etapa-6">6. Diseño y Ruteado</a></li>
-                    <li><a href="#etapa-7">7. Exportación Gerber</a></li>
-                </ul>
-            </aside>
-
-        </div>
-
-    </div>
-
-            <!-- ÍNDICE LATERAL DERECHO -->
-            <aside class="kicad-indice-lateral">
-                <h4><i class="fa-solid fa-list-ul"></i> Índice de Secciones</h4>
-                <ul>
-                    <li><a href="#etapa-1">1. Instalación de KiCad</a></li>
-                    <li><a href="#etapa-2">2. Editor de Esquemas</a></li>
-                    <li><a href="#etapa-3">3. Creación del Esquemático</a></li>
-                    <li><a href="#etapa-4">4. Del Esquemático a la PCB</a></li>
-                    <li><a href="#etapa-5">5. Configuración (Board Setup)</a></li>
-                    <li><a href="#etapa-6">6. Diseño y Ruteado</a></li>
-                    <li><a href="#etapa-7">7. Exportación Gerber</a></li>
-                </ul>
-            </aside>
-
-        </div>
-
-    </div>
-        <!-- SECCIÓN DETALLE MODS -->
-
-<section id="mods-detalle" class="page-section">
-    <div class="detalle-container" style="max-width: 1100px; margin: 0 auto; padding: 2rem; color: #333; font-family: sans-serif; text-align: left;">
-        <button class="btn-regresar" onclick="cambiarPagina('inicio')" style="margin-bottom: 1.5rem; padding: 0.5rem 1rem; cursor: pointer;">← Regresar</button>
-            <h1 style="border-bottom: 2px solid #ccc; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Guía paso a paso para la Generación de Archivos en MODS</h1>
-        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
-            <h2>Paso 1: Verificación de archivos y apertura en la plataforma MODS</h2>
-        <ol>
-            <li><strong>Revisión de archivos y ubicación:</strong> Antes de iniciar, verifica que todos tus diseños (perforaciones, pistas, etiquetas, agujeros para tornillos y contorno) se encuentren perfectamente exportados en formato SVG y ten plenamente identificada la carpeta de tu computadora donde están guardados para localizarlos de inmediato.</li>
-            <li><strong>Entrada a la página:</strong> Ingresa a la interfaz web de MODS a través del siguiente enlace oficial: <a href="https://modsproject.org/?program=programs%252Fmachines%252FRoland%252FSRM-20%252520mill%252Fmill%2525202D%252520PCB&utm_source=gemini" target="_blank">MODS Project - Roland SRM-20 Mill 2D PCB</a>.</li>
-            <li><strong>Carga del SVG:</strong> En el módulo inicial de lectura (<em>Read SVG</em>), da clic en el botón de selección de archivos para cargar tu vector SVG.</li>
-            <li><strong>Verificación e Inversión de Imagen (Invert):</strong>
-                <ul>
-                    <li>En el módulo de conversión de imagen, revisa el apartado de DPI y asegúrate de verificar si es necesario invertir o no la imagen.</li>
-                    <li><em>Nota importante:</em> Principalmente se debe checar si se invierte o no en la sección de pistas y etiquetas, auxiliándote del diseño 3D que se visualiza para confirmar que las líneas de cobre queden expuestas y el fondo negro aísle correctamente.</li>
-                </ul>
-            </li>
-        </ol>
-
-        <blockquote style="background: #f9f9f9; border-left: 4px solid #007bff; padding: 1rem; margin: 1.5rem 0;">
-            📌 <strong>NOTAS Y DETALLES A CONSIDERAR:</strong><br>
-            * <strong>Velocidad de la herramienta: Recuerda que para todos los procesos de fresado estándar (pistas, etiquetas, agujeros y contorno) la velocidad debe ser de <code>4 mm/s</code></strong>, a excepción de las perforaciones (Drill), donde la velocidad debe configurarse específicamente en <code>0.3 mm/s</code> para proteger la broca vertical.
-        </blockquote>
-
-        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 1: Vista general del módulo inicial de MODS, selección de archivo SVG, configuración de DPI a 1000 y casilla de Invertir]</strong></p>
-
-        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
-
-        <h2>Paso 2: Selección de la herramienta según el tipo de proceso</h2>
-        <p>Una vez convertida la imagen, dirígete al panel de configuración por defecto (<em>set PCB defaults</em>) para elegir la herramienta adecuada de acuerdo con la fase que estés procesando:</p>
-        <ol>
-            <li><strong>Para Pistas y Etiquetas (Traces):</strong> Selecciona en la sección de <em>Traces</em> la opción más cercana de cortador plano, que es la de <strong><code>0.4 mm</code></strong> (<code>0.40mm flat</code>).</li>
-            <li><strong>Para Perforaciones / Drill (Primer paso físico):</strong> Selecciona la opción de <strong><code>0.79 mm drill</code></strong> (que corresponde al estándar aproximado de los 0.8 mm necesarios).</li>
-            <li><strong>Para Agujeros de Tornillos y Corte de Contorno (Último paso):</strong> Teóricamente se requiere una herramienta de <strong><code>2 mm</code></strong>, pero como no se encuentra disponible tal cual en el menú, debes seleccionar la opción de <strong><code>1.59 mm cutout</code></strong> (o la más cercana dentro de <em>cutout</em>).</li>
-        </ol>
-
-        <blockquote style="background: #f9f9f9; border-left: 4px solid #007bff; padding: 1rem; margin: 1.5rem 0;">
-            📌 <strong>NOTAS Y DETALLES A CONSIDERAR (Ajuste de herramienta en el módulo de cálculos):</strong><br>
-            * En el módulo secundario de parámetros del cortador que aparece después, únicamente la medida del cortador para el corte de contorno y agujeros de tornillos se tiene que modificar manualmente para que sea de <code>1.9 mm</code> (en lugar de 2 mm o el valor por defecto). Esto se hace para darle una pequeña holgura matemática al programa cortador y evitar que la herramienta se atasque, sufra sobreesfuerzos o rompa el contorno por milímetros exactos.
-        </blockquote>
-
-        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 2: Panel de selección de herramientas (Traces, Drill, Cutout) con las opciones de 0.40 mm, 0.79 mm y 1.59 mm]</strong></p>
-
-        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
-
-        <h2>Paso 3: Configuración del Offset (Número de pasadas)</h2>
-        <p>En el panel de configuración de la herramienta también encontrarás el parámetro de <strong>offset</strong> (<em>offset number</em>), que define cuántas veces pasará el cortador alrededor o al lado de las líneas vectoriales.</p>
-
-        <blockquote style="background: #f9f9f9; border-left: 4px solid #007bff; padding: 1rem; margin: 1.5rem 0;">
-            📌 <strong>¿Para qué se usa el offset y dónde se recomienda ponerlo?</strong><br>
-            * <strong>Uso:</strong> Sirve para limpiar el área de cobre excedente alrededor de las pistas o ampliar el canal de corte. Por defecto, en la mayoría de los procesos se recomienda dejarlo en <code>1 offset</code> (una sola pasada de limpieza o contorno).<br>
-            * <strong>Modificación:</strong> Puedes modificarlo si deseas que limpie más área alrededor de las pistas (por ejemplo, aumentando los offsets a 2 o 4 para barrer más residuo de cobre), pero ten en cuenta que incrementará el tiempo de maquinado. Para el contorno y perforaciones por lo general se mantiene en una pasada limpia.
-        </blockquote>
-
-        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 3: Configuración del parámetro "offset number" y ajustes de profundidad en MODS]</strong></p>
-
-        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
-
-        <h2>Paso 4: Cálculo de trayectorias, tiempo estimado y visualización 3D de la placa</h2>
-        <ol>
-            <li>Una vez configurados los diámetros y el offset, da clic en el botón "Calculate".</li>
-            <li>El sistema procesará los datos y te mostrará el tiempo estimado que tardará la máquina en realizar dicho proceso (por ejemplo, 1 o 2 minutos).</li>
-            <li><strong>Visualización de trazos y modelo 3D final:</strong>
-                <ul>
-                    <li>En el módulo de simulación (<em>simulate toolpath</em>), podrás observar exactamente los trazos y movimientos que hará la máquina detallados línea por línea.</li>
-                    <li>Al darle clic en el botón "VIEW" dentro de este módulo de simulación, se abrirá la visualización en 3D de cómo quedará exactamente la placa terminada con el material de cobre y los surcos rebajados, permitiéndote comprobar el aspecto físico antes de exportar.</li>
-                </ul>
-            </li>
-        </ol>
-
-        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 4: Módulo "simulate toolpath" mostrando los trazos de la máquina y la vista previa 3D de la placa resultante tras hacer clic en "VIEW"]</strong></p>
-
-        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
-
-        <h2>Paso 5: Verificación de coordenadas de origen y configuración espacial</h2>
-        <ol>
-            <li>Dirígete a la sección de configuración de origen de la máquina (<code>origin</code>).</li>
-            <li>Generalmente debes ponerlo en <strong><code>x = 0, y = 0, z = 0</code></strong> (o <code>x = 55, y = 0, z = 0</code> dependiendo de tu esquina de referencia en la tablilla).</li>
-            <li>Consideración para múltiples trabajos: Si vas a hacer dos o más trabajos en la misma placa con algún compañero, verifica muy bien las medidas de dónde deberá estar tu origen, asegurándote de que no se encimen los diseños.</li>
-            <li>En el cuadro o visor de la izquierda, puedes volver a dar clic en "VIEW" para corroborar la perspectiva espacial de cómo quedaría el diseño completo de la placa en esa zona de trabajo.</li>
-        </ol>
-
-        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 5: Módulo de configuración de coordenadas de origen (Origin) y verificación de los ejes X, Y, Z]</strong></p>
-
-        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #ccc;">
-
-        <h2>Paso 6: Descarga y almacenamiento del archivo final</h2>
-        <ol>
-            <li>Una vez que revisaste y corroboraste que todos los datos están correctos (medidas, offset, origen, velocidad y simulación 3D), busca el módulo final de salida.</li>
-            <li>Dale clic en descargar el archivo (que se genera con extensión <code>.rml</code>).</li>
-            <li><strong>Organización:</strong> Guárdalo inmediatamente en una carpeta específica y bien identificada en tu computadora (por ejemplo, una carpeta llamada "Archivos Placa") para que, cuando tengas que pasarlos al software de control de la cortadora física (<em>Monofab</em>), los encuentres rápidamente sin confusiones.</li>
-        </ol>
-
-        <p style="background: #eee; padding: 1rem; text-align: center; border: 1px dashed #999;">🖼️ <strong>[ESPACIO PARA IMAGEN 6: Módulo final de guardado/descarga del archivo .rml con el botón de guardado activo]</strong></p>
-    </div>
-
+        </section>
             
+        <!-- SECCIÓN DETALLE MODS (RECUPERADA Y VISIBLE) -->
+        <section id="mods-detalle" class="page-section">
+            <div class="kicad-detalle-container">
+                <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
+                <h1 style="border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Guía paso a paso para la Generación de Archivos en MODS</h1>
+                <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+                <h2>Paso 1: Verificación de archivos y apertura en la plataforma MODS</h2>
+                <ol class="kicad-pasos-lista">
+                    <li><strong>Revisión de archivos y ubicación:</strong> Antes de iniciar, verifica que todos tus diseños (perforaciones, pistas, etiquetas, agujeros para tornillos y contorno) se encuentren perfectamente exportados en formato SVG y ten plenamente identificada la carpeta de tu computadora donde están guardados para localizarlos de inmediato.</li>
+                    <li><strong>Entrada a la página:</strong> Ingresa a la interfaz web de MODS a través del siguiente enlace oficial: <a href="https://modsproject.org/?program=programs%252Fmachines%252FRoland%252FSRM-20%252520mill%252Fmill%2525202D%252520PCB&utm_source=gemini" target="_blank" style="color: var(--accent-color); font-weight: 600;">MODS Project - Roland SRM-20 Mill 2D PCB</a>.</li>
+                    <li><strong>Carga del SVG:</strong> En el módulo inicial de lectura (<em>Read SVG</em>), da clic en el botón de selección de archivos para cargar tu vector SVG.</li>
+                    <li><strong>Verificación e Inversión de Imagen (Invert):</strong>
+                        <ul>
+                            <li>En el módulo de conversión de imagen, revisa el apartado de DPI y asegúrate de verificar si es necesario invertir o no la imagen.</li>
+                            <li><em>Nota importante:</em> Principalmente se debe checar si se invierte o no en la sección de pistas y etiquetas, auxiliándote del diseño 3D que se visualiza para confirmar que las líneas de cobre queden expuestas y el fondo negro aísle correctamente.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <div class="kicad-nota">
+                    📌 <strong>NOTAS Y DETALLES A CONSIDERAR:</strong><br>
+                    * <strong>Velocidad de la herramienta: Recuerda que para todos los procesos de fresado estándar (pistas, etiquetas, agujeros y contorno) la velocidad debe ser de <code>4 mm/s</code></strong>, a excepción de las perforaciones (Drill), donde la velocidad debe configurarse específicamente en <code>0.3 mm/s</code> para proteger la broca vertical.
+                </div>
+                <p><strong>[ESPACIO PARA IMAGEN 1: Vista general del módulo inicial de MODS, selección de archivo SVG, configuración de DPI a 1000 y casilla de Invertir]</strong></p>
+                <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+                <h2>Paso 2: Selección de la herramienta según el tipo de proceso</h2>
+                <p>Una vez convertida la imagen, dirígete al panel de configuración por defecto (<em>set PCB defaults</em>) para elegir la herramienta adecuada de acuerdo con la fase que estés procesando:</p>
+                <ol class="kicad-pasos-lista">
+                    <li><strong>Para Pistas y Etiquetas (Traces):</strong> Selecciona en la sección de <em>Traces</em> la opción más cercana de cortador plano, que es la de <strong><code>0.4 mm</code></strong> (<code>0.40mm flat</code>).</li>
+                    <li><strong>Para Perforaciones / Drill (Primer paso físico):</strong> Selecciona la opción de <strong><code>0.79 mm drill</code></strong> (que corresponde al estándar aproximado de los 0.8 mm necesarios).</li>
+                    <li><strong>Para Agujeros de Tornillos y Corte de Contorno (Último paso):</strong> Teóricamente se requiere una herramienta de <strong><code>2 mm</code></strong>, pero como no se encuentra disponible tal cual en el menú, debes seleccionar la opción de <strong><code>1.59 mm cutout</code></strong> (o la más cercana dentro de <em>cutout</em>).</li>
+                </ol>
+                <div class="kicad-nota">
+                    📌 <strong>NOTAS Y DETALLES A CONSIDERAR (Ajuste de herramienta en el módulo de cálculos):</strong><br>
+                    * En el módulo secundario de parámetros del cortador que aparece después, únicamente la medida del cortador para el corte de contorno y agujeros de tornillos se tiene que modificar manualmente para que sea de <code>1.9 mm</code> (en lugar de 2 mm o el valor por defecto). Esto se hace para darle una pequeña holgura matemática al programa cortador y evitar que la herramienta se atasque, sufra sobreesfuerzos o rompa el contorno por milímetros exactos.
+                </div>
+                <p><strong>[ESPACIO PARA IMAGEN 2: Panel de selección de herramientas (Traces, Drill, Cutout) con las opciones de 0.40 mm, 0.79 mm y 1.59 mm]</strong></p>
+                <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+                <h2>Paso 3: Configuración del Offset (Número de pasadas)</h2>
+                <p>En el panel de configuración de la herramienta también encontrarás el parámetro de <strong>offset</strong> (<em>offset number</em>), que define cuántas veces pasará el cortador alrededor o al lado de las líneas vectoriales.</p>
+                <div class="kicad-nota">
+                    📌 <strong>¿Para qué se usa el offset y dónde se recomienda ponerlo?</strong><br>
+                    * <strong>Uso:</strong> Sirve para limpiar el área de cobre excedente alrededor de las pistas o ampliar el canal de corte. Por defecto, en la mayoría de los procesos se recomienda dejarlo en <code>1 offset</code> (una sola pasada de limpieza o contorno).<br>
+                    * <strong>Modificación:</strong> Puedes modificarlo si deseas que limpie más área alrededor de las pistas (por ejemplo, aumentando los offsets a 2 o 4 para barrer más residuo de cobre), pero ten en cuenta que incrementará el tiempo de maquinado. Para el contorno y perforaciones por lo general se mantiene en una pasada limpia.
+                </div>
+                <p><strong>[ESPACIO PARA IMAGEN 3: Configuración del parámetro "offset number" y ajustes de profundidad en MODS]</strong></p>
+                <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+                <h2>Paso 4: Cálculo de trayectorias, tiempo estimado y visualización 3D de la placa</h2>
+                <ol class="kicad-pasos-lista">
+                    <li>Una vez configurados los diámetros y el offset, da clic en el botón "Calculate".</li>
+                    <li>El sistema procesará los datos y te mostrará el tiempo estimado que tardará la máquina en realizar dicho proceso (por ejemplo, 1 o 2 minutos).</li>
+                    <li><strong>Visualización de trazos y modelo 3D final:</strong>
+                        <ul>
+                            <li>En el módulo de simulación (<em>simulate toolpath</em>), podrás observar exactamente los trazos y movimientos que hará la máquina detallados línea por línea.</li>
+                            <li>Al darle clic en el botón "VIEW" dentro de este módulo de simulación, se abrirá la visualización en 3D de cómo quedará exactamente la placa terminada con el material de cobre y los surcos rebajados, permitiéndote comprobar el aspecto físico antes de exportar.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p><strong>[ESPACIO PARA IMAGEN 4: Módulo "simulate toolpath" mostrando los trazos de la máquina y la vista previa 3D de la placa resultante tras hacer clic en "VIEW"]</strong></p>
+                <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+                <h2>Paso 5: Verificación de coordenadas de origen y configuración espacial</h2>
+                <ol class="kicad-pasos-lista">
+                    <li>Dirígete a la sección de configuración de origen de la máquina (<code>origin</code>).</li>
+                    <li>Generalmente debes ponerlo en <strong><code>x = 0, y = 0, z = 0</code></strong> (o <code>x = 55, y = 0, z = 0</code> dependiendo de tu esquina de referencia en la tablilla).</li>
+                    <li>Consideración para múltiples trabajos: Si vas a hacer dos o más trabajos en la misma placa con algún compañero, verifica muy bien las medidas de dónde deberá estar tu origen, asegurándote de que no se encimen los diseños.</li>
+                    <li>En el cuadro o visor de la izquierda, puedes volver a dar clic en "VIEW" para corroborar la perspectiva espacial de cómo quedaría el diseño completo de la placa en esa zona de trabajo.</li>
+                </ol>
+                <p><strong>[ESPACIO PARA IMAGEN 5: Módulo de configuración de coordenadas de origen (Origin) y verificación de los ejes X, Y, Z]</strong></p>
+                <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+                <h2>Paso 6: Descarga y almacenamiento del archivo final</h2>
+                <ol class="kicad-pasos-lista">
+                    <li>Una vez que revisaste y corroboraste que todos los datos están correctos (medidas, offset, origen, velocidad y simulación 3D), busca el módulo final de salida.</li>
+                    <li>Dale clic en descargar el archivo (que se genera con extensión <code>.rml</code>).</li>
+                    <li><strong>Organización:</strong> Guárdalo inmediatamente en una carpeta específica y bien identificada en tu computadora (por ejemplo, una carpeta llamada "Archivos Placa") para que, cuando tengas que pasarlos al software de control de la cortadora física (<em>Monofab</em>), los encuentres rápidamente sin confusiones.</li>
+                </ol>
+                <p><strong>[ESPACIO PARA IMAGEN 6: Módulo final de guardado/descarga del archivo .rml con el botón de guardado activo]</strong></p>
+            </div>
         </section>
             
         <!-- SECCIÓN PROYECTOS -->
@@ -1533,7 +1329,6 @@
             </div>
         </section>
     </main>
-
     <!-- FOOTER DEL SITIO -->
     <footer class="site-footer">
         <div class="footer-content">
@@ -1548,36 +1343,29 @@
             <button class="btn-subir" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Subir ↑</button>
         </div>
     </footer>
-
     <!-- SCRIPT NAVEGACIÓN Y MOVIMIENTO DEL GATO -->
     <script>
         function cambiarPagina(idSeccion) {
             // 1. Ocultar todas las secciones
             const secciones = document.querySelectorAll('.page-section');
             secciones.forEach(sec => sec.classList.remove('active-page'));
-
             // 2. Desactivar todos los botones del menú
             const botones = document.querySelectorAll('.nav-links button');
             botones.forEach(btn => btn.classList.remove('active'));
-
             // 3. Mostrar la sección seleccionada
             const seccionActiva = document.getElementById(idSeccion);
             if (seccionActiva) {
                 seccionActiva.classList.add('active-page');
             }
-
             // 4. Activar el botón correspondiente
             if (idSeccion === 'inicio') document.getElementById('btn-inicio')?.classList.add('active');
             if (idSeccion === 'trabajos' || idSeccion === 'kicad-detalle' || idSeccion === 'mods-detalle') document.getElementById('btn-trabajos')?.classList.add('active');
             if (idSeccion === 'proyectos') document.getElementById('btn-proyectos')?.classList.add('active');
-
             // 5. Actualizar la URL con el hash (#)
             history.pushState(null, null, '#' + idSeccion);
-
             // Subir al inicio de la página suavemente
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
         // Leer la URL al cargar la página por si entran con un enlace directo
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.substring(1);
@@ -1585,7 +1373,6 @@
                 cambiarPagina(hash);
             }
         });
-
         // Hacer que funcionen las flechas de avance/atrás del navegador
         window.addEventListener('popstate', () => {
             const hash = window.location.hash.substring(1);
@@ -1595,12 +1382,10 @@
                 cambiarPagina('inicio');
             }
         });
-
         // Lógica de Movimiento del Gato Seguidor
         const catCursorContainer = document.getElementById('cat-cursor-container');
         let mouseX = 0, mouseY = 0, catX = 0, catY = 0;
         let walkTimeout;
-
         document.addEventListener('mousemove', (e) => {
             catCursorContainer.style.opacity = '1';
             
@@ -1608,27 +1393,20 @@
             mouseY = e.clientY;
             
             catCursorContainer.classList.add('walking');
-
             clearTimeout(walkTimeout);
             walkTimeout = setTimeout(() => {
                 catCursorContainer.classList.remove('walking');
             }, 120);
         });
-
         function animateCat() {
             const dx = mouseX - catX;
             const dy = mouseY - catY;
-
             catX += dx * 0.12;
             catY += dy * 0.12;
-
             const angle = Math.atan2(dy, dx) * (180 / Math.PI) - 90;
-
             catCursorContainer.style.transform = `translate3d(${catX - 42}px, ${catY - 42}px, 0) rotate(${angle}deg)`;
-
             requestAnimationFrame(animateCat);
         }
-
         animateCat();
     </script>
 </body>
