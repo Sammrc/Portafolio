@@ -481,6 +481,16 @@
             align-items: start;
         }
         
+        .kicad-imagen-par-asimetrica {
+            grid-template-columns: 1fr 1.8fr;
+        }
+        
+        @media (max-width: 700px) {
+            .kicad-imagen-par-asimetrica {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .kicad-imagen-par .kicad-imagen-item p {
             margin: 0 0 8px 0;
         }
@@ -946,6 +956,7 @@
                             <div class="kicad-imagen-slot"><img src="img/INI.png" alt="Pantalla de inicio de KiCad"></div>
                             <p>Instalar la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint, lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
                             <div class="kicad-imagen-par">
+                          <div class="kicad-imagen-par kicad-imagen-par-asimetrica">
                             <div class="kicad-imagen-item imagen-chica">
                                 <p>Ventana de configuración para añadir librerías externas:</p>
                                 <img src="img/INSKILIB.png" alt="Instalación de la librería FabLab">
