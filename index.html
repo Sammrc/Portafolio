@@ -784,17 +784,21 @@
         .capas-imagen-lateral {
             flex: 1;
             display: flex;
-            min-height: 0;      /* ← evita que el contenido fuerce el alto del contenedor */
+            align-items: center;
+            justify-content: center;
+            min-height: 0;
             overflow: hidden;
-        }
-        .capas-imagen-lateral img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
             background-color: #faf5ff;
             border: 1.5px solid var(--border-color);
             border-radius: 16px;
             padding: 6px;
+        }
+        .capas-imagen-lateral img {
+            max-width: 70%;
+            max-height: 70%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
         }
         @media (max-width: 768px) {
             .capas-layout-flex {
