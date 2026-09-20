@@ -1116,7 +1116,11 @@
                             <p>Diagrama esquemático completo interconectando pulsadores, LEDs y resistencias:</p>
                             <div class="kicad-imagen-slot"><img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"style="max-height: 500px;"></div>
                             <div class="kicad-nota">
-                                <strong>Verificación importante (ERC):</strong> Antes de proceder con el diseño físico de la placa, es indispensable ejecutar el <strong>Electrical Rules Checker (ERC)</strong>. Esta herramienta revisa todo el esquemático para detectar pines de alimentación flotantes, salidas conectadas entre sí, componentes sin alimentación asignada o pines sin conectar. Si el reporte arroja advertencias o errores, marcados en rojo o amarillo, debes corregirlos directamente en el esquema lógico, de lo contrario, estos fallos se arrastrarán y provocarán cortocircuitos o errores críticos en la tarjeta física.
+                                <strong>Verificación importante (ERC):</strong> Antes de proceder con el diseño físico de la placa, es indispensable ejecutar el <strong>Electrical Rules Checker (ERC)</strong>. Esta herramienta realiza una auditoría lógica automática de todo el esquemático para detectar pines de alimentación flotantes, salidas conectadas entre sí, componentes sin alimentación asignada o pines sin conectar. Si el reporte arroja advertencias o errores, marcados en rojo o amarillo, debes corregirlos directamente en el esquema lógico, de lo contrario, estos fallos se arrastrarán y provocarán cortocircuitos o errores críticos en la tarjeta física.
+                            </div>
+                                <div class="kicad-nota">
+                                <strong>Verificación importante (ERC):</strong> Antes de proceder con el diseño físico de la placa, es indispensable ejecutar el <strong>Electrical Rules Checker (ERC)</strong>. Esta herramienta realiza una auditoría lógica automática de todo el esquemático para detectar pines de alimentación flotantes, salidas conectadas entre sí, componentes sin alimentación asignada o pines sin conectar. Si el reporte arroja advertencias o errores, marcados en rojo o amarillo, debes corregirlos directamente en el esquema lógico, de lo contrario, estos fallos se arrastrarán y provocarán cortocircuitos o errores críticos en la tarjeta física.
+                            </div>
                             <div class="kicad-imagen-slot"><img src="img/ERCWE.png" alt="Ventana del Electrical Rules Checker sin errores"></div>
                         </div>
                         <!-- ETAPA 4 -->
@@ -1124,7 +1128,6 @@
                             <div class="kicad-etapa-numero">4</div>
                             <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> Del Esquemático a la PCB</h3>
                             <p>Una vez validado el ERC, se pasa al <strong>Editor de Placas (PCB Editor)</strong>.</p>
-                                 <div class="kicad-imagen-slot"><img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas"style="max-height: 500px;"></div>
                             <p>Vista vacía del lienzo de la PCB antes de importar los componentes:</p>
                             <div class="kicad-imagen-slot"><img src="img/PCBEDIT.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes"></div>
                         </div>
