@@ -902,18 +902,18 @@
                             <div class="kicad-etapa-numero">1</div>
                             <h3><i class="fa-solid fa-download"></i> Instalación de KiCad</h3>
                             <p>Descargar KiCad desde su sitio oficial: <a href="https://www.kicad.org/download/windows/" target="_blank" style="color: var(--accent-color); font-weight: 600;">kicad.org/download</a>.</p>
-                            <p>Vista del sitio de descarga para sistemas operativos Windows.</p>
+                            <p>Vista del sitio de descarga para sistemas operativos Windows:</p>
                             <div class="kicad-imagen-slot"><img src="img/DESKIDCAD.png" alt="Pantalla de inicio de KiCad" style="max-height: 220px;"></div>
                             <p>Al abrirlo por primera vez, aparece la pantalla de inicio, donde se accede a todas las herramientas como el Editor de Esquemas, Editor de PCB, Editor de Footprints, visor de Gerbers, calculadoras, etc.</p>
-                            <p>Interfaz del gestor de proyectos al iniciar el programa.</p>
+                            <p>Interfaz del gestor de proyectos al iniciar el programa:</p>
                             <div class="kicad-imagen-slot"><img src="img/INI.png" alt="Pantalla de inicio de KiCad"></div>
                             <p>Instalar la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint, lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
-                            <p>Ventana de configuración para añadir librerías externas.</p>
+                            <p>Ventana de configuración para añadir librerías externas:</p>
                             <div class="kicad-imagen-slot"><img src="img/INSKILIB.png" alt="Instalación de la librería FabLab" style="max-height: 220px;"></div>
                             <p>Confirmación visual de la librería FabLab cargada correctamente.</p>
                             <div class="kicad-imagen-slot"><img src="img/KICADLIB.png" alt="Librería FabLab instalada" style="max-height: 220px;"></div>
                             <p>Para crear un nuevo proyecto, ir a <strong>File → New Project</strong>, lo cual genera la carpeta de trabajo donde se guardarán el esquemático, la PCB y todos los archivos asociados.</p>
-                            <p>Menú superior desplegado para la creación de un nuevo proyecto.</p>
+                            <p>Menú superior desplegado para la creación de un nuevo proyecto:</p>
                             <div class="kicad-imagen-slot"><img src="img/KiCad_Inicio.png" alt="Menú File New Project"></div>
                         </div>
                         <!-- ETAPA 2 -->
@@ -922,9 +922,9 @@
                             <h3><i class="fa-solid fa-diagram-project"></i> Editor de Esquemas (Eeschema)</h3>
                             <p>Desde el proyecto se abre el <strong>Editor de Esquemas</strong>, donde se representa el circuito de forma lógica antes de pasar al diseño físico. En la barra lateral derecha están los símbolos y en la parte superior las herramientas de anotación, impresión y verificación.</p>
                             <p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <strong>A</strong>. Ambas abren el buscador de símbolos, donde, al tener la librería de FabLab instalada, se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
-                            <p>Área de trabajo del editor de esquemáticos con sus barras de herramientas.</p>
+                            <p>Área de trabajo del editor de esquemáticos con sus barras de herramientas:</p>
                             <div class="kicad-imagen-slot"><img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas"></div>
-                            <p>Buscador de componentes filtrando elementos de la librería FabLab.</p>
+                            <p>Buscador de componentes filtrando elementos de la librería FabLab:</p>
                             <div class="kicad-imagen-slot"><img src="img/CFAB.png" alt="Buscador de símbolos con la librería FabLab"></div>
                         </div>
                         <!-- ETAPA 3 -->
@@ -939,12 +939,12 @@
                                 <span class="kicad-chip">Alimentación 3.3V + GND</span>
                             </div>
                             <p>Para simplificar las conexiones se usaron etiquetas de red, permitiendo unir eléctricamente dos puntos sin necesidad de trazar una línea física entre ellos en el esquemático, manteniendo el diagrama más limpio y ordenado.</p>
-                            <p>Diagrama esquemático completo interconectando pulsadores, LEDs y resistencias.</p>
+                            <p>Diagrama esquemático completo interconectando pulsadores, LEDs y resistencias:</p>
                             <div class="kicad-imagen-slot"><img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"></div>
                             <div class="kicad-nota">
                                 <strong>Verificación importante (ERC):</strong> Antes de proceder con el diseño físico de la placa, es indispensable ejecutar el <strong>Electrical Rules Checker (ERC)</strong> haciendo clic en el icono de los lentes o lupa con un símbolo eléctrico en la barra superior. Esta herramienta realiza una auditoría lógica automática de todo el esquemático para detectar pines de alimentación flotantes, salidas conectadas entre sí, componentes sin alimentación asignada o pines sin conectar. Si el reporte arroja advertencias o errores, marcados en rojo o verde, debes corregirlos directamente en el esquema lógico, de lo contrario, estos fallos se arrastrarán y provocarán cortocircuitos o errores críticos en la tarjeta física.
                             </div>
-                            <p>Ventana de resultados del validador Electrical Rules Checker (ERC).</p>
+                            <p>Ventana de resultados del validador Electrical Rules Checker (ERC):</p>
                             <div class="kicad-imagen-slot"><img src="img/ERC.png" alt="Ventana del Electrical Rules Checker sin errores"></div>
                         </div>
                         <!-- ETAPA 4 -->
@@ -952,7 +952,7 @@
                             <div class="kicad-etapa-numero">4</div>
                             <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> Del Esquemático a la PCB</h3>
                             <p>Una vez validado el ERC, se pasa al <strong>Editor de Placas (PCB Editor)</strong>.</p>
-                            <p>Vista vacía del lienzo de la PCB antes de importar los componentes.</p>
+                            <p>Vista vacía del lienzo de la PCB antes de importar los componentes:</p>
                             <div class="kicad-imagen-slot"><img src="img/PCBEDIT.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes"></div>
                         </div>
                         <!-- ETAPA 5 -->
@@ -960,9 +960,9 @@
                             <div class="kicad-etapa-numero">5</div>
                             <h3><i class="fa-solid fa-gear"></i> Configuración de la Placa (Board Setup)</h3>
                             <p>Antes de rutear, es fundamental definir las reglas de diseño desde <strong>Board Setup</strong>. Se estableció un ancho de pista de <strong>0.4 mm</strong> y una separación mínima entre conductores de <strong>0.4 mm</strong>, para evitar cortos durante el fresado o grabado de la placa.</p>
-                            <p>Panel de configuración de anchos de pista predefinidos.</p>
+                            <p>Panel de configuración de anchos de pista predefinidos:</p>
                             <div class="kicad-imagen-slot"><img src="img/BOARD_PRE.png" alt="Ventana de Board Setup - tamaños predefinidos de pista"></div>
-                            <p>Panel de restricciones de separación y clearance en el diseño.</p>
+                            <p>Panel de restricciones de separación y clearance en el diseño:</p>
                             <div class="kicad-imagen-slot"><img src="img/CONS.png" alt="Ventana de Board Setup - restricciones de diseño"></div>
                             <p>Para trabajar de forma ordenada, se usaron distintas capas del editor según su función:</p>
                             <div class="kicad-grid">
@@ -990,7 +990,7 @@
                             <h3><i class="fa-solid fa-layer-group"></i> Diseño y Ruteado de la PCB</h3>
                             <p>Para importar el esquemático, presionar <strong>F8</strong>. Con los componentes ya importados, se acomodaron de forma estratégica sobre la placa para facilitar el ruteado, evitando cruces innecesarios entre pistas. Después se trazaron las conexiones de cobre siguiendo el esquemático, respetando el contorno, las perforaciones y las etiquetas definidas previamente.</p>
                             <p>Finalmente, se usó la herramienta <strong>Draw Filled Zones</strong> para trazar el contorno completo de la PCB y cubrirlo con un plano de cobre.</p>
-                            <p>Placa de circuito impreso ruteada con sus respectivas pistas y plano de cobre.</p>
+                            <p>Placa de circuito impreso ruteada con sus respectivas pistas y plano de cobre:</p>
                             <div class="kicad-imagen-slot"><img src="img/SAMPCB.png" alt="PCB final Hola_mundo con pistas, plano de cobre y componentes"></div>
                             <div class="kicad-nota">
                                 <strong>Verificación importante (DRC):</strong> Al concluir el ruteado y el vertido de planos de cobre, es obligatorio ejecutar el <strong>Design Rules Checker (DRC)</strong> desde la herramienta de verificación de diseño en el menú superior del editor de PCB. Esta función analiza de forma exhaustiva la geometría del circuito físico, validando que se respeten los anchos de pista mínimos, las distancias de aislamiento configuradas en el Board Setup, y detectando pistas cruzadas o pads aislados sin conexión. El informe final debe arrojar cero errores y cero violaciones de holgura, de lo contrario, la fresadora CNC podría cometer errores graves de corte o provocar cortos circuitos definitivos en el prototipo físico.
@@ -1003,9 +1003,9 @@
                             <div class="kicad-etapa-numero">7</div>
                             <h3><i class="fa-solid fa-file-export"></i> Exportación de Archivos Gerber</h3>
                             <p>El último paso es generar los archivos de fabricación desde el menú superior en <strong>File → Fabrication Outputs → Gerbers (.gbr)</strong>. Se cambió el formato de trazado a <strong>SVG</strong>, seleccionando únicamente las capas utilizadas y activando la opción <strong>"Fit page to board"</strong> para que el archivo se ajuste exactamente al tamaño de la placa.</p>
-                            <p>Selección de la ruta de salida para la generación de archivos Gerber.</p>
+                            <p>Selección de la ruta de salida para la generación de archivos Gerber:</p>
                             <div class="kicad-imagen-slot"><img src="img/SAVE.png" alt="Menú Fabrication Outputs - Gerbers"></div>
-                            <p>Ventana de ploteo configurada en formato SVG con ajuste a la tarjeta.</p>
+                            <p>Ventana de ploteo configurada en formato SVG con ajuste a la tarjeta:</p>
                             <div class="kicad-imagen-slot"><img src="img/PLOTT.png" alt="Ventana de Plot con configuración SVG y Fit page to board"></div>
                             <p>Con la configuración lista, se presiona <strong>Plot</strong> para generar los archivos finales, quedando la placa lista para su fabricación.</p>
                         </div>
