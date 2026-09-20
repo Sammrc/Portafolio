@@ -472,6 +472,36 @@
             object-fit: contain;
             border-radius: 14px;
         }
+
+        .kicad-imagen-par {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 14px 0;
+            align-items: start;
+        }
+        
+        .kicad-imagen-par .kicad-imagen-item p {
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+        
+        .kicad-imagen-par .kicad-imagen-item img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: contain;
+            background-color: #faf5ff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 8px;
+        }
+        
+        @media (max-width: 700px) {
+            .kicad-imagen-par {
+                grid-template-columns: 1fr;
+            }
+        }
+            
         /* Cuadro de fondo moradito idéntico al de la imagen proporcionada */
         .kicad-nota {
             background-color: #faf5ff;
@@ -892,7 +922,6 @@
                 <div class="kicad-contenido-principal">
                     <div class="kicad-detalle-container" style="margin-top: 0;">
                         <h2>Diseño de PCB con KiCad</h2>
-                        <p>Pantalla principal del entorno de trabajo, mostrando el logotipo y acceso general al software.</p>
                         <div class="kicad-imagen-slot">
                             <img src="img/kicadlogo.png" alt="Pantalla de inicio de KiCad" style="max-height: 220px;">
                         </div>
@@ -909,18 +938,23 @@
                             <p>Interfaz del gestor de proyectos al iniciar el programa:</p>
                             <div class="kicad-imagen-slot"><img src="img/INI.png" alt="Pantalla de inicio de KiCad"></div>
                             <p>Instalar la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint, lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
-                            <p>Ventana de configuración para añadir librerías externas:</p>
-                            <div class="kicad-imagen-slot"><img src="img/INSKILIB.png" alt="Instalación de la librería FabLab" style="max-height: 220px;"></div>
-                            <p>Confirmación visual de la librería FabLab cargada correctamente.</p>
-                            <div class="kicad-imagen-slot"><img src="img/KICADLIB.png" alt="Librería FabLab instalada" style="max-height: 220px;"></div>
+                            <div class="kicad-imagen-par">
+                            <div class="kicad-imagen-item">
+                                <p>Ventana de configuración para añadir librerías externas:</p>
+                                <img src="img/INSKILIB.png" alt="Instalación de la librería FabLab">
+                            </div>
+                            <div class="kicad-imagen-item">
+                                <p>Confirmación visual de la librería FabLab cargada correctamente.</p>
+                                <img src="img/KICADLIB.png" alt="Librería FabLab instalada">
+                            </div>
+                        </div>
                             <p>Para crear un nuevo proyecto, ir a <strong>File → New Project</strong>, lo cual genera la carpeta de trabajo donde se guardarán el esquemático, la PCB y todos los archivos asociados.</p>
-                            <p>Menú superior desplegado para la creación de un nuevo proyecto:</p>
                             <div class="kicad-imagen-slot"><img src="img/KiCad_Inicio.png" alt="Menú File New Project"></div>
                         </div>
                         <!-- ETAPA 2 -->
                         <div id="etapa-2" class="kicad-etapa">
                             <div class="kicad-etapa-numero">2</div>
-                            <h3><i class="fa-solid fa-diagram-project"></i> Editor de Esquemas (Eeschema)</h3>
+                            <h3><i class="fa-solid fa-diagram-project"></i> Editor de Esquemas</h3>
                             <p>Desde el proyecto se abre el <strong>Editor de Esquemas</strong>, donde se representa el circuito de forma lógica antes de pasar al diseño físico. En la barra lateral derecha están los símbolos y en la parte superior las herramientas de anotación, impresión y verificación.</p>
                             <p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <strong>A</strong>. Ambas abren el buscador de símbolos, donde, al tener la librería de FabLab instalada, se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
                             <p>Área de trabajo del editor de esquemáticos con sus barras de herramientas:</p>
