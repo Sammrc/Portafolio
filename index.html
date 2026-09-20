@@ -497,6 +497,42 @@
         .btn-regresar:hover { background-color: var(--accent-hover); }
 
         /* --- GUÍA KICAD: FLUJO CONTINUO --- */
+        .kicad-imagen-slot img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+            background-color: #faf5ff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        /* Estilo para tablas de medidas / notas importantes */
+        .tabla-medidas {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .tabla-medidas th, .tabla-medidas td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tabla-medidas th {
+            background-color: var(--accent-light);
+            color: var(--accent-hover);
+            font-weight: 700;
+        }
+
+            
         .kicad-intro-banner {
             background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
             color: #ffffff;
@@ -860,9 +896,9 @@
 
                 <div class="materia-intro-card">
                     <h2>¿De qué trata la materia?</h2>
-                    <p>La asignatura de <strong>Producción Electrónica</strong> está enfocada en el desarrollo de prototipos y circuitos impresos (PCB) mediante la aplicación de técnicas especializadas de diseño, simulación y manufactura.</p>
-                
-                    <h3>Objetivos</h3>
+                        <p>La asignatura de producción electrónica se centra en el estudio integral y la aplicación práctica de los procesos de diseño, validación y manufactura de sistemas electrónicos modernos. Su enfoque principal abarca la ingeniería detrás del diseño de PCBs (Printed Circuit Boards), desde la captura de esquemáticos y el ruteado de pistas hasta la generación de archivos de fabricación y el ensamblaje de componentes de montaje superficial. </p>
+                    <p>Asimismo, la materia vincula la teoría con la práctica industrial, utilizando herramientas de software profesional y maquinaria de prototipado rápido para materializar circuitos funcionales con estándares de calidad y optimización de espacio.</p>
+                        <h3>Objetivos</h3>
                     <div class="materia-objetivos-grid">
                         <div class="objetivo-pill">
                             <i class="fa-solid fa-microchip" style="margin-right: 8px; color: var(--accent-color);"></i>
