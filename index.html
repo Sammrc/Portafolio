@@ -573,6 +573,25 @@
             padding: 6px 14px;
             border-radius: 14px;
         }
+
+        .kicad-tecla {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 26px;
+            height: 26px;
+            padding: 0 6px;
+            background: linear-gradient(180deg, #ffffff, #f3e8ff);
+            border: 1.5px solid var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+            border-radius: 6px;
+            font-family: 'Segoe UI', monospace;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--accent-hover);
+            box-shadow: 0 2px 0 rgba(91, 33, 182, 0.15);
+            margin: 0 2px;
+        }
         /* --- ESTILOS PARA EL ÍNDICE LATERAL Y ESTRUCTURA GENERAL (CORREGIDO AL LADO DERECHO Y TAMAÑO COMPACTO) --- */
         .kicad-layout-principal {
             display: flex;
@@ -1007,7 +1026,7 @@
                             <h3><i class="fa-solid fa-diagram-project"></i> Editor de Esquemas</h3>
                             <p>Desde el proyecto se abre el <strong>Editor de Esquemas</strong>, donde se representa el circuito de forma lógica antes de pasar al diseño físico. En la barra lateral derecha están los símbolos y en la parte superior las herramientas de anotación, impresión y verificación.</p>
                             <div class="kicad-imagen-slot"><img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas"></div>
-                            <p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <strong>A</strong>. Ambas abren el buscador de símbolos, donde, al tener la librería de FabLab instalada, se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
+                            <p><p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <kbd class="kicad-tecla">A</kbd>. Ambas abren el buscador de símbolos, donde, al tener la librería de FabLab instalada, se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
                             <p>Buscador de componentes filtrando elementos de la librería FabLab:</p>
                             <div class="kicad-imagen-slot"><img src="img/A.png" alt="Buscador de símbolos con la librería FabLab"></div>
                         </div>
@@ -1072,7 +1091,7 @@
                         <div id="etapa-6" class="kicad-etapa">
                             <div class="kicad-etapa-numero">6</div>
                             <h3><i class="fa-solid fa-layer-group"></i> Diseño y Ruteado de la PCB</h3>
-                            <p>Para importar el esquemático, presionar <strong>F8</strong>. Con los componentes ya importados, se acomodaron de forma estratégica sobre la placa para facilitar el ruteado, evitando cruces innecesarios entre pistas. Después se trazaron las conexiones de cobre siguiendo el esquemático, respetando el contorno, las perforaciones y las etiquetas definidas previamente.</p>
+                            <p>Para importar el esquemático, presionar <kbd class="kicad-tecla">F8</kbd>. Con los componentes ya importados, se acomodaron de forma estratégica sobre la placa para facilitar el ruteado, evitando cruces innecesarios entre pistas. Después se trazaron las conexiones de cobre siguiendo el esquemático, respetando el contorno, las perforaciones y las etiquetas definidas previamente.</p>
                             <p>Finalmente, se usó la herramienta <strong>Draw Filled Zones</strong> para trazar el contorno completo de la PCB y cubrirlo con un plano de cobre.</p>
                             <p>Placa de circuito impreso ruteada con sus respectivas pistas y plano de cobre:</p>
                             <div class="kicad-imagen-slot"><img src="img/SAMPCB.png" alt="PCB final Hola_mundo con pistas, plano de cobre y componentes"></div>
