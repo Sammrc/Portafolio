@@ -745,6 +745,46 @@
             line-height: 1.7;
             margin: 0 0 14px 0;
         }
+            /* --- NUEVO CONTENEDOR DE DOS MITADES (IMAGEN + PASTILLA) --- */
+        .seccion-dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Divide el espacio en dos mitades iguales */
+            gap: 30px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .columna-imagen img {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1.5px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(91, 33, 182, 0.08);
+            background-color: #faf5ff;
+        }
+
+        .columna-pastilla {
+            width: 100%;
+        }
+
+        /* Cuadro de fondo moradito (Pastilla) */
+        .kicad-nota {
+            background-color: #faf5ff;
+            border: 1.5px solid var(--border-color);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 20px;
+            padding: 22px 26px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            box-shadow: 0 4px 15px rgba(91, 33, 182, 0.05);
+            box-sizing: border-box;
+        }
+        .kicad-nota strong {
+            color: var(--accent-color);
+        }
+            
         /* Tabla de herramientas para MODS */
         .tabla-medidas {
             width: 100%;
@@ -1115,12 +1155,19 @@
                                 <div class="kicad-imagen-slot"><img src="img/ETR.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"></div>
                             <p>Diagrama esquemático completo interconectando pulsadores, LEDs y resistencias:</p>
                             <div class="kicad-imagen-slot"><img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"style="max-height: 500px;"></div>
-                            <div class="kicad-nota">
-                                <strong>Verificación importante (ERC):</strong> Antes de proceder con el diseño físico de la placa, es indispensable ejecutar el <strong>Electrical Rules Checker (ERC)</strong>. Esta herramienta realiza una auditoría lógica automática de todo el esquemático para detectar pines de alimentación flotantes, salidas conectadas entre sí, componentes sin alimentación asignada o pines sin conectar. Si el reporte arroja advertencias o errores, marcados en rojo o verde, debes corregirlos directamente en el esquema lógico, de lo contrario, estos fallos se arrastrarán y provocarán cortocircuitos o errores críticos en la tarjeta física.
-                            </div>
-                            <p>Ventana de resultados del validador Electrical Rules Checker (ERC):</p>
-                            <div class="kicad-imagen-slot"><img src="img/ERC.png" alt="Ventana del Electrical Rules Checker sin errores"></div>
-                        </div>
+                            <!-- CONTENEDOR DIVIDIDO: IZQUIERDA IMAGEN, DERECHA PASTILLA -->
+                                    <div class="seccion-dos-columnas">
+                                        <!-- Mitad Izquierda: Imagen -->
+                                        <div class="columna-imagen">
+                                            <img src="img/ERCWE.png" alt="Ilustración o esquema de verificación ERC">
+                                        </div>
+                        
+                                        <!-- Mitad Derecha: Pastilla -->
+                                        <div class="columna-pastilla">
+                                            <div class="kicad-nota">
+                                                <strong>Verificación importante (ERC):</strong> Antes de proceder con el diseño físico de la placa, es indispensable ejecutar el <strong>Electrical Rules Checker (ERC)</strong>. Esta herramienta realiza una auditoría lógica automática de todo el esquemático para detectar pines de alimentación flotantes, salidas conectadas entre sí, componentes sin alimentación asignada o pines sin conectar. 
+                                            </div>
+                                        </div>
                         <!-- ETAPA 4 -->
                         <div id="etapa-4" class="kicad-etapa">
                             <div class="kicad-etapa-numero">4</div>
