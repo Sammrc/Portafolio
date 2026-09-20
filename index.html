@@ -1169,9 +1169,9 @@
                                     </span>
                                 </div>
                             <p>Para simplificar las conexiones se usaron etiquetas de red, permitiendo unir eléctricamente dos puntos sin necesidad de trazar una línea física entre ellos en el esquemático.</p>
-                                <div class="kicad-imagen-slot"><img src="img/ETR.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"style="max-height: 500px;"></div>
+                                <div class="kicad-imagen-slot"><img src="img/ETR.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"style="max-height: 400px;"></div>
                             <p>Diagrama esquemático completo interconectando pulsadores, LEDs y resistencias:</p>
-                            <div class="kicad-imagen-slot"><img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"style="max-height: 500px;"></div>
+                            <div class="kicad-imagen-slot"><img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"style="max-height: 560px;"></div>
                             <div class="kicad-nota">
                                 <strong>Verificación importante:</strong> Antes de proceder con el diseño físico de la placa, es indispensable ejecutar el <strong>Electrical Rules Checker (ERC)</strong>. Esta herramienta analiza el esquemático para detectar pines de alimentación flotantes, salidas conectadas entre sí, componentes sin alimentación asignada o pines sin conectar. Si el reporte arroja advertencias o errores, marcados en rojo o amarillo, debes corregirlos directamente en el esquema lógico, de lo contrario, estos fallos se arrastrarán y provocarán cortocircuitos o errores críticos en la tarjeta física.
                             </div>
@@ -1186,14 +1186,14 @@
                                         <img src="img/IRALPCBED.png" alt="Pasar al PCB editor"style="max-height: 100px;">
                                     </div>
                             <p>Vista del lienzo de la PCB antes de importar los componentes:</p>
-                            <div class="kicad-imagen-slot"><img src="img/PCBEDIT.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes"style="max-height: 500px;"></div>
+                            <div class="kicad-imagen-slot"><img src="img/PCBEDIT.png" alt="Área de trabajo vacía del PCB Editor antes de importar componentes"style="max-height: 560px;"></div>
                         </div>
                         <!-- ETAPA 5 -->
                         <div id="etapa-5" class="kicad-etapa">
                             <div class="kicad-etapa-numero">5</div>
                             <h3><i class="fa-solid fa-gear"></i> Configuración de la Placa (Board Setup)</h3>
                             <p>Antes de rutear, es fundamental definir las reglas de diseño desde <strong>Board Setup</strong>. Se estableció un ancho de pista de <strong>0.4 mm, 0.8mm y 2mm</strong>.</p>
-                            <div class="kicad-imagen-slot"><img src="img/BOARD_PRED.png" alt="Ventana de Board Setup - tamaños predefinidos de pista"style="max-height: 350px;"></div>
+                            <div class="kicad-imagen-slot"><img src="img/BOARD_PRED.png" alt="Ventana de Board Setup - tamaños predefinidos de pista"style="max-height: 400px;"></div>
                             <p>Se estableció una separación mínima entre conductores de <strong>0.4 mm</strong>, para evitar cortos durante el fresado o grabado de la placa.</p>
                             <div class="kicad-imagen-slot"><img src="img/CONS.png" alt="Ventana de Board Setup - restricciones de diseño"style="max-height: 500px;"></div>
                             <p>Para trabajar de forma ordenada, se usaron distintas capas del editor según su función:</p>
