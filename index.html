@@ -592,6 +592,57 @@
             box-shadow: 0 2px 0 rgba(91, 33, 182, 0.15);
             margin: 0 2px;
         }
+
+                    /* Contenedor de la lista */
+        .kicad-chip-lista {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        /* Cada pastilla debe ser relativa para que la tarjeta se posicione respecto a ella */
+        .kicad-chip {
+            position: relative;
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Estilo de la mini tarjetita (oculta por defecto) */
+        .kicad-tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: 125%; /* La sitúa justo arriba de la pastilla */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            z-index: 10;
+            width: 140px; /* Ajusta el ancho de la tarjeta según necesites */
+            text-align: center;
+        }
+        
+        /* Imagen dentro de la tarjetita */
+        .kicad-tooltip img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        
+        /* ACCIÓN: Mostrar la tarjetita al pasar el cursor */
+        .kicad-chip:hover .kicad-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+            
         /* --- ESTILOS PARA EL ÍNDICE LATERAL Y ESTRUCTURA GENERAL (CORREGIDO AL LADO DERECHO Y TAMAÑO COMPACTO) --- */
         .kicad-layout-principal {
             display: flex;
@@ -1025,22 +1076,41 @@
                             <div class="kicad-etapa-numero">2</div>
                             <h3><i class="fa-solid fa-diagram-project"></i> Editor de Esquemas</h3>
                             <p>Desde el proyecto se abre el <strong>Editor de Esquemas</strong>, donde se representa el circuito de forma lógica antes de pasar al diseño físico. En la barra lateral derecha están los símbolos y en la parte superior las herramientas de anotación, impresión y verificación.</p>
-                            <div class="kicad-imagen-slot"><img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas"></div>
+                            <div class="kicad-imagen-slot"><img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas"style="max-height: 500px;"></div>
                             <p><p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <kbd class="kicad-tecla">A</kbd>. Ambas abren el buscador de símbolos, donde, al tener la librería de FabLab instalada, se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
-                            <p>Buscador de componentes filtrando elementos de la librería FabLab:</p>
-                            <div class="kicad-imagen-slot"><img src="img/A.png" alt="Buscador de símbolos con la librería FabLab"></div>
+                            <div class="kicad-imagen-slot"><img src="img/A.png" alt="Buscador de símbolos con la librería FabLab"style="max-height: 500px;"></div>
                         </div>
                         <!-- ETAPA 3 -->
                         <div id="etapa-3" class="kicad-etapa">
                             <div class="kicad-etapa-numero">3</div>
                             <h3><i class="fa-solid fa-sitemap"></i> Creación del Esquemático</h3>
-                            <p>Con los símbolos ya disponibles, se armó el circuito de la práctica colocando los siguientes componentes:</p>
-                            <div class="kicad-chip-lista">
-                                <span class="kicad-chip">8 resistencias R_1206</span>
-                                <span class="kicad-chip">4 LEDs LED_1206</span>
-                                <span class="kicad-chip">4 interruptores</span>
-                                <span class="kicad-chip">Alimentación 3.3V + GND</span>
-                            </div>
+                           <p>Con los símbolos ya disponibles, se armó el circuito de la práctica colocando los siguientes componentes:</p>
+                                <div class="kicad-chip-lista">
+                                    <span class="kicad-chip">
+                                        8 resistencias R_1206
+                                        <div class="kicad-tooltip">
+                                            <img src="img/R_1206.png" alt="Resistencia R_1206">
+                                        </div>
+                                    </span>
+                                    <span class="kicad-chip">
+                                        4 LEDs LED_1206
+                                        <div class="kicad-tooltip">
+                                            <img src="img/LED.png" alt="LED LED_1206">
+                                        </div>
+                                    </span>
+                                    <span class="kicad-chip">
+                                        4 interruptores
+                                        <div class="kicad-tooltip">
+                                            <img src="img/PUSH.png" alt="Interruptor">
+                                        </div>
+                                    </span>
+                                    <span class="kicad-chip">
+                                        Alimentación 3.3V + GND
+                                        <div class="kicad-tooltip">
+                                            <img src="img/PWR.png" alt="Alimentación 3.3V + GND">
+                                        </div>
+                                    </span>
+                                </div>
                             <p>Para simplificar las conexiones se usaron etiquetas de red, permitiendo unir eléctricamente dos puntos sin necesidad de trazar una línea física entre ellos en el esquemático, manteniendo el diagrama más limpio y ordenado.</p>
                             <p>Diagrama esquemático completo interconectando pulsadores, LEDs y resistencias:</p>
                             <div class="kicad-imagen-slot"><img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"></div>
