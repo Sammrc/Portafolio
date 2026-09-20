@@ -745,6 +745,61 @@
             line-height: 1.7;
             margin: 0 0 14px 0;
         }
+
+        /* --- NUEVOS ESTILOS DISEÑO CAPAS (ETAPA 5) --- */
+        .capas-layout-flex {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            margin: 15px 0;
+        }
+        .capas-lista-columna {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+        }
+        .capas-tarjeta-compacta {
+            background: #faf5ff;
+            padding: 14px 18px;
+            border-radius: 14px;
+            border: 1px solid var(--accent-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .capas-tarjeta-compacta h4 {
+            color: var(--accent-color);
+            margin: 0 0 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        .capas-tarjeta-compacta p {
+            margin: 0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .capas-imagen-lateral {
+            flex: 1;
+            display: flex;
+        }
+        .capas-imagen-lateral img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: #faf5ff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 16px;
+            padding: 6px;
+        }
+        @media (max-width: 768px) {
+            .capas-layout-flex {
+                flex-direction: column;
+            }
+        }
+
         /* Tabla de herramientas para MODS */
         .tabla-medidas {
             width: 100%;
@@ -1140,24 +1195,32 @@
                             <p>Se estableció una separación mínima entre conductores de <strong>0.4 mm</strong>, para evitar cortos durante el fresado o grabado de la placa.</p>
                             <div class="kicad-imagen-slot"><img src="img/CONS.png" alt="Ventana de Board Setup - restricciones de diseño"style="max-height: 500px;"></div>
                             <p>Para trabajar de forma ordenada, se usaron distintas capas del editor según su función:</p>
-                            <div class="kicad-grid">
-                                <div class="kicad-item">
-                                    <h4><i class="fa-solid fa-bolt"></i> F.Cu</h4>
-                                    <p>Capa de cobre superior, usada para rutear todas las pistas del circuito (0.4 mm de ancho).</p>
+                            
+                            <!-- NUEVA ESTRUCTURA DE 1 COLUMNA DE TARJETAS + IMAGEN LATERAL ALINEADA -->
+                            <div class="capas-layout-flex">
+                                <div class="capas-lista-columna">
+                                    <div class="capas-tarjeta-compacta">
+                                        <h4><i class="fa-solid fa-bolt"></i> F.Cu</h4>
+                                        <p>Capa de cobre superior, usada para rutear todas las pistas del circuito (0.4 mm de ancho).</p>
+                                    </div>
+                                    <div class="capas-tarjeta-compacta">
+                                        <h4><i class="fa-solid fa-scissors"></i> Edge.Cuts</h4>
+                                        <p>Define el contorno físico de la placa, en este caso con un ancho de línea de 2 mm.</p>
+                                    </div>
+                                    <div class="capas-tarjeta-compacta">
+                                        <h4><i class="fa-solid fa-tag"></i> User.1</h4>
+                                        <p>Reservada para las etiquetas de texto e identificación de la placa.</p>
+                                    </div>
+                                    <div class="capas-tarjeta-compacta">
+                                        <h4><i class="fa-solid fa-screwdriver"></i> User.2 / User.4</h4>
+                                        <p>Usadas para marcar la posición de tornillos y perforaciones de montaje(0.8 mm de ancho).</p>
+                                    </div>
                                 </div>
-                                <div class="kicad-item">
-                                    <h4><i class="fa-solid fa-scissors"></i> Edge.Cuts</h4>
-                                    <p>Define el contorno físico de la placa, en este caso con un ancho de línea de 2 mm.</p>
-                                </div>
-                                <div class="kicad-item">
-                                    <h4><i class="fa-solid fa-tag"></i> User.1</h4>
-                                    <p>Reservada para las etiquetas de texto e identificación de la placa.</p>
-                                </div>
-                                <div class="kicad-item">
-                                    <h4><i class="fa-solid fa-screwdriver"></i> User.2 / User.4</h4>
-                                    <p>Usadas para marcar la posición de tornillos y perforaciones de montaje.</p>
+                                <div class="capas-imagen-lateral">
+                                    <img src="img/CAPAS.png" alt="Ilustración de capas del editor">
                                 </div>
                             </div>
+
                         </div>
                         <!-- ETAPA 6 -->
                         <div id="etapa-6" class="kicad-etapa">
