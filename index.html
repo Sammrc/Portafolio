@@ -58,13 +58,13 @@
             from { transform: rotate(-6deg); }
             to { transform: rotate(6deg); }
         }
-        /* --- LOGO ESQUINA --- */
+        /* --- LOGO ESQUINA (75x75 px) --- */
         .logo-esquina {
             position: absolute;
             top: 20px;
             left: 25px;
-            width: 150px;
-            height: 150px;
+            width: 75px;
+            height: 75px;
             object-fit: cover;
             border-radius: 14px; 
             border: 2px solid var(--border-color);
@@ -170,7 +170,7 @@
         }
         .perfil-card {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 15px;
         }
         .perfil-foto {
@@ -200,6 +200,33 @@
             text-decoration: underline;
             font-weight: 600;
             word-break: break-all;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .perfil-linkedin {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #faf5ff;
+            padding: 2px 8px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+            margin-bottom: 8px;
+        }
+        .perfil-linkedin:hover {
+            background-color: var(--accent-light);
+            color: var(--accent-hover);
+        }
+        .perfil-info p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-color);
+            margin: 6px 0 0 0;
         }
         .gps-indicator {
             display: inline-block;
@@ -472,7 +499,6 @@
             object-fit: contain;
             border-radius: 14px;
         }
-
         .kicad-imagen-par {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -494,7 +520,6 @@
         .kicad-imagen-par .kicad-imagen-item p {
             margin: 0 0 8px 0;
         }
-
         .kicad-imagen-par .kicad-imagen-item.imagen-grande img {
             max-height: 420px;
         }
@@ -548,10 +573,10 @@
             padding: 6px 14px;
             border-radius: 14px;
         }
-        /* --- ESTILOS PARA EL ÍNDICE LATERAL Y ESTRUCTURA GENERAL --- */
+        /* --- ESTILOS PARA EL ÍNDICE LATERAL Y ESTRUCTURA GENERAL (CORREGIDO AL LADO DERECHO Y TAMAÑO COMPACTO) --- */
         .kicad-layout-principal {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             align-items: flex-start;
             position: relative;
             margin-top: 20px;
@@ -563,22 +588,22 @@
         .kicad-indice-lateral {
             position: sticky;
             top: 90px;
-            width: 270px;
+            width: 230px;
             background-color: var(--card-bg);
             border: 1.5px solid var(--border-color);
-            border-radius: 20px;
-            padding: 20px;
+            border-radius: 16px;
+            padding: 16px;
             box-shadow: 0 4px 15px rgba(91, 33, 182, 0.08);
             flex-shrink: 0;
             z-index: 10;
         }
         .kicad-indice-lateral h4 {
             color: var(--accent-color);
-            font-size: 1.05rem;
-            margin-bottom: 12px;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         .kicad-indice-lateral ul {
             list-style: none;
@@ -586,22 +611,22 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 5px;
         }
         .kicad-indice-lateral ul li a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.84rem;
+            font-size: 0.78rem;
             font-weight: 600;
             display: block;
-            padding: 5px 10px;
-            border-radius: 8px;
+            padding: 4px 8px;
+            border-radius: 6px;
             transition: all 0.2s ease;
         }
         .kicad-indice-lateral ul li a:hover {
             background-color: var(--accent-light);
             color: var(--accent-hover);
-            padding-left: 14px;
+            padding-left: 10px;
         }
         /* Estilos de las etapas de contenido */
         .kicad-etapa {
@@ -830,7 +855,7 @@
         </ul>
     </nav>
     <main>
-        <!-- SECCIÓN INICIO -->
+        <!-- SECCIÓN INICIO ACTUALIZADA -->
         <section id="inicio" class="page-section active-page">
             <div class="contenido-inicial">
                 <h1>Portafolio de Proyectos</h1>
@@ -854,7 +879,7 @@
                         </div>
                         <div class="objetivo-pill">
                             <i class="fa-solid fa-industry" style="margin-right: 8px; color: var(--accent-color);"></i>
-                            <strong>Manufactura Avanzada:</strong> Fabricación física de prototipos mediante la aplicación de reglas de ruteado y el uso de equipo especializado como la cortadora láser <strong>XTOOL</strong> y la máquina <strong>MONOFAB</strong>.
+                            <strong>Manufactura Avanzada:</strong> Fabricación física de prototipos mediante la aplicación de reglas de ruteado y el uso de equipo especializado (como la máquina MONOFAB).
                         </div>
                    </div>
                 </div>
@@ -869,6 +894,8 @@
                                 <h5>Samantha Ramírez Castillo</h5>
                                 <p class="perfil-carrera">Ing. Mecatrónica</p>
                                 <a href="mailto:196933@iberopuebla.mx" class="perfil-correo">196933@iberopuebla.mx</a>
+                                <a href="https://www.linkedin.com/in/samantha-ramirez" target="_blank" class="perfil-linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                                <p>Estudiante de Ingeniería Mecatrónica en la Universidad Iberoamericana Puebla, enfoca su desarrollo académico con un especial interés en el área de la robótica. Paralelamente a su formación en ingeniería, cultiva diversas habilidades creativas y técnicas, como el modelado 3D, el dibujo digital y el aprendizaje de idiomas.</p>
                             </div>
                         </div>
                         <div class="info-card perfil-card">
@@ -877,6 +904,8 @@
                                 <h6>Karen Melissa Pastrana Monzón</h6>
                                 <p class="perfil-carrera">Ing. Mecatrónica</p>
                                 <a href="mailto:195949@iberopuebla.mx" class="perfil-correo">195949@iberopuebla.mx</a>
+                                <a href="https://www.linkedin.com/in/karen-pastrana-980753381?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="perfil-linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                                <p>Estudiante de Ingeniería Mecatrónica en la Universidad Iberoamericana Puebla, orienta su formación hacia el desarrollo de soluciones tecnológicas e innovadoras. Muestra un especial interés en el área de automatización, enfocándose en la optimización de procesos para el ahorro de recursos, la reducción de tiempos y la minimización de errores.</p>
                             </div>
                         </div>
                    </div>   
@@ -932,7 +961,7 @@
             </div>
         </section>
         
-        <!-- VISTA DETALLADA KICAD AMPLIADA -->
+        <!-- VISTA DETALLADA KICAD AMPLIADA (ÍNDICE DERECHO CORREGIDO) -->
         <section id="kicad-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
             <div class="kicad-layout-principal">
@@ -954,31 +983,30 @@
                             <p>Al abrirlo por primera vez, aparece la pantalla de inicio, donde se accede a todas las herramientas como el Editor de Esquemas, Editor de PCB, Editor de Footprints, visor de Gerbers, calculadoras, etc.</p>
                             <p>Interfaz del gestor de proyectos al iniciar el programa:</p>
                             <div class="kicad-imagen-slot"><img src="img/INI.png" alt="Pantalla de inicio de KiCad"></div>
-                         <p>Instalar la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint, lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
-                        <div class="kicad-imagen-par kicad-imagen-par-asimetrica">
-                            <div class="kicad-imagen-item imagen-chica">
-                                <p>Ventana de configuración para añadir librerías externas:</p>
-                                <img src="img/INSKILIB.png" alt="Instalación de la librería FabLab">
+                            <p>Instalar la <strong>librería de FabLab</strong>, que incluye componentes ya vinculados con su footprint, lo cual facilita el trabajo posterior en el diseño de la PCB.</p>
+                            <div class="kicad-imagen-par kicad-imagen-par-asimetrica">
+                                <div class="kicad-imagen-item imagen-chica">
+                                    <p>Ventana de configuración para añadir librerías externas:</p>
+                                    <img src="img/INSKILIB.png" alt="Instalación de la librería FabLab">
+                                </div>
+                                <div class="kicad-imagen-item imagen-grande">
+                                    <p>Confirmación visual de la librería FabLab cargada correctamente.</p>
+                                    <img src="img/KICADLIB.png" alt="Librería FabLab instalada">
+                                </div>
                             </div>
-                            <div class="kicad-imagen-item imagen-grande">
-                                <p>Confirmación visual de la librería FabLab cargada correctamente.</p>
-                                <img src="img/KICADLIB.png" alt="Librería FabLab instalada">
-                            </div>
-                        </div>
-                        
-                        <p>Para crear un nuevo proyecto, ir a <strong>File → New Project</strong>, lo cual genera la carpeta de trabajo donde se guardarán el esquemático, la PCB y todos los archivos asociados.</p>
-                        <div class="kicad-imagen-slot"><img src="img/KiCad_Inicio.png" alt="Menú File New Project"></div>
-                                                </div>
-                                <p>Seleccionar <strong>Schematic Editor</strong> para empezar a diseñar el circuito.</p>
-                                     <div class="kicad-imagen-slot">
+                            <p>Para crear un nuevo proyecto, ir a <strong>File → New Project</strong>, lo cual genera la carpeta de trabajo donde se guardarán el esquemático, la PCB y todos los archivos asociados.</p>
+                            <div class="kicad-imagen-slot"><img src="img/KiCad_Inicio.png" alt="Menú File New Project"></div>
+                            <p>Seleccionar <strong>Schematic Editor</strong> para empezar a diseñar el circuito.</p>
+                            <div class="kicad-imagen-slot">
                                 <img src="img/ESQUEMP.png" alt="Selección de Schematic Editor">
                             </div>
+                        </div>
                         <!-- ETAPA 2 -->
                         <div id="etapa-2" class="kicad-etapa">
                             <div class="kicad-etapa-numero">2</div>
                             <h3><i class="fa-solid fa-diagram-project"></i> Editor de Esquemas</h3>
                             <p>Desde el proyecto se abre el <strong>Editor de Esquemas</strong>, donde se representa el circuito de forma lógica antes de pasar al diseño físico. En la barra lateral derecha están los símbolos y en la parte superior las herramientas de anotación, impresión y verificación.</p>
-                                <div class="kicad-imagen-slot"><img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas"></div>
+                            <div class="kicad-imagen-slot"><img src="img/ESQINI.png" alt="Entorno del Editor de Esquemas y barra de herramientas"></div>
                             <p>Para colocar componentes hay dos formas: hacer clic en el ícono de triángulo del panel derecho, o simplemente presionar la tecla <strong>A</strong>. Ambas abren el buscador de símbolos, donde, al tener la librería de FabLab instalada, se pueden buscar sus componentes específicos, verificando siempre que cada uno tenga asignado su footprint correspondiente.</p>
                             <p>Buscador de componentes filtrando elementos de la librería FabLab:</p>
                             <div class="kicad-imagen-slot"><img src="img/A.png" alt="Buscador de símbolos con la librería FabLab"></div>
@@ -1067,6 +1095,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- ÍNDICE LATERAL DERECHO -->
                 <aside class="kicad-indice-lateral">
                     <h4><i class="fa-solid fa-list-ul"></i> Índice de Secciones</h4>
                     <ul>
@@ -1082,7 +1111,7 @@
             </div>
         </section>
             
-        <!-- SECCIÓN DETALLE MODS (ACTUALIZADA CON ÍNDICE DERECHO Y VELOCIDAD EN PASO 5) -->
+        <!-- SECCIÓN DETALLE MODS (ACTUALIZADA CON INKSCAPE, SIMULACIÓN 3D E ÍNDICE DERECHO) -->
         <section id="mods-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
             
@@ -1109,6 +1138,23 @@
                             <div class="kicad-imagen-slot">
                                 <img src="img/M3.png" alt="Módulo read SVG para cargar el vector">
                             </div>
+                            
+                            <!-- NOTA DE INKSCAPE Y PASOS (CON IMAGEN M15) -->
+                            <div class="kicad-nota">
+                                📌 <strong>Nota y uso de Inkscape:</strong><br>
+                                En caso de que visualices que tu archivo no se abre bien, es recomendable utilizar la herramienta <strong>Inkscape</strong> (un editor gráfico vectorial de código abierto) para revisar y verificar que tus archivos se encuentren sin errores.<br><br>
+                                <strong>Pasos para la verificación en Inkscape:</strong>
+                                <ul style="margin: 6px 0 0 15px; padding-left: 0;">
+                                    <li><strong>M15 (Aplicación abierta):</strong> Abre la aplicación Inkscape en tu computadora y selecciona un documento nuevo.</li>
+                                    <li><strong>Lienzo en blanco:</strong> Con el lienzo listo, dirígete al menú superior, da clic en <strong>Archivo</strong> y selecciona la opción <strong>Abrir</strong>.</li>
+                                    <li><strong>Selección del archivo:</strong> Busca y abre tu archivo SVG en la aplicación.</li>
+                                    <li><strong>Modificación y guardado:</strong> Haz las modificaciones que se requieran (por ejemplo, mover los contornos al interior del lienzo, verificar que no existan trazos incompletos o fuera de área) y vuelve a guardarlo con el formato necesario.</li>
+                                </ul>
+                            </div>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/M15.png" alt="Inkscape - Aplicación abierta y revisión del archivo SVG">
+                            </div>
+
                             <p><strong>Verificación e Inversión de Imagen (Invert):</strong> En el módulo de conversión de imagen, revisa el apartado de DPI y asegúrate de verificar si es necesario invertir o no la imagen. Principalmente se debe checar si se invierte o no en la sección de pistas y etiquetas, auxiliándote del diseño 3D que se visualiza para confirmar que las líneas de cobre queden expuestas y el fondo negro aísle correctamente.</p>
                             <div class="kicad-imagen-slot">
                                 <img src="img/M4.png" alt="Módulo convert SVG image con opciones de inversión y DPI">
@@ -1185,8 +1231,10 @@
                             <div class="kicad-imagen-slot">
                                 <img src="img/M10.png" alt="Botón calculate y módulo Roland SRM-20 milling machine">
                             </div>
-                            <p><strong>Visualización de trazos y modelo 3D final:</strong> En el módulo de simulación llamado <strong>"simulate toolpath"</strong>, podrás observar exactamente los trazos y movimientos que hará la máquina detallados línea por línea.</p>
-                            <p>Al darle clic en el botón <strong>VIEW</strong> dentro de este módulo de simulación, se abrirá la visualización en 3D de cómo quedará exactamente la placa terminada con el material de cobre y los surcos rebajados, permitiéndote comprobar el aspecto físico antes de exportar.</p>
+                            
+                            <!-- SECCIÓN MODIFICADA: MODULO MILL RASTER 2D Y VIEW EN SIMULATE TOOLPATH -->
+                            <p><strong>Visualización de trazos y modelado 3D final:</strong> En el módulo de simulación llamado <strong>mill raster 2D</strong>, podrás observar exactamente los trazos y movimientos que hará la máquina detallados línea por línea. Al darle clic en el botón <strong>VIEW</strong> dentro del módulo <strong>simulate toolpath</strong>, se abrirá la visualización en 3D de cómo quedará exactamente la placa terminada con el material de cobre.</p>
+
                             <div class="kicad-imagen-slot">
                                 <img src="img/M11.png" alt="Módulo simulate toolpath de trayectorias 2D">
                             </div>
