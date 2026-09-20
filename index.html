@@ -1167,13 +1167,13 @@
                                     </span>
                                 </div>
                             <p>Para simplificar las conexiones se usaron etiquetas de red, permitiendo unir eléctricamente dos puntos sin necesidad de trazar una línea física entre ellos en el esquemático.</p>
-                                <div class="kicad-imagen-slot"><img src="img/ETR.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"></div>
+                                <div class="kicad-imagen-slot"><img src="img/ETR.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"style="max-height: 500px;"></div>
                             <p>Diagrama esquemático completo interconectando pulsadores, LEDs y resistencias:</p>
                             <div class="kicad-imagen-slot"><img src="img/ESQM.png" alt="Esquemático completo con pulsadores, LEDs y resistencias"style="max-height: 500px;"></div>
                             <div class="kicad-nota">
                                 <strong>Verificación importante:</strong> Antes de proceder con el diseño físico de la placa, es indispensable ejecutar el <strong>Electrical Rules Checker (ERC)</strong>. Esta herramienta analiza el esquemático para detectar pines de alimentación flotantes, salidas conectadas entre sí, componentes sin alimentación asignada o pines sin conectar. Si el reporte arroja advertencias o errores, marcados en rojo o amarillo, debes corregirlos directamente en el esquema lógico, de lo contrario, estos fallos se arrastrarán y provocarán cortocircuitos o errores críticos en la tarjeta física.
                             </div>
-                            <div class="kicad-imagen-slot"><img src="img/ERCWE.png" alt="Ventana del Electrical Rules Checker sin errores"></div>
+                            <div class="kicad-imagen-slot"><img src="img/ERCWE.png" alt="Ventana del Electrical Rules Checker sin errores"style="max-height: 500px;"></div>
                         </div>
                         <!-- ETAPA 4 -->
                         <div id="etapa-4" class="kicad-etapa">
@@ -1191,7 +1191,7 @@
                             <div class="kicad-etapa-numero">5</div>
                             <h3><i class="fa-solid fa-gear"></i> Configuración de la Placa (Board Setup)</h3>
                             <p>Antes de rutear, es fundamental definir las reglas de diseño desde <strong>Board Setup</strong>. Se estableció un ancho de pista de <strong>0.4 mm, 0.8mm y 2mm</strong>.</p>
-                            <div class="kicad-imagen-slot"><img src="img/BOARD_PRED.png" alt="Ventana de Board Setup - tamaños predefinidos de pista"></div>
+                            <div class="kicad-imagen-slot"><img src="img/BOARD_PRED.png" alt="Ventana de Board Setup - tamaños predefinidos de pista"style="max-height: 350px;"></div>
                             <p>Se estableció una separación mínima entre conductores de <strong>0.4 mm</strong>, para evitar cortos durante el fresado o grabado de la placa.</p>
                             <div class="kicad-imagen-slot"><img src="img/CONS.png" alt="Ventana de Board Setup - restricciones de diseño"style="max-height: 500px;"></div>
                             <p>Para trabajar de forma ordenada, se usaron distintas capas del editor según su función:</p>
@@ -1264,9 +1264,9 @@
                             <h3><i class="fa-solid fa-file-export"></i> Exportación de Archivos Gerber</h3>
                             <p>El último paso es generar los archivos de fabricación desde el menú superior en <strong>File → Fabrication Outputs → Gerbers (.gbr)</strong>. 
                        
-                            <div class="kicad-imagen-slot"><img src="img/SAVE.png" alt="Menú Fabrication Outputs - Gerbers"></div>
+                            <div class="kicad-imagen-slot"><img src="img/SAVE.png" alt="Menú Fabrication Outputs - Gerbers"style="max-height: 500px;"></div>
                              <p>Se cambió el formato de trazado a <strong>SVG</strong>, seleccionando únicamente las capas utilizadas y activando la opción <strong>"Fit page to board"</strong> para que el archivo se ajuste exactamente al tamaño de la placa.</p>
-                            <div class="kicad-imagen-slot"><img src="img/PLOTT.png" alt="Ventana de Plot con configuración SVG y Fit page to board"></div>
+                            <div class="kicad-imagen-slot"><img src="img/PLOTT.png" alt="Ventana de Plot con configuración SVG y Fit page to board"style="max-height: 500px;"></div>
                             <p>Con la configuración lista, se presiona <strong>Plot</strong> para generar los archivos finales, quedando la placa lista para su fabricación.</p>
                         </div>
                     </div>
