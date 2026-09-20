@@ -784,6 +784,8 @@
         .capas-imagen-lateral {
             flex: 1;
             display: flex;
+            min-height: 0;      /* ← evita que el contenido fuerce el alto del contenedor */
+            overflow: hidden;
         }
         .capas-imagen-lateral img {
             width: 100%;
