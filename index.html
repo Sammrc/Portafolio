@@ -1492,8 +1492,9 @@
                         <div id="mono-paso-1" class="kicad-etapa kicad-etapa-primera">
                             <div class="kicad-etapa-numero">1</div>
                             <h3>Instalación del Driver y Configuración de VPanel for SRM-20</h3>
-                            <p>Para comenzar a operar la fresadora, el primer paso fundamental es la instalación del software de control y su driver correspondiente, conocido como <strong>VPanel for SRM-20</strong>. Puedes descargarlo directamente desde la página de soporte oficial de Roland DG (o desde los recursos de la materia) para sistemas operativos Windows.</p>
-                            <div class="kicad-imagen-slot">
+                        <p>Para comenzar a operar la fresadora, el primer paso fundamental es la instalación del software de control y su driver correspondiente, conocido como <strong>VPanel for SRM-20</strong>. Puedes descargarlo directamente desde los 
+                            <a href="https://iberopuebla.sharepoint.com/sites/FabAcademyP24108/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FFabAcademyP24108%2FDocumentos%20compartidos%2FGeneral%2FmonoFab%5FDriver&p=true&ga=1" target="_blank" style="color: var(--accent-color); font-weight: 600; text-decoration: underline;">recursos de la materia (Carpeta monoFab_Driver en SharePoint)</a> 
+                            o desde la página de soporte oficial de Roland DG para sistemas operativos Windows.</p>                            <div class="kicad-imagen-slot">
                                 <img src="img/F1.png" alt="F1">
                             </div>
                             <p>Una vez instalado y abierto el programa, se mostrará la interfaz principal de la aplicación. Esta ventana virtual es la consola mediante la cual enviarás los comandos de movimiento, seleccionarás los archivos de corte y controlarás la velocidad del husillo.</p>
@@ -1595,14 +1596,22 @@
                             <div class="kicad-etapa-numero">6</div>
                             <h3>Cambio de herramientas, carga de archivos .rml y secuencia de ejecución</h3>
                             <p>Una vez que tienes calibrados los orígenes X, Y y Z iniciales, debes seguir un proceso riguroso y ordenado para cambiar las brocas físicas y cargar los archivos correspondientes en el software <strong>VPanel for SRM-20</strong>.</p>
-                            
+
+                                <li>
+                                    <strong>Precaución de seguridad y ejecución del trabajo:</strong> Una vez calibrada la coordenada Z de tu herramienta y cargado el archivo <code>.rml</code>, es obligatorio <strong>subir manualmente la punta de la herramienta</strong> unos milímetros utilizando los botones de desplazamiento en el VPanel. Esto se hace para evitar que al iniciar el trabajo la fresadora arranque a ras de la placa y golpee o rompa la broca. Con la punta elevada de forma segura y la puerta de la máquina completamente cerrada, haz clic en el botón de inicio (el cual adquiere un tono ligeramente azulado). La máquina comenzará a girar, se posicionará correctamente y ejecutará el trayecto.
+                                </li>
+                                
                             <div class="kicad-nota">
-                                <strong>⚠️ Secuencia Estricta de Fabricación:</strong><br>
-                                El orden de los trabajos en la máquina no se puede alterar. Siempre se procesa en este orden exacto:<br>
-                                1. <strong>Perforaciones de tornillos</strong> (Broca de 0.8 mm).<br>
-                                2. <strong>Pistas y etiquetas</strong> (Broca de 0.4 mm).<br>
-                                3. <strong>Agujeros (de tornillos) y contorno de la placa</strong> (Broca de 2 mm).<br>
-                                <em>Nota importante:</em> Si ejecutas el contorno antes de tiempo, la placa se liberará de la cinta y arruinará el resto de los trazos.
+                                <strong>⚠️ Nota de ubicación de herramientas:</strong><br>
+                                Recuerda que las llaves Allen (hexagonales) y los tornillos de repuesto o accesorios necesarios para manipular el husillo y cambiar las brocas se encuentran guardados en el <strong>cajón de la MonoFab</strong>.<br><br>
+                                <strong>⚠️ Secuencia Estricta de Fabricación y Carga de Archivos:</strong><br>
+                                En el software de control puedes cargar y preparar tus archivos .rml considerando las siguientes reglas de orden:<br>
+                                • <strong>Sin orden estricto (agrupados):</strong> Puedes cargar y procesar juntos elementos como pistas y etiquetas de forma consecutiva sin que afecte el orden entre ellos.<br>
+                                • <strong>Con orden estricto obligatorios:</strong> Debes seguir una jerarquía rigurosa al cambiar de herramienta y archivo. El orden exacto es:<br>
+                                &nbsp;&nbsp;1. <strong>Perforaciones de componentes / pines</strong> (Broca delgada de 0.8 mm).<br>
+                                &nbsp;&nbsp;2. <strong>Pistas y etiquetas</strong> (Broca de 0.4 mm).<br>
+                                &nbsp;&nbsp;3. <strong>Agujeros para tornillos y contorno de la placa</strong> (Broca de 2 mm).<br>
+                                <em>Nota crítica:</em> El contorno y los agujeros para tornillos <strong>siempre deben hacerse al final</strong>. Si ejecutas el contorno antes de tiempo, la placa se liberará de la cinta y arruinará el resto de los trazos o perforaciones.
                             </div>
 
                             <p><strong>Procedimiento detallado para cada fase de herramienta y archivo:</strong></p>
