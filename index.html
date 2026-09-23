@@ -1505,7 +1505,7 @@
                         <!-- PASO 2 -->
                         <div id="mono-paso-2" class="kicad-etapa">
                             <div class="kicad-etapa-numero">2</div>
-                            <h3>Encendido y Conexión Física de la Máquina</h3>
+                            <h3>Encendido y conexión física de la máquina</h3>
                             <p>El procedimiento de arranque y enlace con el equipo se realiza de la siguiente forma:</p>
                             <ul class="kicad-pasos-lista">
                                 <li>Conecta la máquina a la corriente eléctrica y enciéndela accionando el botón físico ubicado en la parte superior de la estructura.</li>
@@ -1526,20 +1526,16 @@
                         <!-- PASO 3 -->
                         <div id="mono-paso-3" class="kicad-etapa">
                             <div class="kicad-etapa-numero">3</div>
-                            <h3>Preparación de la Cama de Sacrificio, Placa y Limpieza</h3>
+                            <h3>Preparación de la cama de sacrificio, placa y limpieza</h3>
                             <p>Antes de colocar tu material de trabajo dentro del área de fresado, es indispensable acondicionar la superficie de soporte:</p>
                             <ul class="kicad-pasos-lista">
-                                <li>Coloca la cama de sacrificio sobre la base de la máquina y sujétala firmemente utilizando sus tornillos de fijación.</li>
-                                <div class="kicad-imagen-slot">
-                                    <img src="img/F6.png" alt="F6">
-                                </div>
-                                <li>Toma tu placa de cobre (o el material seleccionado para tu PCB) y límpiala meticulosamente con un poco de alcohol o un paño para retirar cualquier residuo, polvo o grasita proveniente del contacto con las manos.</li>
-                                <div class="kicad-imagen-slot">
-                                    <img src="img/F7.png" alt="F7">
-                                </div>
-                                <li>Pega cinta doble cara en la parte posterior de tu placa de cobre. Colócala sobre la cama de sacrificio procurando que quede perfectamente al ras, asegurándote de que la cinta o la placa no cubran ni estorben los tornillos de sujeción. Presiona bien para corroborar que no queden burbujas o zonas levantadas.</li>
+                                <li>Toma tu placa de cobre (o el material seleccionado para tu PCB) y pega cinta doble cara en la parte posterior de tu placa. Colócala sobre una cama de sacrificio procurando que quede perfectamente al ras, asegurándote de que la cinta o la placa no cubran ni estorben los tornillos de sujeción. Presiona bien para corroborar que no queden burbujas o zonas levantadas.</li>
                                 <div class="kicad-imagen-slot">
                                     <img src="img/F8.png" alt="F8">
+                                </div>
+                                    <li>Limpia meticulosamente tu placa con un poco de alcohol o un paño para retirar cualquier residuo o polvo proveniente del contacto con las manos.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F7.png" alt="F7">
                                 </div>
                                 <li>Antes de introducir la cama de sacrificio con tu material dentro de la máquina, utiliza una aspiradora para limpiar a fondo cualquier viruta o suciedad previa en el interior. Una vez limpio, introduce el conjunto, colócalo en su sitio y asegura los tornillos finales.</li>
                                 <div class="kicad-imagen-slot">
@@ -1551,7 +1547,7 @@
                         <!-- PASO 4 -->
                         <div id="mono-paso-4" class="kicad-etapa">
                             <div class="kicad-etapa-numero">4</div>
-                            <h3>Calibración y Origen de Coordenadas X, Y</h3>
+                            <h3>Calibración y origen de coordenadas X, Y</h3>
                             <p>Con la puerta de la máquina cerrada, utiliza el software VPanel en la computadora para mover los ejes y establecer el punto de partida:</p>
                             <ul class="kicad-pasos-lista">
                                 <li>Identifica tu origen en la esquina inferior izquierda de la placa (el lado más cercano a ti, del lado izquierdo), cuidando que la coordenada quede justo dentro de los límites del material y no se salga al vacío.</li>
@@ -1562,7 +1558,7 @@
                                 <div class="kicad-imagen-slot">
                                     <img src="img/F11.png" alt="F11">
                                 </div>
-                                <li>Una vez situado exactamente en la esquina inferior izquierda elegida, dirígete al lado derecho del driver (VPanel), haz clic en el botón <strong>Origin</strong> y selecciona <strong>X/Y</strong> para guardar el origen plano de tu tarjeta.</li>
+                                <li>Una vez situado exactamente en la esquina inferior izquierda elegida, dirígete al lado derecho del driver (VPanel), haz clic en el botón <strong>Origin</strong> de <strong>X/Y</strong> para guardar el origen plano de tu tarjeta.</li>
                                 <div class="kicad-imagen-slot">
                                     <img src="img/F12.png" alt="F12">
                                 </div>
@@ -1572,7 +1568,7 @@
                         <!-- PASO 5 -->
                         <div id="mono-paso-5" class="kicad-etapa">
                             <div class="kicad-etapa-numero">5</div>
-                            <h3>Calibración y Establecimiento del Origen Z (Eje Vertical)</h3>
+                            <h3>Calibración y establecimiento del origen Z (eje vertical)</h3>
                             <p>El establecimiento del eje Z requiere máxima atención para salvaguardar la integridad de las puntas:</p>
                             <ul class="kicad-pasos-lista">
                                 <li>Es vital que antes de bajar la herramienta le des clic en la opción de <strong>inicializar</strong> (o encendido de husillo) para que empiece a girar antes de tocar el material; de este modo se reduce drásticamente el riesgo de un impacto seco que quiebre la broca.</li>
@@ -1587,45 +1583,80 @@
                                 <div class="kicad-imagen-slot">
                                     <img src="img/F15.png" alt="F15">
                                 </div>
-                                <li>Una vez validado el ligero roce sobre la placa, haz clic en el botón <strong>Origin</strong> y selecciona <strong>Z</strong> en el VPanel. Con esto, tu máquina quedará completamente calibrada en sus tres ejes.</li>
+                                <li>Una vez validado el ligero roce sobre la placa, haz clic en el botón <strong>Origin</strong> de <strong>Z</strong> en el VPanel. Con esto, tu máquina quedará completamente calibrada en sus tres ejes.</li>
                                 <div class="kicad-imagen-slot">
                                     <img src="img/F16.png" alt="F16">
                                 </div>
                             </ul>
                         </div>
 
-                        <!-- PASO 6 -->
+                       <!-- PASO 6 -->
                         <div id="mono-paso-6" class="kicad-etapa">
                             <div class="kicad-etapa-numero">6</div>
-                            <h3>Carga de Archivos .rml y Secuencia Estricta de Corte</h3>
-                            <p>Para mecanizar tu PCB, haz clic en la opción <strong>Cut out</strong> (o en el gestor de archivos) en el VPanel, lo cual abrirá un menú para seleccionar tus archivos previamente guardados en formato <code>.rml</code>.</p>
+                            <h3>Cambio de herramientas, carga de archivos .rml y secuencia de ejecución</h3>
+                            <p>Una vez que tienes calibrados los orígenes X, Y y Z iniciales, debes seguir un proceso riguroso y ordenado para cambiar las brocas físicas y cargar los archivos correspondientes en el software <strong>VPanel for SRM-20</strong>.</p>
+                            
                             <div class="kicad-nota">
-                                <strong>⚠️ Orden y Secuencia Obligatoria de Trabajo:</strong><br>
-                                1. <strong>Perforaciones:</strong> Instala la herramienta de <strong>0.8 mm</strong> (punta muy delicada). Conserva las coordenadas X y Y originales, calibra únicamente tu nuevo Z para esta broca y ejecuta el archivo de perforaciones de tornillos.<br>
-                                2. <strong>Pistas y Etiquetas:</strong> Cambia la herramienta utilizando la llave hexagonal adecuada, apretando con firmeza moderada para no barrer el tornillo ni dejar la broca floja. Coloca la herramienta de <strong>0.4 mm</strong>. <em>Importante: No vuelvas a modificar las coordenadas X y Y</em>, calibra únicamente el nuevo Z correspondiente a esta medida y ejecuta el archivo de pistas.<br>
-                                3. <strong>Contorno:</strong> Cambia la herramienta al cortador final de <strong>2 mm</strong>. Calibra nuevamente solo el eje Z y ejecuta el archivo de contorno al final. <em>Nunca alteres este orden</em>, ya que si cortas el contorno primero, la placa se liberará y los agujeros o pistas posteriores saldrán completamente desalineados o arruinados.
+                                <strong>⚠️ Secuencia Estricta de Fabricación:</strong><br>
+                                El orden de los trabajos en la máquina no se puede alterar. Siempre se procesa en este orden exacto:<br>
+                                1. <strong>Perforaciones de tornillos</strong> (Broca de 0.8 mm).<br>
+                                2. <strong>Pistas y etiquetas</strong> (Broca de 0.4 mm).<br>
+                                3. <strong>Agujeros (de tornillos) y contorno de la placa</strong> (Broca de 2 mm).<br>
+                                <em>Nota importante:</em> Si ejecutas el contorno antes de tiempo, la placa se liberará de la cinta y arruinará el resto de los trazos.
                             </div>
-                            <div class="kicad-imagen-slot">
-                                <img src="img/F17.png" alt="F17">
-                            </div>
-                            <p>Apriete cuidadoso de la herramienta con su llave hexagonal:</p>
-                            <div class="kicad-imagen-slot">
-                                <img src="img/F18.png" alt="F18">
-                            </div>
-                            <p>Selección de archivos RML en el software:</p>
-                            <div class="kicad-imagen-slot">
-                                <img src="img/F19.png" alt="F19">
-                            </div>
-                            <p>Una vez cargado el archivo en el orden correcto, da clic en el botón de ejecución (el cual adquiere un tono ligeramente azulado en la interfaz). La máquina empezará a girar hasta alcanzar la velocidad programada en MODS y comenzará el fresado automáticamente.</p>
-                            <div class="kicad-imagen-slot">
-                                <img src="img/F20.png" alt="F20">
-                            </div>
+
+                            <p><strong>Procedimiento detallado para cada fase de herramienta y archivo:</strong></p>
+                            
+                            <ul class="kicad-pasos-lista">
+                                <li>
+                                    <strong>Fase A: Perforaciones (Broca de 0.8 mm)</strong>
+                                    <ul style="margin-top: 5px; margin-bottom: 10px;">
+                                        <li><strong>Colocación de herramienta:</strong> Toma la llave hexagonal (allen) adecuada para aflojar con cuidado el tornillo del husillo. Inserta la punta de <strong>0.8 mm</strong> (esta punta es extremadamente delicada, manéjala con precaución). Aprieta el tornillo con firmeza moderada: lo suficientemente fuerte para que no se mueva ni vibre, pero cuidando de no exceder la fuerza para no barrerlo.</li>
+                                        <li><strong>Calibración Z:</strong> Recuerda que para la primera herramienta debes establecer tus orígenes de X, Y y Z al inicio. Para las siguientes herramientas <em>ya no debes mover X ni Y</em>, únicamente debes recalibrar la altura en Z utilizando la misma técnica de contacto ligero o el papel,</li>
+                                        <li><strong>Carga del archivo:</strong> En el software VPanel, da clic en el botón de archivo o en la opción de corte para abrir el menú de selección. Busca y selecciona el archivo <code>.rml</code> correspondiente a las perforaciones.</li>
+                                    </ul>
+                                </li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F17.png" alt="F17">
+                                </div>
+
+                                <li>
+                                    <strong>Fase B: Pistas y Etiquetas (Broca de 0.4 mm)</strong>
+                                    <ul style="margin-top: 5px; margin-bottom: 10px;">
+                                        <li><strong>Cambio de herramienta:</strong> Vuelve a utilizar la llave hexagonal para aflojar el husillo, retira la broca de perforación e instala la herramienta de <strong>0.4 mm</strong> para pistas. Aprieta el tornillo con precaución (sin barrerlo).</li>
+                                        <li><strong>Calibración Z:</strong> Mantén intactas las coordenadas X y Y. Desciende el eje Z con el VPanel y vuelve a calibrar la altura exacta haciendo el ajuste fino con la punta tocando el cobre.</li>
+                                        <li><strong>Carga del archivo:</strong> En el VPanel, selecciona el archivo <code>.rml</code> correspondiente a las pistas y etiquetas.</li>
+                                    </ul>
+                                </li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F18.png" alt="F18">
+                                </div>
+
+                                <li>
+                                    <strong>Fase C: Agujeros (de tornillos) y contorno de la placa (Broca de 2 mm)</strong>
+                                    <ul style="margin-top: 5px; margin-bottom: 10px;">
+                                        <li><strong>Cambio de herramienta:</strong> Utiliza por última vez la llave hexagonal para colocar la herramienta de corte de contorno de <strong>2 mm</strong>. Asegúrate de que quede bien fija en el husillo.</li>
+                                        <li><strong>Calibración Z:</strong> Sin tocar las coordenadas X e Y, realiza la calibración del eje Z para esta nueva herramienta más gruesa.</li>
+                                        <li><strong>Carga del archivo:</strong> Carga el archivo <code>.rml</code> del contorno en el VPanel.</li>
+                                    </ul>
+                                </li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F19.png" alt="F19">
+                                </div>
+
+                                <li>
+                                    <strong>Ejecución del trabajo:</strong> Una vez seleccionado el archivo <code>.rml</code> correspondiente en cada etapa, verifica que la puerta de la máquina esté completamente cerrada. Dirígete a la interfaz y haz clic en el botón de inicio (el cual adquiere un tono ligeramente azulado al estar listo para mandar la orden). La máquina comenzará a girar de manera automática hasta alcanzar la velocidad programada y ejecutará el trayecto seleccionado.
+                                </li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F20.png" alt="F20">
+                                </div>
+                            </ul>
                         </div>
 
                         <!-- PASO 7 -->
                         <div id="mono-paso-7" class="kicad-etapa">
                             <div class="kicad-etapa-numero">7</div>
-                            <h3>Supervisión, Limpieza y Finalización del Proceso</h3>
+                            <h3>Supervisión, limpieza y finalización del proceso</h3>
                             <p>Durante la ejecución del trabajo, vigila que las coordenadas y las trayectorias marchen correctamente. Si notas alguna anomalía, vibración extraña o error en el código, puedes presionar inmediatamente el botón <strong>Stop</strong> en el driver para pausar la máquina antes de que ocurra un accidente.</p>
                             <div class="kicad-imagen-slot">
                                 <img src="img/F21.png" alt="F21">
