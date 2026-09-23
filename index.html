@@ -1478,40 +1478,189 @@
             </div>
         </section>
 
-<!-- SECCIÓN DETALLE MONOFAB -->
-    <section id="monofab-detalle" class="page-section">
-        <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
-        <div class="kicad-layout-principal">
-            <div class="kicad-contenido-principal">
-                <div class="kicad-detalle-container" style="margin-top: 0;">
-                    <h1 style="border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Fresadora Roland MonoFab SRM-20</h1>
-                    <div class="kicad-etapa kicad-etapa-primera">
-                        <div class="kicad-etapa-numero">1</div>
-                        <h3>Configuración de VPanel y Orígenes</h3>
-                        <p>Abre el software VPanel, posiciona los ejes X, Y y Z sobre la placa de cobre fijada con cinta doble cara, y establece los ceros de trabajo.</p>
-                        <div class="kicad-imagen-slot">
-                            <img src="img/F2.png" alt="VPanel">
+<!-- SECCIÓN DETALLE FRESADORA MONOFAB -->
+        <section id="monofab-detalle" class="page-section">
+            <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
+            
+            <div class="kicad-layout-principal">
+                <!-- CONTENIDO PRINCIPAL MONOFAB -->
+                <div class="kicad-contenido-principal">
+                    <div class="kicad-detalle-container" style="margin-top: 0;">
+                        <h1 style="border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Procedimiento de Operación: Fresadora Roland MonoFab SRM-20</h1>
+                        
+                        <!-- PASO 1 -->
+                        <div id="mono-paso-1" class="kicad-etapa kicad-etapa-primera">
+                            <div class="kicad-etapa-numero">1</div>
+                            <h3>Instalación del Driver y Configuración de VPanel for SRM-20</h3>
+                            <p>Para comenzar a operar la fresadora, el primer paso fundamental es la instalación del software de control y su driver correspondiente, conocido como <strong>VPanel for SRM-20</strong>. Puedes descargarlo directamente desde la página de soporte oficial de Roland DG (o desde los recursos de la materia) para sistemas operativos Windows.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/F1.png" alt="F1">
+                            </div>
+                            <p>Una vez instalado y abierto el programa, se mostrará la interfaz principal de la aplicación. Esta ventana virtual es la consola mediante la cual enviarás los comandos de movimiento, seleccionarás los archivos de corte y controlarás la velocidad del husillo.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/F2.png" alt="F2">
+                            </div>
                         </div>
-                    </div>
-                    <div class="kicad-etapa">
-                        <div class="kicad-etapa-numero">2</div>
-                        <h3>Ejecución Secuencial (Perforaciones, Pistas, Contorno)</h3>
-                        <p>Carga los archivos <code>.rml</code> en orden estricto cambiando las brocas correspondientes (0.8 mm para perforar, 0.4 mm para pistas y 2 mm para contorno).</p>
-                        <div class="kicad-imagen-slot">
-                            <img src="img/F17.png" alt="Proceso MonoFab">
+
+                        <!-- PASO 2 -->
+                        <div id="mono-paso-2" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">2</div>
+                            <h3>Encendido y Conexión Física de la Máquina</h3>
+                            <p>El procedimiento de arranque y enlace con el equipo se realiza de la siguiente forma:</p>
+                            <ul class="kicad-pasos-lista">
+                                <li>Conecta la máquina a la corriente eléctrica y enciéndela accionando el botón físico ubicado en la parte superior de la estructura.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F3.png" alt="F3">
+                                </div>
+                                <li>Conecta físicamente la fresadora a la computadora utilizando el cable USB en un puerto disponible.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F4.png" alt="F4">
+                                </div>
+                                <li>Abre el software <strong>VPanel</strong> en tu computadora. Debes tener muy en cuenta una regla de seguridad estricta: <strong>los ejes y motores de la máquina solo se moverán si la puerta protectora se encuentra completamente cerrada</strong>; si la abres durante el proceso, la máquina se detendrá automáticamente por seguridad.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F5.png" alt="F5">
+                                </div>
+                            </ul>
+                        </div>
+
+                        <!-- PASO 3 -->
+                        <div id="mono-paso-3" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">3</div>
+                            <h3>Preparación de la Cama de Sacrificio, Placa y Limpieza</h3>
+                            <p>Antes de colocar tu material de trabajo dentro del área de fresado, es indispensable acondicionar la superficie de soporte:</p>
+                            <ul class="kicad-pasos-lista">
+                                <li>Coloca la cama de sacrificio sobre la base de la máquina y sujétala firmemente utilizando sus tornillos de fijación.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F6.png" alt="F6">
+                                </div>
+                                <li>Toma tu placa de cobre (o el material seleccionado para tu PCB) y límpiala meticulosamente con un poco de alcohol o un paño para retirar cualquier residuo, polvo o grasita proveniente del contacto con las manos.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F7.png" alt="F7">
+                                </div>
+                                <li>Pega cinta doble cara en la parte posterior de tu placa de cobre. Colócala sobre la cama de sacrificio procurando que quede perfectamente al ras, asegurándote de que la cinta o la placa no cubran ni estorben los tornillos de sujeción. Presiona bien para corroborar que no queden burbujas o zonas levantadas.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F8.png" alt="F8">
+                                </div>
+                                <li>Antes de introducir la cama de sacrificio con tu material dentro de la máquina, utiliza una aspiradora para limpiar a fondo cualquier viruta o suciedad previa en el interior. Una vez limpio, introduce el conjunto, colócalo en su sitio y asegura los tornillos finales.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F9.png" alt="F9">
+                                </div>
+                            </ul>
+                        </div>
+
+                        <!-- PASO 4 -->
+                        <div id="mono-paso-4" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">4</div>
+                            <h3>Calibración y Origen de Coordenadas X, Y</h3>
+                            <p>Con la puerta de la máquina cerrada, utiliza el software VPanel en la computadora para mover los ejes y establecer el punto de partida:</p>
+                            <ul class="kicad-pasos-lista">
+                                <li>Identifica tu origen en la esquina inferior izquierda de la placa (el lado más cercano a ti, del lado izquierdo), cuidando que la coordenada quede justo dentro de los límites del material y no se salga al vacío.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F10.png" alt="F10">
+                                </div>
+                                <li>Utiliza los botones de desplazamiento del VPanel ajustando la velocidad de avance: el modo <strong>continuous</strong> para traslados libres rápidos, el modo <strong>x100</strong> o <strong>x10</strong> para acercamientos amplios y medianos, y el modo <strong>x1</strong> cuando estés a milímetros de tu esquina de origen deseada.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F11.png" alt="F11">
+                                </div>
+                                <li>Una vez situado exactamente en la esquina inferior izquierda elegida, dirígete al lado derecho del driver (VPanel), haz clic en el botón <strong>Origin</strong> y selecciona <strong>X/Y</strong> para guardar el origen plano de tu tarjeta.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F12.png" alt="F12">
+                                </div>
+                            </ul>
+                        </div>
+
+                        <!-- PASO 5 -->
+                        <div id="mono-paso-5" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">5</div>
+                            <h3>Calibración y Establecimiento del Origen Z (Eje Vertical)</h3>
+                            <p>El establecimiento del eje Z requiere máxima atención para salvaguardar la integridad de las puntas:</p>
+                            <ul class="kicad-pasos-lista">
+                                <li>Es vital que antes de bajar la herramienta le des clic en la opción de <strong>inicializar</strong> (o encendido de husillo) para que empiece a girar antes de tocar el material; de este modo se reduce drásticamente el riesgo de un impacto seco que quiebre la broca.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F13.png" alt="F13">
+                                </div>
+                                <li>Ve bajando poco a poco la herramienta con los incrementos del VPanel hasta que la punta toque la placa de cobre.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F14.png" alt="F14">
+                                </div>
+                                <li>Realiza una prueba física moviendo la herramienta ligeramente hacia los lados: debes verificar que haga un ligero rayón sin dejar marcas profundas ni cortar el material. Si la visibilidad es compleja, puedes auxiliarte de una lámpara, o ir abriendo con precaución la máquina (considerando que el husillo se detendrá al abrir la puerta) y deslizar un pequeño papel tipo Post-it por debajo de la punta para tantear la cercanía milimétrica hasta lograr una calibración perfecta.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F15.png" alt="F15">
+                                </div>
+                                <li>Una vez validado el ligero roce sobre la placa, haz clic en el botón <strong>Origin</strong> y selecciona <strong>Z</strong> en el VPanel. Con esto, tu máquina quedará completamente calibrada en sus tres ejes.</li>
+                                <div class="kicad-imagen-slot">
+                                    <img src="img/F16.png" alt="F16">
+                                </div>
+                            </ul>
+                        </div>
+
+                        <!-- PASO 6 -->
+                        <div id="mono-paso-6" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">6</div>
+                            <h3>Carga de Archivos .rml y Secuencia Estricta de Corte</h3>
+                            <p>Para mecanizar tu PCB, haz clic en la opción <strong>Cut out</strong> (o en el gestor de archivos) en el VPanel, lo cual abrirá un menú para seleccionar tus archivos previamente guardados en formato <code>.rml</code>.</p>
+                            <div class="kicad-nota">
+                                <strong>⚠️ Orden y Secuencia Obligatoria de Trabajo:</strong><br>
+                                1. <strong>Perforaciones:</strong> Instala la herramienta de <strong>0.8 mm</strong> (punta muy delicada). Conserva las coordenadas X y Y originales, calibra únicamente tu nuevo Z para esta broca y ejecuta el archivo de perforaciones de tornillos.<br>
+                                2. <strong>Pistas y Etiquetas:</strong> Cambia la herramienta utilizando la llave hexagonal adecuada, apretando con firmeza moderada para no barrer el tornillo ni dejar la broca floja. Coloca la herramienta de <strong>0.4 mm</strong>. <em>Importante: No vuelvas a modificar las coordenadas X y Y</em>, calibra únicamente el nuevo Z correspondiente a esta medida y ejecuta el archivo de pistas.<br>
+                                3. <strong>Contorno:</strong> Cambia la herramienta al cortador final de <strong>2 mm</strong>. Calibra nuevamente solo el eje Z y ejecuta el archivo de contorno al final. <em>Nunca alteres este orden</em>, ya que si cortas el contorno primero, la placa se liberará y los agujeros o pistas posteriores saldrán completamente desalineados o arruinados.
+                            </div>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/F17.png" alt="F17">
+                            </div>
+                            <p>Apriete cuidadoso de la herramienta con su llave hexagonal:</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/F18.png" alt="F18">
+                            </div>
+                            <p>Selección de archivos RML en el software:</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/F19.png" alt="F19">
+                            </div>
+                            <p>Una vez cargado el archivo en el orden correcto, da clic en el botón de ejecución (el cual adquiere un tono ligeramente azulado en la interfaz). La máquina empezará a girar hasta alcanzar la velocidad programada en MODS y comenzará el fresado automáticamente.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/F20.png" alt="F20">
+                            </div>
+                        </div>
+
+                        <!-- PASO 7 -->
+                        <div id="mono-paso-7" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">7</div>
+                            <h3>Supervisión, Limpieza y Finalización del Proceso</h3>
+                            <p>Durante la ejecución del trabajo, vigila que las coordenadas y las trayectorias marchen correctamente. Si notas alguna anomalía, vibración extraña o error en el código, puedes presionar inmediatamente el botón <strong>Stop</strong> en el driver para pausar la máquina antes de que ocurra un accidente.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/F21.png" alt="F21">
+                            </div>
+                            <p>Entre cada cambio de trabajo o al finalizar, utiliza una aspiradora (portando un cubrebocas por seguridad ante el polvo fino de resina y cobre) para limpiar cuidadosamente los residuos acumulados sobre la placa.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/F22.png" alt="F22">
+                            </div>
+                            <p>Una vez concluido todo el proceso de maquinado, abre la puerta de la fresadora, aspira por completo los residuos restantes, afloja los tornillos de la cama de sacrificio y retira tu placa terminada despegándola con cuidado de la cinta doble cara.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/F23.png" alt="F23">
+                            </div>
+                            <p>Para finalizar, retira la herramienta del husillo, deja todo el material y las llaves en su lugar correspondiente, limpia perfectamente el espacio de trabajo y apaga la máquina si ya no se va a utilizar.</p>
+                            <div class="kicad-imagen-slot">
+                                <img src="img/F24.png" alt="F24">
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- ÍNDICE LATERAL DERECHO MONOFAB -->
+                <aside class="kicad-indice-lateral">
+                    <h4><i class="fa-solid fa-list-ul"></i> Índice MonoFab</h4>
+                    <ul>
+                        <li><a href="#monofab-detalle" onclick="document.getElementById('mono-paso-1').scrollIntoView({behavior: 'smooth'}); return false;">1. Driver y VPanel</a></li>
+                        <li><a href="#monofab-detalle" onclick="document.getElementById('mono-paso-2').scrollIntoView({behavior: 'smooth'}); return false;">2. Encendido y Conexión</a></li>
+                        <li><a href="#monofab-detalle" onclick="document.getElementById('mono-paso-3').scrollIntoView({behavior: 'smooth'}); return false;">3. Cama y Material</a></li>
+                        <li><a href="#monofab-detalle" onclick="document.getElementById('mono-paso-4').scrollIntoView({behavior: 'smooth'}); return false;">4. Origen X e Y</a></li>
+                        <li><a href="#monofab-detalle" onclick="document.getElementById('mono-paso-5').scrollIntoView({behavior: 'smooth'}); return false;">5. Origen Z</a></li>
+                        <li><a href="#monofab-detalle" onclick="document.getElementById('mono-paso-6').scrollIntoView({behavior: 'smooth'}); return false;">6. Archivos RML y Cortes</a></li>
+                        <li><a href="#monofab-detalle" onclick="document.getElementById('mono-paso-7').scrollIntoView({behavior: 'smooth'}); return false;">7. Limpieza y Cierre</a></li>
+                    </ul>
+                </aside>
             </div>
-            <aside class="kicad-indice-lateral">
-                <h4><i class="fa-solid fa-list-ul"></i> Índice</h4>
-                <ul>
-                    <li><a href="#monofab-detalle" onclick="return false;">1. VPanel y Orígenes</a></li>
-                    <li><a href="#monofab-detalle" onclick="return false;">2. Ejecución Secuencial</a></li>
-                </ul>
-            </aside>
-        </div>
-    </section>
+        </section>
             
         <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
