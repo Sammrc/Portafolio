@@ -1533,7 +1533,105 @@
                 <div class="kicad-contenido-principal">
                     <div class="kicad-detalle-container" style="margin-top: 0;">
                         <h1 style="border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Procedimiento de operación: Fresadora Roland MonoFab SRM-20</h1>
-                        
+
+                            <!-- BREVE DESCRIPCIÓN INICIAL Y ESPECIFICACIONES -->
+                        <div class="kicad-etapa kicad-etapa-primera" style="border-top: none; padding-top: 0;">
+                            <h3>¿Qué es la Roland MonoFab SRM-20?</h3>
+                            <p>La <strong>Roland monoFab SRM-20</strong> es una fresadora CNC compacta de 3 ejes pensada para prototipado, mecanizados pequeños y trabajos de detalle. En comparación con una CNC grande, aquí el enfoque no es desbastar mucho material ni trabajar tableros grandes, sino conseguir precisión, limpieza y control en piezas pequeñas, moldes, grabados y, especialmente en un entorno Fab Lab, PCB y componentes de pequeño formato.</p>
+                            
+                            <p><strong>Enfoque recomendado con esta máquina:</strong> trabajar despacio, sujetar bien el material y prestar mucha atención al cero de Z. En una máquina pequeña como esta, un pequeño error en la fijación o en la altura de herramienta se nota enseguida en el resultado.</p>
+                            
+                            <p>Otra ventaja importante es que es una máquina muy adecuada para el aula o el laboratorio: ocupa poco espacio, funciona con interfaz sencilla mediante VPanel y permite controlar muy bien el proceso. Aun así, sigue siendo una fresadora real, así que hay que usarla con el mismo respeto que cualquier otra CNC.</p>
+                            
+                            <h4 style="color: var(--accent-color); margin-top: 20px; margin-bottom: 10px;">Especificaciones de la máquina</h4>
+                            <table class="tabla-medidas">
+                                <thead>
+                                    <tr>
+                                        <th>Parámetro</th>
+                                        <th>Valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Modelo</strong></td>
+                                        <td>Roland monoFab SRM-20</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Tipo de máquina</strong></td>
+                                        <td>Fresadora CNC compacta de sobremesa, 3 ejes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Área máxima de trabajo</strong></td>
+                                        <td>203 × 152 × 60.4 mm</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Material aceptable</strong></td>
+                                        <td>Resinas como madera química y cera para modelar; substratos para mecanizado</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Velocidad máxima del husillo / rotor</strong></td>
+                                        <td>7000 rpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sujeción de herramienta</strong></td>
+                                        <td>Sistema de collar / collet</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Interfaz</strong></td>
+                                        <td>USB</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Comandos</strong></td>
+                                        <td>RML-1, código NC</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Consumo</strong></td>
+                                        <td>Aproximadamente 55 W</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Nivel de ruido</strong></td>
+                                        <td>≤ 65 dB(A) en funcionamiento sin corte; ≤ 45 dB(A) en espera</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dimensiones</strong></td>
+                                        <td>451.0 × 426.6 × 426.2 mm</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Peso</strong></td>
+                                        <td>19.6 kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Entorno recomendado</strong></td>
+                                        <td>5–40 °C, 35–80 % HR sin condensación</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Software asociado</strong></td>
+                                        <td>VPanel, SRP Player, MODELA Player 4, iModela Creator, ClickMILL, Virtual MODELA</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <p style="font-size: 0.9rem; font-style: italic; color: var(--text-muted); margin-top: 8px;">La capacidad real de mecanizado depende del material, de la herramienta, de la profundidad de pasada y del tipo de estrategia. Aunque seja una máquina precisa, no está pensada para mecanizados agresivos.</p>
+
+                            <h4 style="color: var(--accent-color); margin-top: 20px; margin-bottom: 10px;">Materiales compatibles</h4>
+                            <ul class="kicad-pasos-lista" style="margin-top: 0;">
+                                <li>Cera para modelado</li>
+                                <li>Madera química / resinas de modelado</li>
+                                <li>Espumas mecanizables</li>
+                                <li>Acrílico</li>
+                                <li>Poliacetal</li>
+                                <li>ABS y PC en placa</li>
+                                <li>Substratos para mecanizado de PCB</li>
+                            </ul>
+                            
+                            <div class="kicad-nota">
+                                <strong>Importante:</strong> La propia ficha de Roland indica materiales de prototipado y substratos para mecanizado, y especifica que <strong>no acepta metal</strong>. Aunque en algunos entornos se use para placas de circuito o materiales técnicos, conviene mantenerla dentro del rango de trabajo para el que está pensada: piezas pequeñas, materiales blandos o semirrígidos y pasadas controladas.
+                            </div>
+
+                            <p style="margin-top: 15px;">Para consultar especificaciones técnicas avanzadas o guías de referencia, puedes revisar el 
+                            <a href="https://download.rolanddg.com/en/pdf/SRM-20_UM_EN.pdf" target="_blank" style="color: var(--accent-color); font-weight: 600; text-decoration: underline;">Manual de Usuario Oficial de Roland SRM-20</a>.</p>
+                        </div>
+                            
                         <!-- PASO 1 -->
                         <div id="mono-paso-1" class="kicad-etapa kicad-etapa-primera">
                             <div class="kicad-etapa-numero">1</div>
