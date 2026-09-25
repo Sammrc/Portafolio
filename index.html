@@ -1151,93 +1151,124 @@
     <rect x="20" y="142" width="240" height="10" rx="4" fill="#475569" />
     <rect x="50" y="132" width="80" height="10" rx="2" fill="#15803d" />
 
-    <!-- Gato Soldador con Estilo de Cursor Modificado -->
-    <g id="gato-soldador-estilo-cursor">
-        <!-- Cola: curva suave tipo "S" -->
-        <path id="cat-tail" d="M 30 74 C 18 62 14 38 26 20 C 32 12 40 12 38 22" fill="none" stroke="url(#curDarkGrad)" stroke-width="7.5" stroke-linecap="round" />
-        
-        <!-- Patas traseras -->
-        <g id="leg-back-left">
-            <rect x="31" y="80" width="9" height="20" rx="4.5" fill="url(#curDarkGrad)" />
-            <ellipse cx="35.5" cy="101" rx="6" ry="3.5" fill="url(#curDarkGrad)" />
-        </g>
-        <g id="leg-back-right">
-            <rect x="44.5" y="80" width="9" height="20" rx="4.5" fill="url(#curDarkGrad)" />
-            <ellipse cx="49" cy="101" rx="6" ry="3.5" fill="url(#curDarkGrad)" />
-        </g>
+    <svg width="280" height="170" viewBox="0 0 280 170" style="display: block; margin: 0 auto;">
+                        <defs>
+                            <!-- Gradientes estilizados del gato cursor -->
+                            <radialGradient id="curBodyGrad" cx="40%" cy="35%" r="65%">
+                                <stop offset="0%" stop-color="#ffffff" />
+                                <stop offset="55%" stop-color="#fcedd9" />
+                                <stop offset="100%" stop-color="#e2cbb2" />
+                            </radialGradient>
+                            <radialGradient id="curDarkGrad" cx="45%" cy="40%" r="60%">
+                                <stop offset="0%" stop-color="#5e4335" />
+                                <stop offset="65%" stop-color="#2d1d15" />
+                                <stop offset="100%" stop-color="#160c08" />
+                            </radialGradient>
+                            <radialGradient id="curEyeBlue" cx="35%" cy="30%" r="70%">
+                                <stop offset="0%" stop-color="#e0f6ff" />
+                                <stop offset="35%" stop-color="#7dd3fc" />
+                                <stop offset="75%" stop-color="#0284c7" />
+                                <stop offset="100%" stop-color="#075985" />
+                            </radialGradient>
+                            <radialGradient id="curShadow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="rgba(0,0,0,0.28)" />
+                                <stop offset="100%" stop-color="rgba(0,0,0,0)" />
+                            </radialGradient>
+                        </defs>
 
-        <!-- Cuerpo -->
-        <g id="cat-body-group">
-            <ellipse cx="56" cy="70" rx="27" ry="19" fill="url(#curBodyGrad)" />
-            <path d="M 32 68 C 40 78 66 80 78 66" fill="none" stroke="#e2cbb2" stroke-width="1.5" opacity="0.5" />
-        </g>
+                        <!-- Sombra Base y Mesa -->
+                        <ellipse cx="140" cy="152" rx="110" ry="10" fill="url(#curShadow)" />
+                        <rect x="20" y="142" width="240" height="10" rx="4" fill="#475569" />
+                        <rect x="50" y="132" width="80" height="10" rx="2" fill="#15803d" />
 
-        <!-- Patas delanteras -->
-        <g id="leg-front-left">
-            <rect x="58.5" y="80" width="9" height="20" rx="4.5" fill="url(#curDarkGrad)" />
-            <ellipse cx="63" cy="101" rx="6" ry="3.5" fill="url(#curDarkGrad)" />
-        </g>
-        <g id="leg-front-right">
-            <rect x="71.5" y="80" width="9" height="20" rx="4.5" fill="url(#curDarkGrad)" />
-            <ellipse cx="76" cy="101" rx="6" ry="3.5" fill="url(#curDarkGrad)" />
-        </g>
+                        <!-- Gato Soldador con Estilo de Cursor Modificado -->
+                        <g id="gato-soldador-estilo-cursor">
+                            <!-- Cola: curva suave tipo "S" -->
+                            <path id="cat-tail" d="M 30 74 C 18 62 14 38 26 20 C 32 12 40 12 38 22" fill="none" stroke="url(#curDarkGrad)" stroke-width="7.5" stroke-linecap="round" />
+                            
+                            <!-- Patas traseras -->
+                            <g id="leg-back-left">
+                                <rect x="31" y="80" width="9" height="20" rx="4.5" fill="url(#curDarkGrad)" />
+                                <ellipse cx="35.5" cy="101" rx="6" ry="3.5" fill="url(#curDarkGrad)" />
+                            </g>
+                            <g id="leg-back-right">
+                                <rect x="44.5" y="80" width="9" height="20" rx="4.5" fill="url(#curDarkGrad)" />
+                                <ellipse cx="49" cy="101" rx="6" ry="3.5" fill="url(#curDarkGrad)" />
+                            </g>
 
-        <!-- Cabeza y Lentes Protectores -->
-        <g transform="translate(74, 48)">
-            <!-- Orejas Estilizadas -->
-            <path d="M -16 -6 C -18 -18 -12 -30 -3 -34 C -6 -22 -6 -12 0 -8 Z" fill="url(#curDarkGrad)" />
-            <path d="M -13 -10 C -13 -18 -9 -25 -5 -28 C -7 -20 -6 -13 -3 -10 Z" fill="#f472b6" opacity="0.55" />
+                            <!-- Cuerpo -->
+                            <g id="cat-body-group">
+                                <ellipse cx="56" cy="70" rx="27" ry="19" fill="url(#curBodyGrad)" />
+                                <path d="M 32 68 C 40 78 66 80 78 66" fill="none" stroke="#e2cbb2" stroke-width="1.5" opacity="0.5" />
+                            </g>
 
-            <path d="M 4 -8 C 8 -13 10 -24 8 -34 C 16 -29 21 -18 19 -6 Z" fill="url(#curDarkGrad)" />
-            <path d="M 7 -11 C 9 -15 10 -21 9 -28 C 13 -24 15 -18 14 -11 Z" fill="#f472b6" opacity="0.55" />
+                            <!-- Patas delanteras -->
+                            <g id="leg-front-left">
+                                <rect x="58.5" y="80" width="9" height="20" rx="4.5" fill="url(#curDarkGrad)" />
+                                <ellipse cx="63" cy="101" rx="6" ry="3.5" fill="url(#curDarkGrad)" />
+                            </g>
+                            <g id="leg-front-right">
+                                <rect x="71.5" y="80" width="9" height="20" rx="4.5" fill="url(#curDarkGrad)" />
+                                <ellipse cx="76" cy="101" rx="6" ry="3.5" fill="url(#curDarkGrad)" />
+                            </g>
 
-            <!-- Cabeza Principal -->
-            <ellipse cx="2" cy="0" rx="21" ry="18" fill="url(#curBodyGrad)" />
-            
-            <!-- Máscara Siamés -->
-            <path d="M -13 3 C -13 -9 17 -9 17 3 C 17 15 -13 15 -13 3 Z" fill="url(#curDarkGrad)" />
-            
-            <!-- Ojos -->
-            <path d="M -8 3 C -8 -3 -1 -3 -1 3 C -1 8 -8 8 -8 3 Z" fill="url(#curEyeBlue)" />
-            <path d="M 5 3 C 5 -3 12 -3 12 3 C 12 8 5 8 5 3 Z" fill="url(#curEyeBlue)" />
-            <circle cx="-6" cy="1.5" r="1.6" fill="#ffffff" />
-            <circle cx="7" cy="1.5" r="1.6" fill="#ffffff" />
-            
-            <!-- Nariz y Bigotes -->
-            <path d="M 0 6 L 4 6 L 2 9 Z" fill="#f472b6" />
-            <path d="M -13 6 L -21 4 M -13 8 L -21 9" stroke="#ffffff" stroke-width="0.7" opacity="0.7" />
-            <path d="M 17 6 L 25 4 M 17 8 L 25 9" stroke="#ffffff" stroke-width="0.7" opacity="0.7" />
+                            <!-- Cabeza y Lentes Protectores -->
+                            <g transform="translate(74, 48)">
+                                <!-- Orejas Estilizadas -->
+                                <path d="M -16 -6 C -18 -18 -12 -30 -3 -34 C -6 -22 -6 -12 0 -8 Z" fill="url(#curDarkGrad)" />
+                                <path d="M -13 -10 C -13 -18 -9 -25 -5 -28 C -7 -20 -6 -13 -3 -10 Z" fill="#f472b6" opacity="0.55" />
 
-            <!-- Lentes de Protección Integrados con Contorno Negro y Rayas Reflectoras -->
-            <g id="protective-eyewear" transform="translate(-1, -1)">
-                <!-- Gafa Izquierda -->
-                <rect x="-10" y="-7" width="12" height="9" rx="2" fill="#1e293b" stroke="#000000" stroke-width="1" />
-                <line x1="-7" y1="-6" x2="-4" y2="1" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8" />
-                <line x1="-4" y1="-6" x2="-1" y2="1" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" opacity="0.4" />
+                                <path d="M 4 -8 C 8 -13 10 -24 8 -34 C 16 -29 21 -18 19 -6 Z" fill="url(#curDarkGrad)" />
+                                <path d="M 7 -11 C 9 -15 10 -21 9 -28 C 13 -24 15 -18 14 -11 Z" fill="#f472b6" opacity="0.55" />
 
-                <!-- Gafa Derecha -->
-                <rect x="4" y="-7" width="12" height="9" rx="2" fill="#1e293b" stroke="#000000" stroke-width="1" />
-                <line x1="7" y1="-6" x2="10" y2="1" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8" />
-                <line x1="10" y1="-6" x2="13" y2="1" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" opacity="0.4" />
+                                <!-- Cabeza Principal -->
+                                <ellipse cx="2" cy="0" rx="21" ry="18" fill="url(#curBodyGrad)" />
+                                
+                                <!-- Máscara Siamés -->
+                                <path d="M -13 3 C -13 -9 17 -9 17 3 C 17 15 -13 15 -13 3 Z" fill="url(#curDarkGrad)" />
+                                
+                                <!-- Ojos -->
+                                <path d="M -8 3 C -8 -3 -1 -3 -1 3 C -1 8 -8 8 -8 3 Z" fill="url(#curEyeBlue)" />
+                                <path d="M 5 3 C 5 -3 12 -3 12 3 C 12 8 5 8 5 3 Z" fill="url(#curEyeBlue)" />
+                                <circle cx="-6" cy="1.5" r="1.6" fill="#ffffff" />
+                                <circle cx="7" cy="1.5" r="1.6" fill="#ffffff" />
+                                
+                                <!-- Nariz y Bigotes -->
+                                <path d="M 0 6 L 4 6 L 2 9 Z" fill="#f472b6" />
+                                <path d="M -13 6 L -21 4 M -13 8 L -21 9" stroke="#ffffff" stroke-width="0.7" opacity="0.7" />
+                                <path d="M 17 6 L 25 4 M 17 8 L 25 9" stroke="#ffffff" stroke-width="0.7" opacity="0.7" />
 
-                <!-- Puente -->
-                <line x1="2" y1="-2.5" x2="4" y2="-2.5" stroke="#000000" stroke-width="1" />
-            </g>
-        </g>
+                                <!-- Lentes de Protección Integrados con Contorno Negro y Rayas Reflectoras -->
+                                <g id="protective-eyewear" transform="translate(-1, -1)">
+                                    <!-- Gafa Izquierda -->
+                                    <rect x="-10" y="-7" width="12" height="9" rx="2" fill="#1e293b" stroke="#000000" stroke-width="1" />
+                                    <line x1="-7" y1="-6" x2="-4" y2="1" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8" />
+                                    <line x1="-4" y1="-6" x2="-1" y2="1" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" opacity="0.4" />
 
-        <!-- Cautín y Chispas de Soldadura -->
-        <g id="welding-tool-assembly">
-            <line x1="70" y1="100" x2="85" y2="120" stroke="#b91c1c" stroke-width="5" stroke-linecap="round" />
-            <line x1="85" y1="120" x2="92" y2="129" stroke="#94a3b8" stroke-width="2.5" />
-            <g id="efectos-chispa">
-                <circle cx="92" cy="129" r="3" fill="#ffffff" class="spark-core" />
-                <circle cx="93" cy="127" r="1.5" fill="#fde047" class="spark-p1" />
-                <circle cx="90" cy="131" r="1.2" fill="#38bdf8" class="spark-p2" />
-                <circle cx="95" cy="130" r="0.8" fill="#ffffff" class="spark-p3" />
-            </g>
-        </g>
-    </g>
-</svg>
+                                    <!-- Gafa Derecha -->
+                                    <rect x="4" y="-7" width="12" height="9" rx="2" fill="#1e293b" stroke="#000000" stroke-width="1" />
+                                    <line x1="7" y1="-6" x2="10" y2="1" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8" />
+                                    <line x1="10" y1="-6" x2="13" y2="1" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" opacity="0.4" />
+
+                                    <!-- Puente -->
+                                    <line x1="2" y1="-2.5" x2="4" y2="-2.5" stroke="#000000" stroke-width="1" />
+                                </g>
+                            </g>
+
+                            <!-- Cautín y Chispas de Soldadura -->
+                            <g id="welding-tool-assembly">
+                                <line x1="70" y1="100" x2="85" y2="120" stroke="#b91c1c" stroke-width="5" stroke-linecap="round" />
+                                <line x1="85" y1="120" x2="92" y2="129" stroke="#94a3b8" stroke-width="2.5" />
+                                <g id="efectos-chispa">
+                                    <circle cx="92" cy="129" r="3" fill="#ffffff" class="spark-core" />
+                                    <circle cx="93" cy="127" r="1.5" fill="#fde047" class="spark-p1" />
+                                    <circle cx="90" cy="131" r="1.2" fill="#38bdf8" class="spark-p2" />
+                                    <circle cx="95" cy="130" r="0.8" fill="#ffffff" class="spark-p3" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    
                 <h3>¡Próximamente más prácticas!</h3>
                 <p>Las prácticas restantes se encuentran en proceso de documentación y ensamblaje.</p>
             </div>
