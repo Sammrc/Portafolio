@@ -380,7 +380,7 @@
         }
         .trabajos-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             max-width: 1100px;
             margin: 0 auto;
@@ -1117,6 +1117,10 @@
                 <div class="trabajo-card" style="background-image: url('img/F_MONOFAB.png');" onclick="cambiarPagina('monofab-detalle')">
                     <h3>3. Fresadora MONOFAB</h3>
                     <p>Operación de Fresadora MonoFab SRM-20</p>
+                </div>
+                    <div class="trabajo-card" style="background-image: url('img/F_Multisim.png');" onclick="cambiarPagina('multisim-detalle')">
+                    <h3>4. Multisim</h3>
+                    <p>Simulación de circuitos</p>
                 </div>
             </div>
             <div class="siamese-working-box">
@@ -2029,6 +2033,87 @@
                 </aside>
             </div>
         </section>
+
+<!-- SECCIÓN DETALLE MULTISIM -->
+<section id="multisim-detalle" class="page-section">
+    <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
+
+    <div class="kicad-layout-principal">
+        <div class="kicad-contenido-principal">
+            <div class="kicad-detalle-container" style="margin-top: 0;">
+                <h1 style="border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Simulación de circuitos con Multisim</h1>
+
+                <p class="kicad-pastilla-centrada"><strong>Multisim</strong> es un software de National Instruments para capturar esquemáticos y simular circuitos electrónicos antes de construirlos.</p>
+
+                <!-- PASO 1 -->
+                <div id="multi-paso-1" class="kicad-etapa kicad-etapa-primera">
+                    <div class="kicad-etapa-numero">1</div>
+                    <h3><i class="fa-solid fa-display"></i> Apertura del programa y entorno de trabajo</h3>
+                    <p>Al abrir Multisim se muestra el área de diseño (lienzo) en el centro, la barra de componentes en la parte superior, los instrumentos de medición en el lado derecho y el panel de proyecto a la izquierda.</p>
+                    <div class="kicad-imagen-slot"><img src="img/MS1.png" alt="Entorno de trabajo de Multisim" style="max-height: 500px;"></div>
+                </div>
+
+                <!-- PASO 2 -->
+                <div id="multi-paso-2" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">2</div>
+                    <h3><i class="fa-solid fa-microchip"></i> Colocación de componentes</h3>
+                    <p>Para añadir un componente, ir a <strong>Place → Component</strong> o presionar <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">W</kbd>. Se abre el buscador, donde se elige el grupo y la familia (por ejemplo, <strong>Basic</strong> para resistencias, <strong>Diodes</strong> para LEDs o <strong>Sources</strong> para fuentes de alimentación y tierra).</p>
+                    <div class="kicad-imagen-slot"><img src="img/MS2.png" alt="Ventana Select a Component" style="max-height: 500px;"></div>
+                </div>
+
+                <!-- PASO 3 -->
+                <div id="multi-paso-3" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">3</div>
+                    <h3><i class="fa-solid fa-diagram-project"></i> Conexión y valores de los componentes</h3>
+                    <p>Las conexiones se hacen dando clic en el pin de un componente y arrastrando hasta el pin de otro. Para cambiar el valor de un componente (resistencia, voltaje, etc.) se le da doble clic y se edita en su ventana de propiedades.</p>
+                    <div class="kicad-nota">
+                        <strong>Importante:</strong> todo circuito a simular debe tener una referencia a tierra (<strong>GROUND</strong>). Sin ella, Multisim no puede resolver el circuito y la simulación marcará error.
+                    </div>
+                    <div class="kicad-imagen-slot"><img src="img/MS3.png" alt="Circuito armado en Multisim" style="max-height: 500px;"></div>
+                </div>
+
+                <!-- PASO 4 -->
+                <div id="multi-paso-4" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">4</div>
+                    <h3><i class="fa-solid fa-gauge-high"></i> Instrumentos de medición</h3>
+                    <p>En la barra de instrumentos del lado derecho se encuentran el multímetro, el osciloscopio, el generador de funciones, entre otros. Se arrastran al lienzo y se conectan al circuito como se haría con un instrumento real; con doble clic se abre su panel frontal.</p>
+                    <div class="kicad-imagen-slot"><img src="img/MS4.png" alt="Instrumentos de medición en Multisim" style="max-height: 500px;"></div>
+                </div>
+
+                <!-- PASO 5 -->
+                <div id="multi-paso-5" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">5</div>
+                    <h3><i class="fa-solid fa-play"></i> Ejecución de la simulación</h3>
+                    <p>Para iniciar, ir a <strong>Simulate → Run</strong> o presionar <kbd class="kicad-tecla">F5</kbd>. Mientras corre, se pueden observar las lecturas en los instrumentos. Con los botones de <strong>Pause</strong> y <strong>Stop</strong> se detiene o termina la simulación.</p>
+                    <div class="kicad-imagen-slot"><img src="img/MS5.png" alt="Simulación en ejecución" style="max-height: 500px;"></div>
+                </div>
+
+                <!-- PASO 6 -->
+                <div id="multi-paso-6" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">6</div>
+                    <h3><i class="fa-solid fa-chart-line"></i> Análisis y verificación de resultados</h3>
+                    <p>Además de los instrumentos, Multisim permite correr análisis desde <strong>Simulate → Analyses and Simulation</strong> (por ejemplo, transitorio o barrido en AC). Los resultados se muestran en el <strong>Grapher</strong>, donde se verifica que el circuito se comporte como se diseñó antes de pasarlo a la PCB.</p>
+                    <div class="kicad-imagen-slot"><img src="img/MS6.png" alt="Resultados del análisis en el Grapher" style="max-height: 500px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÍNDICE LATERAL DERECHO MULTISIM -->
+        <aside class="kicad-indice-lateral">
+            <h4><i class="fa-solid fa-list-ul"></i> Índice Multisim</h4>
+            <ul>
+                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-1').scrollIntoView({behavior: 'smooth'}); return false;">1. Entorno de trabajo</a></li>
+                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-2').scrollIntoView({behavior: 'smooth'}); return false;">2. Colocar componentes</a></li>
+                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-3').scrollIntoView({behavior: 'smooth'}); return false;">3. Conexión y valores</a></li>
+                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-4').scrollIntoView({behavior: 'smooth'}); return false;">4. Instrumentos</a></li>
+                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-5').scrollIntoView({behavior: 'smooth'}); return false;">5. Simulación</a></li>
+                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-6').scrollIntoView({behavior: 'smooth'}); return false;">6. Análisis y resultados</a></li>
+            </ul>
+        </aside>
+    </div>
+</section>
+
+
             
         <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
@@ -2067,7 +2152,7 @@
                 seccionActiva.classList.add('active-page');
             }
             if (idSeccion === 'inicio') document.getElementById('btn-inicio')?.classList.add('active');
-            if (idSeccion === 'trabajos' || idSeccion === 'kicad-detalle' || idSeccion === 'mods-detalle') document.getElementById('btn-trabajos')?.classList.add('active');
+            if (['trabajos', 'kicad-detalle', 'mods-detalle', 'monofab-detalle', 'multisim-detalle'].includes(idSeccion)) document.getElementById('btn-trabajos')?.classList.add('active');
             if (idSeccion === 'proyectos') document.getElementById('btn-proyectos')?.classList.add('active');
             history.pushState(null, null, '#' + idSeccion);
             window.scrollTo({ top: 0, behavior: 'smooth' });
