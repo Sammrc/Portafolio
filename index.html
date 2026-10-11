@@ -2064,12 +2064,30 @@
                 </div>
 
                 <!-- PASO 2 -->
-                <div id="multi-paso-2" class="kicad-etapa">
-                    <div class="kicad-etapa-numero">2</div>
-                    <h3>Colocación de componentes</h3>
-                    <p>Para añadir un componente, ir a <strong>Place → Component</strong> o presionar <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">W</kbd>. Se abre el buscador, donde se elige el grupo y la familia (por ejemplo, <strong>Basic</strong> para resistencias, <strong>Diodes</strong> para LEDs o <strong>Sources</strong> para fuentes de alimentación y tierra).</p>
-                    <div class="kicad-imagen-slot"><img src="img/MS2.png" alt="Ventana Select a Component" style="max-height: 500px;"></div>
-                </div>
+                    <div id="multi-paso-2" class="kicad-etapa">
+                            <div class="kicad-etapa-numero">2</div>
+                            <h3>Colocación de componentes</h3>
+                            <p>Para armar el circuito hay que insertar en el área de trabajo los componentes, fuentes, compuertas y demás elementos que se necesiten. Multisim ofrece dos formas de hacerlo.</p>
+                        
+                            <p><strong>Opción 1:</strong> Ir a la barra de componentes en el extremo superior derecho.</p>
+                                <div class="kicad-imagen-slot"><img src="img/Multisim,BC.png" alt="Barra de componentes de Multisim" style="max-height: 350px;"></div>
+                                <p>Cada botón de esta barra abre un grupo distinto de elementos. De izquierda a derecha, los símbolos corresponden a:</p>    
+                            <div class="kicad-imagen-slot"><img src="img/Components.png" alt="Barra de componentes de Multisim" style="max-height: 120px;"></div>
+                            <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                                <li><strong>1.º (Símbolo de Tierra): <code>Sources</code></strong> – Fuentes de alimentación, tierras, generadores de voltaje y corriente.</li>
+                                <li><strong>2.º (Símbolo de Resistencia): <code>Basic</code></strong> – Componentes pasivos: resistencias, capacitores, inductores e interruptores.</li>
+                                <li><strong>3.º (Símbolo de Diodo): <code>Diodes</code></strong> – Diodos rectificadores, Zener y LEDs.</li>
+                                <li><strong>4.º (Símbolo de Transistor): <code>Transistors</code></strong> – Transistores BJT, FET y MOSFET.</li>
+                                <li><strong>5.º (Símbolo de Amplificador): <code>Analog</code></strong> – Amplificadores operacionales y comparadores.</li>
+                                <li><strong>6.º (Compuerta TTL): <code>TTL</code></strong> – Compuertas lógicas y circuitos integrados digitales de la serie 74XX.</li>
+                                <li><strong>7.º (Compuerta CMOS): <code>CMOS</code></strong> – Circuitos lógicos digitales de la serie 4000/CMOS.</li>
+                            </ul>
+                        
+                            <p><strong>Opción 2:</strong> También se puede presionar <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">W</kbd>. Se abre la ventana <strong>Select a Component</strong>, donde en el menú desplegable <strong>Group</strong> se puede cambiar de grupo (por ejemplo <code>TTL</code>, <code>Indicators</code>, <code>Sources</code>, <code>Diodes</code>, etc.).</p>
+                            <div class="kicad-imagen-slot"><img src="img/Mcomp.png" alt="Ventana Select a Component con el menú desplegable de grupos" style="max-height: 500px;"></div>
+                            Y después elegir la familia y el componente deseado para armar el circuito.
+                            <div class="kicad-imagen-slot"><img src="img/Mcompfam.png" alt="Ventana Select a Component con el menú desplegable de grupos" style="max-height: 500px;"></div>
+                        </div>
 
                 <!-- PASO 3 -->
                 <div id="multi-paso-3" class="kicad-etapa">
