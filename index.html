@@ -2120,7 +2120,7 @@
                         <li>Seleccionar la <strong>línea roja</strong> (el cable) del nodo que se quiere nombrar.</li>
                             <div class="kicad-imagen-slot"><img src="img/Nodos1.png" alt="Selección del cable y ventana Net Properties" style="max-height: 400px;"></div>
                         <li>Darle <strong>doble clic</strong> para que se abra la ventana <strong>Net Properties</strong>.
-                            <div class="kicad-imagen-slot"><img src="img/Nodos2.png" alt="Selección del cable y ventana Net Properties" style="max-height: 500px;"></div>
+                            <div class="kicad-imagen-slot"><img src="img/Nodos2.png" alt="Selección del cable y ventana Net Properties" style="max-height: 600px;"></div>
                         </li>
                         <li>En el campo <strong>Preferred net name</strong>, escribir el nombre deseado para el nodo.</li>
                             <div class="kicad-imagen-slot"><img src="img/Nodos3.png" alt="Selección del cable y ventana Net Properties" style="max-height: 400px;"></div>
@@ -2145,13 +2145,29 @@
                     <div class="kicad-etapa-numero">4</div>
                     <h3>Instrumentos de medición</h3>
                     <p>En la barra de instrumentos del lado derecho se encuentran el multímetro, el osciloscopio, el generador de funciones, entre otros. Se arrastran al lienzo y se conectan al circuito como se haría con un instrumento real; con doble clic se abre su panel frontal.</p>
-                    <div class="kicad-imagen-slot"><img src="img/MS4.png" alt="Instrumentos de medición en Multisim" style="max-height: 500px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/Sim1.png" alt="Simulación barra" style="max-height: 500px;"></div>
+                    <p>Se abrirá una ventana emergente la cual muestra varias funciones. En el circuito de ejemplo se usará la función de <strong>Transient</strong></p>
+                        <div class="kicad-imagen-slot"><img src="img/AS1.png" alt="Simulación barra" style="max-height: 500px;"></div>
+                    <p>Para setear y que el valor empiece a variar, se selecciona el menú desplegable de <strong>Initial conditions</strong>. Con la finalidad de ver el comportamiento del capacitor, se seleccionó que empiece desde cero.</p>
+                        <div class="kicad-imagen-slot"><img src="img/AS2.png" alt="Simulación barra" style="max-height: 500px;"></div>
+                    <p>En <strong>Start time</strong> se define en qué tiempo va a empezar y en <strong>End time</strong> en qué tiempo va a terminar.</p>
+                        <div class="kicad-imagen-slot"><img src="img/AS6.png" alt="Simulación barra" style="max-height: 500px;"></div>
+                    <p>Una vez establecidos dichos parámetros, en la pestaña <strong>Output</strong> seleccionar <strong>V(vc)</strong>, ya que esa será la salida que se quiere observar, es decir, cómo cambia el voltaje del capacitor.</p>
+                        <div class="kicad-imagen-slot"><img src="img/AS3.png" alt="Simulación barra" style="max-height: 500px;"></div>   
+                    <p>Posteriormente, dar clic en <strong>Añadir</strong>, en donde se pueden apreciar en el apartado derecho las variables elegidas para el análisis, y luego hacer clic en <strong>Run</strong>.</p>
+                        <div class="kicad-imagen-slot"><img src="img/AS4.png" alt="Simulación barra" style="max-height: 500px;"></div>
+                    <p>Se mostrará una ventana de vista de la gráfica.</p>
+                        <div class="kicad-imagen-slot"><img src="img/AS7.png" alt="Simulación barra" style="max-height: 500px;"></div>
+                    <p>Si se requiere reconfigurar los parámetros, ir a la barra superior y dar clic en <strong>Transient</strong> cerca del ícono de herramienta.</p>
+                        <div class="kicad-imagen-slot"><img src="img/AS8.png" alt="Simulación barra" style="max-height: 500px;"></div>
                 </div>
 
                 <!-- PASO 5 -->
                 <div id="multi-paso-5" class="kicad-etapa">
                     <div class="kicad-etapa-numero">5</div>
                     <h3>Ejecución de la simulación</h3>
+                        <p>Para iniciar la simulación, ir a la barra superior, seleccionar <strong>Simulate</strong> y dar clic en <strong>Analyses and simulation</strong>. 
+                        <div class="kicad-imagen-slot"><img src="img/MS5.png" alt="Simulación en ejecución" style="max-height: 500px;"></div>
                     <p>Para iniciar, ir a <strong>Simulate → Run</strong> o presionar <kbd class="kicad-tecla">F5</kbd>. Mientras corre, se pueden observar las lecturas en los instrumentos. Con los botones de <strong>Pause</strong> y <strong>Stop</strong> se detiene o termina la simulación.</p>
                     <div class="kicad-imagen-slot"><img src="img/MS5.png" alt="Simulación en ejecución" style="max-height: 500px;"></div>
                 </div>
