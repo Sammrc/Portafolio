@@ -2166,11 +2166,12 @@
                 <div id="multi-paso-6" class="kicad-etapa">
                     <div class="kicad-etapa-numero">6</div>
                     <h3>Instrumentos de medición</h3>
-                    <p>En la barra de instrumentos del lado derecho se encuentran el multímetro, el osciloscopio, el generador de funciones, entre otros. Se arrastran al lienzo y se conectan al circuito como se haría con un instrumento real; con doble clic se abre su panel frontal. A continuación se muestra un ejemplo con un <strong>generador de funciones</strong> y un <strong>osciloscopio</strong>.</p>
-                
+                    <p>En la barra de instrumentos del lado derecho se encuentran el multímetro, el osciloscopio, el generador de funciones, entre otros.</p>
+                        <div class="kicad-imagen-slot"><img src="img/GenF.jpg" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
+                    <p>A continuación se muestra un ejemplo con un <strong>generador de funciones</strong> y un <strong>osciloscopio</strong>.</p>
                     <h4 style="margin-top: 20px;">Generador de funciones (XFG1)</h4>
                     <p>Para el ejemplo se colocó el generador de funciones <strong>XFG1</strong>, además de un diodo, una resistencia y la tierra. Al dar doble clic sobre el generador se abre su ventana, donde se configura la señal que va a entregar:</p>
-                    <div class="kicad-imagen-slot"><img src="img/Osc1.png" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/FGVentana.jpg" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
                 
                     <table class="tabla-medidas">
                         <thead>
@@ -2204,16 +2205,21 @@
                     </table>
                 
                     <p>Después se hacen las conexiones del circuito: el generador alimenta al diodo <strong>D1</strong>, la resistencia <strong>R1</strong> se conecta a tierra y el terminal común (<strong>COM</strong>) del generador también va a tierra.</p>
-                    <div class="kicad-imagen-slot"><img src="img/Osc2.png" alt="Circuito con generador de funciones, diodo, resistencia y osciloscopio" style="max-height: 450px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/FGConexiones.jpg" alt="Circuito con generador de funciones, diodo, resistencia y osciloscopio" style="max-height: 450px;"></div>
                 
                     <h4 style="margin-top: 20px;">Verificar el tipo de simulación</h4>
-                    <p>Antes de simular es importante revisar que el tipo de análisis seleccionado sea el correcto. Para ello, ir a <strong>Simulate → Analyses and simulation</strong> y elegir <strong>Interactive Simulation</strong>. Esta configuración también se puede abrir con el <strong>icono de herramienta</strong> que está junto a los iconos de simulación en la barra superior.</p>
-                    <div class="kicad-imagen-slot"><img src="img/Osc3.png" alt="Ventana Analyses and Simulation con Interactive Simulation" style="max-height: 400px;"></div>
+                    <p>Antes de simular, es importante verificar que el tipo de análisis seleccionado sea el correcto. Para ello, ir a <strong>Simulate → Analyses and simulation</strong> y elegir <strong>Interactive Simulation</strong>.</p> 
+                        <div class="kicad-imagen-slot"><img src="img/Sim1.png" alt="Ventana Analyses and Simulation con Interactive Simulation" style="max-height: 400px;"></div>
+                    <p>Esta configuración también se puede abrir con el <strong>icono de herramienta</strong> que está junto a los iconos de simulación en la barra superior.</p>
+                    <div class="kicad-imagen-slot"><img src="img/INTERACTIVE.png" alt="Ventana Analyses and Simulation con Interactive Simulation" style="max-height: 400px;"></div>
                 
                     <div class="kicad-nota">
-                        <strong>Error común:</strong> si el análisis activo no corresponde, al correr la simulación aparece el mensaje <code>There are no valid output variables</code>. Esto pasó en el ejemplo porque se había trabajado antes con <strong>DC Sweep</strong> y esa opción se quedó seleccionada en la casilla cercana a los iconos de simulación. Para corregirlo, hay que cambiarla al análisis que se quiere realizar (en este caso, Interactive Simulation).
+                        <strong>Error común:</strong> si el análisis activo no corresponde, al correr la simulación aparece el mensaje <code>There are no valid output variables</code>. Esto pasó en el ejemplo porque se había trabajado antes con <strong>DC Sweep</strong> y esa opción se quedó seleccionada en la casilla cercana a los iconos de simulación. 
+                          <div class="kicad-imagen-slot"><img src="img/Merror.png" alt="Mensaje de error Active Analysis Errors" style="max-height: 300px;"></div>
+                            Para corregirlo, hay que cambiarla al análisis que se quiere realizar (en este caso, Interactive Simulation).
+                            <div class="kicad-imagen-slot"><img src="img/ASINT.png" alt="Mensaje de error Active Analysis Errors" style="max-height: 300px;"></div>
                     </div>
-                    <div class="kicad-imagen-slot"><img src="img/Osc4.png" alt="Mensaje de error Active Analysis Errors" style="max-height: 300px;"></div>
+             
                 
                     <h4 style="margin-top: 20px;">Osciloscopio (XSC1)</h4>
                     <p>Para ver las señales, en la barra de instrumentos de medición se selecciona el <strong>osciloscopio</strong> y se coloca en el lienzo. Se conectan sus canales <strong>A</strong> y <strong>B</strong> a los puntos que se quieren observar (en el ejemplo, la señal de entrada y la señal sobre la resistencia) y su terminal de tierra a la referencia del circuito.</p>
