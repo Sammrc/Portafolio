@@ -2140,7 +2140,7 @@
                     
 
                     
-                <!-- PASO 4 -->
+                <!-- PASO 5 -->
                 <div id="multi-paso-5" class="kicad-etapa">
                     <div class="kicad-etapa-numero">5</div>
                     <h3>Simulación</h3>
@@ -2162,12 +2162,79 @@
                         <div class="kicad-imagen-slot"><img src="img/AS8.png" alt="Simulación barra" style="max-height: 500px;"></div>
                 </div>
 
-                <!-- PASO 5 -->
+        <!-- PASO 6 -->
                 <div id="multi-paso-6" class="kicad-etapa">
                     <div class="kicad-etapa-numero">6</div>
                     <h3>Instrumentos de medición</h3>
-                         <p>En la barra de instrumentos del lado derecho se encuentran el multímetro, el osciloscopio, el generador de funciones, entre otros. Se arrastran al lienzo y se conectan al circuito como se haría con un instrumento real; con doble clic se abre su panel frontal.</p>
-                        <div class="kicad-imagen-slot"><img src="img/MS5.png" alt="Simulación en ejecución" style="max-height: 500px;"></div>
+                    <p>En la barra de instrumentos del lado derecho se encuentran el multímetro, el osciloscopio, el generador de funciones, entre otros. Se arrastran al lienzo y se conectan al circuito como se haría con un instrumento real; con doble clic se abre su panel frontal. A continuación se muestra un ejemplo con un <strong>generador de funciones</strong> y un <strong>osciloscopio</strong>.</p>
+                
+                    <h4 style="margin-top: 20px;">Generador de funciones (XFG1)</h4>
+                    <p>Para el ejemplo se colocó el generador de funciones <strong>XFG1</strong>, además de un diodo, una resistencia y la tierra. Al dar doble clic sobre el generador se abre su ventana, donde se configura la señal que va a entregar:</p>
+                    <div class="kicad-imagen-slot"><img src="img/Osc1.png" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
+                
+                    <table class="tabla-medidas">
+                        <thead>
+                            <tr>
+                                <th>Parámetro</th>
+                                <th>Función</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Waveforms</strong></td>
+                                <td>Forma de onda de la señal: senoidal, triangular o cuadrada.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Frequency</strong></td>
+                                <td>Número de ciclos por segundo de la señal (Hz).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Duty cycle</strong></td>
+                                <td>Porcentaje del periodo en que la señal permanece en alto. Solo se habilita en las ondas triangular y cuadrada.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Amplitude</strong></td>
+                                <td>Valor máximo de la señal (Vp).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Offset</strong></td>
+                                <td>Nivel de voltaje de CD que se suma a la señal, para desplazarla hacia arriba o abajo (V).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <p>Después se hacen las conexiones del circuito: el generador alimenta al diodo <strong>D1</strong>, la resistencia <strong>R1</strong> se conecta a tierra y el terminal común (<strong>COM</strong>) del generador también va a tierra.</p>
+                    <div class="kicad-imagen-slot"><img src="img/Osc2.png" alt="Circuito con generador de funciones, diodo, resistencia y osciloscopio" style="max-height: 450px;"></div>
+                
+                    <h4 style="margin-top: 20px;">Verificar el tipo de simulación</h4>
+                    <p>Antes de simular es importante revisar que el tipo de análisis seleccionado sea el correcto. Para ello, ir a <strong>Simulate → Analyses and simulation</strong> y elegir <strong>Interactive Simulation</strong>. Esta configuración también se puede abrir con el <strong>icono de herramienta</strong> que está junto a los iconos de simulación en la barra superior.</p>
+                    <div class="kicad-imagen-slot"><img src="img/Osc3.png" alt="Ventana Analyses and Simulation con Interactive Simulation" style="max-height: 400px;"></div>
+                
+                    <div class="kicad-nota">
+                        <strong>Error común:</strong> si el análisis activo no corresponde, al correr la simulación aparece el mensaje <code>There are no valid output variables</code>. Esto pasó en el ejemplo porque se había trabajado antes con <strong>DC Sweep</strong> y esa opción se quedó seleccionada en la casilla cercana a los iconos de simulación. Para corregirlo, hay que cambiarla al análisis que se quiere realizar (en este caso, Interactive Simulation).
+                    </div>
+                    <div class="kicad-imagen-slot"><img src="img/Osc4.png" alt="Mensaje de error Active Analysis Errors" style="max-height: 300px;"></div>
+                
+                    <h4 style="margin-top: 20px;">Osciloscopio (XSC1)</h4>
+                    <p>Para ver las señales, en la barra de instrumentos de medición se selecciona el <strong>osciloscopio</strong> y se coloca en el lienzo. Se conectan sus canales <strong>A</strong> y <strong>B</strong> a los puntos que se quieren observar (en el ejemplo, la señal de entrada y la señal sobre la resistencia) y su terminal de tierra a la referencia del circuito.</p>
+                    <p>Con las conexiones listas, se corre la simulación y se da <strong>clic en la pantalla del osciloscopio</strong> para abrir su visualización.</p>
+                    <div class="kicad-imagen-slot"><img src="img/Osc5.png" alt="Pantalla del osciloscopio con las señales" style="max-height: 500px;"></div>
+                
+                    <h4 style="margin-top: 20px;">Cambiar el color de las señales</h4>
+                    <p>Si las señales se ven del mismo color y es difícil identificarlas, se puede asignar un color distinto a cada una:</p>
+                    <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li><strong>Detener la simulación</strong> con el botón <strong>Stop</strong>.</li>
+                        <li>Dar <strong>doble clic</strong> sobre la línea de la señal que se quiere cambiar, o abrir sus <strong>propiedades</strong>.</li>
+                        <li>En el campo <strong>Net color</strong>, elegir el color deseado.</li>
+                        <li>Dar clic en <strong>Aplicar</strong>.</li>
+                        <li>Volver a <strong>correr la simulación</strong> y dar clic en la pantalla del osciloscopio para ver las señales con sus nuevos colores.</li>
+                    </ol>
+                    <div class="kicad-imagen-slot"><img src="img/Osc6.png" alt="Cambio de color de la señal en Net Properties" style="max-height: 400px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/Osc7.png" alt="Señales del osciloscopio con distintos colores" style="max-height: 500px;"></div>
+                
+                    <div class="kicad-nota">
+                        <strong>Tip:</strong> el color del cable es el que usa el osciloscopio para dibujar esa señal, así que conviene asignar colores distintos a las señales de entrada y de salida antes de analizarlas.
+                    </div>
                 </div>
               </div>
             </div>
