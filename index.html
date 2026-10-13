@@ -2220,8 +2220,9 @@
                     <div class="kicad-imagen-slot"><img src="img/FGConexiones.jpg" alt="Circuito con generador de funciones, diodo, resistencia y osciloscopio" style="max-height: 450px;"></div>
                 
                     <h4 style="margin-top: 20px;">Verificar el tipo de simulación</h4>
-                    <p>Antes de simular, es importante verificar que el tipo de análisis seleccionado sea el correcto. Para ello, ir a <strong>Simulate → Analyses and simulation</strong> y elegir <strong>Interactive Simulation</strong>.</p> 
+                    <p>Antes de simular, es importante verificar que el tipo de análisis seleccionado sea el correcto. Para ello, ir a <strong>Simulate → Analyses and simulation</strong> y elegir el tipo de simulación deseado. 
                         <div class="kicad-imagen-slot"><img src="img/Sim1.png" alt="Ventana Analyses and Simulation con Interactive Simulation" style="max-height: 400px;"></div>
+                        <p>Para este caso se seleccionó <strong>Interactive Simulation</strong>.</p>
                         <div class="kicad-imagen-slot"><img src="img/ASINT.png" alt="Mensaje de error Active Analysis Errors" style="max-height: 500px;"></div>
                     <p>Esta configuración también se puede abrir con el <strong>icono de herramienta</strong> que está junto a los iconos de simulación en la barra superior.</p>
                     <div class="kicad-imagen-slot"><img src="img/INTERACTIVE.png" alt="Ventana Analyses and Simulation con Interactive Simulation" style="max-height: 400px;"></div>
@@ -2229,12 +2230,7 @@
                     <div class="kicad-nota">
                         <strong>Error común:</strong> si el análisis activo no corresponde, al correr la simulación aparece el mensaje <code>There are no valid output variables</code>. Esto pasó en el ejemplo porque se había trabajado antes con <strong>DC Sweep</strong> y esa opción se quedó seleccionada en la casilla cercana a los iconos de simulación. 
                           <div class="kicad-imagen-slot"><img src="img/Merror.png" alt="Mensaje de error Active Analysis Errors" style="max-height: 300px;"></div>
-                </div>
-                            Para corregirlo, hay que cambiarla al análisis que se quiere realizar (en este caso, Interactive Simulation).
-                            <div class="kicad-imagen-slot"><img src="img/ASINT.png" alt="Mensaje de error Active Analysis Errors" style="max-height: 500px;"></div>
-                    
-             
-                
+                            
                     <h4 style="margin-top: 20px;">Osciloscopio (XSC1)</h4>
                     <p>Para ver las señales, en la barra de instrumentos de medición se selecciona el <strong>osciloscopio</strong> y se coloca en el lienzo. Se conectan sus canales <strong>A</strong> y <strong>B</strong> a los puntos que se quieren observar (en el ejemplo, la señal de entrada y la señal sobre la resistencia) y su terminal de tierra a la referencia del circuito.</p>
                     <p>Con las conexiones listas, se corre la simulación y se da <strong>clic en la pantalla del osciloscopio</strong> para abrir su visualización.</p>
