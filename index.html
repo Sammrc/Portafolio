@@ -2072,7 +2072,7 @@
                             <p><strong>Opción 1:</strong> Ir a la barra de componentes en el extremo superior derecho.</p>
                                 <div class="kicad-imagen-slot"><img src="img/Multisim_BC.png" alt="Barra de componentes de Multisim" style="max-height: 350px;"></div>
                                 <p>Cada botón de esta barra abre un grupo distinto de elementos. De izquierda a derecha, los símbolos corresponden a:</p>    
-                            <div class="kicad-imagen-slot"><img src="img/Components.png" alt="Barra de componentes de Multisim" style="max-height: 150px;"></div>
+                            <div class="kicad-imagen-slot"><img src="img/CTOOLBAR.png" alt="Barra de componentes de Multisim" style="max-height: 150px;"></div>
                             <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
                                 <li><strong>Símbolo de Tierra: <code>Sources</code></strong> – Fuentes de alimentación, tierras, generadores de voltaje y corriente.</li>
                                 <li><strong>Símbolo de Resistencia: <code>Basic</code></strong> – Componentes pasivos: resistencias, capacitores, inductores e interruptores.</li>
@@ -2269,14 +2269,11 @@
     <p>Se armó un circuito con tres elementos: una <strong>fuente de corriente IB</strong> conectada a la base del transistor <strong>Q1</strong>, una <strong>fuente de voltaje VCE</strong> de 12 V entre el colector y el emisor, y el emisor conectado a tierra. Los nodos se etiquetaron como <code>1</code> (base), <code>2</code> (colector) y <code>0</code> (tierra).</p>
     <div class="kicad-imagen-slot"><img src="img/DC1.png" alt="Circuito con transistor 2N2222A, fuente de corriente IB y fuente de voltaje VCE" style="max-height: 400px;"></div>
 
-    <div class="kicad-nota">
-        <strong>Importante:</strong> los valores que aparecen en el esquema (IB = 1 A y VCE = 12 V) son solo valores iniciales. Durante el barrido, Multisim los sustituye por los valores del rango que se configure para cada fuente.
-    </div>
-
+  
     <h4 style="margin-top: 20px;">Configuración del análisis</h4>
     <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
         <li>Ir a la barra superior, seleccionar <strong>Simulate</strong> y dar clic en <strong>Analyses and simulation</strong>. En la lista de la izquierda elegir <strong>DC Sweep</strong>.</li>
-            <div class="kicad-imagen-slot"><img src="img/nn (1).png" alt="Circuito con transistor 2N2222A, fuente de corriente IB y fuente de voltaje VCE" style="max-height: 400px;"></div>
+            <div class="kicad-imagen-slot"><img src="img/nn (1).png" alt="Circuito con transistor 2N2222A, fuente de corriente IB y fuente de voltaje VCE" style="max-height: 250px;"></div>
         <li>En la pestaña <strong>Analysis parameters</strong> se configuran las dos fuentes que se van a variar:
             <ul style="margin-top: 6px;">
                 <li><strong>Source 1</strong> (la que se grafica en el eje horizontal): fuente <code>VCE</code>, con <em>Start value</em> de 0 V, <em>Stop value</em> de 10 V e <em>Increment</em> de 1 V.</li>
