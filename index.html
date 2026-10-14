@@ -2288,55 +2288,8 @@
     </ol>
 
     <h4 style="margin-top: 20px;">Resultado: curvas características</h4>
-    <p>Como la fuente <code>IB</code> tomó tres valores (0, 0.0005 y 0.001 A), la gráfica muestra <strong>tres curvas</strong>, una por cada corriente de base. En la parte inferior aparece la leyenda con el valor de <code>ib</code> de cada una.</p>
+    <p>Como la fuente <code>IB</code> tomó tres valores (0, 0.0005 y 0.001 A), la gráfica muestra <strong>tres curvas</strong>, una por cada corriente de base. 
     <div class="kicad-imagen-slot"><img src="img/DC5.png" alt="Gráfica DC Transfer Characteristic con tres curvas de corriente de colector" style="max-height: 450px;"></div>
-
-    <table class="tabla-medidas">
-        <thead>
-            <tr>
-                <th>Curva</th>
-                <th>Corriente de base (I<sub>B</sub>)</th>
-                <th>Corriente de colector aprox. (I<sub>C</sub>)</th>
-                <th>Qué muestra</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Roja</td>
-                <td>0 A</td>
-                <td>≈ 0 mA</td>
-                <td>El transistor está en <strong>corte</strong>: sin corriente de base no conduce.</td>
-            </tr>
-            <tr>
-                <td>Verde</td>
-                <td>0.5 mA</td>
-                <td>≈ 90 a 100 mA</td>
-                <td>Con corriente de base, el transistor conduce.</td>
-            </tr>
-            <tr>
-                <td>Azul</td>
-                <td>1 mA</td>
-                <td>≈ 165 a 180 mA</td>
-                <td>Al duplicar I<sub>B</sub>, I<sub>C</sub> también casi se duplica.</td>
-            </tr>
-        </tbody>
-    </table>
-    <p style="font-size: 0.9rem; font-style: italic; color: var(--text-muted);">Los valores de I<sub>C</sub> se leyeron de manera aproximada sobre la gráfica.</p>
-
-    <p>Las curvas permiten identificar las regiones de operación del transistor:</p>
-    <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
-        <li><strong>Corte:</strong> I<sub>B</sub> = 0, por lo que I<sub>C</sub> es prácticamente cero (curva roja).</li>
-        <li><strong>Saturación:</strong> en la parte inicial de cada curva, con V<sub>CE</sub> bajo, donde la corriente sube rápidamente.</li>
-        <li><strong>Región activa:</strong> a partir de V<sub>CE</sub> ≈ 1 V las curvas son casi horizontales. Ahí I<sub>C</sub> casi no depende de V<sub>CE</sub>; la controla la corriente de base mediante la relación <code>I<sub>C</sub> = β · I<sub>B</sub></code>. De los datos de la gráfica resulta una ganancia β de aproximadamente 180 (por ejemplo, 90 mA ÷ 0.5 mA).</li>
-    </ul>
-
-    <h4 style="margin-top: 20px;">Cambiar la cantidad de pasos</h4>
-    <p>Para modificar el número de puntos o de curvas, se regresa a la ventana de configuración con el <strong>ícono de herramienta</strong> de la barra superior y se cambia el valor de <strong>Increment</strong>:</p>
-    <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
-        <li><strong>Increment de la Source 1 (VCE):</strong> un incremento más pequeño genera más puntos y una curva más suave. Con 1 V, la zona de saturación se ve como una recta de 0 a 1 V; con 0.1 V se aprecia mejor el codo.</li>
-        <li><strong>Increment de la Source 2 (IB):</strong> un incremento más pequeño genera más curvas. Por ejemplo, con 0.0002 A se obtienen 6 curvas (0, 0.2, 0.4, 0.6, 0.8 y 1 mA).</li>
-    </ul>
-
 </div>
 
 
