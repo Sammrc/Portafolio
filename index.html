@@ -2034,6 +2034,165 @@
             </div>
         </section>
 
+<!--
+==========================================================================
+ARCHIVO DE ACTUALIZACIÓN DE LA SECCIÓN MULTISIM (3 BLOQUES)
+
+BLOQUE 1 (CSS):    pégalo dentro de tu <style>, justo antes de </style>.
+BLOQUE 2 (HTML):   reemplaza COMPLETA tu <section id="multisim-detalle"> ...
+                   </section> por la de este archivo.
+BLOQUE 3 (JS):     pégalo dentro de tu <script>, al final (después de animateCat();).
+
+Imágenes: no se cambió ninguna ruta; se usan las mismas que ya tienes.
+==========================================================================
+-->
+
+
+<!-- ======================= BLOQUE 1: CSS ======================= -->
+<style>
+/* =====================================================
+   MULTISIM: ÍNDICE JERÁRQUICO, SUBTÍTULOS Y EJEMPLOS
+   ===================================================== */
+
+/* Evita que el menú fijo de arriba tape el título al saltar desde el índice */
+#multisim-detalle .kicad-etapa,
+#multisim-detalle .multi-subtitulo,
+#multisim-detalle .multi-ejemplo {
+    scroll-margin-top: 100px;
+}
+
+/* --- Subtítulos dentro de cada paso (con línea divisoria punteada) --- */
+#multisim-detalle .kicad-etapa h4.multi-subtitulo {
+    margin: 30px 0 14px 0;
+    padding-top: 16px;
+    border-top: 2px dashed var(--accent-light);
+    font-size: 1.08rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#multisim-detalle .multi-sub-num {
+    background-color: var(--accent-light);
+    color: var(--accent-hover);
+    border-radius: 8px;
+    padding: 2px 9px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* --- Etiqueta de "Ejemplo de..." --- */
+#multisim-detalle .multi-ejemplo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    background: linear-gradient(90deg, #f3e8ff, #faf5ff);
+    border: 1.5px solid var(--accent-light);
+    border-left: 6px solid var(--accent-color);
+    border-radius: 14px;
+    padding: 12px 18px;
+    margin: 22px 0;
+}
+#multisim-detalle .multi-ejemplo-etiqueta {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+#multisim-detalle .multi-ejemplo-titulo {
+    font-weight: 700;
+    color: var(--accent-hover);
+    font-size: 0.98rem;
+}
+#multisim-detalle .kicad-etapa .multi-ejemplo p {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+/* --- Índice lateral jerárquico --- */
+.kicad-indice-lateral.indice-multisim {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+.indice-multisim ul.indice-jerarquico {
+    gap: 2px;
+}
+.indice-multisim ul.indice-jerarquico > li + li {
+    border-top: 1px solid #f0e4ff;
+    padding-top: 4px;
+    margin-top: 2px;
+}
+.indice-multisim a.indice-paso {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    padding: 6px 8px;
+}
+.indice-multisim .indice-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-size: 0.72rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.indice-multisim ul.indice-sub {
+    margin: 2px 0 8px 19px;
+    padding-left: 10px;
+    border-left: 2px solid var(--accent-light);
+    gap: 1px;
+}
+.indice-multisim ul.indice-sub a {
+    font-size: 0.74rem;
+    font-weight: 500;
+    padding: 3px 8px;
+    color: var(--text-color);
+}
+.indice-multisim ul.indice-sub a:hover {
+    background-color: var(--accent-light);
+    color: var(--accent-hover);
+}
+.indice-multisim a.indice-ejemplo::before {
+    content: 'Ej.';
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 1px 5px;
+    margin-right: 6px;
+    vertical-align: 1px;
+}
+/* Elemento del índice que corresponde a lo que se está leyendo */
+.indice-multisim a.activo {
+    background-color: var(--accent-light);
+    color: var(--accent-hover);
+}
+.indice-multisim a.indice-paso.activo .indice-num {
+    background-color: var(--accent-hover);
+}
+.indice-multisim ul.indice-sub a.activo {
+    font-weight: 700;
+}
+</style>
+
+
+<!-- ======================= BLOQUE 2: SECCIÓN MULTISIM ======================= -->
 <!-- SECCIÓN DETALLE MULTISIM -->
 <section id="multisim-detalle" class="page-section">
     <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
@@ -2045,8 +2204,9 @@
 
                 <p class="kicad-pastilla-centrada"><strong>Multisim</strong> es un software de National Instruments para capturar esquemáticos y simular circuitos electrónicos antes de construirlos.</p>
                 <div class="kicad-imagen-slot"><img src="img/Multisim_Logo.png" alt="Multisim" style="max-height: 500px;"></div>
+
                 <!-- PASO 1 -->
-               <div id="multi-paso-1" class="kicad-etapa kicad-etapa-primera">
+                <div id="multi-paso-1" class="kicad-etapa kicad-etapa-primera">
                     <div class="kicad-etapa-numero">1</div>
                     <h3>Apertura del programa y entorno de trabajo</h3>
                     <p>Al abrir Multisim se muestra el área de trabajo (lienzo) en el centro, la barra de componentes en la parte superior, los instrumentos de medición en el lado derecho y el panel de proyecto a la izquierda.</p>
@@ -2064,57 +2224,62 @@
                 </div>
 
                 <!-- PASO 2 -->
-                    <div id="multi-paso-2" class="kicad-etapa">
-                            <div class="kicad-etapa-numero">2</div>
-                            <h3>Colocación de componentes</h3>
-                            <p>Para armar el circuito hay que insertar en el área de trabajo los componentes, fuentes, compuertas y demás elementos que se necesiten. Multisim ofrece dos formas de hacerlo.</p>
-                        
-                            <p><strong>Opción 1:</strong> Ir a la barra de componentes en el extremo superior derecho.</p>
-                                <div class="kicad-imagen-slot"><img src="img/Multisim_BC.png" alt="Barra de componentes de Multisim" style="max-height: 350px;"></div>
-                                <p>Cada botón de esta barra abre un grupo distinto de elementos. De izquierda a derecha, los símbolos corresponden a:</p>    
-                            <div class="kicad-imagen-slot"><img src="img/TOOLBAR.png" alt="Barra de componentes de Multisim" style="max-height: 150px;"></div>
-                            <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
-                                <li><strong>Símbolo de Tierra: <code>Sources</code></strong> – Fuentes de alimentación, tierras, generadores de voltaje y corriente.</li>
-                                <li><strong>Símbolo de Resistencia: <code>Basic</code></strong> – Componentes pasivos: resistencias, capacitores, inductores e interruptores.</li>
-                                <li><strong>Símbolo de Diodo: <code>Diodes</code></strong> – Diodos rectificadores, Zener y LEDs.</li>
-                                <li><strong>Símbolo de Transistor: <code>Transistors</code></strong> – Transistores BJT, FET y MOSFET.</li>
-                                <li><strong>Símbolo de Amplificador: <code>Analog</code></strong> – Amplificadores operacionales y comparadores.</li>
-                                <li><strong>Compuerta TTL: <code>TTL</code></strong> – Compuertas lógicas y circuitos integrados digitales de la serie 74XX.</li>
-                                <li><strong>Compuerta CMOS: <code>CMOS</code></strong> – Circuitos lógicos digitales de la serie 4000/CMOS.</li>
-                            </ul>
-                        
-                            <p><strong>Opción 2:</strong> También se puede presionar <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">W</kbd>. Se abre la ventana <strong>Select a Component</strong>, donde en el menú desplegable <strong>Group</strong> se puede cambiar de grupo (por ejemplo <code>TTL</code>, <code>Indicators</code>, <code>Sources</code>, <code>Diodes</code>, etc.).</p>
-                            <div class="kicad-imagen-slot"><img src="img/Mcomp (1).png" alt="Ventana Select a Component con el menú desplegable de grupos" style="max-height: 500px;"></div>
-                             <p>Y después elegir la familia y el componente deseado para armar el circuito.</p>
-                            <div class="kicad-imagen-slot"><img src="img/Mcompfam (1).png" alt="Ventana Select a Component con el menú desplegable de grupos" style="max-height: 500px;"></div>
-                        </div>
+                <div id="multi-paso-2" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">2</div>
+                    <h3>Colocación de componentes</h3>
+                    <p>Para armar el circuito hay que insertar en el área de trabajo los componentes, fuentes, compuertas y demás elementos que se necesiten. Multisim ofrece dos formas de hacerlo.</p>
+
+                    <h4 id="multi-sub-2-1" class="multi-subtitulo"><span class="multi-sub-num">2.1</span> Opción 1: barra de componentes</h4>
+                    <p>Ir a la barra de componentes en el extremo superior derecho.</p>
+                    <div class="kicad-imagen-slot"><img src="img/Multisim_BC.png" alt="Barra de componentes de Multisim" style="max-height: 350px;"></div>
+                    <p>Cada botón de esta barra abre un grupo distinto de elementos. De izquierda a derecha, los símbolos corresponden a:</p>
+                    <div class="kicad-imagen-slot"><img src="img/TOOLBAR.png" alt="Barra de componentes de Multisim" style="max-height: 150px;"></div>
+                    <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li><strong>Símbolo de Tierra: <code>Sources</code></strong> – Fuentes de alimentación, tierras, generadores de voltaje y corriente.</li>
+                        <li><strong>Símbolo de Resistencia: <code>Basic</code></strong> – Componentes pasivos: resistencias, capacitores, inductores e interruptores.</li>
+                        <li><strong>Símbolo de Diodo: <code>Diodes</code></strong> – Diodos rectificadores, Zener y LEDs.</li>
+                        <li><strong>Símbolo de Transistor: <code>Transistors</code></strong> – Transistores BJT, FET y MOSFET.</li>
+                        <li><strong>Símbolo de Amplificador: <code>Analog</code></strong> – Amplificadores operacionales y comparadores.</li>
+                        <li><strong>Compuerta TTL: <code>TTL</code></strong> – Compuertas lógicas y circuitos integrados digitales de la serie 74XX.</li>
+                        <li><strong>Compuerta CMOS: <code>CMOS</code></strong> – Circuitos lógicos digitales de la serie 4000/CMOS.</li>
+                    </ul>
+
+                    <h4 id="multi-sub-2-2" class="multi-subtitulo"><span class="multi-sub-num">2.2</span> Opción 2: atajo de teclado <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">W</kbd></h4>
+                    <p>También se puede presionar <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">W</kbd>. Se abre la ventana <strong>Select a Component</strong>, donde en el menú desplegable <strong>Group</strong> se puede cambiar de grupo (por ejemplo <code>TTL</code>, <code>Indicators</code>, <code>Sources</code>, <code>Diodes</code>, etc.).</p>
+                    <div class="kicad-imagen-slot"><img src="img/Mcomp (1).png" alt="Ventana Select a Component con el menú desplegable de grupos" style="max-height: 500px;"></div>
+                    <p>Y después elegir la familia y el componente deseado para armar el circuito.</p>
+                    <div class="kicad-imagen-slot"><img src="img/Mcompfam (1).png" alt="Ventana Select a Component con el menú desplegable de grupos" style="max-height: 500px;"></div>
+                </div>
 
                 <!-- PASO 3 -->
                 <div id="multi-paso-3" class="kicad-etapa">
                     <div class="kicad-etapa-numero">3</div>
                     <h3>Conexión y valores de los componentes</h3>
+
+                    <h4 id="multi-sub-3-1" class="multi-subtitulo"><span class="multi-sub-num">3.1</span> Conectar los componentes</h4>
                     <p>Las conexiones se hacen dando clic en el pin de un componente.</p>
-                       <div class="kicad-imagen-slot"><img src="img/Rutear1(1).png" alt="Rutear" style="max-height: 500px;"></div>
-                         <p>Y arrastrando hasta el pin de otro.</p>
-                        <div class="kicad-imagen-slot"><img src="img/Rutear2(1).png" alt="Rutear" style="max-height: 500px;"></div> 
-                        <p>Las líneas en rojo indican que las conexiones se han realizado.</p>
-                        <div class="kicad-imagen-slot"><img src="img/Rutear3(1).png" alt="Rutear" style="max-height: 500px;"></div>
-                         <p>Para cambiar el valor de un componente (resistencia, voltaje, etc.) se le da doble clic.</p>
-                        <div class="kicad-imagen-slot"><img src="img/CValor(1).png" alt="Rutear" style="max-height: 500px;"></div>
-                         <p>Y se edita en su ventana de propiedades.</p>
-                        <div class="kicad-imagen-slot"><img src="img/VValor(1).png" alt="Rutear" style="max-height: 500px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/Rutear1(1).png" alt="Rutear" style="max-height: 500px;"></div>
+                    <p>Y arrastrando hasta el pin de otro.</p>
+                    <div class="kicad-imagen-slot"><img src="img/Rutear2(1).png" alt="Rutear" style="max-height: 500px;"></div>
+                    <p>Las líneas en rojo indican que las conexiones se han realizado.</p>
+                    <div class="kicad-imagen-slot"><img src="img/Rutear3(1).png" alt="Rutear" style="max-height: 500px;"></div>
+
+                    <h4 id="multi-sub-3-2" class="multi-subtitulo"><span class="multi-sub-num">3.2</span> Cambiar el valor de un componente</h4>
+                    <p>Para cambiar el valor de un componente (resistencia, voltaje, etc.) se le da doble clic.</p>
+                    <div class="kicad-imagen-slot"><img src="img/CValor(1).png" alt="Rutear" style="max-height: 500px;"></div>
+                    <p>Y se edita en su ventana de propiedades.</p>
+                    <div class="kicad-imagen-slot"><img src="img/VValor(1).png" alt="Rutear" style="max-height: 500px;"></div>
                     <div class="kicad-nota">
                         <strong>Importante:</strong> todo circuito a simular debe tener una referencia a tierra (<strong>GROUND</strong>). Sin ella, Multisim no puede resolver el circuito y la simulación marcará error.
                     </div>
-                    
                 </div>
 
-               <!-- PASO 4 -->
+                <!-- PASO 4 -->
                 <div id="multi-paso-4" class="kicad-etapa">
                     <div class="kicad-etapa-numero">4</div>
                     <h3>Etiquetas</h3>
                     <p>Para identificar con claridad los nodos del circuito (por ejemplo, la entrada, la salida o un punto de medición) se les puede asignar un nombre. Esto facilita la lectura del esquema y después permite reconocer cada señal en los instrumentos y en las gráficas de la simulación.</p>
-                
+
                     <p>El procedimiento para nombrar un nodo es el siguiente:</p>
                     <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
                         <li>Seleccionar la <strong>línea roja</strong> (el cable) del nodo que se quiere nombrar.</li>
@@ -2132,59 +2297,75 @@
                                 <div class="kicad-imagen-slot"><img src="img/Nodos6.png" alt="Nodo con su nombre visible en el esquemático" style="max-height: 400px;"></div>
                         </li>
                     </ol>
-                
+
                     <div class="kicad-nota">
                         <strong>Tip:</strong> usa nombres cortos y descriptivos (como <code>Entrada</code>, <code>Salida</code> o <code>VCC</code>), sin espacios, para que sean fáciles de identificar al analizar los resultados.
                     </div>
                 </div>
-                    
 
-                    
                 <!-- PASO 5 -->
                 <div id="multi-paso-5" class="kicad-etapa">
                     <div class="kicad-etapa-numero">5</div>
                     <h3>Simulación</h3>
+
+                    <h4 id="multi-sub-5-1" class="multi-subtitulo"><span class="multi-sub-num">5.1</span> Abrir el análisis</h4>
                     <p>Para iniciar la simulación, ir a la barra superior, seleccionar <strong>Simulate</strong> y dar clic en <strong>Analyses and simulation</strong>.</p>
                     <div class="kicad-imagen-slot"><img src="img/Sim1.png" alt="Simulación barra" style="max-height: 500px;"></div>
+
+                    <div id="multi-ej-5" class="multi-ejemplo">
+                        <span class="multi-ejemplo-etiqueta"><i class="fa-solid fa-lightbulb"></i> Ejemplo</span>
+                        <span class="multi-ejemplo-titulo">Ejemplo de: análisis Transient del voltaje de un capacitor</span>
+                        <p>En los siguientes pasos se configura un análisis Transient para ver cómo cambia con el tiempo el voltaje de un capacitor.</p>
+                    </div>
+
+                    <h4 id="multi-sub-5-2" class="multi-subtitulo"><span class="multi-sub-num">5.2</span> Elegir el tipo de análisis y configurar los parámetros</h4>
                     <p>Se abrirá una ventana emergente la cual muestra varias funciones. En el circuito de ejemplo se usará la función de <strong>Transient</strong></p>
-                        <div class="kicad-imagen-slot"><img src="img/AS1.png" alt="Simulación barra" style="max-height: 600px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/AS1.png" alt="Simulación barra" style="max-height: 600px;"></div>
                     <p>Para setear y que el valor empiece a variar, se selecciona el menú desplegable de <strong>Initial conditions</strong>. Con la finalidad de ver el comportamiento del capacitor, se seleccionó que empiece desde cero.</p>
-                        <div class="kicad-imagen-slot"><img src="img/AS2.png" alt="Simulación barra" style="max-height: 500px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/AS2.png" alt="Simulación barra" style="max-height: 500px;"></div>
                     <p>En <strong>Start time</strong> se define en qué tiempo va a empezar y en <strong>End time</strong> en qué tiempo va a terminar.</p>
-                        <div class="kicad-imagen-slot"><img src="img/AS6.png" alt="Simulación barra" style="max-height: 500px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/AS6.png" alt="Simulación barra" style="max-height: 500px;"></div>
+
+                    <h4 id="multi-sub-5-3" class="multi-subtitulo"><span class="multi-sub-num">5.3</span> Elegir la salida y ejecutar</h4>
                     <p>Una vez establecidos dichos parámetros, en la pestaña <strong>Output</strong> seleccionar <strong>V(vc)</strong>, ya que esa será la salida que se quiere observar, es decir, cómo cambia el voltaje del capacitor.</p>
-                        <div class="kicad-imagen-slot"><img src="img/AS3.png" alt="Simulación barra" style="max-height: 500px;"></div>   
+                    <div class="kicad-imagen-slot"><img src="img/AS3.png" alt="Simulación barra" style="max-height: 500px;"></div>
                     <p>Posteriormente, dar clic en <strong>Añadir</strong>, en donde se pueden apreciar en el apartado derecho las variables elegidas para el análisis, y luego hacer clic en <strong>Run</strong>.</p>
-                        <div class="kicad-imagen-slot"><img src="img/AS4.png" alt="Simulación barra" style="max-height: 500px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/AS4.png" alt="Simulación barra" style="max-height: 500px;"></div>
                     <p>Se mostrará una ventana de vista de la gráfica.</p>
-                        <div class="kicad-imagen-slot"><img src="img/AS7.png" alt="Simulación barra" style="max-height: 500px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/AS7.png" alt="Simulación barra" style="max-height: 500px;"></div>
                     <p>Si se requiere reconfigurar los parámetros, ir a la barra superior y dar clic en el ícono de herramienta. Con los botones de <strong>Pause</strong> y <strong>Stop</strong> se detiene o termina la simulación.</p>
-                        <div class="kicad-imagen-slot"><img src="img/AS8.png" alt="Simulación barra" style="max-height: 400px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/AS8.png" alt="Simulación barra" style="max-height: 400px;"></div>
                 </div>
 
-        <!-- PASO 6 -->
+                <!-- PASO 6 -->
                 <div id="multi-paso-6" class="kicad-etapa">
                     <div class="kicad-etapa-numero">6</div>
                     <h3>Instrumentos de medición</h3>
                     <p>En la barra de instrumentos del lado derecho se encuentran el multímetro, el osciloscopio, el generador de funciones, entre otros.</p>
-                        <div class="kicad-imagen-slot"><img src="img/PINM.png" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
-                    <p>A continuación se muestra un ejemplo con un <strong>generador de funciones</strong> y un <strong>osciloscopio</strong>.</p>
-                    <h4 style="margin-top: 20px;">Generador de funciones (XFG1)</h4>
+                    <div class="kicad-imagen-slot"><img src="img/PINM.png" alt="Barra de instrumentos de medición" style="max-height: 400px;"></div>
+
+                    <div id="multi-ej-6" class="multi-ejemplo">
+                        <span class="multi-ejemplo-etiqueta"><i class="fa-solid fa-lightbulb"></i> Ejemplo</span>
+                        <span class="multi-ejemplo-titulo">Ejemplo de: generador de funciones y osciloscopio</span>
+                        <p>A continuación se muestra un ejemplo con un <strong>generador de funciones</strong> y un <strong>osciloscopio</strong>, conectados a un circuito con un diodo y una resistencia.</p>
+                    </div>
+
+                    <h4 id="multi-sub-6-1" class="multi-subtitulo"><span class="multi-sub-num">6.1</span> Generador de funciones (XFG1)</h4>
                     <p>Para el ejemplo se colocó el generador de funciones <strong>XFG1</strong>.</p>
-                            <div class="kicad-imagen-slot"><img src="img/GenF.jpg" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
-                     <p>Una vez insertado el generador de funciones, se colocó un diodo yendo a la barra superior y se hizo clic en el ícono de diodos. </p>
-                             <div class="kicad-imagen-slot"><img src="img/GFD.png" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
-                        <p>Se abre la pestaña de componentes, se selecciona el tipo de diodo deseado y se le da a aceptar.</p>
-                         <div class="kicad-imagen-slot"><img src="img/VDIOD.png" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
-                        <p>Posteriormente, se insertó una resistencia. Para ello, se cambia, desde la ventana anterior, el grupo a <strong>Basic</strong>.</p>
-                        <div class="kicad-imagen-slot"><img src="img/GB.png" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
-                        <p>Y se busca el subgrupo <strong>Resistor</strong>, se selecciona el valor de la resistencia y se da aceptar.</p>
-                        <div class="kicad-imagen-slot"><img src="img/Resistor.png" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
-                        <p>Se agregó además una tierra cambiando de grupo a <strong>Sources</strong>, luego en el subgrupo <strong>Power Sources</strong> seleccionar <strong>Ground</strong> y dar aceptar.</p>
-                        <div class="kicad-imagen-slot"><img src="img/GND.png" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
-                        <p> Una vez insertados todos los componentes, al dar doble clic sobre el generador se abre su ventana, donde se configura la señal que va a entregar:</p>
+                    <div class="kicad-imagen-slot"><img src="img/GenF.jpg" alt="Generador de funciones XFG1" style="max-height: 400px;"></div>
+                    <p>Una vez insertado el generador de funciones, se colocó un diodo yendo a la barra superior y se hizo clic en el ícono de diodos. </p>
+                    <div class="kicad-imagen-slot"><img src="img/GFD.png" alt="Ícono de diodos en la barra superior" style="max-height: 400px;"></div>
+                    <p>Se abre la pestaña de componentes, se selecciona el tipo de diodo deseado y se le da a aceptar.</p>
+                    <div class="kicad-imagen-slot"><img src="img/VDIOD.png" alt="Selección del diodo" style="max-height: 400px;"></div>
+                    <p>Posteriormente, se insertó una resistencia. Para ello, se cambia, desde la ventana anterior, el grupo a <strong>Basic</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/GB.png" alt="Cambio de grupo a Basic" style="max-height: 400px;"></div>
+                    <p>Y se busca el subgrupo <strong>Resistor</strong>, se selecciona el valor de la resistencia y se da aceptar.</p>
+                    <div class="kicad-imagen-slot"><img src="img/Resistor.png" alt="Selección de la resistencia" style="max-height: 400px;"></div>
+                    <p>Se agregó además una tierra cambiando de grupo a <strong>Sources</strong>, luego en el subgrupo <strong>Power Sources</strong> seleccionar <strong>Ground</strong> y dar aceptar.</p>
+                    <div class="kicad-imagen-slot"><img src="img/GND.png" alt="Selección de la tierra (Ground)" style="max-height: 400px;"></div>
+                    <p> Una vez insertados todos los componentes, al dar doble clic sobre el generador se abre su ventana, donde se configura la señal que va a entregar:</p>
                     <div class="kicad-imagen-slot"><img src="img/FGVentana.jpg" alt="Ventana del generador de funciones XFG1" style="max-height: 400px;"></div>
-                
+
                     <table class="tabla-medidas">
                         <thead>
                             <tr>
@@ -2215,31 +2396,31 @@
                             </tr>
                         </tbody>
                     </table>
-                
+
                     <p>Después se hacen las conexiones del circuito: el generador alimenta al diodo <strong>D1</strong>, la resistencia <strong>R1</strong> se conecta a tierra y el terminal común (<strong>COM</strong>) del generador también va a tierra.</p>
                     <div class="kicad-imagen-slot"><img src="img/FGConexiones.jpg" alt="Circuito con generador de funciones, diodo, resistencia y osciloscopio" style="max-height: 450px;"></div>
-                
-                    <h4 style="margin-top: 20px;">Verificar el tipo de simulación</h4>
+
+                    <h4 id="multi-sub-6-2" class="multi-subtitulo"><span class="multi-sub-num">6.2</span> Verificar el tipo de simulación</h4>
                     <p>Antes de simular, es importante verificar que el tipo de análisis seleccionado sea el correcto. Para ello, ir a <strong>Simulate → Analyses and simulation</strong> y elegir el tipo de simulación deseado. </p>
-                        <div class="kicad-imagen-slot"><img src="img/Sim1.png" alt="Ventana Analyses and Simulation con Interactive Simulation" style="max-height: 400px;"></div>
-                        <p>Para este caso se seleccionó <strong>Interactive Simulation</strong>.</p>
-                        <div class="kicad-imagen-slot"><img src="img/ASINT.png" alt="Mensaje de error Active Analysis Errors" style="max-height: 500px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/Sim1.png" alt="Ventana Analyses and Simulation con Interactive Simulation" style="max-height: 400px;"></div>
+                    <p>Para este caso se seleccionó <strong>Interactive Simulation</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/ASINT.png" alt="Selección de Interactive Simulation" style="max-height: 500px;"></div>
                     <p>Esta configuración también se puede abrir con el <strong>icono de herramienta</strong> que está junto a los iconos de simulación en la barra superior.</p>
                     <div class="kicad-imagen-slot"><img src="img/INTERACTIVE.png" alt="Ventana Analyses and Simulation con Interactive Simulation" style="max-height: 300px;"></div>
-                
+
                     <div class="kicad-nota">
-                        <strong>Error común:</strong> si el análisis activo no corresponde, al correr la simulación aparece el mensaje <code>There are no valid output variables</code>. Esto pasó en el ejemplo porque se había trabajado antes con <strong>DC Sweep</strong> y esa opción se quedó seleccionada en la casilla cercana a los iconos de simulación. 
-                          <div class="kicad-imagen-slot"><img src="img/Merror.png" alt="Mensaje de error Active Analysis Errors" style="max-height: 300px;"></div>
-                     </div>
-                        
-                    <h4 style="margin-top: 20px;">Osciloscopio (XSC1)</h4>
-                    <p>Para ver las señales, en la barra de instrumentos de medición se selecciona el <strong>osciloscopio</strong> y se coloca en el lienzo.
-                            <div class="kicad-imagen-slot"><img src="img/PINM4.png" alt="Pantalla del osciloscopio con las señales" style="max-height: 500px;"></div>
-                            Se conectan sus canales a los puntos que se quieren observar (en el ejemplo, la señal de entrada y la señal sobre la resistencia) y su terminal de tierra a la referencia del circuito.</p>
+                        <strong>Error común:</strong> si el análisis activo no corresponde, al correr la simulación aparece el mensaje <code>There are no valid output variables</code>. Esto pasó en el ejemplo porque se había trabajado antes con <strong>DC Sweep</strong> y esa opción se quedó seleccionada en la casilla cercana a los iconos de simulación.
+                        <div class="kicad-imagen-slot"><img src="img/Merror.png" alt="Mensaje de error Active Analysis Errors" style="max-height: 300px;"></div>
+                    </div>
+
+                    <h4 id="multi-sub-6-3" class="multi-subtitulo"><span class="multi-sub-num">6.3</span> Osciloscopio (XSC1)</h4>
+                    <p>Para ver las señales, en la barra de instrumentos de medición se selecciona el <strong>osciloscopio</strong> y se coloca en el lienzo.</p>
+                    <div class="kicad-imagen-slot"><img src="img/PINM4.png" alt="Osciloscopio en la barra de instrumentos" style="max-height: 500px;"></div>
+                    <p>Se conectan sus canales a los puntos que se quieren observar (en el ejemplo, la señal de entrada y la señal sobre la resistencia) y su terminal de tierra a la referencia del circuito.</p>
                     <p>Con las conexiones listas, se corre la simulación y se da <strong>clic en la pantalla del osciloscopio</strong> para abrir su visualización.</p>
                     <div class="kicad-imagen-slot"><img src="img/OSCILO.png" alt="Pantalla del osciloscopio con las señales" style="max-height: 500px;"></div>
-                
-                    <h4 style="margin-top: 20px;">Cambiar el color de las señales</h4>
+
+                    <h4 id="multi-sub-6-4" class="multi-subtitulo"><span class="multi-sub-num">6.4</span> Cambiar el color de las señales</h4>
                     <p>Si las señales se ven del mismo color y es difícil identificarlas, se puede asignar un color distinto a cada una:</p>
                     <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
                         <li><strong>Detener la simulación</strong> con el botón <strong>Stop</strong>.</li>
@@ -2251,67 +2432,162 @@
                             <div class="kicad-imagen-slot"><img src="img/SEÑAL3.png" alt="Cambio de color de la señal en Net Properties" style="max-height: 400px;"></div>
                         <li>Volver a <strong>correr la simulación</strong> y dar clic en la pantalla del osciloscopio para ver las señales con sus nuevos colores.</li>
                     </ol>
-                
+
                     <div class="kicad-nota">
                         <strong>Tip:</strong> el color del cable es el que usa el osciloscopio para dibujar esa señal, así que conviene asignar colores distintos a las señales de entrada y de salida antes de analizarlas.
                     </div>
                 </div>
 
+                <!-- PASO 7 -->
+                <div id="multi-paso-7" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">7</div>
+                    <h3>Barrido DC (DC Sweep) y curvas características del transistor</h3>
+                    <p>El análisis <strong>DC Sweep</strong> (barrido de DC) hace que Multisim varíe el valor de una o dos fuentes de DC dentro de un rango y calcule el comportamiento del circuito para cada valor. Con este análisis se pueden obtener las <strong>curvas características</strong> de un transistor, que muestran cómo cambia su corriente según los voltajes y corrientes que se le aplican.</p>
 
-<!-- PASO 7 -->
-<div id="multi-paso-7" class="kicad-etapa">
-    <div class="kicad-etapa-numero">7</div>
-    <h3>Barrido DC (DC Sweep) y curvas características del transistor</h3>
-    <p>El análisis <strong>DC Sweep</strong> (barrido de DC) hace que Multisim varíe el valor de una o dos fuentes de DC dentro de un rango y calcule el comportamiento del circuito para cada valor. Con este análisis se pueden obtener las <strong>curvas características</strong> de un transistor, que muestran cómo cambia su corriente según los voltajes y corrientes que se le aplican.</p>
-    <p>En este ejemplo se obtuvo la <strong>curva de salida de un transistor BJT NPN 2N2222A</strong>: la corriente de colector (I<sub>C</sub>) en función del voltaje colector-emisor (V<sub>CE</sub>), para distintas corrientes de base (I<sub>B</sub>).</p>
+                    <div id="multi-ej-7" class="multi-ejemplo">
+                        <span class="multi-ejemplo-etiqueta"><i class="fa-solid fa-lightbulb"></i> Ejemplo</span>
+                        <span class="multi-ejemplo-titulo">Ejemplo de: curvas características de un transistor BJT NPN 2N2222A</span>
+                        <p>En este ejemplo se obtuvo la <strong>curva de salida</strong>: la corriente de colector (I<sub>C</sub>) en función del voltaje colector-emisor (V<sub>CE</sub>), para distintas corrientes de base (I<sub>B</sub>).</p>
+                    </div>
 
-    <h4 style="margin-top: 20px;">Circuito de prueba</h4>
-    <p>Se armó un circuito con tres elementos: una <strong>fuente de corriente IB</strong> conectada a la base del transistor <strong>Q1</strong>, una <strong>fuente de voltaje VCE</strong> de 12 V entre el colector y el emisor, y el emisor conectado a tierra. Los nodos se etiquetaron como <code>1</code> (base), <code>2</code> (colector) y <code>0</code> (tierra).</p>
-    <div class="kicad-imagen-slot"><img src="img/DC1.png" alt="Circuito con transistor 2N2222A, fuente de corriente IB y fuente de voltaje VCE" style="max-height: 400px;"></div>
+                    <h4 id="multi-sub-7-1" class="multi-subtitulo"><span class="multi-sub-num">7.1</span> Circuito de prueba</h4>
+                    <p>Se armó un circuito con tres elementos: una <strong>fuente de corriente IB</strong> conectada a la base del transistor <strong>Q1</strong>, una <strong>fuente de voltaje VCE</strong> de 12 V entre el colector y el emisor, y el emisor conectado a tierra. Los nodos se etiquetaron como <code>1</code> (base), <code>2</code> (colector) y <code>0</code> (tierra).</p>
+                    <div class="kicad-imagen-slot"><img src="img/DC1.png" alt="Circuito con transistor 2N2222A, fuente de corriente IB y fuente de voltaje VCE" style="max-height: 400px;"></div>
 
-  
-    <h4 style="margin-top: 20px;">Configuración del análisis</h4>
-    <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
-        <li>Ir a la barra superior, seleccionar <strong>Simulate</strong> y dar clic en <strong>Analyses and simulation</strong>. En la lista de la izquierda elegir <strong>DC Sweep</strong>.</li>
-            <div class="kicad-imagen-slot"><img src="img/nn (1).png" alt="Circuito con transistor 2N2222A, fuente de corriente IB y fuente de voltaje VCE" style="max-height: 250px;"></div>
-        <li>En la pestaña <strong>Analysis parameters</strong> se configuran las dos fuentes que se van a variar:
-            <ul style="margin-top: 6px;">
-                <li><strong>Source 1</strong> (la que se grafica en el eje horizontal): fuente <code>VCE</code>, con <em>Start value</em> de 0 V, <em>Stop value</em> de 10 V e <em>Increment</em> de 1 V.</li>
-                <li><strong>Source 2</strong> (genera una curva distinta por cada valor): se activa la casilla <strong>Use source 2</strong> y se elige la fuente <code>IB</code>, con <em>Start value</em> de 0 A, <em>Stop value</em> de 0.001 A e <em>Increment</em> de 0.0005 A.</li>
-            </ul>
-            <div class="kicad-imagen-slot"><img src="img/DC2.png" alt="Pestaña Analysis parameters del DC Sweep con las fuentes VCE e IB" style="max-height: 400px;"></div>
-        </li>
-        <li>En la pestaña <strong>Output</strong> se elige la variable que se quiere graficar. En Multisim los transistores se identifican con la letra <strong>Q</strong> (Q1, Q2, etc.), por eso las variables del transistor aparecen como <code>I(Q1[IB])</code>, <code>I(Q1[IE])</code> e <code>I(Q1[IC])</code>, que corresponden a la corriente de base, emisor y colector. Se selecciona <strong>I(Q1[IC])</strong> y se da clic en <strong>Add</strong>, para que aparezca en la lista <em>Selected variables for analysis</em>.
-            <div class="kicad-imagen-slot"><img src="img/DC4.png" alt="Pestaña Output con la variable I(Q1[IC]) agregada" style="max-height: 400px;"></div>
-        </li>
-        <li>Dar clic en <strong>Run</strong>. Se abre la ventana <strong>Grapher View</strong> con la gráfica <em>DC Transfer Characteristic</em>.</li>
-    </ol>
+                    <h4 id="multi-sub-7-2" class="multi-subtitulo"><span class="multi-sub-num">7.2</span> Configuración del análisis</h4>
+                    <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li>Ir a la barra superior, seleccionar <strong>Simulate</strong> y dar clic en <strong>Analyses and simulation</strong>. En la lista de la izquierda elegir <strong>DC Sweep</strong>.</li>
+                            <div class="kicad-imagen-slot"><img src="img/nn (1).png" alt="Lista de análisis con DC Sweep seleccionado" style="max-height: 250px;"></div>
+                        <li>En la pestaña <strong>Analysis parameters</strong> se configuran las dos fuentes que se van a variar:
+                            <ul style="margin-top: 6px;">
+                                <li><strong>Source 1</strong> (la que se grafica en el eje horizontal): fuente <code>VCE</code>, con <em>Start value</em> de 0 V, <em>Stop value</em> de 10 V e <em>Increment</em> de 1 V.</li>
+                                <li><strong>Source 2</strong> (genera una curva distinta por cada valor): se activa la casilla <strong>Use source 2</strong> y se elige la fuente <code>IB</code>, con <em>Start value</em> de 0 A, <em>Stop value</em> de 0.001 A e <em>Increment</em> de 0.0005 A.</li>
+                            </ul>
+                            <div class="kicad-imagen-slot"><img src="img/DC2.png" alt="Pestaña Analysis parameters del DC Sweep con las fuentes VCE e IB" style="max-height: 400px;"></div>
+                        </li>
+                        <li>En la pestaña <strong>Output</strong> se elige la variable que se quiere graficar. En Multisim los transistores se identifican con la letra <strong>Q</strong> (Q1, Q2, etc.), por eso las variables del transistor aparecen como <code>I(Q1[IB])</code>, <code>I(Q1[IE])</code> e <code>I(Q1[IC])</code>, que corresponden a la corriente de base, emisor y colector. Se selecciona <strong>I(Q1[IC])</strong> y se da clic en <strong>Add</strong>, para que aparezca en la lista <em>Selected variables for analysis</em>.
+                            <div class="kicad-imagen-slot"><img src="img/DC4.png" alt="Pestaña Output con la variable I(Q1[IC]) agregada" style="max-height: 400px;"></div>
+                        </li>
+                        <li>Dar clic en <strong>Run</strong>. Se abre la ventana <strong>Grapher View</strong> con la gráfica <em>DC Transfer Characteristic</em>.</li>
+                    </ol>
 
-    <h4 style="margin-top: 20px;">Resultado: curvas características</h4>
-    <p>Como la fuente <code>IB</code> tomó tres valores (0, 0.0005 y 0.001 A), la gráfica muestra <strong>tres curvas</strong>, una por cada corriente de base. 
-    <div class="kicad-imagen-slot"><img src="img/DC5.png" alt="Gráfica DC Transfer Characteristic con tres curvas de corriente de colector" style="max-height: 450px;"></div>
-</div>
+                    <h4 id="multi-sub-7-3" class="multi-subtitulo"><span class="multi-sub-num">7.3</span> Resultado: curvas características</h4>
+                    <p>Como la fuente <code>IB</code> tomó tres valores (0, 0.0005 y 0.001 A), la gráfica muestra <strong>tres curvas</strong>, una por cada corriente de base.</p>
+                    <div class="kicad-imagen-slot"><img src="img/DC5.png" alt="Gráfica DC Transfer Characteristic con tres curvas de corriente de colector" style="max-height: 450px;"></div>
+                </div>
 
-
-                    
-              </div>
             </div>
+        </div>
 
-        <!-- ÍNDICE LATERAL DERECHO MULTISIM -->
-        <aside class="kicad-indice-lateral">
+        <!-- ÍNDICE LATERAL DERECHO MULTISIM (JERÁRQUICO) -->
+        <aside class="kicad-indice-lateral indice-multisim">
             <h4><i class="fa-solid fa-list-ul"></i> Índice Multisim</h4>
-            <ul>
-                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-1').scrollIntoView({behavior: 'smooth'}); return false;">1. Entorno de trabajo</a></li>
-                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-2').scrollIntoView({behavior: 'smooth'}); return false;">2. Colocar componentes</a></li>
-                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-3').scrollIntoView({behavior: 'smooth'}); return false;">3. Conexión y valores</a></li>
-                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-4').scrollIntoView({behavior: 'smooth'}); return false;">4. Etiquetas</a></li>
-                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-5').scrollIntoView({behavior: 'smooth'}); return false;">5. Simulación</a></li>
-                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-6').scrollIntoView({behavior: 'smooth'}); return false;">6. Instrumentos</a></li>
-                <li><a href="#multisim-detalle" onclick="document.getElementById('multi-paso-7').scrollIntoView({behavior: 'smooth'}); return false;">7. Barrido DC (DC Sweep)</a></li>
+            <ul class="indice-jerarquico">
+                <li>
+                    <a href="#multisim-detalle" class="indice-paso" data-destino="multi-paso-1"><span class="indice-num">1</span> Entorno de trabajo</a>
+                </li>
+                <li>
+                    <a href="#multisim-detalle" class="indice-paso" data-destino="multi-paso-2"><span class="indice-num">2</span> Colocar componentes</a>
+                    <ul class="indice-sub">
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-2-1">2.1 Barra de componentes</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-2-2">2.2 Atajo Ctrl + W</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#multisim-detalle" class="indice-paso" data-destino="multi-paso-3"><span class="indice-num">3</span> Conexión y valores</a>
+                    <ul class="indice-sub">
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-3-1">3.1 Conectar componentes</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-3-2">3.2 Cambiar valores</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#multisim-detalle" class="indice-paso" data-destino="multi-paso-4"><span class="indice-num">4</span> Etiquetas</a>
+                </li>
+                <li>
+                    <a href="#multisim-detalle" class="indice-paso" data-destino="multi-paso-5"><span class="indice-num">5</span> Simulación</a>
+                    <ul class="indice-sub">
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-5-1">5.1 Abrir el análisis</a></li>
+                        <li><a href="#multisim-detalle" class="indice-ejemplo" data-destino="multi-ej-5">Transient de un capacitor</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-5-2">5.2 Tipo y parámetros</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-5-3">5.3 Salida y ejecución</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#multisim-detalle" class="indice-paso" data-destino="multi-paso-6"><span class="indice-num">6</span> Instrumentos</a>
+                    <ul class="indice-sub">
+                        <li><a href="#multisim-detalle" class="indice-ejemplo" data-destino="multi-ej-6">Generador y osciloscopio</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-6-1">6.1 Generador de funciones</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-6-2">6.2 Tipo de simulación</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-6-3">6.3 Osciloscopio</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-6-4">6.4 Color de las señales</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#multisim-detalle" class="indice-paso" data-destino="multi-paso-7"><span class="indice-num">7</span> Barrido DC (DC Sweep)</a>
+                    <ul class="indice-sub">
+                        <li><a href="#multisim-detalle" class="indice-ejemplo" data-destino="multi-ej-7">Curvas del BJT 2N2222A</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-7-1">7.1 Circuito de prueba</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-7-2">7.2 Configuración</a></li>
+                        <li><a href="#multisim-detalle" data-destino="multi-sub-7-3">7.3 Resultado</a></li>
+                    </ul>
+                </li>
             </ul>
         </aside>
     </div>
 </section>
+
+
+<!-- ======================= BLOQUE 3: JAVASCRIPT ======================= -->
+<script>
+/* Índice de Multisim: salto suave al dar clic y resaltado de la parte que se está leyendo */
+(function () {
+    const seccion = document.getElementById('multisim-detalle');
+    if (!seccion) return;
+    const indice = seccion.querySelector('.indice-multisim');
+    const enlaces = Array.from(seccion.querySelectorAll('.indice-multisim a[data-destino]'));
+    let pendiente = false;
+
+    // Clic en el índice: desplazarse suavemente sin cambiar el hash de la página
+    seccion.addEventListener('click', function (e) {
+        const enlace = e.target.closest('.indice-multisim a[data-destino]');
+        if (!enlace) return;
+        e.preventDefault();
+        const destino = document.getElementById(enlace.dataset.destino);
+        if (destino) destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // Resaltar en el índice el último título que ya pasó por la parte superior
+    function actualizar() {
+        pendiente = false;
+        if (!seccion.classList.contains('active-page')) return;
+        let actual = null;
+        enlaces.forEach(function (a) {
+            const el = document.getElementById(a.dataset.destino);
+            if (el && el.getBoundingClientRect().top <= 140) actual = a;
+        });
+        enlaces.forEach(function (a) { a.classList.toggle('activo', a === actual); });
+        // Mantener visible el elemento activo dentro del índice
+        if (actual && indice) {
+            const arriba = actual.offsetTop;
+            const alto = indice.clientHeight;
+            if (arriba < indice.scrollTop + 30 || arriba > indice.scrollTop + alto - 30) {
+                indice.scrollTop = arriba - alto / 2;
+            }
+        }
+    }
+    window.addEventListener('scroll', function () {
+        if (!pendiente) {
+            pendiente = true;
+            requestAnimationFrame(actualizar);
+        }
+    }, { passive: true });
+    actualizar();
+})();
+</script>
+
+
+
+
 
 
             
