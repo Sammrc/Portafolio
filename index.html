@@ -2033,21 +2033,7 @@
             </div>
         </section>
 
-<!--
-==========================================================================
-ARCHIVO DE ACTUALIZACIÓN DE LA SECCIÓN MULTISIM (3 BLOQUES)
 
-BLOQUE 1 (CSS):    pégalo dentro de tu <style>, justo antes de </style>.
-BLOQUE 2 (HTML):   reemplaza COMPLETA tu <section id="multisim-detalle"> ...
-                   </section> por la de este archivo.
-BLOQUE 3 (JS):     pégalo dentro de tu <script>, al final (después de animateCat();).
-
-Imágenes: no se cambió ninguna ruta; se usan las mismas que ya tienes.
-==========================================================================
--->
-
-
-<!-- ======================= BLOQUE 1: CSS ======================= -->
 <style>
 /* =====================================================
    MULTISIM: ÍNDICE JERÁRQUICO, SUBTÍTULOS Y EJEMPLOS
@@ -2585,18 +2571,487 @@ Imágenes: no se cambió ninguna ruta; se usan las mismas que ya tienes.
 </script>
 
 
-<!-- SECCIÓN DETALLE ALTIUM -->
+            
+<!-- ======================= BLOQUE 1: CSS ======================= -->
+<style>
+        #altium-detalle .kicad-etapa,
+        #altium-detalle .alt-subtitulo {
+            scroll-margin-top: 100px;
+        }
+        #altium-detalle .kicad-etapa h4.alt-subtitulo {
+            margin: 30px 0 14px 0;
+            padding-top: 16px;
+            border-top: 2px dashed var(--accent-light);
+            font-size: 1.08rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #altium-detalle .alt-sub-num {
+            background-color: var(--accent-light);
+            color: var(--accent-hover);
+            border-radius: 8px;
+            padding: 2px 9px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        #altium-detalle .kicad-etapa code {
+            background-color: #f3e8ff;
+            color: var(--accent-hover);
+            padding: 1px 6px;
+            border-radius: 5px;
+            font-size: 0.88em;
+        }
+</style>
+
+<!-- ======================= BLOQUE 2: SECCIÓN ALTIUM ======================= -->
 <section id="altium-detalle" class="page-section">
     <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
 
-    <div class="kicad-detalle-container" style="margin-top: 0;">
-        <h1 style="border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Diseño de PCB con Altium</h1>
-        <div class="siamese-working-box">
-            <h3>Sección en desarrollo</h3>
-            <p>Aquí se publicará la documentación de Altium.</p>
+    <div class="kicad-layout-principal">
+        <div class="kicad-contenido-principal">
+            <div class="kicad-detalle-container" style="margin-top: 0;">
+                <h1 style="border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Diseño de PCB con Altium Designer</h1>
+
+                <!-- PASO 1 -->
+                <div id="alt-paso-1" class="kicad-etapa kicad-etapa-primera">
+                    <div class="kicad-etapa-numero">1</div>
+                    <h3><i class="fa-solid fa-microchip"></i> ¿Qué es Altium Designer?</h3>
+                    <p class="kicad-pastilla-centrada"><strong>Altium Designer</strong> es un software profesional para el diseño de circuitos electrónicos: permite capturar el esquemático, diseñar la PCB y generar los archivos de fabricación en un mismo entorno.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL01.png" alt="Logo de Altium Designer" style="max-height: 300px;"></div>
+                </div>
+
+                <!-- PASO 2 -->
+                <div id="alt-paso-2" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">2</div>
+                    <h3><i class="fa-solid fa-key"></i> Inicio de sesión y licencia</h3>
+
+                    <h4 id="alt-sub-2-1" class="alt-subtitulo"><span class="alt-sub-num">2.1</span> Iniciar sesión</h4>
+                    <p>Al abrir Altium Designer por primera vez, hay que iniciar sesión con la cuenta de Altium (en nuestro caso, la cuenta institucional).</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL02.png" alt="Ventana de inicio de sesión de Altium" style="max-height: 450px;"></div>
+
+                    <h4 id="alt-sub-2-2" class="alt-subtitulo"><span class="alt-sub-num">2.2</span> Elegir una licencia</h4>
+                    <p>Después de iniciar sesión, se muestra la lista de licencias disponibles. Se selecciona la que corresponda a la cuenta y se confirma para poder usar el programa.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL03.png" alt="Selección de licencia en Altium" style="max-height: 450px;"></div>
+                </div>
+
+                <!-- PASO 3 -->
+                <div id="alt-paso-3" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">3</div>
+                    <h3><i class="fa-solid fa-folder-plus"></i> Creación del proyecto</h3>
+
+                    <h4 id="alt-sub-3-1" class="alt-subtitulo"><span class="alt-sub-num">3.1</span> Nombre y ubicación</h4>
+                    <p>Crear un nuevo proyecto de PCB desde <strong>File → New → Project</strong>. En la ventana que aparece se escribe el <strong>nombre</strong> del proyecto y se elige la <strong>carpeta donde se guardará</strong>. Después se da clic en <strong>Create</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL04.png" alt="Ventana para crear un nuevo proyecto" style="max-height: 500px;"></div>
+                    <div class="kicad-nota">
+                        <strong>Tip:</strong> usa un nombre sin espacios ni acentos y una carpeta exclusiva para el proyecto. Altium guarda varios archivos (esquemático, PCB, salidas) y así todo queda ordenado.
+                    </div>
+
+                    <h4 id="alt-sub-3-2" class="alt-subtitulo"><span class="alt-sub-num">3.2</span> Agregar el esquemático y la PCB</h4>
+                    <p>El proyecto se crea vacío. Para agregar los documentos, dar clic derecho sobre el proyecto en el panel <strong>Projects</strong> y elegir <strong>Add New to Project</strong>; ahí se crea un <strong>Schematic</strong> y un <strong>PCB</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL05.png" alt="Agregar esquemático y PCB al proyecto" style="max-height: 450px;"></div>
+                    <p>Ambos archivos quedan dentro del proyecto. Se recomienda guardarlos de inmediato (<kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">S</kbd>) con el mismo nombre del proyecto.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL06.png" alt="Proyecto con esquemático y PCB" style="max-height: 400px;"></div>
+                </div>
+
+                <!-- PASO 4 -->
+                <div id="alt-paso-4" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">4</div>
+                    <h3><i class="fa-solid fa-diagram-project"></i> Editor de esquemáticos</h3>
+                    <p>Al hacer doble clic en el archivo de esquemático (<code>.SchDoc</code>) se abre el editor, donde se dibuja el circuito de forma lógica antes de pasar a la placa.</p>
+
+                    <h4 id="alt-sub-4-1" class="alt-subtitulo"><span class="alt-sub-num">4.1</span> Entorno y herramientas</h4>
+                    <p>Los elementos principales del entorno son:</p>
+                    <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li><strong>Barra de menús:</strong> File, Edit, View, Project, Place, Design, Tools, etc.</li>
+                        <li><strong>Barra de herramientas:</strong> accesos rápidos para colocar cables, etiquetas, puertos, alimentación y tierra.</li>
+                        <li><strong>Panel Projects:</strong> muestra los archivos del proyecto.</li>
+                        <li><strong>Panel Components:</strong> permite buscar y colocar componentes de las librerías.</li>
+                        <li><strong>Panel Properties:</strong> muestra y permite editar las propiedades del objeto seleccionado.</li>
+                        <li><strong>Área de trabajo:</strong> la hoja con cuadrícula donde se arma el circuito.</li>
+                    </ul>
+                    <div class="kicad-imagen-slot"><img src="img/AL07.png" alt="Entorno del editor de esquemáticos de Altium" style="max-height: 550px;"></div>
+
+                    <h4 id="alt-sub-4-2" class="alt-subtitulo"><span class="alt-sub-num">4.2</span> Colocar componentes</h4>
+                    <p>Abrir el panel <strong>Components</strong>, buscar el componente por nombre o valor (por ejemplo, <code>Res</code>, <code>LED</code>) y arrastrarlo al área de trabajo, o dar doble clic sobre él para colocarlo. Cada clic coloca una copia; con <kbd class="kicad-tecla">Esc</kbd> se termina de colocar.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL08.png" alt="Panel Components con búsqueda de componentes" style="max-height: 500px;"></div>
+
+                    <h4 id="alt-sub-4-3" class="alt-subtitulo"><span class="alt-sub-num">4.3</span> Manufacturer Part Search</h4>
+                    <p>Si el componente no está en las librerías instaladas, se puede buscar en el panel <strong>Manufacturer Part Search</strong>. Este panel busca piezas reales de fabricantes y distribuidores, y permite colocarlas directamente en el esquemático con su información (número de parte, fabricante, etc.).</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL09.png" alt="Panel Manufacturer Part Search" style="max-height: 500px;"></div>
+
+                    <h4 id="alt-sub-4-4" class="alt-subtitulo"><span class="alt-sub-num">4.4</span> Componentes y huellas que no están en Altium (SnapMagic)</h4>
+                    <p>Cuando el símbolo o la huella (footprint) no existen en las librerías de Altium, se pueden descargar de sitios web especializados como <strong>SnapMagic</strong> (antes SnapEDA), que ofrece modelos listos para varios programas de diseño.</p>
+                    <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li>Entrar a SnapMagic y buscar el número de parte del componente.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL10.png" alt="Búsqueda del componente en SnapMagic" style="max-height: 400px;"></div>
+                        <li>Elegir la opción de descarga para <strong>Altium Designer</strong> y descargar el archivo (normalmente un <code>.zip</code>).</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL11.png" alt="Descarga del modelo para Altium" style="max-height: 400px;"></div>
+                        <li>Descomprimir el archivo. Dentro vienen los archivos del símbolo (<code>.SchLib</code>) y de la huella (<code>.PcbLib</code>), o una librería integrada (<code>.IntLib</code>).</li>
+                        <li>Agregarlo a Altium: en el panel <strong>Components</strong>, abrir el menú de librerías y entrar a <strong>File-based Libraries Preferences</strong>; en la pestaña <strong>Installed</strong> dar clic en <strong>Install</strong> y seleccionar los archivos descargados.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL12.png" alt="Instalación de librerías en Altium" style="max-height: 450px;"></div>
+                        <li>La librería aparecerá en el panel Components y ya se podrá colocar el componente como cualquier otro.</li>
+                    </ol>
+                    <div class="kicad-nota">
+                        <strong>Importante:</strong> antes de mandar a fabricar, revisa que las medidas de la huella descargada coincidan con las del datasheet del componente. Los modelos de terceros pueden traer errores.
+                    </div>
+
+                    <h4 id="alt-sub-4-5" class="alt-subtitulo"><span class="alt-sub-num">4.5</span> Rutear (conectar) los componentes</h4>
+                    <p>Para conectar los pines se usa la herramienta <strong>Place Wire</strong> (barra de herramientas o <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">W</kbd>). Se da clic en el pin de origen, se mueve el cursor hasta el pin de destino y se da otro clic. Con <kbd class="kicad-tecla">Esc</kbd> o clic derecho se termina el cable.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL13.png" alt="Conexión de componentes con Place Wire" style="max-height: 450px;"></div>
+
+                    <h4 id="alt-sub-4-6" class="alt-subtitulo"><span class="alt-sub-num">4.6</span> Etiquetas de red (Net Labels)</h4>
+                    <p>Para no dibujar cables muy largos se usan etiquetas de red: dos puntos con la misma etiqueta quedan conectados eléctricamente. Se colocan con <strong>Place → Net Label</strong>; antes de colocarla se presiona <kbd class="kicad-tecla">Tab</kbd> para escribir el nombre. También se pueden colocar los símbolos de alimentación y tierra desde <strong>Place → Power Port</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL14.png" alt="Colocación de Net Label" style="max-height: 450px;"></div>
+
+                    <h4 id="alt-sub-4-7" class="alt-subtitulo"><span class="alt-sub-num">4.7</span> Rotar y reflejar componentes</h4>
+                    <p>Con el componente seleccionado o pegado al cursor:</p>
+                    <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li><kbd class="kicad-tecla">Espacio</kbd>: gira el componente 90°.</li>
+                        <li><kbd class="kicad-tecla">X</kbd>: lo refleja horizontalmente.</li>
+                        <li><kbd class="kicad-tecla">Y</kbd>: lo refleja verticalmente.</li>
+                    </ul>
+
+                    <h4 id="alt-sub-4-8" class="alt-subtitulo"><span class="alt-sub-num">4.8</span> Verificación del esquemático (ERC)</h4>
+                    <p>Antes de pasar a la PCB hay que revisar el esquemático. En el menú superior ir a <strong>Project → Validate PCB Project</strong>. Altium compila el proyecto y muestra los resultados en el panel <strong>Messages</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL15.png" alt="Project - Validate PCB Project" style="max-height: 450px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/AL16.png" alt="Panel Messages con errores y advertencias" style="max-height: 450px;"></div>
+                    <p>Los tipos de mensajes más comunes son:</p>
+                    <table class="tabla-medidas">
+                        <thead>
+                            <tr><th>Tipo</th><th>Qué significa</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Error</strong></td><td>Problema grave que debe corregirse, por ejemplo dos salidas conectadas entre sí o nombres de red duplicados.</td></tr>
+                            <tr><td><strong>Warning</strong></td><td>Posible problema, como un pin sin conectar (<em>Unconnected pin</em>) o una red con un solo pin (<em>Net with only one pin</em>). Se revisa si es intencional.</td></tr>
+                            <tr><td><strong>Floating net label</strong></td><td>Una etiqueta de red que no está conectada a ningún cable o pin.</td></tr>
+                            <tr><td><strong>Duplicate designator</strong></td><td>Dos componentes tienen la misma referencia (por ejemplo, dos R1). Se corrige con <strong>Tools → Annotation</strong>.</td></tr>
+                            <tr><td><strong>Missing footprint</strong></td><td>Un componente no tiene huella asignada, por lo que no pasará a la PCB.</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="kicad-nota">
+                        <strong>Verificación importante:</strong> corrige los errores directamente en el esquemático y vuelve a ejecutar la validación hasta que el panel no muestre errores. Si se arrastran a la PCB, provocarán fallos en la placa física.
+                    </div>
+
+                    <h4 id="alt-sub-4-9" class="alt-subtitulo"><span class="alt-sub-num">4.9</span> Guardar el esquemático</h4>
+                    <p>Una vez terminado y verificado, guardar con <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">S</kbd> (o <strong>File → Save</strong>) antes de continuar con la PCB.</p>
+                </div>
+
+                <!-- PASO 5 -->
+                <div id="alt-paso-5" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">5</div>
+                    <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> Del esquemático a la PCB</h3>
+
+                    <h4 id="alt-sub-5-1" class="alt-subtitulo"><span class="alt-sub-num">5.1</span> Actualizar el documento PCB</h4>
+                    <p>Con el esquemático abierto, ir a <strong>Design → Update PCB Document</strong>. Se abre la ventana <strong>Engineering Change Order</strong>; ahí se da clic en <strong>Validate Changes</strong> y, si todo está bien (palomitas verdes), en <strong>Execute Changes</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL17.png" alt="Design - Update PCB Document" style="max-height: 450px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/AL18.png" alt="Ventana Engineering Change Order" style="max-height: 500px;"></div>
+
+                    <h4 id="alt-sub-5-2" class="alt-subtitulo"><span class="alt-sub-num">5.2</span> Colocar los componentes en el área de trabajo</h4>
+                    <p>Al abrir la PCB, los componentes aparecen agrupados fuera de la hoja, dentro de un recuadro llamado <em>Room</em>. Hay que <strong>arrastrarlos</strong> con el mouse hacia el área de trabajo (la zona oscura).</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL19.png" alt="Componentes importados en la PCB" style="max-height: 450px;"></div>
+
+                    <h4 id="alt-sub-5-3" class="alt-subtitulo"><span class="alt-sub-num">5.3</span> Acomodar y rotar</h4>
+                    <p>Acomodar los componentes de forma estratégica, cerca de los que están conectados entre sí, para evitar cruces innecesarios entre las líneas guía (<em>ratsnest</em>). Se arrastran con el mouse y, mientras se mueven, se rotan con <kbd class="kicad-tecla">Espacio</kbd>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL20.png" alt="Componentes acomodados en la placa" style="max-height: 450px;"></div>
+                </div>
+
+                <!-- PASO 6 -->
+                <div id="alt-paso-6" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">6</div>
+                    <h3><i class="fa-solid fa-gear"></i> Reglas de diseño</h3>
+                    <p>Antes de rutear es fundamental definir las reglas, para que Altium avise cuando algo no cumpla con lo que la fabricación necesita.</p>
+
+                    <h4 id="alt-sub-6-1" class="alt-subtitulo"><span class="alt-sub-num">6.1</span> Abrir y modificar las reglas</h4>
+                    <p>Ir a <strong>Design → Rules</strong>. Se abre la ventana <strong>PCB Rules and Constraints Editor</strong>. Las reglas más usadas son:</p>
+                    <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li><strong>Electrical → Clearance:</strong> separación mínima entre elementos de cobre.</li>
+                        <li><strong>Routing → Width:</strong> ancho mínimo, preferido y máximo de las pistas.</li>
+                        <li><strong>Routing → Routing Via Style:</strong> diámetro y agujero de las vías.</li>
+                        <li><strong>Manufacturing → Hole Size:</strong> tamaño mínimo y máximo de las perforaciones.</li>
+                    </ul>
+                    <div class="kicad-imagen-slot"><img src="img/AL21.png" alt="PCB Rules and Constraints Editor" style="max-height: 550px;"></div>
+                    <p>Para cambiar una regla, se da clic sobre ella y se editan los valores en el panel derecho (por ejemplo, el ancho de pista a usar).</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL22.png" alt="Edición de la regla de ancho de pista" style="max-height: 450px;"></div>
+
+                    <h4 id="alt-sub-6-2" class="alt-subtitulo"><span class="alt-sub-num">6.2</span> Insertar un archivo de reglas</h4>
+                    <p>Si ya se tiene un archivo de reglas (por ejemplo, el que proporciona el fabricante o el laboratorio), se puede importar: en la ventana de reglas, dar <strong>clic derecho</strong> sobre <strong>Design Rules</strong> y elegir <strong>Import Rules</strong>; después seleccionar el archivo y confirmar las reglas que se quieren cargar.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL23.png" alt="Importar archivo de reglas" style="max-height: 450px;"></div>
+                    <div class="kicad-nota">
+                        <strong>Nota:</strong> las reglas de la PCB deben estar de acuerdo con las capacidades de la fresadora o del fabricante. Si fresas la placa en la MonoFab, el ancho de pista y la separación deben ser compatibles con la herramienta de 0.4 mm.
+                    </div>
+                </div>
+
+                <!-- PASO 7 -->
+                <div id="alt-paso-7" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">7</div>
+                    <h3><i class="fa-solid fa-route"></i> Ruteo y diseño de la PCB</h3>
+
+                    <h4 id="alt-sub-7-1" class="alt-subtitulo"><span class="alt-sub-num">7.1</span> Rutear las pistas</h4>
+                    <p>Usar <strong>Route → Interactive Routing</strong> (o <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">W</kbd>), dar clic en un pad y seguir la línea guía hasta el pad de destino. Con <kbd class="kicad-tecla">Esc</kbd> se termina la pista.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL24.png" alt="Ruteo interactivo de pistas" style="max-height: 450px;"></div>
+
+                    <h4 id="alt-sub-7-2" class="alt-subtitulo"><span class="alt-sub-num">7.2</span> Cambiar el grosor de la pista (Tab)</h4>
+                    <p>Mientras se está trazando una pista, presionar <kbd class="kicad-tecla">Tab</kbd> abre el panel de propiedades, donde se puede cambiar el <strong>ancho</strong> de la pista (dentro de lo permitido por la regla), la capa y el estilo de vía.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL25.png" alt="Cambio de grosor de pista con Tab" style="max-height: 450px;"></div>
+
+                    <h4 id="alt-sub-7-3" class="alt-subtitulo"><span class="alt-sub-num">7.3</span> Capas de trabajo</h4>
+                    <p>Las capas se muestran en la parte inferior del área de trabajo y se pueden cambiar con el panel de capas. Las principales son:</p>
+                    <table class="tabla-medidas">
+                        <thead>
+                            <tr><th>Capa</th><th>Uso</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Top Layer</strong></td><td>Cobre superior: pistas y pads.</td></tr>
+                            <tr><td><strong>Bottom Layer</strong></td><td>Cobre inferior: pistas y pads en el lado de abajo.</td></tr>
+                            <tr><td><strong>Top Overlay</strong></td><td>Serigrafía superior: etiquetas y referencias.</td></tr>
+                            <tr><td><strong>Mechanical 1</strong></td><td>Capa mecánica, usada comúnmente para el contorno de la placa.</td></tr>
+                            <tr><td><strong>Keep-Out Layer</strong></td><td>Delimita la zona donde no se debe rutear o colocar componentes; también se usa para el contorno.</td></tr>
+                            <tr><td><strong>Multi-Layer</strong></td><td>Elementos que atraviesan todas las capas, como perforaciones y pads de componentes through-hole.</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="kicad-imagen-slot"><img src="img/AL26.png" alt="Capas del editor de PCB" style="max-height: 300px;"></div>
+
+                    <h4 id="alt-sub-7-4" class="alt-subtitulo"><span class="alt-sub-num">7.4</span> Agregar etiquetas (texto)</h4>
+                    <p>Para colocar texto en la placa (nombre, fecha, nombre del equipo), ir a <strong>Place → String</strong>, presionar <kbd class="kicad-tecla">Tab</kbd> para escribir el texto y elegir la capa. Para que se grabe en el cobre se coloca en <strong>Top Layer</strong>; para serigrafía, en <strong>Top Overlay</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL27.png" alt="Place String para texto" style="max-height: 450px;"></div>
+
+                    <h4 id="alt-sub-7-5" class="alt-subtitulo"><span class="alt-sub-num">7.5</span> Agregar perforaciones</h4>
+                    <p>Para perforaciones de tornillos o de montaje se puede usar <strong>Place → Pad</strong> o <strong>Place → Via</strong>. Con <kbd class="kicad-tecla">Tab</kbd> se define el diámetro del agujero (<em>Hole Size</em>) y se coloca en la posición deseada.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL28.png" alt="Perforaciones en la PCB" style="max-height: 450px;"></div>
+
+                    <h4 id="alt-sub-7-6" class="alt-subtitulo"><span class="alt-sub-num">7.6</span> Dibujar figuras</h4>
+                    <p>Desde el menú <strong>Place</strong> se pueden dibujar líneas (<em>Line</em>), arcos (<em>Arc</em>) y rellenos (<em>Fill</em>) en la capa que se desee, útiles para logotipos, marcas o formas especiales.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL29.png" alt="Figuras dibujadas en la PCB" style="max-height: 450px;"></div>
+                </div>
+
+                <!-- PASO 8 -->
+                <div id="alt-paso-8" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">8</div>
+                    <h3><i class="fa-solid fa-clipboard-check"></i> Verificación de reglas (DRC)</h3>
+                    <p>Para comprobar que el diseño cumple con las reglas definidas, ir a <strong>Tools → Design Rule Check</strong> y dar clic en <strong>Run Design Rule Check</strong>. Al terminar se genera un reporte y los errores se marcan en verde sobre la placa.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL30.png" alt="Ventana del Design Rule Checker" style="max-height: 500px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/AL31.png" alt="Resultados del DRC" style="max-height: 500px;"></div>
+                    <p>Los errores más frecuentes son:</p>
+                    <table class="tabla-medidas">
+                        <thead>
+                            <tr><th>Error</th><th>Qué significa</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Clearance Constraint</strong></td><td>Dos elementos de cobre están más cerca de lo permitido. Se separan o se reduce el ancho de las pistas.</td></tr>
+                            <tr><td><strong>Short-Circuit Constraint</strong></td><td>Dos redes distintas se están tocando. Es crítico: provocaría un corto.</td></tr>
+                            <tr><td><strong>Un-Routed Net Constraint</strong></td><td>Hay conexiones que faltan por rutear.</td></tr>
+                            <tr><td><strong>Width Constraint</strong></td><td>Una pista es más delgada o más ancha de lo que permite la regla.</td></tr>
+                            <tr><td><strong>Hole Size Constraint</strong></td><td>El diámetro de una perforación está fuera del rango permitido.</td></tr>
+                            <tr><td><strong>Silk To Solder Mask Clearance</strong></td><td>La serigrafía se traslapa con un pad. Se mueve o se borra el texto.</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="kicad-nota">
+                        <strong>Verificación importante:</strong> el reporte final debe quedar sin errores. Si no, la fresadora o el fabricante podrían cometer errores de corte, o la placa terminar con cortos.
+                    </div>
+                </div>
+
+                <!-- PASO 9 -->
+                <div id="alt-paso-9" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">9</div>
+                    <h3><i class="fa-solid fa-vector-square"></i> Contorno de la placa y plano de cobre</h3>
+
+                    <h4 id="alt-sub-9-1" class="alt-subtitulo"><span class="alt-sub-num">9.1</span> Contorno de la placa</h4>
+                    <p>Por defecto el área de trabajo es rectangular. Para que tome la forma de la placa real:</p>
+                    <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li>Cambiar a la capa <strong>Keep-Out Layer</strong> (o Mechanical 1) y dibujar el contorno alrededor de los componentes con <strong>Place → Line</strong>, cerrando la figura.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL32.png" alt="Contorno dibujado alrededor de los componentes" style="max-height: 450px;"></div>
+                        <li>Seleccionar todas las líneas del contorno.</li>
+                        <li>Ir a <strong>Design → Board Shape → Define Board Shape from Selected Objects</strong>.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL33.png" alt="Define Board Shape from Selected Objects" style="max-height: 450px;"></div>
+                        <li>El área de trabajo ya no será rectangular: tomará la forma del contorno dibujado.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL34.png" alt="Placa con forma personalizada" style="max-height: 450px;"></div>
+                    </ol>
+
+                    <h4 id="alt-sub-9-2" class="alt-subtitulo"><span class="alt-sub-num">9.2</span> Polígono de cobre (Polygon Pour)</h4>
+                    <p>Ir a <strong>Place → Polygon Pour</strong>. En el panel de propiedades se elige la capa (por ejemplo, <em>Top Layer</em>) y la red a la que se conecta (comúnmente <strong>GND</strong>). Después se dibuja el polígono sobre toda la placa, haciendo clic en cada esquina.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL35.png" alt="Configuración del Polygon Pour" style="max-height: 450px;"></div>
+                    <p>Si se modifica algo después, se actualiza el cobre con <strong>Tools → Polygon Pours → Repour All</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL36.png" alt="Placa con plano de cobre" style="max-height: 450px;"></div>
+                    <div class="kicad-nota">
+                        <strong>Tip:</strong> después de hacer el plano de cobre, vuelve a ejecutar el DRC.
+                    </div>
+
+                    <h4 id="alt-sub-9-3" class="alt-subtitulo"><span class="alt-sub-num">9.3</span> Guardar la PCB</h4>
+                    <p>Guardar con <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">S</kbd> antes de generar los archivos de fabricación.</p>
+                </div>
+
+                <!-- PASO 10 -->
+                <div id="alt-paso-10" class="kicad-etapa">
+                    <div class="kicad-etapa-numero">10</div>
+                    <h3><i class="fa-solid fa-file-export"></i> Archivos de fabricación (Gerber y perforaciones)</h3>
+                    <p>Esta carpeta es la que se envía a fabricar a servicios como <strong>JLCPCB</strong>.</p>
+
+                    <h4 id="alt-sub-10-1" class="alt-subtitulo"><span class="alt-sub-num">10.1</span> Archivos Gerber</h4>
+                    <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li>Ir a <strong>File → Fabrication Outputs → Gerber Files</strong>.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL37.png" alt="File - Fabrication Outputs - Gerber Files" style="max-height: 450px;"></div>
+                        <li>En la pestaña <strong>Layers</strong> (<em>Plot Layers</em>), seleccionar las capas que se usaron, o todas, y dar clic en <strong>Apply</strong> (o OK).</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL38.png" alt="Selección de capas para Gerber" style="max-height: 500px;"></div>
+                        <li>Se genera la carpeta de salida (normalmente <em>Project Outputs</em>) dentro de la carpeta del proyecto, y se abre un archivo <strong>CAM</strong> con los Gerber. Guardarlo.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL39.png" alt="Archivo CAM con los Gerber" style="max-height: 450px;"></div>
+                    </ol>
+
+                    <h4 id="alt-sub-10-2" class="alt-subtitulo"><span class="alt-sub-num">10.2</span> Archivo de perforaciones (NC Drill)</h4>
+                    <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li>Ir a <strong>File → Fabrication Outputs → NC Drill Files</strong>.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL40.png" alt="File - Fabrication Outputs - NC Drill Files" style="max-height: 450px;"></div>
+                        <li>Seleccionar las unidades en <strong>milímetros</strong> y el formato <strong>4:4</strong>. Dar clic en <strong>OK</strong>.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL41.png" alt="Configuración de NC Drill: milímetros y formato 4:4" style="max-height: 450px;"></div>
+                        <li>Se abre otra ventana; dar clic en <strong>OK</strong> nuevamente.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL42.png" alt="Segunda ventana de NC Drill" style="max-height: 350px;"></div>
+                        <li>Se abre otro archivo <strong>CAM</strong>. Verificar que aparezcan <strong>todas las perforaciones</strong> del diseño y dar clic en <strong>Guardar</strong>.</li>
+                        <div class="kicad-imagen-slot"><img src="img/AL43.png" alt="Archivo CAM de perforaciones" style="max-height: 450px;"></div>
+                    </ol>
+
+                    <h4 id="alt-sub-10-3" class="alt-subtitulo"><span class="alt-sub-num">10.3</span> Comprimir y enviar a fabricar</h4>
+                    <p>Dentro de la carpeta de salida quedan los Gerber y el archivo de perforaciones. Se selecciona todo el contenido, se comprime en un archivo <strong>.zip</strong> y se sube a la plataforma del fabricante (por ejemplo, <strong>JLCPCB</strong>).</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL44.png" alt="Carpeta de salida comprimida en zip" style="max-height: 400px;"></div>
+                    <div class="kicad-nota">
+                        <strong>Tip:</strong> revisa en el visor de Gerber del fabricante que la forma, las perforaciones y las pistas se vean igual que en Altium antes de confirmar el pedido.
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+        <!-- ÍNDICE LATERAL DERECHO ALTIUM (JERÁRQUICO) -->
+        <aside class="kicad-indice-lateral indice-multisim indice-altium">
+            <h4><i class="fa-solid fa-list-ul"></i> Índice Altium</h4>
+            <ul class="indice-jerarquico">
+                <li>
+                    <a href="#altium-detalle" class="indice-paso" data-destino="alt-paso-1"><span class="indice-num">1</span> ¿Qué es Altium?</a>
+                </li>
+                <li>
+                    <a href="#altium-detalle" class="indice-paso" data-destino="alt-paso-2"><span class="indice-num">2</span> Sesión y licencia</a>
+                    <ul class="indice-sub">
+                        <li><a href="#altium-detalle" data-destino="alt-sub-2-1">2.1 Iniciar sesión</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-2-2">2.2 Elegir licencia</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#altium-detalle" class="indice-paso" data-destino="alt-paso-3"><span class="indice-num">3</span> Crear proyecto</a>
+                    <ul class="indice-sub">
+                        <li><a href="#altium-detalle" data-destino="alt-sub-3-1">3.1 Nombre y ubicación</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-3-2">3.2 Esquemático y PCB</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#altium-detalle" class="indice-paso" data-destino="alt-paso-4"><span class="indice-num">4</span> Editor de esquemáticos</a>
+                    <ul class="indice-sub">
+                        <li><a href="#altium-detalle" data-destino="alt-sub-4-1">4.1 Entorno y herramientas</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-4-2">4.2 Colocar componentes</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-4-3">4.3 Manufacturer Part Search</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-4-4">4.4 Huellas con SnapMagic</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-4-5">4.5 Rutear componentes</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-4-6">4.6 Etiquetas</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-4-7">4.7 Rotar</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-4-8">4.8 ERC y errores</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-4-9">4.9 Guardar</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#altium-detalle" class="indice-paso" data-destino="alt-paso-5"><span class="indice-num">5</span> Del esquemático a la PCB</a>
+                    <ul class="indice-sub">
+                        <li><a href="#altium-detalle" data-destino="alt-sub-5-1">5.1 Update PCB Document</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-5-2">5.2 Colocar componentes</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-5-3">5.3 Acomodar y rotar</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#altium-detalle" class="indice-paso" data-destino="alt-paso-6"><span class="indice-num">6</span> Reglas de diseño</a>
+                    <ul class="indice-sub">
+                        <li><a href="#altium-detalle" data-destino="alt-sub-6-1">6.1 Modificar reglas</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-6-2">6.2 Importar reglas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#altium-detalle" class="indice-paso" data-destino="alt-paso-7"><span class="indice-num">7</span> Ruteo y diseño</a>
+                    <ul class="indice-sub">
+                        <li><a href="#altium-detalle" data-destino="alt-sub-7-1">7.1 Rutear pistas</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-7-2">7.2 Grosor (Tab)</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-7-3">7.3 Capas</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-7-4">7.4 Etiquetas</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-7-5">7.5 Perforaciones</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-7-6">7.6 Figuras</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#altium-detalle" class="indice-paso" data-destino="alt-paso-8"><span class="indice-num">8</span> Verificación (DRC)</a>
+                </li>
+                <li>
+                    <a href="#altium-detalle" class="indice-paso" data-destino="alt-paso-9"><span class="indice-num">9</span> Contorno y cobre</a>
+                    <ul class="indice-sub">
+                        <li><a href="#altium-detalle" data-destino="alt-sub-9-1">9.1 Contorno de la placa</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-9-2">9.2 Polígono de cobre</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-9-3">9.3 Guardar</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#altium-detalle" class="indice-paso" data-destino="alt-paso-10"><span class="indice-num">10</span> Archivos de fabricación</a>
+                    <ul class="indice-sub">
+                        <li><a href="#altium-detalle" data-destino="alt-sub-10-1">10.1 Gerber</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-10-2">10.2 NC Drill</a></li>
+                        <li><a href="#altium-detalle" data-destino="alt-sub-10-3">10.3 Zip y JLCPCB</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
     </div>
 </section>
+
+
+<!-- ======================= BLOQUE 3: JAVASCRIPT ======================= -->
+<script>
+/* Índice de Altium: salto suave y resaltado de la parte que se está leyendo */
+(function () {
+    const seccion = document.getElementById('altium-detalle');
+    if (!seccion) return;
+    const indice = seccion.querySelector('.indice-altium');
+    const enlaces = Array.from(seccion.querySelectorAll('.indice-altium a[data-destino]'));
+    let pendiente = false;
+
+    seccion.addEventListener('click', function (e) {
+        const enlace = e.target.closest('.indice-altium a[data-destino]');
+        if (!enlace) return;
+        e.preventDefault();
+        const destino = document.getElementById(enlace.dataset.destino);
+        if (destino) destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    function actualizar() {
+        pendiente = false;
+        if (!seccion.classList.contains('active-page')) return;
+        let actual = null;
+        enlaces.forEach(function (a) {
+            const el = document.getElementById(a.dataset.destino);
+            if (el && el.getBoundingClientRect().top <= 140) actual = a;
+        });
+        enlaces.forEach(function (a) { a.classList.toggle('activo', a === actual); });
+        if (actual && indice) {
+            const arriba = actual.offsetTop;
+            const alto = indice.clientHeight;
+            if (arriba < indice.scrollTop + 30 || arriba > indice.scrollTop + alto - 30) {
+                indice.scrollTop = arriba - alto / 2;
+            }
+        }
+    }
+    window.addEventListener('scroll', function () {
+        if (!pendiente) {
+            pendiente = true;
+            requestAnimationFrame(actualizar);
+        }
+    }, { passive: true });
+    actualizar();
+})();
+</script>
+
 
 
 
