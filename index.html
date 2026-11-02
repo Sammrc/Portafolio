@@ -2657,7 +2657,7 @@
                     <p>El proyecto se crea vacío. Para agregar los documentos, dar clic derecho sobre el proyecto en el panel <strong>Projects</strong> y elegir <strong>Add New to Project</strong>; ahí se crea un <strong>Schematic</strong> y un <strong>PCB</strong>.</p>
                     <div class="kicad-imagen-slot"><img src="img/ND_AL.png" alt="Agregar esquemático y PCB al proyecto" style="max-height: 450px;"></div>
                     <p>Ambos archivos quedan dentro del proyecto. Se recomienda guardarlos de inmediato (<kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">S</kbd>) con el mismo nombre del proyecto.</p>
-                    <div class="kicad-imagen-slot"><img src="img/E&P_AL.png" alt="Proyecto con esquemático y PCB" style="max-height: 300px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/E&P_AL.png" alt="Proyecto con esquemático y PCB" style="max-height: 100px;"></div>
                 </div>
 
                 <!-- PASO 4 -->
@@ -2676,12 +2676,14 @@
                         <li><strong>Panel Properties:</strong> muestra y permite editar las propiedades del objeto seleccionado.</li>
                         <li><strong>Área de trabajo:</strong> la hoja con cuadrícula donde se arma el circuito.</li>
                     </ul>
-                    <div class="kicad-imagen-slot"><img src="img/ALTIUM_SCHM.png" alt="Entorno del editor de esquemáticos de Altium" style="max-height: 550px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/ALTIUM_SCHM.png" alt="Entorno del editor de esquemáticos de Altium" style="max-height: 700px;"></div>
 
                     <h4 id="alt-sub-4-2" class="alt-subtitulo"><span class="alt-sub-num">4.2</span> Colocar componentes</h4>
-                    <p>Al abrir el panel <strong>Components</strong>, se muestran diversas categorías de componentes, puedes picarle a alguna categoría o buscar el componente por nombre o valor (por ejemplo, <code>Res</code>, <code>LED</code>) y arrastrarlo al área de trabajo, o dar doble clic sobre él para colocarlo. Cada clic coloca una copia; con <kbd class="kicad-tecla">Esc</kbd> se termina de colocar.</p>
+                    <p>Al abrir el panel <strong>Components</strong>, se muestran diversas categorías de componentes; puedes hacer clic en alguna categoría.</p>
                     <div class="kicad-imagen-slot"><img src="img/AL08.png" alt="Panel Components con búsqueda de componentes" style="max-height: 500px;"></div>
-
+                    <p>O también puedes buscar el componente por nombre o valor (por ejemplo, <code>Res</code>, <code>LED</code>) y arrastrarlo al área de trabajo, o hacer doble clic sobre él para colocarlo. Cada clic coloca una copia; con <kbd class="kicad-tecla">Esc</kbd> se termina de colocar.</p>
+                    <div class="kicad-imagen-slot"><img src="img/AL08.png" alt="Panel Components con búsqueda de componentes" style="max-height: 500px;"></div>
+                        
                     <h4 id="alt-sub-4-3" class="alt-subtitulo"><span class="alt-sub-num">4.3</span> Manufacturer Part Search</h4>
                     <p>Si el componente no está en las librerías instaladas, se puede buscar en el panel <strong>Manufacturer Part Search</strong>. Este panel busca piezas reales de fabricantes y distribuidores, y permite colocarlas directamente en el esquemático con su información (número de parte, fabricante, etc.).</p>
                     <div class="kicad-imagen-slot"><img src="img/AL09.png" alt="Panel Manufacturer Part Search" style="max-height: 500px;"></div>
@@ -2746,7 +2748,7 @@
                 <!-- PASO 5 -->
                 <div id="alt-paso-5" class="kicad-etapa">
                     <div class="kicad-etapa-numero">5</div>
-                    <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> Del esquemático a la PCB</h3>
+                    <h3>Del esquemático a la PCB</h3>
 
                     <h4 id="alt-sub-5-1" class="alt-subtitulo"><span class="alt-sub-num">5.1</span> Actualizar el documento PCB</h4>
                     <p>Con el esquemático abierto, ir a <strong>Design → Update PCB Document</strong>. Se abre la ventana <strong>Engineering Change Order</strong>; ahí se da clic en <strong>Validate Changes</strong> y, si todo está bien (palomitas verdes), en <strong>Execute Changes</strong>.</p>
@@ -2765,7 +2767,7 @@
                 <!-- PASO 6 -->
                 <div id="alt-paso-6" class="kicad-etapa">
                     <div class="kicad-etapa-numero">6</div>
-                    <h3><i class="fa-solid fa-gear"></i> Reglas de diseño</h3>
+                    <h3>Reglas de diseño</h3>
                     <p>Antes de rutear es fundamental definir las reglas, para que Altium avise cuando algo no cumpla con lo que la fabricación necesita.</p>
 
                     <h4 id="alt-sub-6-1" class="alt-subtitulo"><span class="alt-sub-num">6.1</span> Abrir y modificar las reglas</h4>
@@ -2791,7 +2793,7 @@
                 <!-- PASO 7 -->
                 <div id="alt-paso-7" class="kicad-etapa">
                     <div class="kicad-etapa-numero">7</div>
-                    <h3><i class="fa-solid fa-route"></i> Ruteo y diseño de la PCB</h3>
+                    <h3>Ruteo y diseño de la PCB</h3>
 
                     <h4 id="alt-sub-7-1" class="alt-subtitulo"><span class="alt-sub-num">7.1</span> Rutear las pistas</h4>
                     <p>Usar <strong>Route → Interactive Routing</strong> (o <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">W</kbd>), dar clic en un pad y seguir la línea guía hasta el pad de destino. Con <kbd class="kicad-tecla">Esc</kbd> se termina la pista.</p>
@@ -2834,7 +2836,7 @@
                 <!-- PASO 8 -->
                 <div id="alt-paso-8" class="kicad-etapa">
                     <div class="kicad-etapa-numero">8</div>
-                    <h3><i class="fa-solid fa-clipboard-check"></i> Verificación de reglas (DRC)</h3>
+                    <h3>Verificación de reglas (DRC)</h3>
                     <p>Para comprobar que el diseño cumple con las reglas definidas, ir a <strong>Tools → Design Rule Check</strong> y dar clic en <strong>Run Design Rule Check</strong>. Al terminar se genera un reporte y los errores se marcan en verde sobre la placa.</p>
                     <div class="kicad-imagen-slot"><img src="img/AL30.png" alt="Ventana del Design Rule Checker" style="max-height: 500px;"></div>
                     <div class="kicad-imagen-slot"><img src="img/AL31.png" alt="Resultados del DRC" style="max-height: 500px;"></div>
@@ -2860,7 +2862,7 @@
                 <!-- PASO 9 -->
                 <div id="alt-paso-9" class="kicad-etapa">
                     <div class="kicad-etapa-numero">9</div>
-                    <h3><i class="fa-solid fa-vector-square"></i> Contorno de la placa y plano de cobre</h3>
+                    <h3>Contorno de la placa y plano de cobre</h3>
 
                     <h4 id="alt-sub-9-1" class="alt-subtitulo"><span class="alt-sub-num">9.1</span> Contorno de la placa</h4>
                     <p>Por defecto el área de trabajo es rectangular. Para que tome la forma de la placa real:</p>
@@ -2890,7 +2892,7 @@
                 <!-- PASO 10 -->
                 <div id="alt-paso-10" class="kicad-etapa">
                     <div class="kicad-etapa-numero">10</div>
-                    <h3><i class="fa-solid fa-file-export"></i> Archivos de fabricación (Gerber y perforaciones)</h3>
+                    <h3>Archivos de fabricación (Gerber y perforaciones)</h3>
                     <p>Esta carpeta es la que se envía a fabricar a servicios como <strong>JLCPCB</strong>.</p>
 
                     <h4 id="alt-sub-10-1" class="alt-subtitulo"><span class="alt-sub-num">10.1</span> Archivos Gerber</h4>
