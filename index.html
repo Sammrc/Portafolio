@@ -2760,29 +2760,32 @@
                     <div class="kicad-imagen-slot"><img src="img/DES6_AL.png" alt="Colocación de Net Label" style="max-height: 450px;"></div>
 
                     <h4 id="alt-sub-4-8" class="alt-subtitulo"><span class="alt-sub-num">4.8</span> Verificación del esquemático (ERC)</h4>
-                    <p>Antes de pasar a la PCB hay que revisar el esquemático. En el menú superior, ir a <strong>Project → Validate PCB Project</strong>. Altium compila el proyecto y muestra los resultados en el panel <strong>Messages</strong>.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL15.png" alt="Project - Validate PCB Project" style="max-height: 450px;"></div>
-                    <div class="kicad-imagen-slot"><img src="img/AL16.png" alt="Panel Messages con errores y advertencias" style="max-height: 450px;"></div>
+                    <p>Antes de pasar a la PCB hay que revisar el esquemático. En el menú superior, ir a <strong>Project → Validate PCB Project</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/ERC_AL.png" alt="Project - Validate PCB Project" style="max-height: 450px;"></div>
+                    <p>Altium compila el proyecto y muestra los resultados en el panel <strong>Messages</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/ERC2_AL.png" alt="Panel Messages con errores y advertencias" style="max-height: 450px;"></div>
                     <p>Los tipos de mensajes más comunes son:</p>
                     <table class="tabla-medidas">
                         <thead>
                             <tr><th>Tipo</th><th>Qué significa</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong>Error</strong></td><td>Problema grave que debe corregirse, por ejemplo dos salidas conectadas entre sí o nombres de red duplicados.</td></tr>
+                            <tr><td><strong>Error</strong></td><td>Problema grave que debe corregirse, por ejemplo, dos salidas conectadas entre sí o nombres de red duplicados.</td></tr>
                             <tr><td><strong>Warning</strong></td><td>Posible problema, como un pin sin conectar (<em>Unconnected pin</em>) o una red con un solo pin (<em>Net with only one pin</em>). Se revisa si es intencional.</td></tr>
                             <tr><td><strong>Floating net label</strong></td><td>Una etiqueta de red que no está conectada a ningún cable o pin.</td></tr>
                             <tr><td><strong>Duplicate designator</strong></td><td>Dos componentes tienen la misma referencia (por ejemplo, dos R1). Se corrige con <strong>Tools → Annotation</strong>.</td></tr>
-                            <tr><td><strong>Missing footprint</strong></td><td>Un componente no tiene huella asignada, por lo que no pasará a la PCB.</td></tr>
                         </tbody>
                     </table>
+                    <div class="kicad-imagen-slot"><img src="img/ERC3_AL.png" alt="Panel Messages con errores y advertencias" style="max-height: 450px;"></div>
                     <div class="kicad-nota">
                         <strong>Verificación importante:</strong> corrige los errores directamente en el esquemático y vuelve a ejecutar la validación hasta que el panel no muestre errores. Si se arrastran a la PCB, provocarán fallos en la placa física.
                     </div>
+                    <div class="kicad-imagen-slot"><img src="img/ERC4_AL.png" alt="Panel Messages con errores y advertencias" style="max-height: 450px;"></div>
 
                     <h4 id="alt-sub-4-9" class="alt-subtitulo"><span class="alt-sub-num">4.9</span> Guardar el esquemático</h4>
                     <p>Una vez terminado y verificado, guardar con <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">S</kbd> (o <strong>File → Save</strong>) antes de continuar con la PCB.</p>
                 </div>
+                    <div class="kicad-imagen-slot"><img src="img/ERC5_AL.png" alt="Panel Messages con errores y advertencias" style="max-height: 450px;"></div>
 
                 <!-- PASO 5 -->
                 <div id="alt-paso-5" class="kicad-etapa">
