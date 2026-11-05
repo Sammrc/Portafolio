@@ -2638,11 +2638,11 @@
                     <p>Se abrirá una ventana en el buscador para ingresar el correo y la contraseña.</p>
                     <div class="kicad-imagen-slot"><img src="img/SIGN3_AL.png" alt="Ventana de inicio de sesión de Altium" style="max-height: 450px;"></div>
                     <div class="kicad-nota">
-                        <strong>Nota:</strong> Es posible que Altium mande un código de verificación; si es el caso, revisar en la bandeja de correo no deseado.
+                        <strong>Nota:</strong> Es posible que Altium envíe un código de verificación; si es así, revisar la bandeja de correo no deseado.
                     </div>
 
                     <h4 id="alt-sub-2-2" class="alt-subtitulo"><span class="alt-sub-num">2.2</span> Elegir una licencia</h4>
-                    <p>Después de iniciar sesión, Se abre un cuadro de diálogo en donde Altium solicita escoger una licencia.</p>
+                    <p>Después de iniciar sesión, se abre un cuadro de diálogo en donde Altium solicita escoger una licencia.</p>
                     <div class="kicad-imagen-slot"><img src="img/LIC_AL.png" alt="Selección de licencia en Altium" style="max-height: 450px;"></div>
                 </div>
                     <p>Se muestra la lista de licencias disponibles. Se selecciona la que corresponda a la cuenta y se confirma para poder usar el programa.</p>
@@ -2690,29 +2690,37 @@
                     <div class="kicad-imagen-slot"><img src="img/ALTIUM_SCHM.png" alt="Entorno del editor de esquemáticos de Altium" style="max-height: 700px;"></div>
 
                     <h4 id="alt-sub-4-2" class="alt-subtitulo"><span class="alt-sub-num">4.2</span> Colocar componentes</h4>
-                    <p>Al abrir el panel <strong>Components</strong>, se muestran diversas categorías de componentes; puedes hacer clic en alguna categoría.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL08.png" alt="Panel Components con búsqueda de componentes" style="max-height: 500px;"></div>
-                    <p>O también puedes buscar el componente por nombre o valor (por ejemplo, <code>Res</code>, <code>LED</code>) y arrastrarlo al área de trabajo, o hacer doble clic sobre él para colocarlo. Cada clic coloca una copia; con <kbd class="kicad-tecla">Esc</kbd> se termina de colocar.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL08.png" alt="Panel Components con búsqueda de componentes" style="max-height: 500px;"></div>
+                    <p>Al abrir el panel <strong>Components</strong>, se muestran diversas categorías de componentes; se puede hacer clic en alguna categoría.</p>
+                    <div class="kicad-imagen-slot"><img src="img/COMP2_AL.png" alt="Panel Components con búsqueda de componentes" style="max-height: 500px;"></div>
+                    <p>O también buscar el componente por nombre o valor (por ejemplo, <code>Res</code>, <code>LED</code>).</p>
+                    <div class="kicad-imagen-slot"><img src="img/COMP3_AL.png" alt="Panel Components con búsqueda de componentes" style="max-height: 500px;"></div>
+                    <p>Para insertarlo, se puede arrastrar al área de trabajo o hacer doble clic sobre él para colocarlo. Cada clic coloca una copia; con <kbd class="kicad-tecla">Esc</kbd> se termina de colocar.</p>
+                    <div class="kicad-imagen-slot"><img src="img/COMP4_AL.png" alt="Panel Components con búsqueda de componentes" style="max-height: 500px;"></div>
                         
                     <h4 id="alt-sub-4-3" class="alt-subtitulo"><span class="alt-sub-num">4.3</span> Manufacturer Part Search</h4>
                     <p>Si el componente no está en las librerías instaladas, se puede buscar en el panel <strong>Manufacturer Part Search</strong>. Este panel busca piezas reales de fabricantes y distribuidores, y permite colocarlas directamente en el esquemático con su información (número de parte, fabricante, etc.).</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL09.png" alt="Panel Manufacturer Part Search" style="max-height: 500px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/COMP5_AL.png" alt="Panel Manufacturer Part Search" style="max-height: 500px;"></div>
 
                     <h4 id="alt-sub-4-4" class="alt-subtitulo"><span class="alt-sub-num">4.4</span> Componentes y huellas que no están en Altium (SnapMagic)</h4>
-                    <p>Cuando el símbolo o la huella (footprint) no existen en las librerías de Altium, se pueden descargar de sitios web especializados como <strong>SnapMagic</strong> (antes SnapEDA), que ofrece modelos listos para varios programas de diseño.</p>
+                    <p>Cuando el símbolo o la huella (footprint) no existe en las librerías de Altium, se puede descargar de sitios web especializados como <strong>SnapMagic</strong>, que ofrece modelos listos para varios programas de diseño.</p>
                     <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
                         <li>Entrar a SnapMagic y buscar el número de parte del componente.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL10.png" alt="Búsqueda del componente en SnapMagic" style="max-height: 400px;"></div>
-                        <li>Elegir la opción de descarga para <strong>Altium Designer</strong> y descargar el archivo (normalmente un <code>.zip</code>).</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL11.png" alt="Descarga del modelo para Altium" style="max-height: 400px;"></div>
-                        <li>Descomprimir el archivo. Dentro vienen los archivos del símbolo (<code>.SchLib</code>) y de la huella (<code>.PcbLib</code>), o una librería integrada (<code>.IntLib</code>).</li>
-                        <li>Agregarlo a Altium: en el panel <strong>Components</strong>, abrir el menú de librerías y entrar a <strong>File-based Libraries Preferences</strong>; en la pestaña <strong>Installed</strong> dar clic en <strong>Install</strong> y seleccionar los archivos descargados.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL12.png" alt="Instalación de librerías en Altium" style="max-height: 450px;"></div>
-                        <li>La librería aparecerá en el panel Components y ya se podrá colocar el componente como cualquier otro.</li>
+                        <div class="kicad-imagen-slot"><img src="img/COMP6_AL.png" alt="Búsqueda del componente en SnapMagic" style="max-height: 400px;"></div>
+                        <li>Asegurarse de que contenga mínimo el símbolo y la huella.</li>
+                        <div class="kicad-imagen-slot"><img src="img/COMP7_AL.png" alt="Búsqueda del componente en SnapMagic" style="max-height: 400px;"></div>
+                        <li>Dar clic en descargar símbolo y huella.</li>
+                        <div class="kicad-imagen-slot"><img src="img/COMP8_AL.png" alt="Descarga del modelo para Altium" style="max-height: 400px;"></div>
+                        <li>Elegir la opción de descarga para <strong>Altium Designer</strong> y descargar el archivo <code>.IntLib</code>.</li>
+                        <div class="kicad-imagen-slot"><img src="img/COMP9_AL.pngAL11.png" alt="Descarga del modelo para Altium" style="max-height: 400px;"></div>
+                        <li>Para agregarlo a Altium, ir a la carpeta de descargas y arrastrar el archivo al área de trabajo del esquemático. Se abrirá una ventana emergente, seleccionar importar.</li>
+                        <div class="kicad-imagen-slot"><img src="img/COMP10_AL.png" alt="Instalación de librerías en Altium" style="max-height: 450px;"></div>
+                        <li>Verificar que sea el componente correcto y dar en importar.</li>
+                        <div class="kicad-imagen-slot"><img src="img/COMP11_AL.png" alt="Instalación de librerías en Altium" style="max-height: 450px;"></div>
+                        <li>Una vez importado, el componente aparecerá en el panel de componentes. Verificar que aparezcan su símbolo y su huella y ya se podrá colocar como cualquier otro .</li>
+                        <div class="kicad-imagen-slot"><img src="img/COMP12_AL.png" alt="Instalación de librerías en Altium" style="max-height: 450px;"></div>
                     </ol>
                     <div class="kicad-nota">
-                        <strong>Importante:</strong> antes de mandar a fabricar, revisa que las medidas de la huella descargada coincidan con las del datasheet del componente. Los modelos de terceros pueden traer errores.
+                        <strong>Importante:</strong> antes de mandar a fabricar, revisar que las medidas de la huella descargada coincidan con las del datasheet del componente. Los modelos de terceros pueden traer errores.
                     </div>
 
                     <h4 id="alt-sub-4-5" class="alt-subtitulo"><span class="alt-sub-num">4.5</span> Rutear (conectar) los componentes</h4>
