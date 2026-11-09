@@ -2877,8 +2877,9 @@
                     <p><strong>Cambiar las unidades de mil a mm:</strong> si los valores del panel aparecen en mils (milésimas de pulgada) y necesitas verlos en milímetros, presiona <kbd class="kicad-tecla">Q</kbd>. Cada vez que la presionas, Altium alterna entre <strong>mil</strong> y <strong>mm</strong>, y los valores del ancho de pista se actualizan a la unidad elegida. Puedes usarla en cualquier momento mientras trazas o editas.</p>
                    
                     <h4 id="alt-sub-7-3" class="alt-subtitulo"><span class="alt-sub-num">7.3</span> Capas de trabajo</h4>
-                    <p>Las capas se muestran en la parte inferior del área de trabajo y se pueden cambiar con el panel de capas. Las principales son:</p>
-
+                    <p>Las capas se muestran en la parte inferior del área de trabajo.Se pueden cambiar con el panel de capas.</p>
+                    <div class="kicad-imagen-slot"><img src="img/CAPAS_AL.png" alt="Capas del editor de PCB" style="max-height: 300px;"></div>
+                    <p>Las principales son:</p>
                         <table class="tabla-medidas">
                             <thead>
                                 <tr><th>Capa</th><th>Uso</th></tr>
@@ -2911,26 +2912,34 @@
                             </tbody>
                         </table>
 
-                    <div class="kicad-imagen-slot"><img src="img/CAPAS_AL.png" alt="Capas del editor de PCB" style="max-height: 300px;"></div>
-
                     <h4 id="alt-sub-7-4" class="alt-subtitulo"><span class="alt-sub-num">7.4</span> Agregar etiquetas (texto)</h4>
-                    <p>Para colocar texto en la placa (nombre, fecha, nombre del equipo), ir a <strong>Place → String</strong>, presionar <kbd class="kicad-tecla">Tab</kbd> para escribir el texto y elegir la capa. Para que se grabe en el cobre se coloca en <strong>Top Layer</strong>; para serigrafía, en <strong>Top Overlay</strong>.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL27.png" alt="Place String para texto" style="max-height: 450px;"></div>
-
+                    <p>Para colocar texto en la placa (nombre, fecha, nombre del equipo), ir a <strong>Place → String</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/ETIQUETAS_AL.png" alt="Place String para texto" style="max-height: 450px;"></div>
+                    <p>Presionar <kbd class="kicad-tecla">Tab</kbd> para escribir el texto y elegir la capa. Para que se grabe en el cobre se coloca en <strong>Top Layer</strong>; para serigrafía, en <strong>Top Overlay</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/ETIQUETAS2_AL.png" alt="Place String para texto" style="max-height: 450px;"></div>
+                    <p>Para colocar la etiqueta, dar clic en  el área donde se quiere colocar y presionar la tecla <kbd class="kicad-tecla">Esc</kbd> si no se van a poner más etiquetas.</p>
+                    <div class="kicad-imagen-slot"><img src="img/ETIQUETAS3_AL.png" alt="Place String para texto" style="max-height: 450px;"></div>
+                        
                     <h4 id="alt-sub-7-5" class="alt-subtitulo"><span class="alt-sub-num">7.5</span> Agregar perforaciones</h4>
-                    <p>Para perforaciones de tornillos o de montaje se puede usar <strong>Place → Pad</strong> o <strong>Place → Via</strong>. Con <kbd class="kicad-tecla">Tab</kbd> se define el diámetro del agujero (<em>Hole Size</em>) y se coloca en la posición deseada.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL28.png" alt="Perforaciones en la PCB" style="max-height: 450px;"></div>
+                    <p>Para perforaciones de tornillos o de montaje se puede usar <strong>Place → Pad</strong> o <strong>Place → Via</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/PERF_AL.png" alt="Perforaciones en la PCB" style="max-height: 450px;"></div>
+                    <p>Con <kbd class="kicad-tecla">Tab</kbd> se define el diámetro del agujero (<em>Hole Size</em>) y se coloca en la posición deseada.</p>
+                    <div class="kicad-imagen-slot"><img src="img/PERF2_AL.png" alt="Perforaciones en la PCB" style="max-height: 450px;"></div>
+                    <p>Para colocarlo, dar clic en el área deseada y presionar la tecla <kbd class="kicad-tecla">Esc</kbd> si ya no se van a colocar más copias.</p>
+                    <div class="kicad-imagen-slot"><img src="img/PERF3_AL.png" alt="Perforaciones en la PCB" style="max-height: 450px;"></div>
 
                     <h4 id="alt-sub-7-6" class="alt-subtitulo"><span class="alt-sub-num">7.6</span> Dibujar figuras</h4>
                     <p>Desde el menú <strong>Place</strong> se pueden dibujar líneas (<em>Line</em>), arcos (<em>Arc</em>) y rellenos (<em>Fill</em>) en la capa que se desee, útiles para logotipos, marcas o formas especiales.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL29.png" alt="Figuras dibujadas en la PCB" style="max-height: 450px;"></div>
+                    <div class="kicad-imagen-slot"><img src="DIBUJO_AL.png" alt="Figuras dibujadas en la PCB" style="max-height: 450px;"></div>
+                    <p>Para trazar la figura, hacer clic en donde se quiere trazar e ir haciendo la forma deseada. Para finalizar el trazo se puede presionar la tecla <kbd class="kicad-tecla">Esc</kbd> o cuando se haya hecho clic en el último vértice, hacer clic derecho para cortar la línea actual.</p>
+                    <div class="kicad-imagen-slot"><img src="DIBUJO2_AL.png" alt="Figuras dibujadas en la PCB" style="max-height: 450px;"></div>
                 </div>
 
                 <!-- PASO 8 -->
                 <div id="alt-paso-8" class="kicad-etapa">
                     <div class="kicad-etapa-numero">8</div>
                     <h3>Verificación de reglas (DRC)</h3>
-                    <p>Para comprobar que el diseño cumple con las reglas definidas, ir a <strong>Tools → Design Rule Check</strong> y dar clic en <strong>Run Design Rule Check</strong>. Al terminar se genera un reporte y los errores se marcan en verde sobre la placa.</p>
+                    <p>Para comprobar que el diseño cumple con las reglas definidas, ir a <strong>Tools → Design Rule Check</strong> y dar clic en <strong>Run Design Rule Check</strong>. Al terminar, se genera un reporte y los errores se marcan en verde sobre la placa.</p>
                     <div class="kicad-imagen-slot"><img src="img/AL30.png" alt="Ventana del Design Rule Checker" style="max-height: 500px;"></div>
                     <div class="kicad-imagen-slot"><img src="img/AL31.png" alt="Resultados del DRC" style="max-height: 500px;"></div>
                     <p>Los errores más frecuentes son:</p>
@@ -2948,7 +2957,7 @@
                         </tbody>
                     </table>
                     <div class="kicad-nota">
-                        <strong>Verificación importante:</strong> el reporte final debe quedar sin errores. Si no, la fresadora o el fabricante podrían cometer errores de corte, o la placa terminar con cortos.
+                        <strong>Verificación importante:</strong> el reporte final debe quedar sin errores. Si no, la fresadora o el fabricante podrían cometer errores de corte, o la placa podría terminar con cortos.
                     </div>
                 </div>
 
