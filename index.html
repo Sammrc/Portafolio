@@ -2791,17 +2791,20 @@
                     <h3>Del esquemático a la PCB</h3>
 
                     <h4 id="alt-sub-5-1" class="alt-subtitulo"><span class="alt-sub-num">5.1</span> Actualizar el documento PCB</h4>
-                    <p>Con el esquemático abierto, ir a <strong>Design → Update PCB Document</strong>. Se abre la ventana <strong>Engineering Change Order</strong>; ahí se da clic en <strong>Validate Changes</strong> y, si todo está bien (palomitas verdes), en <strong>Execute Changes</strong>.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL17.png" alt="Design - Update PCB Document" style="max-height: 450px;"></div>
-                    <div class="kicad-imagen-slot"><img src="img/AL18.png" alt="Ventana Engineering Change Order" style="max-height: 500px;"></div>
+                    <p>Con el esquemático abierto, ir a <strong>Design → Update PCB Document</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/UPCB_AL.png" alt="Design - Update PCB Document" style="max-height: 450px;"></div>
+                    <p>Se abre la ventana <strong>Engineering Change Order</strong>; ahí se da clic en <strong>Validate Changes</strong> y, si todo está bien (palomitas verdes), en <strong>Execute Changes</strong> y dar en <strong>Close</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/UPCB2_AL.png" alt="Ventana Engineering Change Order" style="max-height: 500px;"></div>
 
                     <h4 id="alt-sub-5-2" class="alt-subtitulo"><span class="alt-sub-num">5.2</span> Colocar los componentes en el área de trabajo</h4>
-                    <p>Al abrir la PCB, los componentes aparecen agrupados fuera de la hoja, dentro de un recuadro llamado <em>Room</em>. Hay que <strong>arrastrarlos</strong> con el mouse hacia el área de trabajo (la zona oscura).</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL19.png" alt="Componentes importados en la PCB" style="max-height: 450px;"></div>
+                    <p>Al abrir la PCB, los componentes aparecen agrupados fuera de la hoja.</p>
+                    <div class="kicad-imagen-slot"><img src="img/PCB_AL.png" alt="Componentes importados en la PCB" style="max-height: 450px;"></div>
+                    <p>Hay que arrastrarlos con el mouse hacia el área de trabajo (la zona oscura).</p>
+                    <div class="kicad-imagen-slot"><img src="img/PCB2_AL.png" alt="Componentes importados en la PCB" style="max-height: 450px;"></div>
 
                     <h4 id="alt-sub-5-3" class="alt-subtitulo"><span class="alt-sub-num">5.3</span> Acomodar y rotar</h4>
                     <p>Acomodar los componentes de forma estratégica, cerca de los que están conectados entre sí, para evitar cruces innecesarios entre las líneas guía (<em>ratsnest</em>). Se arrastran con el mouse y, mientras se mueven, se rotan con <kbd class="kicad-tecla">Espacio</kbd>.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL20.png" alt="Componentes acomodados en la placa" style="max-height: 450px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/PCB3_AL.png" alt="Componentes acomodados en la placa" style="max-height: 450px;"></div>
                 </div>
 
                 <!-- PASO 6 -->
@@ -2811,20 +2814,26 @@
                     <p>Antes de rutear es fundamental definir las reglas, para que Altium avise cuando algo no cumpla con lo que la fabricación necesita.</p>
 
                     <h4 id="alt-sub-6-1" class="alt-subtitulo"><span class="alt-sub-num">6.1</span> Abrir y modificar las reglas</h4>
-                    <p>Ir a <strong>Design → Rules</strong>. Se abre la ventana <strong>PCB Rules and Constraints Editor</strong>. Las reglas más usadas son:</p>
+                    <p>Ir a <strong>Design → Rules</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/RPCB_AL.png" alt="Componentes acomodados en la placa" style="max-height: 450px;"></div>
+                    <p>Se abre la ventana <strong>PCB Rules and Constraints Editor</strong>.Las reglas más usadas son:</p>
                     <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
                         <li><strong>Electrical → Clearance:</strong> separación mínima entre elementos de cobre.</li>
                         <li><strong>Routing → Width:</strong> ancho mínimo, preferido y máximo de las pistas.</li>
                         <li><strong>Routing → Routing Via Style:</strong> diámetro y agujero de las vías.</li>
                         <li><strong>Manufacturing → Hole Size:</strong> tamaño mínimo y máximo de las perforaciones.</li>
                     </ul>
-                    <div class="kicad-imagen-slot"><img src="img/AL21.png" alt="PCB Rules and Constraints Editor" style="max-height: 550px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/RPCB2_AL.png" alt="PCB Rules and Constraints Editor" style="max-height: 550px;"></div>
                     <p>Para cambiar una regla, se da clic sobre ella y se editan los valores en el panel derecho (por ejemplo, el ancho de pista a usar).</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL22.png" alt="Edición de la regla de ancho de pista" style="max-height: 450px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/RPCB3_AL.png" alt="Edición de la regla de ancho de pista" style="max-height: 450px;"></div>
 
                     <h4 id="alt-sub-6-2" class="alt-subtitulo"><span class="alt-sub-num">6.2</span> Insertar un archivo de reglas</h4>
-                    <p>Si ya se tiene un archivo de reglas (por ejemplo, el que proporciona el fabricante o el laboratorio), se puede importar: en la ventana de reglas, dar <strong>clic derecho</strong> sobre <strong>Design Rules</strong> y elegir <strong>Import Rules</strong>; después seleccionar el archivo y confirmar las reglas que se quieren cargar.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL23.png" alt="Importar archivo de reglas" style="max-height: 450px;"></div>
+                    <p>Si ya se tiene un archivo de reglas (por ejemplo, el que proporciona el fabricante o el laboratorio), se puede importar: en la ventana de reglas, dar <strong>clic derecho</strong> sobre cualquier espacio libre del panel izquierdo y elegir <strong>Import Rules</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/RPCB4_AL.png" alt="Importar archivo de reglas" style="max-height: 450px;"></div>
+                    <p>Después seleccionar el archivo a importar.</p>
+                    <div class="kicad-imagen-slot"><img src="img/RPCB5_AL.png" alt="Importar archivo de reglas" style="max-height: 450px;"></div>
+                    <p>Y confirmar las reglas que se quieren cargar, luego dar clic en importar.</p>
+                    <div class="kicad-imagen-slot"><img src="img/RPCB6_AL.png" alt="Importar archivo de reglas" style="max-height: 450px;"></div>
                     <div class="kicad-nota">
                         <strong>Nota:</strong> las reglas de la PCB deben estar de acuerdo con las capacidades de la fresadora o del fabricante. Si fresas la placa en la MonoFab, el ancho de pista y la separación deben ser compatibles con la herramienta de 0.4 mm.
                     </div>
