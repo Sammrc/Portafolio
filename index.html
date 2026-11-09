@@ -2606,6 +2606,13 @@
             border-radius: 5px;
             font-size: 0.88em;
         }
+        .tabla-medidas .capa-mini {
+            display: block;
+            margin-top: 6px;
+            max-height: 40px;
+            width: auto;
+            border-radius: 4px;
+        }
 </style>
 
 <!-- ======================= BLOQUE 2: SECCIÓN ALTIUM ======================= -->
@@ -2846,38 +2853,65 @@
 
                     <h4 id="alt-sub-7-1" class="alt-subtitulo"><span class="alt-sub-num">7.1</span> Rutear las pistas</h4>
                     <p>Usar <strong>Route → Interactive Routing</strong> (o <kbd class="kicad-tecla">Ctrl</kbd> + <kbd class="kicad-tecla">W</kbd>).</p>
-                    <div class="kicad-imagen-slot"><img src="ROPCB_AL.png" alt="Ruteo interactivo de pistas" style="max-height: 450px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/ROPCB_AL.png" alt="Ruteo interactivo de pistas" style="max-height: 450px;"></div>
                     <p>Dar clic en un pad y seguir la línea guía hasta el pad de destino. Con <kbd class="kicad-tecla">Esc</kbd> se termina la pista.</p>
-                    <div class="kicad-imagen-slot"><img src="ROPCB_AL.png" alt="Ruteo interactivo de pistas" style="max-height: 450px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/ROPCB2_AL.png" alt="Ruteo interactivo de pistas" style="max-height: 450px;"></div>
+                    <p>Y dar clic en el pad de destino para crear la pista.</p>
+                    <div class="kicad-imagen-slot"><img src="img/ROPCB3_AL.png" alt="Ruteo interactivo de pistas" style="max-height: 450px;"></div>
                         
-                    <p>Además del ruteo manual, Altium puede rutear las pistas de forma automática. Para ello, ir a <strong>Route → Auto Route → All</strong> y en la ventana que se abre dar clic en <strong>Route All</strong>.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL25.png" alt="Menú Route, Auto Route, All" style="max-height: 450px;"></div>
-                    <div class="kicad-imagen-slot"><img src="img/AL26.png" alt="Ventana Situs Routing Strategies con el botón Route All" style="max-height: 450px;"></div>
+                    <p>Además del ruteo manual, Altium puede rutear las pistas de forma automática. Para ello, ir a <strong>Route → Auto Route → All</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/ROPCB4_AL.png" alt="Menú Route, Auto Route, All" style="max-height: 450px;"></div>
+                    <p>En la ventana que se abre dar clic en <strong>Route All</strong>.</p>
+                    <div class="kicad-imagen-slot"><img src="img/ROPCB5_AL.png" alt="Ventana Situs Routing Strategies con el botón Route All" style="max-height: 450px;"></div>
+                    <p>Y Altium ruteará automáticamente los componentes.</p>
+                    <div class="kicad-imagen-slot"><img src="img/ROPCB6_AL.png" alt="Ventana Situs Routing Strategies con el botón Route All" style="max-height: 450px;"></div>
 
                     <div class="kicad-nota">
                         <strong>Tip:</strong> el autoruteo es una ayuda, no siempre da el mejor resultado. Conviene revisar las pistas que genera y, si hace falta, corregirlas o rutear a mano las conexiones importantes.
                     </div>
 
+
                     <h4 id="alt-sub-7-2" class="alt-subtitulo"><span class="alt-sub-num">7.2</span> Cambiar el grosor de la pista (Tab)</h4>
                     <p>Mientras se está trazando una pista, presionar <kbd class="kicad-tecla">Tab</kbd> abre el panel de propiedades, donde se puede cambiar el <strong>ancho</strong> de la pista (dentro de lo permitido por la regla), la capa y el estilo de vía.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL25.png" alt="Cambio de grosor de pista con Tab" style="max-height: 450px;"></div>
-
+                    <div class="kicad-imagen-slot"><img src="img/ROPCB7_AL.png" alt="Cambio de grosor de pista con Tab" style="max-height: 450px;"></div>
+                    <p><strong>Cambiar las unidades de mil a mm:</strong> si los valores del panel aparecen en mils (milésimas de pulgada) y necesitas verlos en milímetros, presiona <kbd class="kicad-tecla">Q</kbd>. Cada vez que la presionas, Altium alterna entre <strong>mil</strong> y <strong>mm</strong>, y los valores del ancho de pista se actualizan a la unidad elegida. Puedes usarla en cualquier momento mientras trazas o editas.</p>
+                   
                     <h4 id="alt-sub-7-3" class="alt-subtitulo"><span class="alt-sub-num">7.3</span> Capas de trabajo</h4>
                     <p>Las capas se muestran en la parte inferior del área de trabajo y se pueden cambiar con el panel de capas. Las principales son:</p>
-                    <table class="tabla-medidas">
-                        <thead>
-                            <tr><th>Capa</th><th>Uso</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><strong>Top Layer</strong></td><td>Cobre superior: pistas y pads.</td></tr>
-                            <tr><td><strong>Bottom Layer</strong></td><td>Cobre inferior: pistas y pads en el lado de abajo.</td></tr>
-                            <tr><td><strong>Top Overlay</strong></td><td>Serigrafía superior: etiquetas y referencias.</td></tr>
-                            <tr><td><strong>Mechanical 1</strong></td><td>Capa mecánica, usada comúnmente para el contorno de la placa.</td></tr>
-                            <tr><td><strong>Keep-Out Layer</strong></td><td>Delimita la zona donde no se debe rutear o colocar componentes; también se usa para el contorno.</td></tr>
-                            <tr><td><strong>Multi-Layer</strong></td><td>Elementos que atraviesan todas las capas, como perforaciones y pads de componentes through-hole.</td></tr>
-                        </tbody>
-                    </table>
-                    <div class="kicad-imagen-slot"><img src="img/AL26.png" alt="Capas del editor de PCB" style="max-height: 300px;"></div>
+
+                        <table class="tabla-medidas">
+                            <thead>
+                                <tr><th>Capa</th><th>Uso</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Top Layer</strong><br><img class="capa-mini" src="img/CAPAS1_AL.png" alt="Top Layer"></td>
+                                    <td>Cobre superior: pistas y pads.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bottom Layer</strong><br><img class="capa-mini" src="img/CAPAS2_AL.png" alt="Bottom Layer"></td>
+                                    <td>Cobre inferior: pistas y pads en el lado de abajo.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Top Overlay</strong><br><img class="capa-mini" src="img/CAPAS3_AL.png" alt="Top Overlay"></td>
+                                    <td>Serigrafía superior: etiquetas y referencias.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Mechanical 1</strong><br><img class="capa-mini" src="img/CAPAS4_AL.png" alt="Mechanical 1"></td>
+                                    <td>Capa mecánica, usada comúnmente para el contorno de la placa.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Keep-Out Layer</strong><br><img class="capa-mini" src="img/CAPAS5_AL.png" alt="Keep-Out Layer"></td>
+                                    <td>Delimita la zona donde no se debe rutear o colocar componentes; también se usa para el contorno.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Multi-Layer</strong><br><img class="capa-mini" src="img/CAPAS6_AL.png" alt="Multi-Layer"></td>
+                                    <td>Elementos que atraviesan todas las capas, como perforaciones y pads de componentes through-hole.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    <div class="kicad-imagen-slot"><img src="img/CAPAS_AL.png" alt="Capas del editor de PCB" style="max-height: 300px;"></div>
 
                     <h4 id="alt-sub-7-4" class="alt-subtitulo"><span class="alt-sub-num">7.4</span> Agregar etiquetas (texto)</h4>
                     <p>Para colocar texto en la placa (nombre, fecha, nombre del equipo), ir a <strong>Place → String</strong>, presionar <kbd class="kicad-tecla">Tab</kbd> para escribir el texto y elegir la capa. Para que se grabe en el cobre se coloca en <strong>Top Layer</strong>; para serigrafía, en <strong>Top Overlay</strong>.</p>
