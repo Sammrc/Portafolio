@@ -2973,20 +2973,21 @@
                     <h4 id="alt-sub-9-1" class="alt-subtitulo"><span class="alt-sub-num">9.1</span> Contorno de la placa</h4>
                     <p>Por defecto el área de trabajo es rectangular. Para que tome la forma de la placa real:</p>
                     <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
-                        <li>Cambiar a la capa <strong>Keep-Out Layer</strong> (o Mechanical 1) y dibujar el contorno alrededor de los componentes con <strong>Place → Line</strong>, cerrando la figura.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL32.png" alt="Contorno dibujado alrededor de los componentes" style="max-height: 450px;"></div>
-                        <li>Seleccionar todas las líneas del contorno.</li>
-                        <li>Ir a <strong>Design → Board Shape → Define Board Shape from Selected Objects</strong>.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL33.png" alt="Define Board Shape from Selected Objects" style="max-height: 450px;"></div>
+                        <li>Cambiar a la capa <strong>Mechanical 1</strong> (o Keep-Out Layer) y dibujar el contorno alrededor de los componentes con <strong>Place → Line</strong>, cerrando la figura.</li>
+                        <div class="kicad-imagen-slot"><img src="img/CONTORNO_AL.png" alt="Contorno dibujado alrededor de los componentes" style="max-height: 450px;"></div>
+                        <li>Seleccionar todas las líneas del contorno e ir a <strong>Design → Board Shape → Define Board Shape from Selected Objects</strong>.</li>
+                        <div class="kicad-imagen-slot"><img src="img/CONTORNO2_AL.png" alt="Define Board Shape from Selected Objects" style="max-height: 450px;"></div>
                         <li>El área de trabajo ya no será rectangular: tomará la forma del contorno dibujado.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL34.png" alt="Placa con forma personalizada" style="max-height: 450px;"></div>
+                        <div class="kicad-imagen-slot"><img src="img/CONTORNO3_AL.png" alt="Placa con forma personalizada" style="max-height: 450px;"></div>
                     </ol>
 
                     <h4 id="alt-sub-9-2" class="alt-subtitulo"><span class="alt-sub-num">9.2</span> Polígono de cobre (Polygon Pour)</h4>
-                    <p>Ir a <strong>Place → Polygon Pour</strong>. En el panel de propiedades se elige la capa (por ejemplo, <em>Top Layer</em>) y la red a la que se conecta (comúnmente <strong>GND</strong>). Después se dibuja el polígono sobre toda la placa, haciendo clic en cada esquina.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL35.png" alt="Configuración del Polygon Pour" style="max-height: 450px;"></div>
+                    <p>Ir a <strong>Place → Polygon Pour</strong>.
+                    <div class="kicad-imagen-slot"><img src="img/CONTORNO4_AL.png" alt="Configuración del Polygon Pour" style="max-height: 450px;"></div>
+                    <p>En el panel de propiedades se elige la capa (por ejemplo, <em>Top Layer</em>) y la red a la que se conecta (comúnmente <strong>GND</strong>). Después se dibuja el polígono siguiendo la figura de la placa.</p>
+                    <div class="kicad-imagen-slot"><img src="img/CONTORNO5_AL.png" alt="Configuración del Polygon Pour" style="max-height: 450px;"></div>
                     <p>Si se modifica algo después, se actualiza el cobre con <strong>Tools → Polygon Pours → Repour All</strong>.</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL36.png" alt="Placa con plano de cobre" style="max-height: 450px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/CONTORNO6_AL.png" alt="Placa con plano de cobre" style="max-height: 450px;"></div>
                     <div class="kicad-nota">
                         <strong>Tip:</strong> después de hacer el plano de cobre, vuelve a ejecutar el DRC.
                     </div>
