@@ -3005,28 +3005,32 @@
                     <h4 id="alt-sub-10-1" class="alt-subtitulo"><span class="alt-sub-num">10.1</span> Archivos Gerber</h4>
                     <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
                         <li>Ir a <strong>File → Fabrication Outputs → Gerber Files</strong>.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL37.png" alt="File - Fabrication Outputs - Gerber Files" style="max-height: 450px;"></div>
-                        <li>En la pestaña <strong>Layers</strong> (<em>Plot Layers</em>), seleccionar las capas que se usaron, o todas, y dar clic en <strong>Apply</strong> (o OK).</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL38.png" alt="Selección de capas para Gerber" style="max-height: 500px;"></div>
-                        <li>Se genera la carpeta de salida (normalmente <em>Project Outputs</em>) dentro de la carpeta del proyecto, y se abre un archivo <strong>CAM</strong> con los Gerber. Guardarlo.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL39.png" alt="Archivo CAM con los Gerber" style="max-height: 450px;"></div>
+                        <div class="kicad-imagen-slot"><img src="img/GER_AL.png" alt="File - Fabrication Outputs - Gerber Files" style="max-height: 450px;"></div>
+                        <li>En la pestaña <strong>Layers to plot</strong>, abajo en <strong>Plot Layers</strong>, seleccionar las capas que se usaron, o todas, y dar clic en <strong>Apply</strong>.</li>
+                        <div class="kicad-imagen-slot"><img src="img/GER2_AL.png" alt="Selección de capas para Gerber" style="max-height: 500px;"></div>
+                        <li>Se genera la carpeta de salida (normalmente <em>Project Outputs</em>) dentro de la carpeta del proyecto.</li>
+                        <div class="kicad-imagen-slot"><img src="img/GER3_AL.png" alt="Archivo CAM con los Gerber" style="max-height: 450px;"></div>
+                        <li>También se abre un archivo <strong>CAM</strong> con los Gerber. Dar <strong>CTRL+S</strong> para guardar el archivo. Guardarlo con el mismo nombre que el proyecto y "Gerber" para identificarlo.</li>
+                        <div class="kicad-imagen-slot"><img src="img/GER4_AL.png" alt="Archivo CAM con los Gerber" style="max-height: 450px;"></div>
                     </ol>
 
                     <h4 id="alt-sub-10-2" class="alt-subtitulo"><span class="alt-sub-num">10.2</span> Archivo de perforaciones (NC Drill)</h4>
                     <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
-                        <li>Ir a <strong>File → Fabrication Outputs → NC Drill Files</strong>.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL40.png" alt="File - Fabrication Outputs - NC Drill Files" style="max-height: 450px;"></div>
+                        <li>Regresar a la pestaña de PCB del proyecto, ir a <strong>File → Fabrication Outputs → NC Drill Files</strong>.</li>
+                        <div class="kicad-imagen-slot"><img src="img/DRILL_AL.png" alt="File - Fabrication Outputs - NC Drill Files" style="max-height: 450px;"></div>
                         <li>Seleccionar las unidades en <strong>milímetros</strong> y el formato <strong>4:4</strong>. Dar clic en <strong>OK</strong>.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL41.png" alt="Configuración de NC Drill: milímetros y formato 4:4" style="max-height: 450px;"></div>
+                        <div class="kicad-imagen-slot"><img src="img/DRILL2_AL.png" alt="Configuración de NC Drill: milímetros y formato 4:4" style="max-height: 450px;"></div>
                         <li>Se abre otra ventana; dar clic en <strong>OK</strong> nuevamente.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL42.png" alt="Segunda ventana de NC Drill" style="max-height: 350px;"></div>
-                        <li>Se abre otro archivo <strong>CAM</strong>. Verificar que aparezcan <strong>todas las perforaciones</strong> del diseño y dar clic en <strong>Guardar</strong>.</li>
-                        <div class="kicad-imagen-slot"><img src="img/AL43.png" alt="Archivo CAM de perforaciones" style="max-height: 450px;"></div>
+                        <div class="kicad-imagen-slot"><img src="img/DRILL3_AL.png" alt="Segunda ventana de NC Drill" style="max-height: 350px;"></div>
+                        <li>Se abre otro archivo <strong>CAM</strong>. Verificar que aparezcan <strong>todas las perforaciones</strong> del diseño y dar <strong>CTRL+S</strong> para guardar el archivo. Guardarlo con el mismo nombre que el proyecto y "Perforaciones" para identificarlo.</li>
+                        <div class="kicad-imagen-slot"><img src="img/DRILL4_AL.png" alt="Archivo CAM de perforaciones" style="max-height: 450px;"></div>
                     </ol>
 
                     <h4 id="alt-sub-10-3" class="alt-subtitulo"><span class="alt-sub-num">10.3</span> Comprimir y enviar a fabricar</h4>
                     <p>Dentro de la carpeta de salida quedan los Gerber y el archivo de perforaciones. Se selecciona todo el contenido, se comprime en un archivo <strong>.zip</strong> y se sube a la plataforma del fabricante (por ejemplo, <strong>JLCPCB</strong>).</p>
-                    <div class="kicad-imagen-slot"><img src="img/AL44.png" alt="Carpeta de salida comprimida en zip" style="max-height: 400px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/ZIP_AL.png" alt="Carpeta de salida comprimida en zip" style="max-height: 400px;"></div>
+                    <p>Y ya estarán listos los archivos para subirlos a la plataforma del fabricante (por ejemplo, <strong>JLCPCB</strong>).</p>
+                    <div class="kicad-imagen-slot"><img src="img/ZIP2_AL.png" alt="Carpeta de salida comprimida en zip" style="max-height: 400px;"></div>
                     <div class="kicad-nota">
                         <strong>Tip:</strong> revisa en el visor de Gerber del fabricante que la forma, las perforaciones y las pistas se vean igual que en Altium antes de confirmar el pedido.
                     </div>
