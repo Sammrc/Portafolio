@@ -1121,7 +1121,11 @@
                     <div class="trabajo-card" style="background-image: url('img/F_Altium.png');" onclick="cambiarPagina('altium-detalle')">
                     <h3>5. Altium</h3>
                 </div>
+                    <div class="trabajo-card" style="background-image: url('img/F_Soldadura.png');" onclick="cambiarPagina('soldadura-detalle')">
+                    <h3>6. Soldadura</h3>
+                </div>
             </div>
+                
             <div class="siamese-working-box">
     <svg width="280" height="170" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -3169,7 +3173,18 @@
 </script>
 
 
+<!-- SECCIÓN DETALLE SOLDADURA -->
+<section id="soldadura-detalle" class="page-section">
+    <button class="btn-regresar" onclick="cambiarPagina('trabajos')"><i class="fa-solid fa-arrow-left"></i> Volver a Trabajos</button>
 
+    <div class="kicad-detalle-container" style="margin-top: 0;">
+        <h1 style="border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Soldadura de componentes electrónicos</h1>
+        <div class="siamese-working-box">
+            <h3>Sección en desarrollo</h3>
+            <p>Aquí se publicará la documentación de soldadura.</p>
+        </div>
+    </div>
+</section>
 
             
         <!-- SECCIÓN PROYECTOS -->
@@ -3209,7 +3224,7 @@
                 seccionActiva.classList.add('active-page');
             }
             if (idSeccion === 'inicio') document.getElementById('btn-inicio')?.classList.add('active');
-            if (['trabajos', 'kicad-detalle', 'mods-detalle', 'monofab-detalle', 'multisim-detalle', 'altium-detalle'].includes(idSeccion)) document.getElementById('btn-trabajos')?.classList.add('active');
+            if (['trabajos', 'kicad-detalle', 'mods-detalle', 'monofab-detalle', 'multisim-detalle', 'altium-detalle', 'soldadura-detalle'].includes(idSeccion)) document.getElementById('btn-trabajos')?.classList.add('active');
             if (idSeccion === 'proyectos') document.getElementById('btn-proyectos')?.classList.add('active');
             history.pushState(null, null, '#' + idSeccion);
             window.scrollTo({ top: 0, behavior: 'smooth' });
