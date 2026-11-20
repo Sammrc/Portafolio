@@ -3287,7 +3287,8 @@
                 <div id="sol-paso-1" class="kicad-etapa kicad-etapa-primera">
                     <div class="kicad-etapa-numero">1</div>
                     <h3>Introducción</h3>
-                    <p>Una vez fresada la placa en la MonoFab, el último paso para convertirla en un circuito funcional es soldar los componentes. En esta práctica se soldaron componentes de montaje superficial (<strong>SMD</strong>, como resistencias y LEDs de tamaño 1206 y pulsadores) y componentes de orificio pasante (<strong>through-hole</strong>, como los conectores de pines).</p>
+                    <p>Una vez fabricada la placa, el último paso para convertirla en un circuito funcional es soldar los componentes. La soldadura manual se aplica a dos tipos de componentes: los de montaje superficial (<strong>SMD</strong>), que se colocan sobre los pads de la placa, y los de orificio pasante (<strong>through-hole</strong>), cuyas terminales atraviesan la placa.</p>
+                    <p>Una buena soldadura debe ser <strong>brillante, lisa y con forma de cono</strong> (cóncava), y debe cubrir el pad y la terminal del componente sin desbordarse hacia los pads de al lado.</p>
                 </div>
 
                 <!-- PASO 2 -->
@@ -3339,15 +3340,6 @@
                             </tr>
                         </tbody>
                     </table>
-
-                    <h4 id="sol-sub-2-2" class="sol-subtitulo"><span class="sol-sub-num">2.2</span> Componentes de la práctica</h4>
-                    <div class="kicad-chip-lista">
-                        <span class="kicad-chip">8 resistencias 1206</span>
-                        <span class="kicad-chip">4 LEDs 1206</span>
-                        <span class="kicad-chip">4 pulsadores</span>
-                        <span class="kicad-chip">Conectores / pines de alimentación</span>
-                    </div>
-                    <div class="kicad-imagen-slot"><img src="img/SOL04.png" alt="Componentes" style="max-height: 400px;"></div>
                 </div>
 
                 <!-- PASO 3 -->
@@ -3355,7 +3347,7 @@
                     <div class="kicad-etapa-numero">3</div>
                     <h3>Preparación de la placa y del cautín</h3>
 
-                    <h4 id="sol-sub-3-1" class="sol-subtitulo"><span class="sol-sub-num">3.1</span> Inspección de la placa fresada</h4>
+                    <h4 id="sol-sub-3-1" class="sol-subtitulo"><span class="sol-sub-num">3.1</span> Inspección de la placa</h4>
                     <p>Antes de soldar, revisar la placa para detectar rebabas de cobre, pistas unidas por residuos o cortes incompletos. Con el multímetro en modo continuidad, comprobar que <strong>no haya cortos entre pistas vecinas</strong> y que cada pista esté continua de extremo a extremo.</p>
                     <p>Si hay rebabas o puentes de cobre, se pueden retirar con cuidado con una lija muy fina.</p>
 
@@ -3378,9 +3370,10 @@
                 <div id="sol-paso-4" class="kicad-etapa">
                     <div class="kicad-etapa-numero">4</div>
                     <h3>Procedimiento de soldadura</h3>
+                    <p>Este es el procedimiento general para soldar un componente SMD de dos terminales. Los componentes con más terminales y los through-hole siguen la misma lógica y se explican al final.</p>
 
                     <h4 id="sol-sub-4-1" class="sol-subtitulo"><span class="sol-sub-num">4.1</span> Aplicar fundente en los pads</h4>
-                    <p>Antes de soldar, aplicar fundente (flux) con unas pinzas delgadas sobre los pads donde irá el componente. El fundente limpia el óxido del cobre y hace que el estaño fluya y se adhiera bien, evitando puentes entre pads.</p>
+                    <p>Antes de soldar, aplicar fundente (flux) sobre los pads donde irá el componente. El fundente limpia el óxido del cobre y hace que el estaño fluya y se adhiera bien, evitando puentes entre pads.</p>
                     <div class="kicad-imagen-slot"><img src="img/SOL16.png" alt="Aplicación de fundente en los pads" style="max-height: 350px;"></div>
 
                     <h4 id="sol-sub-4-2" class="sol-subtitulo"><span class="sol-sub-num">4.2</span> Estañar un pad</h4>
@@ -3391,9 +3384,9 @@
                     <p>Con las pinzas, posicionar el componente sobre sus pads, alineado y centrado.</p>
                     <div class="kicad-imagen-slot"><img src="img/SOL10.png" alt="Componente colocado con pinzas" style="max-height: 350px;"></div>
                     <div class="kicad-nota">
-                        <strong>LEDs:</strong> antes de soldarlos, identificar el <strong>cátodo</strong> (marcado con una línea, un punto verde o una muesca) y colocarlo hacia el lado conectado a GND, según el esquemático.
+                        <strong>Componentes con polaridad:</strong> algunos componentes, como los LEDs, los diodos o los capacitores electrolíticos, solo funcionan en un sentido. Antes de soldarlos, identificar el lado que marca su polaridad (por ejemplo, el <strong>cátodo</strong> de un LED se indica con una línea, un punto verde o una muesca) y colocarlo según el esquemático.
                     </div>
-                    <div class="kicad-imagen-slot"><img src="img/LEDCA.png" alt="Identificación del cátodo del LED" style="max-height: 350px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/LEDCA.png" alt="Identificación de la polaridad de un LED" style="max-height: 350px;"></div>
 
                     <h4 id="sol-sub-4-4" class="sol-subtitulo"><span class="sol-sub-num">4.4</span> Fijar el primer lado</h4>
                     <p>Mantener el componente sujeto con las pinzas y calentar el pad estañado hasta que el estaño lo atrape. Retirar el cautín y esperar a que se enfríe antes de soltar el componente.</p>
@@ -3404,21 +3397,16 @@
                     <div class="kicad-imagen-slot"><img src="img/SOL12.png" alt="Segundo extremo soldado" style="max-height: 350px;"></div>
                     <p>Por último, revisar el primer lado: si quedó con poco estaño o desalineado, se vuelve a calentar y se corrige.</p>
 
-                    <h4 id="sol-sub-4-6" class="sol-subtitulo"><span class="sol-sub-num">4.6</span> Repetir con el resto de los componentes</h4>
-                    <p>Se repite el mismo procedimiento (fundente, estañar un pad, colocar, fijar y soldar el otro lado) con todos los componentes, en este orden:</p>
-                    <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
-                        <li><strong>Resistencias:</strong> las más pequeñas y bajas primero.</li>
-                        <li><strong>LEDs:</strong> verificando la polaridad.</li>
-                        <li><strong>Pulsadores:</strong> fijar una terminal, comprobar que el componente quede recto y asentado, y soldar las demás una por una.
+                    <h4 id="sol-sub-4-6" class="sol-subtitulo"><span class="sol-sub-num">4.6</span> Componentes con más terminales y through-hole</h4>
+                    <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                        <li><strong>Componentes SMD con varias terminales:</strong> fijar una terminal para que el componente quede en posición, comprobar que esté recto y asentado, y después soldar las demás una por una.</li>
+                        <li><strong>Componentes through-hole:</strong> insertarlos hasta que queden asentados, sujetarlos para que no se muevan y soldar cada terminal formando un cono pequeño.
+                            <div class="kicad-imagen-slot"><img src="img/SOL15.png" alt="Soldadura de componentes through-hole" style="max-height: 400px;"></div>
                         </li>
-                        <li><strong>Conectores o pines:</strong> insertarlos hasta que queden asentados, soldar cada terminal formando un cono pequeño.
-                            <div class="kicad-imagen-slot"><img src="img/SOL15.png" alt="Soldadura de conectores" style="max-height: 400px;"></div>
-                        </li>
-                    </ol>
-                 
-                    <div class="kicad-nota">
-                        <strong>Si hay un error:</strong> para retirar estaño sobrante o un puente entre pads, colocar la malla desoldadora sobre el estaño, presionar con el cautín y dejar que la malla lo absorba.
-                    </div>
+                    </ul>
+
+                    <h4 id="sol-sub-4-7" class="sol-subtitulo"><span class="sol-sub-num">4.7</span> Corregir errores</h4>
+                    <p>Para retirar estaño sobrante o un puente entre pads, colocar la malla desoldadora sobre el estaño, presionar con el cautín y dejar que la malla lo absorba.</p>
                     <div class="kicad-imagen-slot"><img src="img/SOL17.png" alt="Desoldado con malla" style="max-height: 350px;"></div>
                 </div>
 
@@ -3434,8 +3422,8 @@
                         <li>Cubre todo el pad sin salirse hacia las pistas vecinas.</li>
                         <li>El componente queda <strong>recto, centrado y bien asentado</strong>.</li>
                     </ul>
-                        <div class="kicad-imagen-slot"><img src="img/SOL28.png" alt="Ej. Buena soldadura" style="max-height: 400px;"></div>
-                        
+                    <div class="kicad-imagen-slot"><img src="img/SOL24.png" alt="Ejemplo de buena soldadura" style="max-height: 400px;"></div>
+
                     <h4 id="sol-sub-5-2" class="sol-subtitulo"><span class="sol-sub-num">5.2</span> Defectos comunes y cómo corregirlos</h4>
                     <table class="tabla-medidas">
                         <thead>
@@ -3486,7 +3474,7 @@
                             </tr>
                         </tbody>
                     </table>
-                         <div class="kicad-imagen-slot"><img src="img/SOL28.png" alt="Ej. Mala soldadura" style="max-height: 400px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/SOL26.png" alt="Ejemplo de mala soldadura" style="max-height: 400px;"></div>
                 </div>
 
                 <!-- PASO 6 -->
@@ -3495,27 +3483,23 @@
                     <h3>Pruebas eléctricas y funcionamiento</h3>
 
                     <h4 id="sol-sub-6-1" class="sol-subtitulo"><span class="sol-sub-num">6.1</span> Prueba de continuidad (sin alimentar)</h4>
-                    <p>Con el multímetro se comprueba:</p>
+                    <p>Con el multímetro en modo continuidad (el que emite un pitido) se comprueba que:</p>
                     <ul class="sol-check">
-                        <li><strong>No hay cortocircuito</strong> entre la alimentación (3.3 V) y tierra (GND).</li>
+                        <li><strong>No hay cortocircuito</strong> entre la alimentación y tierra (GND).</li>
                         <li>Cada terminal de cada componente tiene <strong>continuidad</strong> con su pista correspondiente.</li>
                         <li>No hay continuidad entre pistas que no deberían estar conectadas (por ejemplo, entre pads vecinos).</li>
                     </ul>
                     <div class="kicad-imagen-slot"><img src="img/SOL28.png" alt="Prueba de continuidad con multímetro" style="max-height: 400px;"></div>
+                    <div class="kicad-nota">
+                        <strong>Importante:</strong> haz siempre esta prueba <strong>antes</strong> de conectar la alimentación. Si el multímetro pita entre alimentación y GND, hay un corto que debes encontrar y corregir antes de seguir.
+                    </div>
 
                     <h4 id="sol-sub-6-2" class="sol-subtitulo"><span class="sol-sub-num">6.2</span> Prueba de funcionamiento (alimentada)</h4>
                     <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
-                        <li>Conectar la alimentación de <strong>3.3 V</strong> y GND a los conectores correspondientes.</li>
-                        <li>Presionar cada pulsador y observar que se encienda el <strong>LED/strong>.</li>
-                        <li>Si un LED no enciende, revisar con el multímetro: polaridad del LED, soldadura de la resistencia y continuidad de la pista.</li>
+                        <li>Conectar la alimentación del circuito con el voltaje para el que fue diseñado.</li>
+                        <li>Comprobar que el circuito responde como se espera (por ejemplo, que los LEDs enciendan o que los pulsadores funcionen).</li>
+                        <li>Si algo no funciona, apagar el circuito y revisar con el multímetro la polaridad de los componentes, las soldaduras y la continuidad de las pistas.</li>
                     </ol>
-                    <div class="kicad-imagen-slot"><img src="img/SOL29.png" alt="Placa alimentada con un LED encendido" style="max-height: 400px;"></div>
-                    <div class="kicad-imagen-slot">
-                        <video autoplay muted loop playsinline style="width: 100%; max-height: 320px; object-fit: contain; background-color: #faf5ff; border: 1.5px solid var(--border-color); border-radius: 14px; padding: 8px;">
-                            <source src="Videos/SOL_prueba.mp4" type="video/mp4">
-                            Tu navegador no soporta video HTML5.
-                        </video>
-                    </div>
 
                     <h4 id="sol-sub-6-3" class="sol-subtitulo"><span class="sol-sub-num">6.3</span> Si algo no funciona</h4>
                     <table class="tabla-medidas">
@@ -3523,11 +3507,11 @@
                             <tr><th>Síntoma</th><th>Posible causa</th><th>Qué revisar</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Ningún LED enciende</td><td>Falta alimentación o hay un corto.</td><td>Voltaje entre 3.3 V y GND; continuidad en la pista de alimentación.</td></tr>
-                            <tr><td>Un LED no enciende</td><td>LED al revés o soldadura fría.</td><td>Polaridad, soldaduras del LED y de su resistencia.</td></tr>
-                            <tr><td>Un LED siempre está encendido</td><td>Corto en el pulsador o puente de estaño.</td><td>Soldaduras del pulsador y pistas cercanas.</td></tr>
-                            <tr><td>Un pulsador no responde</td><td>Terminal sin soldar o mal asentado.</td><td>Continuidad en el pulsador al presionarlo.</td></tr>
-                            <tr><td>LED muy tenue</td><td>Resistencia de valor incorrecto.</td><td>Valor de la resistencia soldada.</td></tr>
+                            <tr><td>Nada funciona</td><td>Falta alimentación o hay un corto.</td><td>Voltaje entre alimentación y GND; continuidad en la pista de alimentación.</td></tr>
+                            <tr><td>Un componente no funciona</td><td>Polaridad invertida o soldadura fría.</td><td>Orientación del componente y sus soldaduras.</td></tr>
+                            <tr><td>Un componente siempre está activo</td><td>Corto o puente de estaño.</td><td>Soldaduras y pistas cercanas al componente.</td></tr>
+                            <tr><td>Un componente no responde</td><td>Terminal sin soldar o mal asentado.</td><td>Continuidad en cada terminal.</td></tr>
+                            <tr><td>Funcionamiento débil o incorrecto</td><td>Componente de valor equivocado.</td><td>Valor del componente soldado.</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -3536,7 +3520,17 @@
                 <div id="sol-paso-7" class="kicad-etapa">
                     <div class="kicad-etapa-numero">7</div>
                     <h3>Resultados</h3>
+                    <p>Así quedó la placa de la práctica con todos sus componentes soldados.</p>
                     <div class="kicad-imagen-slot"><img src="img/SOL33.png" alt="Placa terminada" style="max-height: 450px;"></div>
+
+                    <p>Placa alimentada y funcionando:</p>
+                    <div class="kicad-imagen-slot"><img src="img/SOL29.png" alt="Placa alimentada con un LED encendido" style="max-height: 400px;"></div>
+                    <div class="kicad-imagen-slot">
+                        <video autoplay muted loop playsinline style="width: 100%; max-height: 320px; object-fit: contain; background-color: #faf5ff; border: 1.5px solid var(--border-color); border-radius: 14px; padding: 8px;">
+                            <source src="Videos/SOL_prueba.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
+                    </div>
                 </div>
 
                 <!-- PASO 8 -->
@@ -3563,7 +3557,6 @@
                     <a href="#soldadura-detalle" class="indice-paso" data-destino="sol-paso-2"><span class="indice-num">2</span> Materiales</a>
                     <ul class="indice-sub">
                         <li><a href="#soldadura-detalle" data-destino="sol-sub-2-1">2.1 Lista de materiales</a></li>
-                        <li><a href="#soldadura-detalle" data-destino="sol-sub-2-2">2.2 Componentes</a></li>
                     </ul>
                 </li>
                 <li>
@@ -3582,7 +3575,8 @@
                         <li><a href="#soldadura-detalle" data-destino="sol-sub-4-3">4.3 Colocar el componente</a></li>
                         <li><a href="#soldadura-detalle" data-destino="sol-sub-4-4">4.4 Fijar el primer lado</a></li>
                         <li><a href="#soldadura-detalle" data-destino="sol-sub-4-5">4.5 Soldar el segundo lado</a></li>
-                        <li><a href="#soldadura-detalle" data-destino="sol-sub-4-6">4.6 Resto de componentes</a></li>
+                        <li><a href="#soldadura-detalle" data-destino="sol-sub-4-6">4.6 Más terminales y through-hole</a></li>
+                        <li><a href="#soldadura-detalle" data-destino="sol-sub-4-7">4.7 Corregir errores</a></li>
                     </ul>
                 </li>
                 <li>
@@ -3605,7 +3599,7 @@
             </ul>
         </aside>
     </div>
-</section>       
+</section>
 
 <!-- ======================= BLOQUE 3: JAVASCRIPT ======================= -->
 <script>
