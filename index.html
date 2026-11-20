@@ -3357,10 +3357,10 @@
 
                     <h4 id="sol-sub-3-3" class="sol-subtitulo"><span class="sol-sub-num">3.3</span> Temperatura y preparación del cautín</h4>
                     <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
-                        <li><strong>Temperatura:</strong> de forma general, entre 300 °C y 350 °C.</li>
+                        <li><strong>Temperatura:</strong> de forma general, entre 600 °F y 660 °F.</li>
                         <li><strong>Limpiar la punta:</strong> pasarla por la esponja antes de cada soldadura.</li>
                     </ul>
-                    <div class="kicad-imagen-slot"><img src="img/SOL07.png" alt="Estación de soldadura con la temperatura ajustada" style="max-height: 400px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/ESCAU.jpeg" alt="Estación de soldadura con la temperatura ajustada" style="max-height: 400px;"></div>
                     <div class="kicad-nota">
                         <strong>Importante:</strong> no usar una temperatura demasiado alta. Más calor no equivale a mejor soldadura: puede <strong>despegar las pistas de cobre</strong> de la placa o dañar los componentes.
                     </div>
@@ -3370,44 +3370,55 @@
                 <div id="sol-paso-4" class="kicad-etapa">
                     <div class="kicad-etapa-numero">4</div>
                     <h3>Procedimiento de soldadura</h3>
-                    <p>Este es el procedimiento general para soldar un componente SMD de dos terminales. Los componentes con más terminales y los through-hole siguen la misma lógica y se explican al final.</p>
 
                     <h4 id="sol-sub-4-1" class="sol-subtitulo"><span class="sol-sub-num">4.1</span> Aplicar fundente en los pads</h4>
                     <p>Antes de soldar, aplicar fundente (flux) sobre los pads donde irá el componente. El fundente limpia el óxido del cobre y hace que el estaño fluya y se adhiera bien, evitando puentes entre pads.</p>
-                    <div class="kicad-imagen-slot"><img src="img/SOL16.png" alt="Aplicación de fundente en los pads" style="max-height: 350px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/APFL.jpg" alt="Aplicación de fundente en los pads" style="max-height: 350px;"></div>
 
                     <h4 id="sol-sub-4-2" class="sol-subtitulo"><span class="sol-sub-num">4.2</span> Estañar un pad</h4>
-                    <p>Con el cautín limpio y estañado, aplicar una pequeña cantidad de estaño en <strong>uno solo</strong> de los pads del componente.</p>
-                    <div class="kicad-imagen-slot"><img src="img/SOL09.png" alt="Pad estañado" style="max-height: 350px;"></div>
+                    <p>Con el cautín limpio, aplicar una pequeña cantidad de estaño en <strong>uno solo</strong> de los pads del componente.</p>
+                      <video autoplay muted loop playsinline style="width: 100%; max-height: 320px; object-fit: contain; background-color: #faf5ff; border: 1.5px solid var(--border-color); border-radius: 14px; padding: 8px;">
+                            <source src="Videos/SOLD.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
 
                     <h4 id="sol-sub-4-3" class="sol-subtitulo"><span class="sol-sub-num">4.3</span> Colocar el componente</h4>
                     <p>Con las pinzas, posicionar el componente sobre sus pads, alineado y centrado.</p>
-                    <div class="kicad-imagen-slot"><img src="img/SOL10.png" alt="Componente colocado con pinzas" style="max-height: 350px;"></div>
+                    <div class="kicad-imagen-slot"><img src="img/SOLD.jpeg" alt="Componente colocado con pinzas" style="max-height: 350px;"></div>
                     <div class="kicad-nota">
                         <strong>Componentes con polaridad:</strong> algunos componentes, como los LEDs, los diodos o los capacitores electrolíticos, solo funcionan en un sentido. Antes de soldarlos, identificar el lado que marca su polaridad (por ejemplo, el <strong>cátodo</strong> de un LED se indica con una línea, un punto verde o una muesca) y colocarlo según el esquemático.
                     </div>
                     <div class="kicad-imagen-slot"><img src="img/LEDCA.png" alt="Identificación de la polaridad de un LED" style="max-height: 350px;"></div>
 
                     <h4 id="sol-sub-4-4" class="sol-subtitulo"><span class="sol-sub-num">4.4</span> Fijar el primer lado</h4>
-                    <p>Mantener el componente sujeto con las pinzas y calentar el pad estañado hasta que el estaño lo atrape. Retirar el cautín y esperar a que se enfríe antes de soltar el componente.</p>
-                    <div class="kicad-imagen-slot"><img src="img/SOL11.png" alt="Primer extremo fijado" style="max-height: 350px;"></div>
+                    <p>Mantener el componente fijo, calentar el pad estañado hasta que el estaño lo atrape y retirar el cautín.</p>
+                     <video autoplay muted loop playsinline style="width: 100%; max-height: 320px; object-fit: contain; background-color: #faf5ff; border: 1.5px solid var(--border-color); border-radius: 14px; padding: 8px;">
+                            <source src="Videos/SOLD2.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
 
                     <h4 id="sol-sub-4-5" class="sol-subtitulo"><span class="sol-sub-num">4.5</span> Soldar el segundo lado</h4>
                     <p>Con el componente ya fijo, tocar con la punta el segundo pad y la terminal al mismo tiempo, esperar 1–2 segundos y acercar el estaño al punto de contacto. Retirar primero el estaño y después el cautín, sin mover el componente hasta que el estaño se solidifique.</p>
-                    <div class="kicad-imagen-slot"><img src="img/SOL12.png" alt="Segundo extremo soldado" style="max-height: 350px;"></div>
+                      <video autoplay muted loop playsinline style="width: 100%; max-height: 320px; object-fit: contain; background-color: #faf5ff; border: 1.5px solid var(--border-color); border-radius: 14px; padding: 8px;">
+                            <source src="Videos/SOLD3.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
                     <p>Por último, revisar el primer lado: si quedó con poco estaño o desalineado, se vuelve a calentar y se corrige.</p>
 
                     <h4 id="sol-sub-4-6" class="sol-subtitulo"><span class="sol-sub-num">4.6</span> Componentes con más terminales y through-hole</h4>
                     <ul class="kicad-pasos-lista" style="font-size: 0.95rem;">
                         <li><strong>Componentes SMD con varias terminales:</strong> fijar una terminal para que el componente quede en posición, comprobar que esté recto y asentado, y después soldar las demás una por una.</li>
                         <li><strong>Componentes through-hole:</strong> insertarlos hasta que queden asentados, sujetarlos para que no se muevan y soldar cada terminal formando un cono pequeño.
-                            <div class="kicad-imagen-slot"><img src="img/SOL15.png" alt="Soldadura de componentes through-hole" style="max-height: 400px;"></div>
+                            <div class="kicad-imagen-slot"><img src="img/SOLD2.jpeg" alt="Soldadura de componentes through-hole" style="max-height: 400px;"></div>
                         </li>
                     </ul>
 
                     <h4 id="sol-sub-4-7" class="sol-subtitulo"><span class="sol-sub-num">4.7</span> Corregir errores</h4>
                     <p>Para retirar estaño sobrante o un puente entre pads, colocar la malla desoldadora sobre el estaño, presionar con el cautín y dejar que la malla lo absorba.</p>
-                    <div class="kicad-imagen-slot"><img src="img/SOL17.png" alt="Desoldado con malla" style="max-height: 350px;"></div>
+                    <video autoplay muted loop playsinline style="width: 100%; max-height: 320px; object-fit: contain; background-color: #faf5ff; border: 1.5px solid var(--border-color); border-radius: 14px; padding: 8px;">
+                            <source src="Videos/SOLD4.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
                 </div>
 
                 <!-- PASO 5 -->
@@ -3422,7 +3433,6 @@
                         <li>Cubre todo el pad sin salirse hacia las pistas vecinas.</li>
                         <li>El componente queda <strong>recto, centrado y bien asentado</strong>.</li>
                     </ul>
-                    <div class="kicad-imagen-slot"><img src="img/SOL24.png" alt="Ejemplo de buena soldadura" style="max-height: 400px;"></div>
 
                     <h4 id="sol-sub-5-2" class="sol-subtitulo"><span class="sol-sub-num">5.2</span> Defectos comunes y cómo corregirlos</h4>
                     <table class="tabla-medidas">
@@ -3474,7 +3484,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="kicad-imagen-slot"><img src="img/SOL26.png" alt="Ejemplo de mala soldadura" style="max-height: 400px;"></div>
                 </div>
 
                 <!-- PASO 6 -->
@@ -3489,9 +3498,7 @@
                         <li>Cada terminal de cada componente tiene <strong>continuidad</strong> con su pista correspondiente.</li>
                         <li>No hay continuidad entre pistas que no deberían estar conectadas (por ejemplo, entre pads vecinos).</li>
                     </ul>
-                    <div class="kicad-imagen-slot"><img src="img/SOL28.png" alt="Prueba de continuidad con multímetro" style="max-height: 400px;"></div>
-                    <div class="kicad-nota">
-                        <strong>Importante:</strong> haz siempre esta prueba <strong>antes</strong> de conectar la alimentación. Si el multímetro pita entre alimentación y GND, hay un corto que debes encontrar y corregir antes de seguir.
+                        <strong>Importante:</strong> hacer siempre esta prueba <strong>antes</strong> de conectar la alimentación. Si el multímetro pita entre alimentación y GND, hay un corto que encontrar y corregir antes de seguir.
                     </div>
 
                     <h4 id="sol-sub-6-2" class="sol-subtitulo"><span class="sol-sub-num">6.2</span> Prueba de funcionamiento (alimentada)</h4>
@@ -3520,11 +3527,10 @@
                 <div id="sol-paso-7" class="kicad-etapa">
                     <div class="kicad-etapa-numero">7</div>
                     <h3>Resultados</h3>
-                    <p>Así quedó la placa de la práctica con todos sus componentes soldados.</p>
-                    <div class="kicad-imagen-slot"><img src="img/SOL33.png" alt="Placa terminada" style="max-height: 450px;"></div>
+                    <p>Placa soldada:</p>
+                    <div class="kicad-imagen-slot"><img src="SOLD3.jpeg alt="Placa terminada" style="max-height: 450px;"></div>
 
                     <p>Placa alimentada y funcionando:</p>
-                    <div class="kicad-imagen-slot"><img src="img/SOL29.png" alt="Placa alimentada con un LED encendido" style="max-height: 400px;"></div>
                     <div class="kicad-imagen-slot">
                         <video autoplay muted loop playsinline style="width: 100%; max-height: 320px; object-fit: contain; background-color: #faf5ff; border: 1.5px solid var(--border-color); border-radius: 14px; padding: 8px;">
                             <source src="Videos/SOL_prueba.mp4" type="video/mp4">
@@ -3539,10 +3545,17 @@
                     <h3>Limpieza y cierre</h3>
                     <ul class="sol-check">
                         <li>Apagar y desconectar el cautín.</li>
+                             <video autoplay muted loop playsinline style="width: 100%; max-height: 320px; object-fit: contain; background-color: #faf5ff; border: 1.5px solid var(--border-color); border-radius: 14px; padding: 8px;">
+                            <source src="Videos/SOLD5.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
                         <li>Limpiar la punta con la esponja para quitar residuos.</li>
-                        <li>Limpiar la placa con alcohol isopropílico para retirar el fundente.</li>
+                             <video autoplay muted loop playsinline style="width: 100%; max-height: 320px; object-fit: contain; background-color: #faf5ff; border: 1.5px solid var(--border-color); border-radius: 14px; padding: 8px;">
+                            <source src="Videos/SOLD6.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
                     </ul>
-                    <div class="kicad-imagen-slot"><img src="img/SOL34.png" alt="Espacio de trabajo limpio" style="max-height: 350px;"></div>
+                    
                 </div>
 
             </div>
