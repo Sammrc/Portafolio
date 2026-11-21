@@ -3288,6 +3288,9 @@
                     <div class="kicad-etapa-numero">1</div>
                     <h3>Introducción</h3>
                     <p>La soldadura manual se aplica a dos tipos de componentes: los de montaje superficial (<strong>SMD</strong>), que se colocan sobre los pads de la placa, y los de orificio pasante (<strong>through-hole</strong>), cuyas terminales atraviesan la placa.</p>
+                    <h4 id="sol-sub-1-1" class="sol-subtitulo"><span class="sol-sub-num">1.1</span> Tamaños de componentes SMD</h4>
+<p>Los componentes de montaje superficial se identifican mediante códigos numéricos (como <strong>0603</strong>, <strong>0805</strong> o <strong>1206</strong>) que indican sus dimensiones físicas. Conocer su escala permite elegir la punta adecuada del cautín, las pinzas y el nivel de aumento necesario para soldarlos con precisión.</p>
+<div class="kicad-imagen-slot"><img src="img/Tam_SMD.jpg" alt="Comparativa de tamaños de componentes SMD" style="max-height: 400px;"></div>
                 </div>
 
                 <!-- PASO 2 -->
@@ -3370,6 +3373,9 @@
                     <div class="kicad-etapa-numero">4</div>
                     <h3>Procedimiento de soldadura</h3>
 
+                        <h4 id="sol-sub-4-8" class="sol-subtitulo"><span class="sol-sub-num">4.8</span> Orden recomendado para poblar la PCB</h4>
+                        <p>Conviene armar la placa de menor a mayor altura y complejidad: primero componentes pasivos planos y encapsulados bajos, después circuitos integrados y al final conectores o piezas altas que puedan estorbar el acceso del cautín.</p>
+                        
                     <h4 id="sol-sub-4-1" class="sol-subtitulo"><span class="sol-sub-num">4.1</span> Aplicar fundente en los pads</h4>
                     <p>Antes de soldar, aplicar fundente (flux) sobre los pads donde irá el componente. El fundente limpia el óxido del cobre y hace que el estaño fluya y se adhiera bien, evitando puentes entre pads.</p>
                     <div class="kicad-imagen-slot"><img src="img/APFL.jpg" alt="Aplicación de fundente en los pads" style="max-height: 350px;"></div>
@@ -3413,7 +3419,12 @@
                     </ul>
 
                     <h4 id="sol-sub-4-7" class="sol-subtitulo"><span class="sol-sub-num">4.7</span> Corregir errores</h4>
-                    <p>Para retirar estaño sobrante o un puente entre pads, colocar la malla desoldadora sobre el estaño, presionar con el cautín y dejar que la malla lo absorba.</p>
+                        <h4 id="sol-sub-4-9" class="sol-subtitulo"><span class="sol-sub-num">4.9</span> Retiro limpio de componentes</h4>
+                        <ol class="kicad-pasos-lista" style="font-size: 0.95rem;">
+                            <li>Aplicar fundente fresco sobre las terminales para mejorar la transferencia térmica.</li>
+                            <li>Extraer el estaño acumulado con malla desoldadora o bomba de succión sin presionar en exceso.</li>
+                            <li>Asegurar que cada pin esté libre antes de levantar la pieza, evitando forzar el pad de cobre.</li>
+                        </ol>                   
                     <video autoplay muted loop playsinline style="width: 100%; max-height: 320px; object-fit: contain; background-color: #faf5ff; border: 1.5px solid var(--border-color); border-radius: 14px; padding: 8px;">
                             <source src="Videos/SOLD4.mp4" type="video/mp4">
                             Tu navegador no soporta video HTML5.
